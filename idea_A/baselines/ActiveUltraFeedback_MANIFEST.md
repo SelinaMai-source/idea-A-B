@@ -1,0 +1,22 @@
+# ActiveUltraFeedback acquisition manifest
+
+- **Paper:** ActiveUltraFeedback: Efficient Preference Data Generation using Active Learning
+- **Venue:** ICML 2026 Main
+- **arXiv:** https://arxiv.org/abs/2603.09692
+- **Official source:** https://github.com/lasgroup/ActiveUltraFeedback
+- **Clone method:** `git clone --depth 1 --recurse-submodules=no https://github.com/lasgroup/ActiveUltraFeedback.git idea_A/baselines/ActiveUltraFeedback`
+- **Upstream commit:** `3cf700a85bbe344b1b472890a488671e2916a8b4`
+- **Commit date:** 2026-05-02 13:10:41 +0200
+- **Commit subject:** Merge pull request #3 from lasgroup/readme_update
+- **Shallow:** yes
+- **License:** Apache-2.0 (upstream `LICENSE` and README)
+- **Local path:** `idea_A/baselines/ActiveUltraFeedback/`
+- **On-disk size after shallow clone:** 1.9M
+- **Clone date (local):** 2026-10-31
+- **Submodules (declared, NOT initialized):**
+  - `resources/reward-bench` -> https://github.com/allenai/reward-bench.git
+  - `resources/olmes` -> https://github.com/swiss-ai/olmes.git
+  - `resources/alpaca_eval` -> https://github.com/tatsu-lab/alpaca_eval.git
+- **`resources/` present:** no
+- **Parent-repo policy:** this manifest is the committed record. The clone keeps its own `.git` and is not vendored into the parent commit. Do not `git add` the clone directory (it would record a nested gitlink or the whole tree).
+- **Selector import (main `.venv`, 2026-10-31):** DRTS, DeltaUCB, and InfoMax each fail with `ModuleNotFoundError: No module named 'torch'`. No `selector_unit_check`. Full RM/DPO pipeline not run.
