@@ -1,0 +1,92 @@
+{
+  "status": "ok",
+  "comparability_cell": null,
+  "protocol_a2": "BLOCKED_INCOMPARABLE",
+  "check_type": "selector_unit_check",
+  "clone_commit_expected": "3cf700a85bbe344b1b472890a488671e2916a8b4",
+  "candidate_pool": {
+    "n_prompts": 2,
+    "n_completions_per_prompt": 4,
+    "pairs_per_prompt": 1,
+    "note": "same synthetic pool for all three official selectors"
+  },
+  "budget_pairs_per_prompt": 1,
+  "same_candidate_pool": true,
+  "oracle_labels_in_acquisition_scores": false,
+  "vllm_imported": false,
+  "selectors": {
+    "drts": {
+      "qualname": "DoubleReverseThompsonSampling",
+      "module": "activeuf.acquisition_function.drts",
+      "file": "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback/activeuf/acquisition_function/drts.py",
+      "file_is_official": true,
+      "selected_pairs": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "n_pairs": 2,
+      "pair_indices_in_range": true,
+      "call_args": [
+        "rewards",
+        "lower_bounds",
+        "upper_bounds"
+      ],
+      "oracle_labels_passed": false
+    },
+    "deltaucb": {
+      "qualname": "DeltaUCB",
+      "module": "activeuf.acquisition_function.deltaucb",
+      "file": "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback/activeuf/acquisition_function/deltaucb.py",
+      "file_is_official": true,
+      "selected_pairs": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "n_pairs": 2,
+      "pair_indices_in_range": true,
+      "call_args": [
+        "rewards",
+        "lower_bounds",
+        "upper_bounds"
+      ],
+      "oracle_labels_passed": false
+    },
+    "infomax": {
+      "qualname": "InfoMax",
+      "module": "activeuf.acquisition_function.infomax",
+      "file": "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback/activeuf/acquisition_function/infomax.py",
+      "file_is_official": true,
+      "selected_pairs": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_pairs": 2,
+      "pair_indices_in_range": true,
+      "call_args": [
+        "rewards",
+        "lower_bounds",
+        "upper_bounds"
+      ],
+      "oracle_labels_passed": false
+    }
+  },
+  "all_official_files": true
+}

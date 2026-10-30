@@ -1,0 +1,10 @@
+{
+  "python": "/Users/grantwright/Desktop/科研/10.30新课题/v0/.isolated_baselines_venv/bin/python",
+  "python_version": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "torch_available": true,
+  "vllm_imported": false,
+  "clone_root": "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback",
+  "repo_root": "/Users/grantwright/Desktop/科研/10.30新课题/v0",
+  "torch_version": "2.15.0",
+  "torch_cuda": false
+}

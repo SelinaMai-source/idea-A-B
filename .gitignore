@@ -4,6 +4,10 @@ venv/
 env/
 .isolated_baselines_venv/
 
+# Nested official clone of ActiveUltraFeedback. Parent repo records only
+# idea_A/baselines/ActiveUltraFeedback_MANIFEST.md; do not vendor the tree.
+idea_A/baselines/ActiveUltraFeedback/
+
 # Python caches
 __pycache__/
 *.py[cod]

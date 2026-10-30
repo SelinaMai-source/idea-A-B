@@ -1,0 +1,8 @@
+selector_unit_check: official ActiveUF DRTS/DeltaUCB/InfoMax
+python: /Users/grantwright/Desktop/科研/10.30新课题/v0/.isolated_baselines_venv/bin/python
+clone_root: /Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback
+not a DIRECT/ADAPTED comparison cell
+status: ok
+drts: DoubleReverseThompsonSampling file=/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback/activeuf/acquisition_function/drts.py pairs=[[3, 0], [1, 0]]
+deltaucb: DeltaUCB file=/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback/activeuf/acquisition_function/deltaucb.py pairs=[[3, 0], [1, 0]]
+infomax: InfoMax file=/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_A/baselines/ActiveUltraFeedback/activeuf/acquisition_function/infomax.py pairs=[[2, 0], [2, 0]]

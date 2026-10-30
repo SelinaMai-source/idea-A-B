@@ -1,0 +1,10 @@
+experiment_id: activeuf_selector_unit_check
+protocol: null
+comparability: not_a_comparison_cell
+seed: 0
+official_selectors:
+- drts
+- deltaucb
+- infomax
+note: Calls official ActiveUF classes on synthetic RM-UQ tensors. Does not establish
+  Protocol A2.

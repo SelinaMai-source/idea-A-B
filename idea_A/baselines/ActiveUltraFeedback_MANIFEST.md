@@ -19,4 +19,5 @@
   - `resources/alpaca_eval` -> https://github.com/tatsu-lab/alpaca_eval.git
 - **`resources/` present:** no
 - **Parent-repo policy:** this manifest is the committed record. The clone keeps its own `.git` and is not vendored into the parent commit. Do not `git add` the clone directory (it would record a nested gitlink or the whole tree).
-- **Selector import (main `.venv`, 2026-10-31):** DRTS, DeltaUCB, and InfoMax each fail with `ModuleNotFoundError: No module named 'torch'`. No `selector_unit_check`. Full RM/DPO pipeline not run.
+- **Selector import (main `.venv`, 2026-10-31):** DRTS, DeltaUCB, and InfoMax each fail with `ModuleNotFoundError: No module named 'torch'`.
+- **Selector import (isolated `.isolated_baselines_venv`, torch 2.15.0, no vLLM, 2026-10-31):** official `DoubleReverseThompsonSampling`, `DeltaUCB`, and `InfoMax` import and select pairs from a 2×4 synthetic `(rewards, lower, upper)` array. Recorded as `results/v1.2/idea_A/original/activeuf_selector_unit_check/` (`selector_unit_check`, not a comparison cell). Live RM UQ is still missing, so Protocol A2 stays BLOCKED / INCOMPARABLE. Full RM/DPO pipeline not run.
