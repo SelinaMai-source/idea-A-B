@@ -1,0 +1,62 @@
+{
+  "machine": {
+    "os": "macOS 14.5",
+    "arch": "arm64",
+    "model": "MacBook Air M3 16GB",
+    "python_main": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+    "python_isolated": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+    "torch_in_main_venv": false,
+    "disk_free_before_clones": "12Gi",
+    "disk_free_after_clones": "12Gi",
+    "disk_free_after_experiments": "9.7Gi",
+    "isolated_venv_size": "1.3G"
+  },
+  "baselines": [
+    {
+      "paper": "Comparison-based Active Preference Learning for Multi-dimensional Personalization (AMPLe)",
+      "venue": "ACL 2025 Main (Long)",
+      "official_source": "https://github.com/ml-postech/AMPLe",
+      "official_code": true,
+      "upstream_commit": "0cad341f6a9e77063ef451c27732bf5c1534c797",
+      "local_status": "partial",
+      "local_results_path": "idea_A/baselines/AMPLe/official_reproduction/",
+      "blocker": "Full README run is n_rounds=100 with burnin=50000; only n_rounds was shortened to 3. README --dims 0 1 would request minhyeonoh/feedback_assistant_harmlesshelpful_271 (HTTP 401 / not public), so --dims was omitted to load the public 3-aspect dataset. Torch/datasets/wandb/accelerate were installed in an isolated venv, not the main project venv. WANDB_MODE=offline. Acquisition remained volume; burnin remained 50000.",
+      "comparability": "NOT DIRECTLY COMPARABLE to Idea A Neyman-audit IPW. AMPLe optimizes multi-dimensional preference identification via volume/random acquisition on RM-scored pairs. Different target, budget, and information.",
+      "what_ran": {
+        "command": "python main.py --seed=1 --task=assistant --rm_names harmless helpful humor --n_rounds=3 --true_preference 0.2 0.7 0.1 --true_beta=10 --beta=2.0 --jitter=0.01 --alpha=10 --init=previous --acquisition=volume --burnin=50000 --gamma=0.0 --mode=likelihood --margin=none --inputs=0",
+        "dataset": "minhyeonoh/feedback_assistant_harmlesshelpfulhumor_271",
+        "pool_std_diff": 11.289824485778809,
+        "pool_noise_rate": 0.04100000113248825,
+        "true_preference": [0.2, 0.7, 0.1],
+        "estimation_t0": [0.3249063193798065, 0.32413744926452637, 0.3509562909603119],
+        "estimation_t3": [0.0035132216289639473, 0.9920580983161926, 0.004428689833730459],
+        "l2_to_true_t0": 0.4688851731916284,
+        "l2_to_true_t3": 0.3647449275776112,
+        "chosen_indices": [737, 95, 135],
+        "wall_sec_approx": 97.8
+      }
+    },
+    {
+      "paper": "Hybrid Preferences: Learning to Route Instances for Human vs. AI Feedback (HyPER)",
+      "venue": "ACL 2025 Main (Long)",
+      "official_source": "https://github.com/allenai/hybrid-preferences",
+      "official_code": true,
+      "upstream_commit": "4d96b27b989828b0b69a430f68d25b6b36e9015a",
+      "local_status": "blocked",
+      "local_results_path": "idea_A/baselines/HyPER/REPRODUCTION_STATUS.md",
+      "blocker": "Pre-declared. Official pipeline needs Google Cloud TPU v3-128, EasyLM RM/DPO training of Tulu-2 13B / Llama-3.1-8B, vLLM (>=0.4.1; forbidden), Beaker, GCS, and submodules open-instruct + reward-bench (not initialized). Clone without submodules was 632K and was kept. No simplified HyPER was invented.",
+      "comparability": "NOT DIRECTLY COMPARABLE. HyPER routes human vs LM annotations to maximize downstream RM / RewardBench scores."
+    },
+    {
+      "paper": "Online Compatible Reward Identification from Preference Feedback",
+      "venue": "ICML 2026",
+      "official_source": "https://proceedings.mlr.press/v306/drago26a.html",
+      "official_code": false,
+      "upstream_commit": null,
+      "local_status": "blocked",
+      "local_results_path": "idea_A/baselines/Online_Compatible_Reward_ICML2026/THEORY_COMPARATOR.md",
+      "blocker": "No official code found. PMLR/ICML poster/author PDF have no GitHub badge. github.com/simone-drago has only a github.io page. github.com/marcomussi/SleepingRL is a different ICML 2025 paper. No author implementation was invented.",
+      "comparability": "NOT DIRECTLY COMPARABLE. Theory-only contrast: globally compatible reward identification vs Idea A finite-budget audit estimation."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+experiment_id=synthetic_B3_unrecoverable_LazyDeployment_budget0p05_seed2
+environment=B3_unrecoverable method=LazyDeployment seed=2 budget=0.05
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.6786740438134687, 'late_observed_performance': 0.9780249558598563, 'early_lambda_min': 0.021661393412423246, 'late_lambda_min': 0.03208701296692805, 'early_weak_skill_error': 0.9219731163539309, 'late_weak_skill_error': 0.5164893448853862, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.8200020511972987
+final_lambda_min=0.03134644879077164
+runtime_s=0.0043
+generic_control=True
+official_reproduction=False

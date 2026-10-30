@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_UncertaintyExploration_budget0p20_seed2
+environment=B1 method=UncertaintyExploration seed=2 budget=0.2
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9773394709480684
+final_lambda_min=2.999522113036026
+runtime_s=0.0046
+generic_control=True
+official_reproduction=False

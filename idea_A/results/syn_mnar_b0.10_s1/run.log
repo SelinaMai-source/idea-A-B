@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:50.023422+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=mnar
+seed=1
+n=2000
+budget=0.1
+truth_population_mean=0.2915848554749893
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Natural observation depends on unobserved Y (MNAR). The natural propensity is not identified from (X, S) without extra assumptions. This is identification failure, not an estimator bug.'}
+
+methods:
+  observed_only: estimate=1.4549940681599278 truth=0.2915848554749893 bias=1.1634092126849385 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=0.9035752894529108 truth=0.2915848554749893 bias=0.6119904339779214 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.06903231143984705 truth=0.2915848554749893 bias=-0.22255254403514224 expected_q=0.10000000000000002 realized_q=0.1065
+  uniform_snips: estimate=0.06481907177450426 truth=0.2915848554749893 bias=-0.22676578370048506 expected_q=0.10000000000000002 realized_q=0.1065
+  uniform_dr: estimate=0.2881196851942631 truth=0.2915848554749893 bias=-0.003465170280726182 expected_q=0.10000000000000002 realized_q=0.1065
+  fixed_stratified_ipw: estimate=0.2399752816779934 truth=0.2915848554749893 bias=-0.051609573796995906 expected_q=0.1 realized_q=0.106
+  neyman_ipw: estimate=0.37253162916982185 truth=0.2915848554749893 bias=0.08094677369483255 expected_q=0.1 realized_q=0.1165
+  neyman_snips: estimate=0.3255199573225771 truth=0.2915848554749893 bias=0.0339351018475878 expected_q=0.1 realized_q=0.1165
+  neyman_dr: estimate=0.25171641089672725 truth=0.2915848554749893 bias=-0.03986844457826205 expected_q=0.1 realized_q=0.1165
+  uncertainty_ipw: estimate=0.2450815559942991 truth=0.2915848554749893 bias=-0.04650329948069021 expected_q=0.1 realized_q=0.105
+  full_feedback_oracle: estimate=0.2915848554749893 truth=0.2915848554749893 bias=0.0 expected_q=1.0 realized_q=1.0

@@ -1,0 +1,247 @@
+{
+  "stage": 6,
+  "title": "real_data_feasibility",
+  "recorded_at_utc": "2026-10-30T16:26:32.779603+00:00",
+  "branch": "v1",
+  "repo": "/Users/grantwright/Research/idea-A-B",
+  "python_main_venv": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+  "python_isolated_venv": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+  "python_used_for_downloads_and_inference": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+  "scientific_boundary": {
+    "synthetic_results_are_not_llm_post_training": true,
+    "this_stage_is_not_llm_post_training": true,
+    "qwen_smoke_is_load_and_generate_only": true,
+    "did_not_rerun_idea_a_or_b_synthetic_matrices": true,
+    "did_not_write_the_three_final_chinese_reports": true,
+    "did_not_commit_or_push": true,
+    "did_not_edit_the_plan": true
+  },
+  "packages": {
+    "huggingface_hub": "2.4.0",
+    "datasets": "3.2.0",
+    "transformers": "5.22.1",
+    "torch": "2.15.0",
+    "pyarrow": "26.0.0",
+    "installed_into": "isolated_venv",
+    "not_installed": [
+      "vllm",
+      "bitsandbytes",
+      "flash-attn"
+    ],
+    "main_venv_still_lacks_torch_transformers_datasets": true
+  },
+  "disk_before_after": {
+    "stage_start_df_h_avail": "9.7Gi",
+    "stage_start_df_k_avail_kb": 10219968,
+    "stage_start_df_k_avail_gib": 9.74652099609375,
+    "after_transformers_install_df_k_avail_kb": 10054936,
+    "benchmarks_script_start_free_bytes": 10291826688,
+    "benchmarks_script_start_free_gib": 9.585010528564453,
+    "after_datasets_free_bytes": 10241736704,
+    "after_datasets_free_gib": 9.538360595703125,
+    "before_model_df_k_avail_kb": 10001680,
+    "before_model_projected_free_after_1p25gib_gib": 8.374188303947449,
+    "after_model_download_df_k_avail_kb": 7968664,
+    "after_model_download_df_k_avail_gib": 7.599510192871094,
+    "after_inference_free_bytes": 6823694336,
+    "after_inference_free_gib": 6.355060577392578,
+    "min_free_required_after_model_gib": 4.0,
+    "model_was_not_skipped_for_disk": true,
+    "timeline": [
+      {
+        "when": "stage6_start",
+        "source": "df -k",
+        "avail_kb": 10219968,
+        "avail_gib": 9.7465
+      },
+      {
+        "when": "after_transformers_5.22.1",
+        "source": "df -k",
+        "avail_kb": 10054936,
+        "avail_gib": 9.5891
+      },
+      {
+        "when": "download_benchmarks_start",
+        "source": "shutil.disk_usage",
+        "free_bytes": 10291826688,
+        "free_gib": 9.585
+      },
+      {
+        "when": "download_benchmarks_end",
+        "source": "shutil.disk_usage",
+        "free_bytes": 10241736704,
+        "free_gib": 9.5384
+      },
+      {
+        "when": "before_qwen_download",
+        "source": "df -k",
+        "avail_kb": 10001680,
+        "avail_gib": 9.5383
+      },
+      {
+        "when": "after_qwen_download_first_mps_abort",
+        "source": "df -k",
+        "avail_kb": 7968664,
+        "avail_gib": 7.5995
+      },
+      {
+        "when": "after_cpu_inference_smoke",
+        "source": "shutil.disk_usage_now",
+        "free_bytes": 6823694336,
+        "free_gib": 6.3551
+      }
+    ]
+  },
+  "datasets_status": {
+    "multipref": {
+      "status": "ok",
+      "repo_id": "allenai/multipref",
+      "revision": "12910233a0238a997ebe425656e9dfed7b0ff031",
+      "source": "huggingface",
+      "modelscope_used": false,
+      "schema_ok": true,
+      "upstream_version": "MultiPref 1.0",
+      "n_source_default_rows": 10461,
+      "n_source_gpt4_rows": 10461,
+      "gpt4_matched_by_comparison_id": 10461,
+      "subset_n_prompt_ids": 50,
+      "subset_n_comparisons": 99,
+      "splits_examples": {
+        "train": 70,
+        "val": 15,
+        "test": 14
+      },
+      "splits_prompts": {
+        "train": 35,
+        "val": 8,
+        "test": 7
+      },
+      "split_unit": "prompt_id",
+      "annotation_types_preserved": [
+        "human_normal_crowdworkers",
+        "human_domain_experts",
+        "model_generated_gpt4"
+      ],
+      "preference_dimensions": [
+        "helpful_pref",
+        "truthful_pref",
+        "harmless_pref",
+        "overall_pref"
+      ],
+      "collapsed_human_majority_not_used": true,
+      "subset_disagreements_overall": {
+        "normal_workers_disagree": 60,
+        "experts_disagree": 58,
+        "human_group_value_sets_differ": 78
+      },
+      "subset_json_bytes": 1501152,
+      "subset_sha256": "8eba3a14d0d6a03c4257c09ad618345bc758682642a1b5e74e5760e010f1ba9c",
+      "paths": {
+        "subset_json": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/subset.json",
+        "subset_ids": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/subset_ids.json",
+        "manifest": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/SUBSET_MANIFEST.md",
+        "schema": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/SCHEMA_VALIDATION.json",
+        "loader": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/load_subset.py"
+      }
+    },
+    "rewardbench": {
+      "status": "ok",
+      "repo_id": "allenai/reward-bench",
+      "revision": "168d848cdbbea9764fae4a544dc9ca1e6cca4931",
+      "source": "huggingface",
+      "modelscope_used": false,
+      "schema_ok": true,
+      "rewardbench_version": "v1 (Lambert et al. 2024 RewardBench; NOT RewardBench-2 / allenai/reward-bench-2)",
+      "n_filtered": 2985,
+      "n_raw": 5123,
+      "sample_n": 50,
+      "chosen_rejected_are_strings": true,
+      "leaderboard_comparison": "not_run",
+      "scoring": {
+        "ran": false,
+        "reason": "No compatible small reward-model scorer is available. Qwen2.5-0.5B-Instruct is a causal LM, not an official RewardBench RM. Any logprob/proxy score would not be a RewardBench leaderboard result and was not computed.",
+        "proxy_label_if_any_score_had_been_computed": "proxy_not_leaderboard"
+      },
+      "hyper_reward_bench_submodule_initialized": false,
+      "did_not_reclone_official_reward_bench_repo": true,
+      "paths": {
+        "sample_json": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/schema_sample.json",
+        "sample_ids": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/sample_ids.json",
+        "manifest": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/SUBSET_MANIFEST.md",
+        "schema": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/SCHEMA_VALIDATION.json",
+        "loader": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/load_sample.py"
+      }
+    }
+  },
+  "model_status": {
+    "status": "downloaded_ok_inference_cpu_ok_mps_generate_aborted",
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "source": "huggingface",
+    "modelscope_used": false,
+    "architecture_check": {
+      "ok": true,
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "hidden_size": 896,
+      "num_hidden_layers": 24,
+      "vocab_size": 151936,
+      "torch_dtype": "bfloat16"
+    },
+    "weights_bytes": 988097824,
+    "shared_cache": "/Users/grantwright/Research/idea-A-B/.cache/models/Qwen2.5-0.5B-Instruct",
+    "idea_a_model_dir": "/Users/grantwright/Research/idea-A-B/idea_A/models/Qwen2.5-0.5B-Instruct",
+    "idea_b_model_dir": "/Users/grantwright/Research/idea-A-B/idea_B/models/Qwen2.5-0.5B-Instruct",
+    "layout": "shared cache plus relative symlinks and manifests; weights not copied",
+    "inference": {
+      "status": "ok",
+      "tokenizer_load_ok": true,
+      "weights_load_ok": true,
+      "generate_ok": true,
+      "preferred_device": "mps",
+      "device_actually_used": "cpu",
+      "dtype": "torch.float32",
+      "prompt": "Reply with the single word pong.",
+      "output_text": "system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.\nuser\nReply with the single word pong.\nassistant\nPong!",
+      "generate_latency_seconds": 0.2612558747641742,
+      "tokenizer_load_seconds": 0.18152087507769465,
+      "weights_load_seconds": 1.0631697908975184,
+      "peak_memory_ru_maxrss_bytes": 3424256000,
+      "clean_exit": true,
+      "is_llm_post_training": false,
+      "mps_available": true,
+      "mps_generate": {
+        "tried": true,
+        "float16_returncode": -6,
+        "float32_returncode": -6,
+        "exception": "*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[MPSNDArray arrayViewWithShape:strides:]: unrecognized selector sent to instance 0x14c862b00'",
+        "note": "Weights finished loading on MPS (290/290) then generate() aborted with an uncaught ObjC NSException. CPU fallback used the same checkpoint."
+      }
+    }
+  },
+  "blockers": [
+    {
+      "item": "Qwen2.5-0.5B-Instruct MPS generate",
+      "severity": "partial",
+      "detail": "*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[MPSNDArray arrayViewWithShape:strides:]: unrecognized selector sent to instance 0x14c862b00'",
+      "workaround": "CPU float32 generate on the same pinned revision succeeded. Model was not substituted."
+    },
+    {
+      "item": "RewardBench leaderboard scoring",
+      "severity": "skipped_by_design",
+      "detail": "No compatible small reward-model scorer. Qwen2.5-0.5B-Instruct is a causal LM, not an official RewardBench RM. Leaderboard comparison was not run."
+    },
+    {
+      "item": "HyPER official reward-bench git tree",
+      "severity": "not_cloned",
+      "detail": "idea_A/baselines/HyPER/reward-bench submodule remains uninitialized. Schema check used allenai/reward-bench on Hugging Face instead of re-cloning the huge tree."
+    }
+  ],
+  "reviewer_scripts": {
+    "download_benchmarks": "/Users/grantwright/Research/idea-A-B/scripts/download_benchmarks.py",
+    "download_models": "/Users/grantwright/Research/idea-A-B/scripts/download_models.py",
+    "isolated_python": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python"
+  }
+}

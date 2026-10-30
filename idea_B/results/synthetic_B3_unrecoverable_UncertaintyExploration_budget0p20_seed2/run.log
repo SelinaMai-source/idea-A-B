@@ -1,0 +1,9 @@
+experiment_id=synthetic_B3_unrecoverable_UncertaintyExploration_budget0p20_seed2
+environment=B3_unrecoverable method=UncertaintyExploration seed=2 budget=0.2
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9665000205522989, 'late_observed_performance': 0.9761437155298022, 'early_lambda_min': 0.040943481820279154, 'late_lambda_min': 0.05097917040647339, 'early_weak_skill_error': 0.7365383801317011, 'late_weak_skill_error': 0.3687212100342943, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.8195067439227527
+final_lambda_min=0.051376444426338735
+runtime_s=0.0053
+generic_control=True
+official_reproduction=False

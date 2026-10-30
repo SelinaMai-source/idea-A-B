@@ -1,0 +1,9 @@
+experiment_id=diagnostic_fixed_policy_fixed_sampling_FrozenPolicyUniformSampling_budget0p05_seed2
+environment=fixed_policy_fixed_sampling method=FrozenPolicyUniformSampling seed=2 budget=0.05
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'fixed policy with fixed sampling is not endogenous collapse'}
+final_true_performance=0.44896565525308574
+final_lambda_min=1.6526155024489908
+runtime_s=0.0038
+generic_control=False
+official_reproduction=False

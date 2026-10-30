@@ -1,0 +1,23 @@
+Collecting torch
+  Downloading torch-2.15.0-cp312-cp312-macosx_14_0_arm64.whl.metadata (36 kB)
+Collecting filelock (from torch)
+  Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.13.0 (from torch)
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting setuptools>=77.0.3 (from torch)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch)
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch)
+  Using cached networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting jinja2 (from torch)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch)
+  Using cached fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch)
+  Downloading markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.7 kB)
+Downloading torch-2.15.0-cp312-cp312-macosx_14_0_arm64.whl (138.6 MB)
+
+INSTALL_STOPPED: pip install torch was terminated with exit 143 during download of torch-2.15.0-cp312-cp312-macosx_14_0_arm64.whl (138.6 MB). The transfer was about 64 KB/s and still incomplete, so the install was capped. Torch is not installed. MPS was not probed. The NumPy stack remains installed.

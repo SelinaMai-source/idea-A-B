@@ -1,0 +1,4 @@
+utc=2026-10-30T15:13:01.614080+00:00
+ablation=A5_Misspecified_Propensity
+mechanism=nonstationary seed=1 budget=0.05
+methods=['a5_neyman_ipw_wrong_q', 'neyman_ipw_reference']

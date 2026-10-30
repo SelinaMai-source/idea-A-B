@@ -1,0 +1,9 @@
+experiment_id=synthetic_B3_recoverable_FixedExplorationSchedule_budget0p20_seed2
+environment=B3_recoverable method=FixedExplorationSchedule seed=2 budget=0.2
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9785241967101699, 'late_observed_performance': 0.97708815382478, 'early_lambda_min': 2.5076692824999354, 'late_lambda_min': 1.7086398554514126, 'early_weak_skill_error': 0.0557314320246369, 'late_weak_skill_error': 0.03423870816856599, 'observed_stable': True, 'lambda_min_worsened': True, 'weak_skill_error_worsened': False}
+final_true_performance=0.9773904387769747
+final_lambda_min=1.6788721203517216
+runtime_s=0.0042
+generic_control=True
+official_reproduction=False

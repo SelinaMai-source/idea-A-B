@@ -1,0 +1,9 @@
+experiment_id=synthetic_B2_UniformExploration_budget0p01_seed2
+environment=B2 method=UniformExploration seed=2 budget=0.01
+policy_affects_feedback=True
+collapse={'endogenous_collapse': True, 'reason': 'observed performance stayed high while lambda_min(W_T/T) and weak-skill error worsened', 'early_observed_performance': 0.9773104853479264, 'late_observed_performance': 0.979316412376564, 'early_lambda_min': 0.6885538894154607, 'late_lambda_min': 0.09948431262136215, 'early_weak_skill_error': 0.10589233836352122, 'late_weak_skill_error': 0.11829445689592119, 'observed_stable': True, 'lambda_min_worsened': True, 'weak_skill_error_worsened': True}
+final_true_performance=0.9763046670215912
+final_lambda_min=0.09077171684569114
+runtime_s=0.0042
+generic_control=True
+official_reproduction=False

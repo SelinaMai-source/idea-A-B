@@ -1,0 +1,74 @@
+{
+  "idea": "A",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "downloaded": true,
+  "source": "huggingface",
+  "shared_cache": "/Users/grantwright/Research/idea-A-B/.cache/models/Qwen2.5-0.5B-Instruct",
+  "shared_cache_relative": "../../../.cache/models/Qwen2.5-0.5B-Instruct",
+  "files": [
+    {
+      "name": ".gitattributes",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/.gitattributes",
+      "bytes": 1519
+    },
+    {
+      "name": "LICENSE",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/LICENSE",
+      "bytes": 11343
+    },
+    {
+      "name": "README.md",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/README.md",
+      "bytes": 4917
+    },
+    {
+      "name": "config.json",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/config.json",
+      "bytes": 659
+    },
+    {
+      "name": "generation_config.json",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/generation_config.json",
+      "bytes": 242
+    },
+    {
+      "name": "merges.txt",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/merges.txt",
+      "bytes": 1671839
+    },
+    {
+      "name": "model.safetensors",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/model.safetensors",
+      "bytes": 988097824
+    },
+    {
+      "name": "tokenizer.json",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/tokenizer.json",
+      "bytes": 7031645
+    },
+    {
+      "name": "tokenizer_config.json",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/tokenizer_config.json",
+      "bytes": 7305
+    },
+    {
+      "name": "vocab.json",
+      "symlink": "../../../.cache/models/Qwen2.5-0.5B-Instruct/vocab.json",
+      "bytes": 2776833
+    }
+  ],
+  "config_check": {
+    "ok": true,
+    "model_type": "qwen2",
+    "architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "hidden_size": 896,
+    "num_hidden_layers": 24,
+    "vocab_size": 151936,
+    "torch_dtype": "bfloat16"
+  },
+  "recorded_at_utc": "2026-10-30T16:25:48.753442+00:00",
+  "note": "Weights are not copied. This folder holds manifests and relative symlinks."
+}

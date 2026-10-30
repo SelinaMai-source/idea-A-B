@@ -1,0 +1,20 @@
+experiment: synthetic_closed_loop
+idea: Feedback-Induced Observability Collapse
+python: /Users/grantwright/Research/idea-A-B/.venv/bin/python
+seeds: [0, 1, 2]
+budgets: [0.01, 0.05, 0.10, 0.20]
+primary_budget: 0.05
+horizon: 32
+population_per_round: 40
+environments: [B1, B2, B3_recoverable, B3_unrecoverable]
+methods:
+  - ObservabilityController
+  - UniformExploration
+  - GreedyDeployment
+  - LazyDeployment
+  - StandardOnlineSGD
+  - FixedExplorationSchedule
+  - UncertaintyExploration
+  - NoFeedbackController
+  - FullFeedbackOracle
+skip_policy: if runtime is tight, run every environment at 5% and B2 at all budgets

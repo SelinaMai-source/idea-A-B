@@ -1,0 +1,4 @@
+utc=2026-10-30T15:12:55.897559+00:00
+ablation=A2_No_Propensity_Correction
+mechanism=policy_dependent seed=2 budget=0.05
+methods=['a2_neyman_unweighted', 'neyman_ipw_reference']

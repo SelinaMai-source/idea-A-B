@@ -1,0 +1,71 @@
+# Virtual environments
+.venv/
+venv/
+env/
+.isolated_baselines_venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+dist/
+build/
+
+# Secrets and tokens
+.env
+.env.*
+secrets.json
+credentials.json
+**/*token*
+**/*secret*
+*.pem
+auth.json
+
+# Model weights, checkpoints, and the shared weight cache
+*.safetensors
+*.gguf
+*.ggml
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.msgpack
+**/*.bin
+checkpoints/
+**/checkpoints/
+shared/cache/**
+!shared/cache/README.md
+# Model folders hold manifests and relative symlinks only. Never un-ignore
+# weight blobs; the actual files live in gitignored .cache/models/.
+wandb/
+*.wandb
+
+# Hugging Face and other download caches
+.cache/
+**/.cache/
+huggingface/
+hub/
+models--*
+
+# Large datasets. Small JSON and YAML results stay trackable.
+*.parquet
+*.arrow
+*.tfrecord
+*.feather
+*.sqlite
+*.db
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/

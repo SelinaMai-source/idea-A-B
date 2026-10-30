@@ -1,0 +1,39 @@
+ablation: A1_No_Adaptive_Allocation
+experiment_id: A1_No_Adaptive_Allocation_mnar_b0.10_s1
+mechanism: mnar
+seed: 1
+budget: 0.1
+methods:
+- a1_uniform_ipw
+- neyman_ipw_reference
+one_component_change: true
+config:
+  ablation: A1_No_Adaptive_Allocation
+  component_changed: allocation
+  description: 'Replace data-dependent Neyman allocation with uniform q_t = b. Estimator
+    remains audit IPW with known q. One component change.
+
+    '
+  n: 2000
+  seeds:
+  - 0
+  - 1
+  - 2
+  budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  mechanisms:
+  - mcar
+  - mar
+  - mnar
+  - policy_dependent
+  - low_overlap
+  - zero_overlap
+  - nonstationary
+  exploration_mix: 0.15
+  q_floor: 1.0e-06
+  ridge_lambda: 0.001
+  allocation: uniform
+  estimator: ipw

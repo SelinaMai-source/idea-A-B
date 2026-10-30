@@ -1,0 +1,17 @@
+experiment_id: common_protocol_zero_overlap_b0.05_s1
+idea: A
+protocol: adapted_to_common_protocol
+official_reproduction: false
+volume_note: Adapted max-variance / posterior-volume allocation on strata, then audit
+  IPW with known q. Not AMPLe official; AMPLe volume needs RM-scored preference pairs
+  and an MH posterior on the simplex.
+mechanism: zero_overlap
+seed: 1
+budget: 0.05
+n: 2000
+methods:
+- uniform_ipw
+- neyman_ipw
+- volume_adapted_ipw
+paired_world: true
+novelty_claim: false

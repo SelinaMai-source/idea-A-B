@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:51.710114+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=zero_overlap
+seed=1
+n=2000
+budget=0.01
+truth_population_mean=0.2915848554749893
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Zero overlap: P(S=1|stratum)=0 for some strata [6, 7]. Those stratum means are not identified from the natural channel.', 'zero_overlap_strata': [6, 7]}
+
+methods:
+  observed_only: estimate=-0.033223143372957335 truth=0.2915848554749893 bias=-0.32480799884794664 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=-0.027765055533114362 truth=0.2915848554749893 bias=-0.31934991100810367 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.19547170851307938 truth=0.2915848554749893 bias=-0.09611314696190992 expected_q=0.01 realized_q=0.009
+  uniform_snips: estimate=0.21719078723675486 truth=0.2915848554749893 bias=-0.07439406823823444 expected_q=0.01 realized_q=0.009
+  uniform_dr: estimate=0.3099613523199088 truth=0.2915848554749893 bias=0.018376496844919488 expected_q=0.01 realized_q=0.009
+  fixed_stratified_ipw: estimate=0.3551664025871569 truth=0.2915848554749893 bias=0.06358154711216762 expected_q=0.01 realized_q=0.011
+  neyman_ipw: estimate=-0.27785744064904333 truth=0.2915848554749893 bias=-0.5694422961240326 expected_q=0.01 realized_q=0.011
+  neyman_snips: estimate=-0.23352481100192504 truth=0.2915848554749893 bias=-0.5251096664769144 expected_q=0.01 realized_q=0.011
+  neyman_dr: estimate=0.18240121388552052 truth=0.2915848554749893 bias=-0.10918364158946878 expected_q=0.01 realized_q=0.011
+  uncertainty_ipw: estimate=0.05250782416453305 truth=0.2915848554749893 bias=-0.23907703131045627 expected_q=0.009999999999999998 realized_q=0.0125
+  full_feedback_oracle: estimate=0.2915848554749893 truth=0.2915848554749893 bias=0.0 expected_q=1.0 realized_q=1.0

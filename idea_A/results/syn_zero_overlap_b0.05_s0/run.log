@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:51.817331+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=zero_overlap
+seed=0
+n=2000
+budget=0.05
+truth_population_mean=0.357690705047082
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Zero overlap: P(S=1|stratum)=0 for some strata [6, 7]. Those stratum means are not identified from the natural channel.', 'zero_overlap_strata': [6, 7]}
+
+methods:
+  observed_only: estimate=-0.01850492581222782 truth=0.357690705047082 bias=-0.37619563085930985 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=-0.015376712163017843 truth=0.357690705047082 bias=-0.37306741721009984 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.3184622956352874 truth=0.357690705047082 bias=-0.03922840941179462 expected_q=0.05000000000000001 realized_q=0.0465
+  uniform_snips: estimate=0.34243257595192195 truth=0.357690705047082 bias=-0.015258129095160056 expected_q=0.05000000000000001 realized_q=0.0465
+  uniform_dr: estimate=0.3080762601801416 truth=0.357690705047082 bias=-0.04961444486694039 expected_q=0.05000000000000001 realized_q=0.0465
+  fixed_stratified_ipw: estimate=0.09557960762932936 truth=0.357690705047082 bias=-0.2621110974177526 expected_q=0.05 realized_q=0.054
+  neyman_ipw: estimate=0.29278111720028777 truth=0.357690705047082 bias=-0.06490958784679424 expected_q=0.05000000000000002 realized_q=0.047
+  neyman_snips: estimate=0.3202511323878969 truth=0.357690705047082 bias=-0.03743957265918513 expected_q=0.05000000000000002 realized_q=0.047
+  neyman_dr: estimate=0.21238817716469346 truth=0.357690705047082 bias=-0.14530252788238854 expected_q=0.05000000000000002 realized_q=0.047
+  uncertainty_ipw: estimate=0.4022444745384969 truth=0.357690705047082 bias=0.044553769491414874 expected_q=0.05 realized_q=0.053
+  full_feedback_oracle: estimate=0.357690705047082 truth=0.357690705047082 bias=0.0 expected_q=1.0 realized_q=1.0

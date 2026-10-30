@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_ObservabilityController_budget0p05_seed1
+environment=B1 method=ObservabilityController seed=1 budget=0.05
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9833421160121679
+final_lambda_min=1.9152847261475274
+runtime_s=0.0054
+generic_control=False
+official_reproduction=False

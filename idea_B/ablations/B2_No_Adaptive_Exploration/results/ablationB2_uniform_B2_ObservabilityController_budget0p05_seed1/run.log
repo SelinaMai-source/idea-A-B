@@ -1,0 +1,9 @@
+experiment_id=ablationB2_uniform_B2_ObservabilityController_budget0p05_seed1
+environment=B2 method=ObservabilityController seed=1 budget=0.05
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9826348072316387, 'late_observed_performance': 0.9797586509478233, 'early_lambda_min': 0.5414651593749333, 'late_lambda_min': 0.8932485261717735, 'early_weak_skill_error': 0.22852326683847385, 'late_weak_skill_error': 0.0030424312086933664, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.9825106030134783
+final_lambda_min=0.9015067383091261
+runtime_s=0.0053
+generic_control=False
+official_reproduction=False

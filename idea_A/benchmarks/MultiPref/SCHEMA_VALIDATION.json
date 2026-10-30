@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "required_fields": [
+    "comparison_id",
+    "prompt_id",
+    "text",
+    "completion_a",
+    "model_a",
+    "completion_b",
+    "model_b",
+    "source",
+    "category",
+    "subject_study",
+    "highest_level_degree",
+    "normal_worker_annotations",
+    "expert_worker_annotations"
+  ],
+  "preference_dimensions": [
+    "helpful_pref",
+    "truthful_pref",
+    "harmless_pref",
+    "overall_pref"
+  ],
+  "annotation_types_preserved": [
+    "human_normal_crowdworkers",
+    "human_domain_experts",
+    "model_generated_gpt4"
+  ],
+  "collapsed_configs_not_used": [
+    "human_overall_binarized"
+  ],
+  "n_source_default_rows": 10461,
+  "n_source_gpt4_rows": 10461,
+  "head20_schema_errors": [],
+  "subset_schema_errors": [],
+  "gpt4_join": {
+    "gpt4_rows": 10461,
+    "default_rows": 10461,
+    "matched_by_comparison_id": 10461,
+    "gpt4_columns": [
+      "chosen",
+      "chosen_model",
+      "comparison_id",
+      "prompt",
+      "prompt_id",
+      "rejected",
+      "rejected_model",
+      "tie_is_common"
+    ]
+  },
+  "default_parquet": "/Users/grantwright/Research/idea-A-B/.cache/datasets/allenai_multipref/12910233a0238a997ebe425656e9dfed7b0ff031/data/train-00000-of-00001.parquet",
+  "gpt4_parquet": "/Users/grantwright/Research/idea-A-B/.cache/datasets/allenai_multipref/12910233a0238a997ebe425656e9dfed7b0ff031/gpt4_overall_binarized/train-00000-of-00001.parquet",
+  "subset_sha256": "8eba3a14d0d6a03c4257c09ad618345bc758682642a1b5e74e5760e010f1ba9c",
+  "subset_bytes": 1501152
+}

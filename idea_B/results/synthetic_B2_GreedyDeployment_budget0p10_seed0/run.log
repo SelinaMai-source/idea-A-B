@@ -1,0 +1,9 @@
+experiment_id=synthetic_B2_GreedyDeployment_budget0p10_seed0
+environment=B2 method=GreedyDeployment seed=0 budget=0.1
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9746049606510734, 'late_observed_performance': 0.9759695089534085, 'early_lambda_min': 0.3664253781635499, 'late_lambda_min': 0.0663755485512445, 'early_weak_skill_error': 0.26175466381784335, 'late_weak_skill_error': 0.154978852780015, 'observed_stable': True, 'lambda_min_worsened': True, 'weak_skill_error_worsened': False}
+final_true_performance=0.9830817025294312
+final_lambda_min=0.06193513857646782
+runtime_s=0.0044
+generic_control=True
+official_reproduction=False

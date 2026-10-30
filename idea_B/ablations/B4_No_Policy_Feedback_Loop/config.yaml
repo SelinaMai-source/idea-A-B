@@ -1,0 +1,12 @@
+ablation: B4_No_Policy_Feedback_Loop
+component_removed: policy_dependent_feedback
+budget: 0.05
+seeds: [0, 1, 2]
+arms:
+  - name: exogenous_B1
+    env: B1
+    method: ObservabilityController
+  - name: closed_loop_B2
+    env: B2
+    method: ObservabilityController
+note: Same controller and budget; only the observation channel stops depending on the policy.

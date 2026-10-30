@@ -1,0 +1,205 @@
+{
+  "script": "scripts/download_benchmarks.py",
+  "started_at_utc": "2026-10-30T16:16:15.840572+00:00",
+  "disk_start": {
+    "path": "/Users/grantwright/Research/idea-A-B",
+    "total_bytes": 494384795648,
+    "used_bytes": 484143443968,
+    "free_bytes": 10241351680,
+    "free_gib": 9.538002014160156,
+    "recorded_at_utc": "2026-10-30T16:16:15.840680+00:00"
+  },
+  "python": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+  "multipref": {
+    "status": "ok",
+    "download": {
+      "repo_id": "allenai/multipref",
+      "revision": "12910233a0238a997ebe425656e9dfed7b0ff031",
+      "repo_type": "dataset",
+      "local_dir": "/Users/grantwright/Research/idea-A-B/.cache/datasets/allenai_multipref/12910233a0238a997ebe425656e9dfed7b0ff031",
+      "resolved_path": "/Users/grantwright/Research/idea-A-B/.cache/datasets/allenai_multipref/12910233a0238a997ebe425656e9dfed7b0ff031",
+      "source": "huggingface",
+      "hf_error": null,
+      "disk_before": {
+        "path": "/Users/grantwright/Research/idea-A-B",
+        "total_bytes": 494384795648,
+        "used_bytes": 484143443968,
+        "free_bytes": 10241351680,
+        "free_gib": 9.538002014160156,
+        "recorded_at_utc": "2026-10-30T16:16:16.017461+00:00"
+      },
+      "disk_after": {
+        "path": "/Users/grantwright/Research/idea-A-B",
+        "total_bytes": 494384795648,
+        "used_bytes": 484143443968,
+        "free_bytes": 10241351680,
+        "free_gib": 9.538002014160156,
+        "recorded_at_utc": "2026-10-30T16:16:16.022941+00:00"
+      },
+      "allow_patterns": [
+        "README.md",
+        "data/*.parquet",
+        "gpt4_overall_binarized/*.parquet"
+      ]
+    },
+    "subset_meta": {
+      "selection_rule": "Sort all default-config rows by comparison_id (lexicographic). Walk in that order and keep the first 50 unique prompt_id values. Include every comparison whose prompt_id is in that set, so a prompt is never split across train/val/test. Split the selected prompt_ids in first-seen order as {'train': 35, 'val': 8, 'test': 7}.",
+      "n_source_rows": 10461,
+      "n_selected_prompt_ids": 50,
+      "n_selected_comparisons": 99,
+      "prompt_ids_in_first_seen_order": [
+        "7efc557fe887498786e7b054ada45eb2",
+        "f50020580c3b491fbb27dcbb90383703",
+        "4529d7793eef44c6b1c646556c93929d",
+        "e1126c68d47846ea9c1cc7a0281f972c",
+        "d964f170d1164d4aae38649dfcf0cb3d",
+        "05109ebfb3474d7bb0e3b50fbc7d0e39",
+        "4bfaf1db7cff454ba351fc3abf79dcb6",
+        "b63ae9bc5c6c4e48afbe34cb83fec1d1",
+        "db8b5ffb23d14a68878ae19b4f995de6",
+        "0a1075efd8ac4c9da8b7babf07ff5498",
+        "bc657ec2491d493fb8fa8ec4c5305d2f",
+        "beaee5c149f74a2b9708f85bc8b94082",
+        "a02a88c9056945f0b1ecc7cae4900fdc",
+        "974232a628a7426083a8007e1b5d3449",
+        "8fbd2cfdc651434f9a0f3cdb275ac9d6",
+        "9b023e3abe0b49b191fd6505706d8b05",
+        "304ed61b694341548d6eb73f2c0ef6cf",
+        "cb53c44a512648f2978bd9513adbd2b2",
+        "8479d7835a914613814b2bad0cd1ed94",
+        "ab4b85d44a4a42c18969c421760cf9e4",
+        "2a83a7ae0d31421c8eb570cbe837f24e",
+        "fa5223bb005f4337bf67c68a9af20d53",
+        "78d36023cfa447648a39dfaf21b84e48",
+        "93b12009f9dd452dabe01cee2adb7302",
+        "299a7d687a0d4be18105ab46b8ee0ec6",
+        "1efd393b28964c258bb1bad8250d235f",
+        "8773ae8a701347629d4a2b4a6c1e07e2",
+        "a18028d567c7455eabe015719d79c79e",
+        "336fb1564b3040978d02381ab7b0a8e4",
+        "6b92273aca8f4a3a9484533243a2647c",
+        "3075f9afce7d465ba34c25ea2d28746a",
+        "823f1ac1fce244afaf10c013e1f6b543",
+        "197bc7aca07842e2b8beb96285442cb3",
+        "24f295fce4d24857ad7e085da7b414b4",
+        "989c4f9c7b864c15bf91dcc2cfb93e61",
+        "bc96646a7a2b43aa8e9a8ee6c25dc90c",
+        "e9b4d5936a484f9f816f172da687c13f",
+        "2f894e9b4b4e42fd9c83e2d2d0b2b078",
+        "ceef026d16a14e43844e6e8a7f145d85",
+        "a5d339afdae6421b911139c13ea0dd43",
+        "add2804cd9af4bf48e5256c893c6fffe",
+        "b1f402d150bb44a18a9b7add15c87683",
+        "f76852a4fff04450a64915e62e7405fe",
+        "4ca1572022b8452ea11b17190f9d7819",
+        "1508faec40794ca3873e54abf5f5431f",
+        "3dafc664ae104c7fac067d97c7ecd24e",
+        "c6fe262e300648ed94168bf7dd769216",
+        "44f3b3b7f6254ccaaa8b4b9fcdd96308",
+        "f58b42ebdb034997acab2214c9886df0",
+        "b0530141614749ed94ec2b91ccb77f3b"
+      ],
+      "examples_by_split": {
+        "train": 70,
+        "val": 15,
+        "test": 14
+      },
+      "prompts_by_split": {
+        "train": 35,
+        "val": 8,
+        "test": 7
+      },
+      "no_collapsed_ground_truth": true
+    },
+    "schema": {
+      "ok": true,
+      "head20_schema_errors": [],
+      "subset_schema_errors": [],
+      "subset_bytes": 1501152,
+      "subset_sha256": "8eba3a14d0d6a03c4257c09ad618345bc758682642a1b5e74e5760e010f1ba9c",
+      "gpt4_join": {
+        "gpt4_rows": 10461,
+        "default_rows": 10461,
+        "matched_by_comparison_id": 10461,
+        "gpt4_columns": [
+          "chosen",
+          "chosen_model",
+          "comparison_id",
+          "prompt",
+          "prompt_id",
+          "rejected",
+          "rejected_model",
+          "tie_is_common"
+        ]
+      }
+    },
+    "paths": {
+      "subset_json": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/subset.json",
+      "subset_ids": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/subset_ids.json",
+      "manifest": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/MultiPref/SUBSET_MANIFEST.md"
+    }
+  },
+  "rewardbench": {
+    "status": "ok",
+    "download": {
+      "repo_id": "allenai/reward-bench",
+      "revision": "168d848cdbbea9764fae4a544dc9ca1e6cca4931",
+      "repo_type": "dataset",
+      "local_dir": "/Users/grantwright/Research/idea-A-B/.cache/datasets/allenai_reward_bench/168d848cdbbea9764fae4a544dc9ca1e6cca4931",
+      "resolved_path": "/Users/grantwright/Research/idea-A-B/.cache/datasets/allenai_reward_bench/168d848cdbbea9764fae4a544dc9ca1e6cca4931",
+      "source": "huggingface",
+      "hf_error": null,
+      "disk_before": {
+        "path": "/Users/grantwright/Research/idea-A-B",
+        "total_bytes": 494384795648,
+        "used_bytes": 484143255552,
+        "free_bytes": 10241540096,
+        "free_gib": 9.538177490234375,
+        "recorded_at_utc": "2026-10-30T16:16:17.299922+00:00"
+      },
+      "disk_after": {
+        "path": "/Users/grantwright/Research/idea-A-B",
+        "total_bytes": 494384795648,
+        "used_bytes": 484143255552,
+        "free_bytes": 10241540096,
+        "free_gib": 9.538177490234375,
+        "recorded_at_utc": "2026-10-30T16:16:17.303740+00:00"
+      },
+      "allow_patterns": [
+        "README.md",
+        "data/filtered-*.parquet",
+        "data/raw-*.parquet"
+      ]
+    },
+    "schema": {
+      "ok": true,
+      "errors": [],
+      "n_filtered": 2985,
+      "n_raw": 5123,
+      "sample_n": 50,
+      "rewardbench_version": "v1 (Lambert et al. 2024 RewardBench; NOT RewardBench-2 / allenai/reward-bench-2)",
+      "leaderboard_comparison": "not_run"
+    },
+    "paths": {
+      "sample_json": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/schema_sample.json",
+      "manifest": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/SUBSET_MANIFEST.md",
+      "schema": "/Users/grantwright/Research/idea-A-B/idea_A/benchmarks/RewardBench/SCHEMA_VALIDATION.json"
+    },
+    "hyper": {
+      "official_code": "https://github.com/allenai/reward-bench",
+      "hyper_submodule_path": "/Users/grantwright/Research/idea-A-B/idea_A/baselines/HyPER/reward-bench",
+      "hyper_submodule_initialized": false,
+      "action": "Did not re-clone the RewardBench git tree. Schema check against allenai/reward-bench is enough."
+    }
+  },
+  "blockers": [],
+  "finished_at_utc": "2026-10-30T16:16:17.334659+00:00",
+  "disk_end": {
+    "path": "/Users/grantwright/Research/idea-A-B",
+    "total_bytes": 494384795648,
+    "used_bytes": 484143255552,
+    "free_bytes": 10241540096,
+    "free_gib": 9.538177490234375,
+    "recorded_at_utc": "2026-10-30T16:16:17.334680+00:00"
+  }
+}

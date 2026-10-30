@@ -1,0 +1,9 @@
+experiment_id=synthetic_B3_unrecoverable_ObservabilityController_budget0p20_seed2
+environment=B3_unrecoverable method=ObservabilityController seed=2 budget=0.2
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.964757508156621, 'late_observed_performance': 0.9782737975681073, 'early_lambda_min': 0.03264294030181553, 'late_lambda_min': 0.036876800909976935, 'early_weak_skill_error': 0.7719403344791098, 'late_weak_skill_error': 0.4383706405232358, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.8198784320969261
+final_lambda_min=0.03681485994711097
+runtime_s=0.0057
+generic_control=False
+official_reproduction=False

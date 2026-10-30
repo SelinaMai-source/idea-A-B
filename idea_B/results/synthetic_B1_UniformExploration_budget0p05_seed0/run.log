@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_UniformExploration_budget0p05_seed0
+environment=B1 method=UniformExploration seed=0 budget=0.05
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9849561528211705
+final_lambda_min=0.5018649196276396
+runtime_s=0.0042
+generic_control=True
+official_reproduction=False

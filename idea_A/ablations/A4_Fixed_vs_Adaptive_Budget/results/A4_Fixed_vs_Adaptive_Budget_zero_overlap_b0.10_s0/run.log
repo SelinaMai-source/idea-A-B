@@ -1,0 +1,4 @@
+utc=2026-10-30T15:12:59.586793+00:00
+ablation=A4_Fixed_vs_Adaptive_Budget
+mechanism=zero_overlap seed=0 budget=0.1
+methods=['a4_neyman_oneshot', 'a4_neyman_batched']

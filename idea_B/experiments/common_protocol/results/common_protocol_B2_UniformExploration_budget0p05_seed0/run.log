@@ -1,0 +1,9 @@
+experiment_id=common_protocol_B2_UniformExploration_budget0p05_seed0
+environment=B2 method=UniformExploration seed=0 budget=0.05
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9760729659359857, 'late_observed_performance': 0.9765465253602743, 'early_lambda_min': 0.4291800411451157, 'late_lambda_min': 0.36125085320250067, 'early_weak_skill_error': 0.2528796082671633, 'late_weak_skill_error': 0.07596813184758373, 'observed_stable': True, 'lambda_min_worsened': True, 'weak_skill_error_worsened': False}
+final_true_performance=0.9853784503528441
+final_lambda_min=0.35022309573550847
+runtime_s=0.0043
+generic_control=True
+official_reproduction=False

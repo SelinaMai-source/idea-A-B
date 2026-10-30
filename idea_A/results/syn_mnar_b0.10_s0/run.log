@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:49.967951+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=mnar
+seed=0
+n=2000
+budget=0.1
+truth_population_mean=0.357690705047082
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Natural observation depends on unobserved Y (MNAR). The natural propensity is not identified from (X, S) without extra assumptions. This is identification failure, not an estimator bug.'}
+
+methods:
+  observed_only: estimate=1.5246677193837042 truth=0.357690705047082 bias=1.1669770143366223 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=0.9095697196370025 truth=0.357690705047082 bias=0.5518790145899205 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.39494928152791636 truth=0.357690705047082 bias=0.03725857648083436 expected_q=0.10000000000000002 realized_q=0.092
+  uniform_snips: estimate=0.42929269731295255 truth=0.357690705047082 bias=0.07160199226587055 expected_q=0.10000000000000002 realized_q=0.092
+  uniform_dr: estimate=0.41750629459664856 truth=0.357690705047082 bias=0.05981558954956656 expected_q=0.10000000000000002 realized_q=0.092
+  fixed_stratified_ipw: estimate=0.3273227069467219 truth=0.357690705047082 bias=-0.030367998100360116 expected_q=0.1 realized_q=0.1095
+  neyman_ipw: estimate=0.052509861965349514 truth=0.357690705047082 bias=-0.3051808430817325 expected_q=0.1 realized_q=0.0895
+  neyman_snips: estimate=0.05794240279387244 truth=0.357690705047082 bias=-0.2997483022532096 expected_q=0.1 realized_q=0.0895
+  neyman_dr: estimate=0.29433733003074714 truth=0.357690705047082 bias=-0.06335337501633487 expected_q=0.1 realized_q=0.0895
+  uncertainty_ipw: estimate=0.4725932294159649 truth=0.357690705047082 bias=0.11490252436888287 expected_q=0.1 realized_q=0.102
+  full_feedback_oracle: estimate=0.357690705047082 truth=0.357690705047082 bias=0.0 expected_q=1.0 realized_q=1.0

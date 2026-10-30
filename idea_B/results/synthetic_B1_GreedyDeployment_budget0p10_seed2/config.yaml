@@ -1,0 +1,20 @@
+idea: Feedback-Induced Observability Collapse
+method: GreedyDeployment
+method_label: Greedy Deployment (generic control)
+generic_control: true
+official_reproduction: false
+seed: 2
+budget: 0.1
+horizon: 32
+ridge_lambda: 0.5
+smoothing: 0.6
+mix_uniform: 0.1
+sgd_learning_rate: 0.15
+lazy_period: 5
+freeze_theta: false
+freeze_sampling: false
+information_metric: lambda_min
+update_rule: ridge
+information_matrix: observed_design_gramian W_T = sum_t S_t phi_t phi_t^T
+conditional_information_matrix: W_T_cond = sum_t q_t phi_t phi_t^T
+environment: B1

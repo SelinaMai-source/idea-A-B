@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_LazyDeployment_budget0p10_seed0
+environment=B1 method=LazyDeployment seed=0 budget=0.1
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9845473756713757
+final_lambda_min=0.32209300080544745
+runtime_s=0.0040
+generic_control=True
+official_reproduction=False

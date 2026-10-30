@@ -1,0 +1,9 @@
+experiment_id=synthetic_B2_StandardOnlineSGD_budget0p01_seed2
+environment=B2 method=StandardOnlineSGD seed=2 budget=0.01
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9468273898292379, 'late_observed_performance': 0.9761335237343945, 'early_lambda_min': 0.6910009035624641, 'late_lambda_min': 0.10545725097974651, 'early_weak_skill_error': 0.6729341758112448, 'late_weak_skill_error': 0.6536640192275556, 'observed_stable': True, 'lambda_min_worsened': True, 'weak_skill_error_worsened': False}
+final_true_performance=0.9009324356603787
+final_lambda_min=0.09750029040015164
+runtime_s=0.0050
+generic_control=True
+official_reproduction=False

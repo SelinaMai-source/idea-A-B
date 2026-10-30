@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_StandardOnlineSGD_budget0p05_seed1
+environment=B1 method=StandardOnlineSGD seed=1 budget=0.05
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9710496148676366
+final_lambda_min=0.7859260427306707
+runtime_s=0.0049
+generic_control=True
+official_reproduction=False

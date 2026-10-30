@@ -1,0 +1,13 @@
+ablation: B2_No_Adaptive_Exploration
+component_changed: adaptive_exploration_replaced_with_uniform
+environment: B2
+budget: 0.05
+seeds: [0, 1, 2]
+arms:
+  - name: uniform_inside_controller
+    method: ObservabilityController
+    mix_uniform: 1.0
+  - name: adaptive_controller
+    method: ObservabilityController
+    mix_uniform: 0.1
+note: Same budget and controller update; only the allocation rule becomes uniform.

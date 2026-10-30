@@ -1,0 +1,417 @@
+{
+  "idea": "B",
+  "name": "Feedback-Induced Observability Collapse",
+  "protocol_label": "adapted_to_common_protocol",
+  "environment": "B2",
+  "budget": 0.05,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "horizon": 32,
+  "population_per_round": 40,
+  "n_runs": 9,
+  "wall_time_s": 1.8928380003198981,
+  "leaderboard": {
+    "name": "idea_B_B2_budget0.05_common_protocol",
+    "methods_on_this_board": [
+      "ObservabilityController",
+      "UniformExploration",
+      "GreedyDeployment"
+    ],
+    "excluded": [
+      "PP-bandit adapted (skipped; see adapted_skipped)",
+      "PP-bandit official 1-D numerical demo (different protocol)",
+      "ncvxpp / Performative SGD synthetic-iter (different protocol)",
+      "Greedy/Lazy must not be relabeled as official SGD-GD"
+    ],
+    "rule": "Do not mix incomparable methods into one leaderboard."
+  },
+  "methods": {
+    "ObservabilityController": {
+      "n_seeds": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "generic_control": false,
+      "official_reproduction": false,
+      "paths": [
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_ObservabilityController_budget0p05_seed0",
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_ObservabilityController_budget0p05_seed1",
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_ObservabilityController_budget0p05_seed2"
+      ],
+      "late_true_performance": {
+        "mean": 0.9783709068747761,
+        "std": 0.00046618281211049635,
+        "n": 3,
+        "values": [
+          0.9786014423461178,
+          0.9786769068231818,
+          0.9778343714550287
+        ]
+      },
+      "late_observed_performance": {
+        "mean": 0.9783359566707078,
+        "std": 0.0011542285678321433,
+        "n": 3,
+        "values": [
+          0.9775996410462897,
+          0.9796662075463614,
+          0.9777420214194721
+        ]
+      },
+      "late_lambda_min": {
+        "mean": 1.762170680286225,
+        "std": 0.20249337657766686,
+        "n": 3,
+        "values": [
+          1.6416850701578496,
+          1.9959530510748307,
+          1.6488739196259943
+        ]
+      },
+      "late_weak_skill_error": {
+        "mean": 0.019493691501658268,
+        "std": 0.011552761061843747,
+        "n": 3,
+        "values": [
+          0.012306252706376627,
+          0.013354896793215637,
+          0.03281992500538254
+        ]
+      },
+      "mean_feedback_cost": {
+        "mean": 0.052604166666666674,
+        "std": 0.0038538147361845665,
+        "n": 3,
+        "values": [
+          0.05078125,
+          0.05703125,
+          0.05
+        ]
+      },
+      "realized_audit_fraction": {
+        "mean": 0.052604166666666674,
+        "std": 0.0038538147361845665,
+        "n": 3,
+        "values": [
+          0.05078125,
+          0.05703125,
+          0.05
+        ]
+      },
+      "cumulative_regret": {
+        "mean": 0.09758496865188286,
+        "std": 0.02145313104969985,
+        "n": 3,
+        "values": [
+          0.12153648285540732,
+          0.08013376112532722,
+          0.09108466197491405
+        ]
+      },
+      "runtime_s": {
+        "mean": 0.00761004180336992,
+        "std": 0.0038106125715896056,
+        "n": 3,
+        "values": [
+          0.011997333262115717,
+          0.005707125179469585,
+          0.005125666968524456
+        ]
+      },
+      "endogenous_collapse_flags": [
+        false,
+        false,
+        false
+      ]
+    },
+    "UniformExploration": {
+      "n_seeds": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "generic_control": true,
+      "official_reproduction": false,
+      "paths": [
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_UniformExploration_budget0p05_seed0",
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_UniformExploration_budget0p05_seed1",
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_UniformExploration_budget0p05_seed2"
+      ],
+      "late_true_performance": {
+        "mean": 0.9778182672963678,
+        "std": 0.0008180274214835598,
+        "n": 3,
+        "values": [
+          0.9774606037024963,
+          0.9787542162754579,
+          0.9772399819111494
+        ]
+      },
+      "late_observed_performance": {
+        "mean": 0.9787102990037809,
+        "std": 0.001874182988204162,
+        "n": 3,
+        "values": [
+          0.9765465253602743,
+          0.9797586509478233,
+          0.9798257207032455
+        ]
+      },
+      "late_lambda_min": {
+        "mean": 0.5318487335716275,
+        "std": 0.3131443888918345,
+        "n": 3,
+        "values": [
+          0.36125085320250067,
+          0.8932485261717735,
+          0.3410468213406085
+        ]
+      },
+      "late_weak_skill_error": {
+        "mean": 0.05331808896086806,
+        "std": 0.04361101238149909,
+        "n": 3,
+        "values": [
+          0.07596813184758373,
+          0.0030424312086933664,
+          0.08094370382632708
+        ]
+      },
+      "mean_feedback_cost": {
+        "mean": 0.05494791666666667,
+        "std": 0.006644453553215144,
+        "n": 3,
+        "values": [
+          0.0484375,
+          0.06171875,
+          0.0546875
+        ]
+      },
+      "realized_audit_fraction": {
+        "mean": 0.05494791666666667,
+        "std": 0.006644453553215144,
+        "n": 3,
+        "values": [
+          0.0484375,
+          0.06171875,
+          0.0546875
+        ]
+      },
+      "cumulative_regret": {
+        "mean": 0.11522899569948768,
+        "std": 0.03719885999612184,
+        "n": 3,
+        "values": [
+          0.1568909258805801,
+          0.08534441999215385,
+          0.10345164122572911
+        ]
+      },
+      "runtime_s": {
+        "mean": 0.004183833487331867,
+        "std": 0.00017213174194725736,
+        "n": 3,
+        "values": [
+          0.0040578339248895645,
+          0.004379958845674992,
+          0.0041137076914310455
+        ]
+      },
+      "endogenous_collapse_flags": [
+        false,
+        false,
+        false
+      ]
+    },
+    "GreedyDeployment": {
+      "n_seeds": 3,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "generic_control": true,
+      "official_reproduction": false,
+      "paths": [
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_GreedyDeployment_budget0p05_seed0",
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_GreedyDeployment_budget0p05_seed1",
+        "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_GreedyDeployment_budget0p05_seed2"
+      ],
+      "late_true_performance": {
+        "mean": 0.9726314604824942,
+        "std": 0.004438810796126605,
+        "n": 3,
+        "values": [
+          0.9742408813086074,
+          0.9676124452943691,
+          0.976041054844506
+        ]
+      },
+      "late_observed_performance": {
+        "mean": 0.9778370219113718,
+        "std": 0.0017659869700553488,
+        "n": 3,
+        "values": [
+          0.9759695089534085,
+          0.9780615488842803,
+          0.9794800078964265
+        ]
+      },
+      "late_lambda_min": {
+        "mean": 0.07948933519809541,
+        "std": 0.017396320810020238,
+        "n": 3,
+        "values": [
+          0.0663755485512445,
+          0.0728684659056289,
+          0.0992239911374128
+        ]
+      },
+      "late_weak_skill_error": {
+        "mean": 0.1733927705838384,
+        "std": 0.07017403571186906,
+        "n": 3,
+        "values": [
+          0.154978852780015,
+          0.2509377936332382,
+          0.11426166533826197
+        ]
+      },
+      "mean_feedback_cost": {
+        "mean": 0.05000000000000001,
+        "std": 8.498374721940739e-18,
+        "n": 3,
+        "values": [
+          0.05,
+          0.05,
+          0.05
+        ]
+      },
+      "realized_audit_fraction": {
+        "mean": 0.05000000000000001,
+        "std": 8.498374721940739e-18,
+        "n": 3,
+        "values": [
+          0.05,
+          0.05,
+          0.05
+        ]
+      },
+      "cumulative_regret": {
+        "mean": 0.24655925939520254,
+        "std": 0.1323105884847206,
+        "n": 3,
+        "values": [
+          0.2476425038040663,
+          0.3783248998838522,
+          0.1137103744976892
+        ]
+      },
+      "runtime_s": {
+        "mean": 0.004369735872993867,
+        "std": 0.00022651983506521327,
+        "n": 3,
+        "values": [
+          0.004201458767056465,
+          0.004627291113138199,
+          0.004280457738786936
+        ]
+      },
+      "endogenous_collapse_flags": [
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "paired_controller_vs_uniform": {
+    "late_lambda_min": {
+      "field": "late_lambda_min",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "ObservabilityController": [
+        1.6416850701578496,
+        1.9959530510748307,
+        1.6488739196259943
+      ],
+      "UniformExploration": [
+        0.36125085320250067,
+        0.8932485261717735,
+        0.3410468213406085
+      ],
+      "mean_a_minus_b": 1.2303219467145972,
+      "paired_bootstrap": {
+        "n_seeds": 3,
+        "mean_difference": 1.2303219467145972,
+        "ci_low": 1.1027045249030571,
+        "ci_high": 1.3078270982853857,
+        "alpha": 0.05,
+        "n_boot": 5000,
+        "seed": 0,
+        "preliminary": true,
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    },
+    "late_true_performance": {
+      "field": "late_true_performance",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "ObservabilityController": [
+        0.9786014423461178,
+        0.9786769068231818,
+        0.9778343714550287
+      ],
+      "UniformExploration": [
+        0.9774606037024963,
+        0.9787542162754579,
+        0.9772399819111494
+      ],
+      "mean_a_minus_b": 0.0005526395784082316,
+      "paired_bootstrap": {
+        "n_seeds": 3,
+        "mean_difference": 0.0005526395784082316,
+        "ci_low": -7.730945227613084e-05,
+        "ci_high": 0.0011408386436214668,
+        "alpha": 0.05,
+        "n_boot": 5000,
+        "seed": 0,
+        "preliminary": true,
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    }
+  },
+  "adapted_skipped": [
+    {
+      "method_id": "pp_bandit_zeroth_order_reparam_adapted",
+      "protocol_label": "adapted-skipped",
+      "status": "BLOCKED",
+      "official_reproduction": false,
+      "reason": "Official PP-bandit core (bandit-icml24.ipynb / official_reproduction/run_official_numerical.py) is a 1-D reparameterization x = y^2 with two-point zeroth-order updates and an inner LearnModel that minimizes Bernoulli KL(x_target || y^2). That procedure queries an uncensored scalar performative-risk function. Idea B environment B2 is a 3-D linear skill model whose performative channel is skill-wise observation censoring, not a Bernoulli mean map, and labels are revealed only under a limited audit budget. A faithful LearnModel+reparameterization port is not feasible on this NumPy protocol without rewriting the paper's 1-D Bernoulli experiment. A two-point ZO-SGD with uniform audits would be a different generic optimizer and must not be relabeled as adapted PP-bandit. Official numerical demo remains in idea_B/baselines/Performative_Bandit_ICML2024/official_reproduction/ (COMPLETE, separate from this leaderboard)."
+    }
+  ],
+  "greedy_label": "GreedyDeployment is a generic control already used in Idea B smoke. It is not an official Performative SGD / SGD-GD reproduction.",
+  "information_matrix": "W_T = sum_t S_t phi_t phi_t^T (linear-model observed design Gramian)",
+  "result_dirs": [
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_ObservabilityController_budget0p05_seed0",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_ObservabilityController_budget0p05_seed1",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_ObservabilityController_budget0p05_seed2",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_UniformExploration_budget0p05_seed0",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_UniformExploration_budget0p05_seed1",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_UniformExploration_budget0p05_seed2",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_GreedyDeployment_budget0p05_seed0",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_GreedyDeployment_budget0p05_seed1",
+    "/Users/grantwright/Research/idea-A-B/idea_B/experiments/common_protocol/results/common_protocol_B2_GreedyDeployment_budget0p05_seed2"
+  ]
+}

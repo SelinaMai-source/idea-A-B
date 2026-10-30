@@ -1,0 +1,40 @@
+ablation: A3_No_Anchor_Intervention
+experiment_id: A3_No_Anchor_Intervention_zero_overlap_b0.10_s2
+mechanism: zero_overlap
+seed: 2
+budget: 0.1
+methods:
+- a3_observed_only
+- a3_naive_ips
+one_component_change: true
+config:
+  ablation: A3_No_Anchor_Intervention
+  component_changed: audit_intervention
+  description: 'Remove the independent audit channel (the identification anchor).
+    Only natural observations S are available. Estimators are observed-only and naive
+    IPS. One component change.
+
+    '
+  n: 2000
+  seeds:
+  - 0
+  - 1
+  - 2
+  budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  mechanisms:
+  - mcar
+  - mar
+  - mnar
+  - policy_dependent
+  - low_overlap
+  - zero_overlap
+  - nonstationary
+  exploration_mix: 0.15
+  q_floor: 1.0e-06
+  ridge_lambda: 0.001
+  allocation: none
+  estimator: observed_only

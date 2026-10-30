@@ -1,0 +1,85 @@
+{
+  "status": "ok",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "prompt": "Reply with the single word pong.",
+  "max_new_tokens": 8,
+  "do_sample": false,
+  "is_llm_post_training": false,
+  "is_synthetic_matrix": false,
+  "python": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+  "note": "Short deterministic load/generate check only. Not post-training.",
+  "attempts": [
+    {
+      "device": "mps",
+      "dtype_name": "float16",
+      "returncode": -6,
+      "status": "crashed",
+      "stderr_head": "W1031 00:25:51.505000 48250 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.\n\nLoading weights:   0%|          | 0/290 [00:00<?, ?it/s]\nLoading weights:  18%|█▊        | 51/290 [00:00<00:00, 482.02it/s]\nLoading weights:  34%|███▍      | 100/290 [00:00<00:00, 457.04it/s]\nLoading weights: 100%|██████████| 290/290 [00:00<00:00, 1043.72it/s]\n*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[MPSNDArray arrayViewWithShape:strides:]: unrecognized selector sent to instance 0x148d98710'\n*** First throw call stack:\n(\n\t0   CoreFoundation                      0x000000019739f2ec __exceptionPreprocess + 176\n\t1   libobjc.A.dylib                     0x0000000196e86788 objc_exception_throw + 60\n\t2   CoreFoundation                      0x000000019745156c -[NSObject(NSObject) __retain_OA] + 0\n\t3   CoreFoundation                      0x0000000197308f3c ___forwarding___ + 1580\n\t4   CoreFoundation                      0x0000000197308850 _CF_forwarding_prep_0 + 96\n\t5   libtorch_cpu.dylib                  0x000000031dc8b6bc _ZN2at6native3mps20getStridedMPSNDArrayERKNS_10TensorBaseEP10MPSNDArray + 924\n\t6   libtorch_cpu.dylib                  0x000000031dc8b278 _ZN2at6native3mps13getMPSNDArrayERKNS_10TensorBaseEP7NSArrayIP8NSNumberES9_ + 392\n\t7   libtorch_cpu.dylib                  0x000000031dd27794 ___ZN2at6nativeL19_mps_linear_nographERKNS_6TensorES3_S3_RS1__block_invoke + 212\n\t8   libtorch_cpu.dylib",
+      "stderr_tail": "FrameDefault + 54548\n\t70  Python                              0x00000001063bf4dc method_vectorcall + 304\n\t71  Python                              0x00000001063bc4ec _PyObject_Call + 280\n\t72  Python                              0x00000001065012c4 _PyEval_EvalFrameDefault + 54548\n\t73  Python                              0x00000001064f3a14 PyEval_EvalCode + 304\n\t74  Python                              0x000000010657422c run_mod + 176\n\t75  Python                              0x00000001065732b4 pyrun_file + 156\n\t76  Python                              0x0000000106572210 _PyRun_SimpleFileObject + 304\n\t77  Python                              0x0000000106571dd4 _PyRun_AnyFileObject + 80\n\t78  Python                              0x00000001065a06a4 pymain_run_file_obj + 164\n\t79  Python                              0x00000001065a041c pymain_run_file + 72\n\t80  Python                              0x000000010659f6fc Py_RunMain + 1104\n\t81  Python                              0x000000010659fdc8 pymain_main + 500\n\t82  Python                              0x000000010659fee4 Py_BytesMain + 40\n\t83  dyld                                0x0000000196ec20e0 start + 2360\n)\nlibc++abi: terminating due to uncaught exception of type NSException\n/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown\n  warnings.warn('resource_tracker: There appear to be %d '\n"
+    },
+    {
+      "device": "mps",
+      "dtype_name": "float32",
+      "returncode": -6,
+      "status": "crashed",
+      "stderr_head": "W1031 00:25:55.036000 48252 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.\n\nLoading weights:   0%|          | 0/290 [00:00<?, ?it/s]\nLoading weights:   0%|          | 1/290 [00:00<00:33,  8.73it/s]\nLoading weights:  64%|██████▍   | 185/290 [00:00<00:00, 714.33it/s]\nLoading weights: 100%|██████████| 290/290 [00:00<00:00, 955.39it/s]\n*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[MPSNDArray arrayViewWithShape:strides:]: unrecognized selector sent to instance 0x14c862b00'\n*** First throw call stack:\n(\n\t0   CoreFoundation                      0x000000019739f2ec __exceptionPreprocess + 176\n\t1   libobjc.A.dylib                     0x0000000196e86788 objc_exception_throw + 60\n\t2   CoreFoundation                      0x000000019745156c -[NSObject(NSObject) __retain_OA] + 0\n\t3   CoreFoundation                      0x0000000197308f3c ___forwarding___ + 1580\n\t4   CoreFoundation                      0x0000000197308850 _CF_forwarding_prep_0 + 96\n\t5   libtorch_cpu.dylib                  0x0000000304a436bc _ZN2at6native3mps20getStridedMPSNDArrayERKNS_10TensorBaseEP10MPSNDArray + 924\n\t6   libtorch_cpu.dylib                  0x0000000304a43278 _ZN2at6native3mps13getMPSNDArrayERKNS_10TensorBaseEP7NSArrayIP8NSNumberES9_ + 392\n\t7   libtorch_cpu.dylib                  0x0000000304adf794 ___ZN2at6nativeL19_mps_linear_nographERKNS_6TensorES3_S3_RS1__block_invoke + 212\n\t8   libtorch_cpu.dylib   ",
+      "stderr_tail": "FrameDefault + 54548\n\t70  Python                              0x0000000103b334dc method_vectorcall + 304\n\t71  Python                              0x0000000103b304ec _PyObject_Call + 280\n\t72  Python                              0x0000000103c752c4 _PyEval_EvalFrameDefault + 54548\n\t73  Python                              0x0000000103c67a14 PyEval_EvalCode + 304\n\t74  Python                              0x0000000103ce822c run_mod + 176\n\t75  Python                              0x0000000103ce72b4 pyrun_file + 156\n\t76  Python                              0x0000000103ce6210 _PyRun_SimpleFileObject + 304\n\t77  Python                              0x0000000103ce5dd4 _PyRun_AnyFileObject + 80\n\t78  Python                              0x0000000103d146a4 pymain_run_file_obj + 164\n\t79  Python                              0x0000000103d1441c pymain_run_file + 72\n\t80  Python                              0x0000000103d136fc Py_RunMain + 1104\n\t81  Python                              0x0000000103d13dc8 pymain_main + 500\n\t82  Python                              0x0000000103d13ee4 Py_BytesMain + 40\n\t83  dyld                                0x0000000196ec20e0 start + 2360\n)\nlibc++abi: terminating due to uncaught exception of type NSException\n/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown\n  warnings.warn('resource_tracker: There appear to be %d '\n"
+    },
+    {
+      "device": "cpu",
+      "dtype_name": "float32",
+      "returncode": 0,
+      "worker": {
+        "status": "ok",
+        "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "prompt": "Reply with the single word pong.",
+        "max_new_tokens": 8,
+        "do_sample": false,
+        "device": "cpu",
+        "dtype_name": "float32",
+        "torch_version": "2.15.0",
+        "mps_available": true,
+        "mps_built": true,
+        "python": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+        "is_llm_post_training": false,
+        "is_synthetic_matrix": false,
+        "tokenizer_load_ok": true,
+        "tokenizer_load_seconds": 0.18152087507769465,
+        "weights_load_ok": true,
+        "weights_load_seconds": 1.0631697908975184,
+        "dtype": "torch.float32",
+        "generate_ok": true,
+        "generate_latency_seconds": 0.2612558747641742,
+        "output_text": "system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.\nuser\nReply with the single word pong.\nassistant\nPong!",
+        "n_output_tokens": 40,
+        "peak_memory": {
+          "ru_maxrss_bytes": 3424256000
+        },
+        "clean_exit": true
+      },
+      "status": "ok"
+    }
+  ],
+  "torch_version": "2.15.0",
+  "mps_available": true,
+  "mps_built": true,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "tokenizer_load_ok": true,
+  "tokenizer_load_seconds": 0.18152087507769465,
+  "weights_load_ok": true,
+  "weights_load_seconds": 1.0631697908975184,
+  "generate_ok": true,
+  "generate_latency_seconds": 0.2612558747641742,
+  "output_text": "system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.\nuser\nReply with the single word pong.\nassistant\nPong!",
+  "n_output_tokens": 40,
+  "peak_memory": {
+    "ru_maxrss_bytes": 3424256000
+  },
+  "clean_exit": true,
+  "preferred_device": "mps",
+  "device_actually_used": "cpu",
+  "mps_generate_blocker": "MPS was available and was tried first. generate() aborted or failed on MPS; CPU was used as a fallback on the same Qwen2.5-0.5B-Instruct weights. No other model was substituted."
+}

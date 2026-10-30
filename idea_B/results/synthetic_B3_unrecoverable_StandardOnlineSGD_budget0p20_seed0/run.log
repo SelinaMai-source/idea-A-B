@@ -1,0 +1,9 @@
+experiment_id=synthetic_B3_unrecoverable_StandardOnlineSGD_budget0p20_seed0
+environment=B3_unrecoverable method=StandardOnlineSGD seed=0 budget=0.2
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9605718888122889, 'late_observed_performance': 0.9745347497998451, 'early_lambda_min': 0.04294982830765379, 'late_lambda_min': 0.04382508939997059, 'early_weak_skill_error': 1.003584704992519, 'late_weak_skill_error': 0.9641601420454224, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.8255352526555917
+final_lambda_min=0.043710798073731544
+runtime_s=0.0058
+generic_control=True
+official_reproduction=False

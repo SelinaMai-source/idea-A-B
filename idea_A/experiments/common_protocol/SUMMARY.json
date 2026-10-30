@@ -1,0 +1,711 @@
+{
+  "idea": "A",
+  "name": "Adaptive Identification under Endogenous Feedback Censoring",
+  "version": "1.0",
+  "allocation_note": "v1.0 allocation is classical stratified Neyman allocation plus an exploration floor, then IPW/Hájek/AIPW with known audit propensities. This is not a novel algorithm.",
+  "n": 2000,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "n_seeds": 3,
+  "preliminary": true,
+  "matrix": {
+    "mode": "common_protocol",
+    "mechanisms_requested": [
+      "mnar",
+      "zero_overlap"
+    ],
+    "budgets_requested": [
+      0.05
+    ],
+    "n_runs_written": 6,
+    "n_cells_selected": 6,
+    "n_cells_skipped": 0,
+    "skipped": [],
+    "note": "Adapted volume heuristic vs Uniform IPW vs Neyman IPW on the existing synthetic selective-feedback world. MNAR and zero-overlap only, b=0.05, seeds 0,1,2. Not AMPLe official."
+  },
+  "per_method": {
+    "neyman_ipw": {
+      "mnar": {
+        "b=0.05": {
+          "n_seeds": 3,
+          "expected_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3
+          },
+          "realized_audit_fraction": {
+            "mean": 0.04800000000000001,
+            "std": 0.0025000000000000022,
+            "n": 3
+          },
+          "population_mean_reward": {
+            "bias": {
+              "mean": -0.0980140111046001,
+              "std": 0.18517337074781856,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.14673868369125656,
+              "std": 0.1280661346967422,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.18018378912160418
+          },
+          "preference_rate": {
+            "bias": {
+              "mean": -0.019636192956452542,
+              "std": 0.07983999991823038,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.06797305406091332,
+              "std": 0.004721395993327918,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.06808228206945663
+          },
+          "policy_value_target_distribution": {
+            "bias": {
+              "mean": -0.17822424756101607,
+              "std": 0.22484008331318478,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.20705658671637903,
+              "std": 0.18409302414366308,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.25586309710769856
+          },
+          "context_conditioned_mae": {
+            "mean": 0.4766860493819758,
+            "std": 0.1758433146076178,
+            "n": 3
+          }
+        }
+      },
+      "zero_overlap": {
+        "b=0.05": {
+          "n_seeds": 3,
+          "expected_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3
+          },
+          "realized_audit_fraction": {
+            "mean": 0.04933333333333334,
+            "std": 0.002254624876411446,
+            "n": 3
+          },
+          "population_mean_reward": {
+            "bias": {
+              "mean": -0.05061518239326259,
+              "std": 0.24657036664393997,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.18580947086992175,
+              "std": 0.11336688909263326,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.20758900218136456
+          },
+          "preference_rate": {
+            "bias": {
+              "mean": -0.013318652952376997,
+              "std": 0.0916160432254864,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.07465449656832239,
+              "std": 0.01731006540104612,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.07598060783732027
+          },
+          "policy_value_target_distribution": {
+            "bias": {
+              "mean": -0.10234508171240873,
+              "std": 0.3299586773793031,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.2656631763357291,
+              "std": 0.13681782600522283,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.28819495994202543
+          },
+          "context_conditioned_mae": {
+            "mean": 0.41500157240264074,
+            "std": 0.22600311964129163,
+            "n": 3
+          }
+        }
+      }
+    },
+    "uniform_ipw": {
+      "mnar": {
+        "b=0.05": {
+          "n_seeds": 3,
+          "expected_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 0.0,
+            "n": 3
+          },
+          "realized_audit_fraction": {
+            "mean": 0.04816666666666667,
+            "std": 0.0033291640592396955,
+            "n": 3
+          },
+          "population_mean_reward": {
+            "bias": {
+              "mean": -0.10457501848261268,
+              "std": 0.05676108936571581,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.10457501848261268,
+              "std": 0.05676108936571581,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.1143845065322542
+          },
+          "preference_rate": {
+            "bias": {
+              "mean": -0.016166666666666607,
+              "std": 0.05400308633155457,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.041166666666666664,
+              "std": 0.027682726262659402,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.046963638416687145
+          },
+          "policy_value_target_distribution": {
+            "bias": {
+              "mean": -0.12403096973766094,
+              "std": 0.007490586394318552,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.12403096973766094,
+              "std": 0.007490586394318552,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.12418167085800168
+          },
+          "context_conditioned_mae": {
+            "mean": 0.3604837451111443,
+            "std": 0.08962205007451561,
+            "n": 3
+          }
+        }
+      },
+      "zero_overlap": {
+        "b=0.05": {
+          "n_seeds": 3,
+          "expected_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 0.0,
+            "n": 3
+          },
+          "realized_audit_fraction": {
+            "mean": 0.04816666666666667,
+            "std": 0.0033291640592396955,
+            "n": 3
+          },
+          "population_mean_reward": {
+            "bias": {
+              "mean": -0.10457501848261268,
+              "std": 0.05676108936571581,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.10457501848261268,
+              "std": 0.05676108936571581,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.1143845065322542
+          },
+          "preference_rate": {
+            "bias": {
+              "mean": -0.016166666666666607,
+              "std": 0.05400308633155457,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.041166666666666664,
+              "std": 0.027682726262659402,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.046963638416687145
+          },
+          "policy_value_target_distribution": {
+            "bias": {
+              "mean": -0.12403096973766094,
+              "std": 0.007490586394318552,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.12403096973766094,
+              "std": 0.007490586394318552,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.12418167085800168
+          },
+          "context_conditioned_mae": {
+            "mean": 0.3604837451111443,
+            "std": 0.08962205007451561,
+            "n": 3
+          }
+        }
+      }
+    },
+    "volume_adapted_ipw": {
+      "mnar": {
+        "b=0.05": {
+          "n_seeds": 3,
+          "expected_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3
+          },
+          "realized_audit_fraction": {
+            "mean": 0.049999999999999996,
+            "std": 0.0021794494717703346,
+            "n": 3
+          },
+          "population_mean_reward": {
+            "bias": {
+              "mean": -0.08871214129044276,
+              "std": 0.08937578933761058,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.09593347910286365,
+              "std": 0.07738183972389645,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.11487035514940068
+          },
+          "preference_rate": {
+            "bias": {
+              "mean": -0.004405992882989355,
+              "std": 0.045056738874644266,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.0354247771766125,
+              "std": 0.01329874508840365,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.03705157556654696
+          },
+          "policy_value_target_distribution": {
+            "bias": {
+              "mean": -0.14745714968577103,
+              "std": 0.07393080952216338,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.14745714968577103,
+              "std": 0.07393080952216338,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.15933440952240507
+          },
+          "context_conditioned_mae": {
+            "mean": 0.36855994550027926,
+            "std": 0.059522158598299124,
+            "n": 3
+          }
+        }
+      },
+      "zero_overlap": {
+        "b=0.05": {
+          "n_seeds": 3,
+          "expected_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 1.0971354589302191e-17,
+            "n": 3
+          },
+          "realized_audit_fraction": {
+            "mean": 0.04966666666666667,
+            "std": 0.004010403138505322,
+            "n": 3
+          },
+          "population_mean_reward": {
+            "bias": {
+              "mean": 0.19042581008275414,
+              "std": 0.12937321478951705,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.19042581008275414,
+              "std": 0.12937321478951705,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.21776196855509344
+          },
+          "preference_rate": {
+            "bias": {
+              "mean": 0.02788018835777173,
+              "std": 0.06062658251825993,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.03734892912443925,
+              "std": 0.05243210945620104,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.056812791177930026
+          },
+          "policy_value_target_distribution": {
+            "bias": {
+              "mean": 0.1346842021689374,
+              "std": 0.14017758329785368,
+              "n": 3
+            },
+            "mae": {
+              "mean": 0.1346842021689374,
+              "std": 0.14017758329785368,
+              "n": 3
+            },
+            "rmse_across_seeds": 0.17674747773787608
+          },
+          "context_conditioned_mae": {
+            "mean": 0.5824947548705609,
+            "std": 0.2839407528363405,
+            "n": 3
+          }
+        }
+      }
+    }
+  },
+  "paired_neyman_vs_uniform": {
+    "mnar": {
+      "b=0.05": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "neyman_ipw_rmse": [
+          0.07251269556356277,
+          0.0730870088799847,
+          0.29461634663022224
+        ],
+        "uniform_ipw_rmse": [
+          0.03922840941179462,
+          0.14162859449271778,
+          0.13286805154332562
+        ],
+        "mean_rmse_difference_neyman_minus_uniform": 0.0421636652086439,
+        "paired_bootstrap_rmse": {
+          "n_seeds": 3,
+          "mean_difference": 0.0421636652086439,
+          "ci_low": -0.06854158561273307,
+          "ci_high": 0.16174829508689662,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 0,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "paired_bootstrap_abs_bias": {
+          "n_seeds": 3,
+          "mean_difference": 0.0421636652086439,
+          "ci_low": -0.06854158561273307,
+          "ci_high": 0.16174829508689662,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 1,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    },
+    "zero_overlap": {
+      "b=0.05": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "neyman_ipw_rmse": [
+          0.06490958784679424,
+          0.20279143271498873,
+          0.28972739204798226
+        ],
+        "uniform_ipw_rmse": [
+          0.03922840941179462,
+          0.14162859449271778,
+          0.13286805154332562
+        ],
+        "mean_rmse_difference_neyman_minus_uniform": 0.08123445238730907,
+        "paired_bootstrap_rmse": {
+          "n_seeds": 3,
+          "mean_difference": 0.08123445238730907,
+          "ci_low": 0.02568117843499962,
+          "ci_high": 0.15685934050465664,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 0,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "paired_bootstrap_abs_bias": {
+          "n_seeds": 3,
+          "mean_difference": 0.08123445238730907,
+          "ci_low": 0.02568117843499962,
+          "ci_high": 0.15685934050465664,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 1,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    }
+  },
+  "key_findings": {
+    "mnar_observed_only_vs_audit_ipw": {},
+    "neyman_vs_uniform_rmse": {
+      "mnar_b=0.05": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "neyman_ipw_rmse": [
+          0.07251269556356277,
+          0.0730870088799847,
+          0.29461634663022224
+        ],
+        "uniform_ipw_rmse": [
+          0.03922840941179462,
+          0.14162859449271778,
+          0.13286805154332562
+        ],
+        "mean_rmse_difference_neyman_minus_uniform": 0.0421636652086439,
+        "paired_bootstrap_rmse": {
+          "n_seeds": 3,
+          "mean_difference": 0.0421636652086439,
+          "ci_low": -0.06854158561273307,
+          "ci_high": 0.16174829508689662,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 0,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "paired_bootstrap_abs_bias": {
+          "n_seeds": 3,
+          "mean_difference": 0.0421636652086439,
+          "ci_low": -0.06854158561273307,
+          "ci_high": 0.16174829508689662,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 1,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      },
+      "zero_overlap_b=0.05": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "neyman_ipw_rmse": [
+          0.06490958784679424,
+          0.20279143271498873,
+          0.28972739204798226
+        ],
+        "uniform_ipw_rmse": [
+          0.03922840941179462,
+          0.14162859449271778,
+          0.13286805154332562
+        ],
+        "mean_rmse_difference_neyman_minus_uniform": 0.08123445238730907,
+        "paired_bootstrap_rmse": {
+          "n_seeds": 3,
+          "mean_difference": 0.08123445238730907,
+          "ci_low": 0.02568117843499962,
+          "ci_high": 0.15685934050465664,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 0,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "paired_bootstrap_abs_bias": {
+          "n_seeds": 3,
+          "mean_difference": 0.08123445238730907,
+          "ci_low": 0.02568117843499962,
+          "ci_high": 0.15685934050465664,
+          "alpha": 0.05,
+          "n_boot": 10000,
+          "seed": 1,
+          "preliminary": true,
+          "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+        },
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    }
+  },
+  "result_dirs": [
+    "/Users/grantwright/Research/idea-A-B/idea_A/experiments/common_protocol/results/common_protocol_mnar_b0.05_s0",
+    "/Users/grantwright/Research/idea-A-B/idea_A/experiments/common_protocol/results/common_protocol_mnar_b0.05_s1",
+    "/Users/grantwright/Research/idea-A-B/idea_A/experiments/common_protocol/results/common_protocol_mnar_b0.05_s2",
+    "/Users/grantwright/Research/idea-A-B/idea_A/experiments/common_protocol/results/common_protocol_zero_overlap_b0.05_s0",
+    "/Users/grantwright/Research/idea-A-B/idea_A/experiments/common_protocol/results/common_protocol_zero_overlap_b0.05_s1",
+    "/Users/grantwright/Research/idea-A-B/idea_A/experiments/common_protocol/results/common_protocol_zero_overlap_b0.05_s2"
+  ],
+  "protocol_label": "adapted_to_common_protocol",
+  "official_reproduction": false,
+  "volume_note": "Adapted max-variance / posterior-volume allocation on strata, then audit IPW with known q. Not AMPLe official; AMPLe volume needs RM-scored preference pairs and an MH posterior on the simplex.",
+  "leaderboard": {
+    "name": "idea_A_synthetic_selective_feedback_b0.05_mnar_zero_overlap",
+    "methods_on_this_board": [
+      "uniform_ipw",
+      "neyman_ipw",
+      "volume_adapted_ipw"
+    ],
+    "excluded": [
+      "AMPLe official (different target: multi-dimensional preference identification)",
+      "HyPER (blocked; RewardBench routing)",
+      "Drago 2026 (theory only)"
+    ],
+    "rule": "Do not mix incomparable methods into one leaderboard."
+  },
+  "paired_volume_vs_uniform": {
+    "mnar": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "volume_adapted_ipw_rmse": [
+        0.1620692458775677,
+        0.11489918471239191,
+        0.010832006718631326
+      ],
+      "uniform_ipw_rmse": [
+        0.03922840941179462,
+        0.14162859449271778,
+        0.13286805154332562
+      ],
+      "mean_rmse_difference_a_minus_b": -0.008641539379749022,
+      "paired_bootstrap_rmse": {
+        "n_seeds": 3,
+        "mean_difference": -0.008641539379749022,
+        "ci_low": -0.12203604482469428,
+        "ci_high": 0.1228408364657731,
+        "alpha": 0.05,
+        "n_boot": 10000,
+        "seed": 0,
+        "preliminary": true,
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    },
+    "zero_overlap": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "volume_adapted_ipw_rmse": [
+        0.14337594784374852,
+        0.09116164741766036,
+        0.33673983498685356
+      ],
+      "uniform_ipw_rmse": [
+        0.03922840941179462,
+        0.14162859449271778,
+        0.13286805154332562
+      ],
+      "mean_rmse_difference_a_minus_b": 0.08585079160014147,
+      "paired_bootstrap_rmse": {
+        "n_seeds": 3,
+        "mean_difference": 0.08585079160014147,
+        "ci_low": -0.05046694707505742,
+        "ci_high": 0.20387178344352794,
+        "alpha": 0.05,
+        "n_boot": 10000,
+        "seed": 0,
+        "preliminary": true,
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    }
+  },
+  "paired_volume_vs_neyman": {
+    "mnar": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "volume_adapted_ipw_rmse": [
+        0.1620692458775677,
+        0.11489918471239191,
+        0.010832006718631326
+      ],
+      "neyman_ipw_rmse": [
+        0.07251269556356277,
+        0.0730870088799847,
+        0.29461634663022224
+      ],
+      "mean_rmse_difference_a_minus_b": -0.05080520458839292,
+      "paired_bootstrap_rmse": {
+        "n_seeds": 3,
+        "mean_difference": -0.05080520458839292,
+        "ci_low": -0.2837843399115909,
+        "ci_high": 0.08955655031400495,
+        "alpha": 0.05,
+        "n_boot": 10000,
+        "seed": 0,
+        "preliminary": true,
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    },
+    "zero_overlap": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "volume_adapted_ipw_rmse": [
+        0.14337594784374852,
+        0.09116164741766036,
+        0.33673983498685356
+      ],
+      "neyman_ipw_rmse": [
+        0.06490958784679424,
+        0.20279143271498873,
+        0.28972739204798226
+      ],
+      "mean_rmse_difference_a_minus_b": 0.004616339212832406,
+      "paired_bootstrap_rmse": {
+        "n_seeds": 3,
+        "mean_difference": 0.004616339212832406,
+        "ci_low": -0.11162978529732837,
+        "ci_high": 0.07846635999695428,
+        "alpha": 0.05,
+        "n_boot": 10000,
+        "seed": 0,
+        "preliminary": true,
+        "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim."
+      }
+    }
+  }
+}

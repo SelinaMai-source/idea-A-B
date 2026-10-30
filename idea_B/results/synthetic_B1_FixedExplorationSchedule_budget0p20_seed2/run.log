@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_FixedExplorationSchedule_budget0p20_seed2
+environment=B1 method=FixedExplorationSchedule seed=2 budget=0.2
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9773763338554522
+final_lambda_min=1.6079218189177042
+runtime_s=0.0041
+generic_control=True
+official_reproduction=False

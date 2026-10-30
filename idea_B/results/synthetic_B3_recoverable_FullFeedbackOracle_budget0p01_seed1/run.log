@@ -1,0 +1,9 @@
+experiment_id=synthetic_B3_recoverable_FullFeedbackOracle_budget0p01_seed1
+environment=B3_recoverable method=FullFeedbackOracle seed=1 budget=0.01
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9822752141586439, 'late_observed_performance': 0.9789060449241882, 'early_lambda_min': 5.399787523818476, 'late_lambda_min': 6.323355974288445, 'early_weak_skill_error': 0.027340354411925546, 'late_weak_skill_error': 0.010472147337428683, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.9833840106237296
+final_lambda_min=6.292886399626688
+runtime_s=0.0043
+generic_control=True
+official_reproduction=False

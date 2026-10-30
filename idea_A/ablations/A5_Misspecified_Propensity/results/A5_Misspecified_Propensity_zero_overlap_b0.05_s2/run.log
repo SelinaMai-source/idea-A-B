@@ -1,0 +1,4 @@
+utc=2026-10-30T15:13:01.320312+00:00
+ablation=A5_Misspecified_Propensity
+mechanism=zero_overlap seed=2 budget=0.05
+methods=['a5_neyman_ipw_wrong_q', 'neyman_ipw_reference']

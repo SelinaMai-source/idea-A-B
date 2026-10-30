@@ -1,0 +1,13 @@
+ablation: B5_Observability_Metric_Variants
+component_changed: information_metric
+environment: B2
+budget: 0.05
+seeds: [0, 1, 2]
+arms:
+  - name: lambda_min
+    information_metric: lambda_min
+  - name: trace_inverse
+    information_metric: trace_inverse
+  - name: logdet
+    information_metric: logdet
+note: Same controller, budget, and closed loop; only the information readout used for allocation changes.

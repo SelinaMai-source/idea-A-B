@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_NoFeedbackController_budget0p01_seed0
+environment=B1 method=NoFeedbackController seed=0 budget=0.01
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9847019178215187
+final_lambda_min=0.283327939346344
+runtime_s=0.0042
+generic_control=True
+official_reproduction=False

@@ -1,0 +1,11 @@
+ablation: B1_No_Observability_Control
+component_removed: observability_control
+environment: B2
+budget: 0.05
+seeds: [0, 1, 2]
+arms:
+  - name: no_control
+    method: NoFeedbackController
+  - name: reference_controller
+    method: ObservabilityController
+note: One component. Extra audit allocation from W_T is removed; everything else matches B2.

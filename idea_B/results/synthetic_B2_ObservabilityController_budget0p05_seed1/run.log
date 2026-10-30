@@ -1,0 +1,9 @@
+experiment_id=synthetic_B2_ObservabilityController_budget0p05_seed1
+environment=B2 method=ObservabilityController seed=1 budget=0.05
+policy_affects_feedback=True
+collapse={'endogenous_collapse': False, 'reason': 'policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error', 'early_observed_performance': 0.9826139548422725, 'late_observed_performance': 0.9796662075463614, 'early_lambda_min': 0.8023442526740607, 'late_lambda_min': 1.9959530510748307, 'early_weak_skill_error': 0.19041896203905384, 'late_weak_skill_error': 0.013354896793215637, 'observed_stable': True, 'lambda_min_worsened': False, 'weak_skill_error_worsened': False}
+final_true_performance=0.9822552558612765
+final_lambda_min=2.0223969743043644
+runtime_s=0.0058
+generic_control=False
+official_reproduction=False

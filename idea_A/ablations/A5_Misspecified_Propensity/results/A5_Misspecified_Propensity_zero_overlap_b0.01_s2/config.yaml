@@ -1,0 +1,40 @@
+ablation: A5_Misspecified_Propensity
+experiment_id: A5_Misspecified_Propensity_zero_overlap_b0.01_s2
+mechanism: zero_overlap
+seed: 2
+budget: 0.01
+methods:
+- a5_neyman_ipw_wrong_q
+- neyman_ipw_reference
+one_component_change: true
+config:
+  ablation: A5_Misspecified_Propensity
+  component_changed: propensity_used_in_estimator
+  description: 'Keep Neyman draws from the true q, but feed IPW a misspecified q_hat
+    (mixture of true q with its mean). One component change.
+
+    '
+  n: 2000
+  seeds:
+  - 0
+  - 1
+  - 2
+  budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  mechanisms:
+  - mcar
+  - mar
+  - mnar
+  - policy_dependent
+  - low_overlap
+  - zero_overlap
+  - nonstationary
+  exploration_mix: 0.15
+  q_floor: 1.0e-06
+  ridge_lambda: 0.001
+  allocation: neyman
+  estimator: ipw
+  q_misspecification: mix_uniform

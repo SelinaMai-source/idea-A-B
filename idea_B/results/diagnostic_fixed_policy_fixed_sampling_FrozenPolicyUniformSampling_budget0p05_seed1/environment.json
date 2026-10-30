@@ -1,0 +1,81 @@
+{
+  "benchmark": "Synthetic_Closed_Loop",
+  "idea": "Feedback-Induced Observability Collapse",
+  "name": "fixed_policy_fixed_sampling",
+  "d": 3,
+  "mix": [
+    0.42,
+    0.42,
+    0.16
+  ],
+  "theta_star": [
+    1.2,
+    1.05,
+    1.0
+  ],
+  "noise_std": 0.15,
+  "feature_noise": 0.05,
+  "population_per_round": 40,
+  "weak_skill": 2,
+  "policy_affects_feedback": false,
+  "audits_identify_weak_skill": true,
+  "collapse_type": "fixed_policy_fixed_sampling",
+  "description": "Diagnostic: a frozen parameter vector and a calendar missingness schedule. Information can vanish, but this is not endogenous collapse.",
+  "extra": {
+    "strong_rate": 0.45,
+    "weak_rate0": 0.2,
+    "weak_decay": 0.82,
+    "weak_floor": 0.0
+  },
+  "collapse": {
+    "endogenous_collapse": false,
+    "reason": "fixed policy with fixed sampling is not endogenous collapse"
+  },
+  "method_meta": {
+    "theta_is_fixed": true,
+    "sampling_is_fixed": true,
+    "generic_control": false,
+    "official_reproduction": false
+  },
+  "summary": {
+    "final_true_performance": 0.451639589755262,
+    "final_observed_performance": 0.4770533814920413,
+    "final_gap": 0.025413791736779268,
+    "final_true_mse": 1.2141548763293488,
+    "final_observed_mse": 1.0962014709389145,
+    "final_lambda_min": 1.6945408620430185,
+    "final_condition_number": 5.059351228975193,
+    "late_true_performance": 0.4455691837333853,
+    "late_observed_performance": 0.4438488755590804,
+    "late_lambda_min": 1.7137270275854526,
+    "late_weak_skill_error": 1.0,
+    "mean_true_performance": 0.44285293901811545,
+    "mean_observed_performance": 0.44218237075795747,
+    "cumulative_regret": 39.5861903111622,
+    "mean_feedback_cost": 0.06171875,
+    "realized_audit_fraction": 0.06171875,
+    "expected_audit_fraction": 0.049999999999999996,
+    "runtime_s": 0.0037554590962827206,
+    "final_skill_error": [
+      1.2,
+      1.05,
+      1.0
+    ],
+    "final_skill_observation_rate": [
+      0.3333333333333333,
+      0.6,
+      0.4
+    ],
+    "trace_W_over_T": 18.126127169122174,
+    "lambda_min_conditional": 1.5331114943122817
+  },
+  "theta_final": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "python_executable": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+  "python_version": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "numpy_version": "2.5.4",
+  "torch_installed": false
+}

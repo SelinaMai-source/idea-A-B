@@ -1,0 +1,11 @@
+ablation: B3_Fixed_vs_Adaptive_Feedback
+component_changed: allocation_schedule
+environment: B2
+budget: 0.05
+seeds: [0, 1, 2]
+arms:
+  - name: fixed_equal_skill
+    method: EqualSkillAllocation
+  - name: adaptive_controller
+    method: ObservabilityController
+note: Fixed per-skill allocation versus W_T-adaptive allocation, same budget.

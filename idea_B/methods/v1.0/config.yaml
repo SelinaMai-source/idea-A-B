@@ -1,0 +1,21 @@
+name: observability_controller_v1.0
+idea: Feedback-Induced Observability Collapse
+information_matrix: observed_design_gramian
+formula: W_T = sum_t S_t phi_t phi_t^T
+conditional_formula: W_T_cond = sum_t q_t phi_t phi_t^T
+d: 3
+horizon: 32
+population_per_round: 40
+ridge_lambda: 0.5
+smoothing: 0.65
+mix_uniform: 0.1
+sgd_learning_rate: 0.15
+lazy_period: 5
+information_metric: lambda_min
+seeds: [0, 1, 2]
+budgets: [0.01, 0.05, 0.10, 0.20]
+weak_skill: 2
+notes:
+  - The information matrix is the linear-model observed design Gramian, not an abstract observability Gramian.
+  - Better information is not assumed to imply better reward; both are recorded.
+  - A fixed policy with fixed sampling is never labeled endogenous collapse.

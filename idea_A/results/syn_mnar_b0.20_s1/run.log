@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:50.189759+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=mnar
+seed=1
+n=2000
+budget=0.2
+truth_population_mean=0.2915848554749893
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Natural observation depends on unobserved Y (MNAR). The natural propensity is not identified from (X, S) without extra assumptions. This is identification failure, not an estimator bug.'}
+
+methods:
+  observed_only: estimate=1.4549940681599278 truth=0.2915848554749893 bias=1.1634092126849385 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=0.9035752894529108 truth=0.2915848554749893 bias=0.6119904339779214 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.17167579194458565 truth=0.2915848554749893 bias=-0.11990906353040365 expected_q=0.20000000000000004 realized_q=0.179
+  uniform_snips: estimate=0.19181652731238624 truth=0.2915848554749893 bias=-0.09976832816260306 expected_q=0.20000000000000004 realized_q=0.179
+  uniform_dr: estimate=0.22726995771718997 truth=0.2915848554749893 bias=-0.06431489775779933 expected_q=0.20000000000000004 realized_q=0.179
+  fixed_stratified_ipw: estimate=0.22040441898804733 truth=0.2915848554749893 bias=-0.07118043648694197 expected_q=0.2 realized_q=0.1925
+  neyman_ipw: estimate=0.34177237423323437 truth=0.2915848554749893 bias=0.050187518758245064 expected_q=0.2 realized_q=0.1825
+  neyman_snips: estimate=0.37644220090399266 truth=0.2915848554749893 bias=0.08485734542900336 expected_q=0.2 realized_q=0.1825
+  neyman_dr: estimate=0.30677499304486694 truth=0.2915848554749893 bias=0.015190137569877638 expected_q=0.2 realized_q=0.1825
+  uncertainty_ipw: estimate=0.3458155853274777 truth=0.2915848554749893 bias=0.05423072985248839 expected_q=0.2 realized_q=0.2025
+  full_feedback_oracle: estimate=0.2915848554749893 truth=0.2915848554749893 bias=0.0 expected_q=1.0 realized_q=1.0

@@ -1,0 +1,62 @@
+{
+  "machine": {
+    "os": "macOS 14.5",
+    "arch": "arm64",
+    "model": "MacBook Air M3 16GB",
+    "python_main": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+    "python_isolated": "/Users/grantwright/Research/idea-A-B/.isolated_baselines_venv/bin/python",
+    "torch_in_main_venv": false,
+    "disk_free_before_clones": "12Gi",
+    "disk_free_after_clones": "12Gi",
+    "disk_free_after_experiments": "9.7Gi"
+  },
+  "baselines": [
+    {
+      "paper": "Performative Prediction with Bandit Feedback: Learning through Reparameterization",
+      "venue": "ICML 2024",
+      "official_source": "https://github.com/UCSC-REAL/PP-bandit-feedback",
+      "official_code": true,
+      "upstream_commit": "d5daeffba8683dc9d8d0f1bedd3fa2c5f168c0c5",
+      "local_status": "complete",
+      "local_results_path": "idea_B/baselines/Performative_Bandit_ICML2024/official_reproduction/",
+      "blocker": null,
+      "comparability": "Official numerical experiment is a 1-D reparameterized zeroth-order performative-risk demo (Appendix H / Figures 4-6). Comparable only as a performative-prediction algorithmic primitive, not as Idea B observability-controller numbers. License: MIT (REAL@UCSC).",
+      "what_ran": {
+        "command": "/Users/grantwright/Research/idea-A-B/.venv/bin/python official_reproduction/run_official_numerical.py",
+        "source": "bandit-icml24.ipynb cells converted; algorithm unchanged",
+        "numpy_seed": 0,
+        "elapsed_sec": 0.814453125,
+        "single_run_final_PR_phi": -0.28164988861568363,
+        "single_run_final_PR_theta": -0.2962457875065718,
+        "multi_run_PR_phi_final_mean": -0.2883591540722531,
+        "multi_run_PR_phi_final_std": 0.0071395956688855965,
+        "multi_run_PR_theta_final_mean": -0.291834361799254,
+        "multi_run_PR_theta_final_std": 0.007228858237631779
+      }
+    },
+    {
+      "paper": "Stochastic Optimization Schemes for Performative Prediction with Nonconvex Loss",
+      "venue": "NeurIPS 2024",
+      "official_source": "https://github.com/Qiang-CU/nips2024-ncvxpp",
+      "official_code": true,
+      "upstream_commit": "ccbeeddfbf9237aa06dca3a1579529faabd8fe99",
+      "local_status": "partial",
+      "local_results_path": "idea_B/baselines/Performative_SGD_NeurIPS2024/official_reproduction/",
+      "blocker": "Official full run `cd synthetic-iter && mpiexec -np 10 python main.py` is BLOCKED: mpi4py missing, mpicc/mpiexec not on PATH. A single-process subset of the original synthetic-iter SGD-GD loop was executed with an mpi4py stub (rank=0, size=1). That is still the original per-process algorithm (performative shift + SGD), not a 10-replica paper reproduction. Device was CPU (no CUDA). dataset.py balances Y==1 vs Y==0 but data.csv uses {+1,-1}, so only class +1 survived — official code/data interaction, not a rewrite.",
+      "comparability": "NOT a full paper reproduction. Synthetic-iter SGD-GD is a performative linear-model experiment; not the same target as Idea B observability Gramian / closed-loop collapse.",
+      "what_ran": {
+        "command": "PYTHONPATH=official_reproduction/mpi4py_stub python synthetic-iter/main.py",
+        "eps_list": [0, 0.1, 10, 100],
+        "batch": 5,
+        "log_maxiter": 5,
+        "wall_sec": 540.486,
+        "npy": {
+          "eps0-batch5-res0.npy": {"iter_last": 99426, "loss_last": 0.3281349241733551, "train_acc_last": 0.9004424778761062, "test_acc_last": 1.0, "grd_last": 1.559475437673541e-09},
+          "eps0.1-batch5-res0.npy": {"iter_last": 99426, "loss_last": 0.3458000421524048, "train_acc_last": 0.9004424778761062, "test_acc_last": 1.0, "grd_last": 8.505186777085783e-09},
+          "eps10-batch5-res0.npy": {"iter_last": 99426, "loss_last": 0.3553709387779236, "train_acc_last": 0.9004424778761062, "test_acc_last": 1.0, "grd_last": 2.0597110506059835e-06},
+          "eps100-batch5-res0.npy": {"iter_last": 99426, "loss_last": 0.9450080394744873, "train_acc_last": 0.09955752212389381, "test_acc_last": 0.0, "grd_last": 1.3713279123361843e-10}
+        }
+      }
+    }
+  ]
+}

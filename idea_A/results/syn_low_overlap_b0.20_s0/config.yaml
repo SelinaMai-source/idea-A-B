@@ -1,0 +1,81 @@
+experiment_id: syn_low_overlap_b0.20_s0
+idea: A
+name: Adaptive Identification under Endogenous Feedback Censoring
+version: '1.0'
+mechanism: low_overlap
+seed: 0
+budget: 0.2
+n: 2000
+methods:
+- observed_only
+- naive_ips
+- uniform_ipw
+- uniform_snips
+- uniform_dr
+- fixed_stratified_ipw
+- neyman_ipw
+- neyman_snips
+- neyman_dr
+- uncertainty_ipw
+- full_feedback_oracle
+novelty_claim: false
+allocation_note: 'v1.0 uses classical stratified Neyman allocation with an exploration
+  floor, then IPW / Hájek / AIPW with the known audit propensity q. This is textbook
+  two-phase sampling, not a novel algorithm.
+
+  '
+paired_world: true
+v1_config:
+  name: Adaptive Identification under Endogenous Feedback Censoring
+  version: '1.0'
+  allocation: stratified_neyman_with_exploration_floor
+  novelty_claim: false
+  novelty_note: 'v1.0 uses classical stratified Neyman allocation with an exploration
+    floor, then IPW / Hájek / AIPW with the known audit propensity q. This is textbook
+    two-phase sampling, not a novel algorithm.
+
+    '
+  estimators:
+  - ipw
+  - hajek_snips
+  - aipw
+  propensity: known_audit_q
+  n: 2000
+  n_strata: 8
+  seeds:
+  - 0
+  - 1
+  - 2
+  budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  mechanisms:
+  - mcar
+  - mar
+  - mnar
+  - policy_dependent
+  - low_overlap
+  - zero_overlap
+  - nonstationary
+  exploration_mix: 0.15
+  q_floor: 1.0e-06
+  preference_threshold: 0.0
+  target_distribution: uniform_over_strata
+  outcome_model: ridge_linear_on_audited_units
+  ridge_lambda: 0.001
+  n_batches_adaptive_budget: 4
+  estimands:
+    population_mean_reward: E[Y] under the factual behavior policy, finite population.
+    preference_rate: P(Y > 0) under the factual behavior policy.
+    context_conditioned_reward: E[Y | stratum = h] for each discrete stratum.
+    policy_value_target_distribution: E_{x ~ p*}[Y] with p* uniform over strata.
+  assumptions:
+  - Independent audits A_t are drawn from known q_t and do not depend on hidden Y
+    given the logged history.
+  - Labels are available iff O_t = S_t OR A_t. The algorithm must not read hidden
+    Y.
+  - Natural-channel MNAR or zero overlap is identification failure.
+  - Finite-population truths are computed from the simulated Y of the same world used
+    for every paired method.

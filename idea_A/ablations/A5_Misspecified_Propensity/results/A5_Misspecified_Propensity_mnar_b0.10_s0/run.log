@@ -1,0 +1,4 @@
+utc=2026-10-30T15:13:00.682964+00:00
+ablation=A5_Misspecified_Propensity
+mechanism=mnar seed=0 budget=0.1
+methods=['a5_neyman_ipw_wrong_q', 'neyman_ipw_reference']

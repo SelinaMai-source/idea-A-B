@@ -1,0 +1,81 @@
+{
+  "benchmark": "Synthetic_Closed_Loop",
+  "idea": "Feedback-Induced Observability Collapse",
+  "name": "B1",
+  "d": 3,
+  "mix": [
+    0.42,
+    0.42,
+    0.16
+  ],
+  "theta_star": [
+    1.2,
+    1.05,
+    1.0
+  ],
+  "noise_std": 0.15,
+  "feature_noise": 0.05,
+  "population_per_round": 40,
+  "weak_skill": 2,
+  "policy_affects_feedback": false,
+  "audits_identify_weak_skill": true,
+  "collapse_type": "exogenous_missing",
+  "description": "Exogenous missingness diagnostic: weak-skill observation rate decays on a calendar schedule that does not depend on the deployed parameters.",
+  "extra": {
+    "strong_rate": 0.45,
+    "weak_rate0": 0.2,
+    "weak_decay": 0.82,
+    "weak_floor": 0.0
+  },
+  "collapse": {
+    "endogenous_collapse": false,
+    "reason": "feedback distribution does not depend on the policy"
+  },
+  "method_meta": {
+    "theta_is_fixed": false,
+    "sampling_is_fixed": false,
+    "generic_control": true,
+    "official_reproduction": false
+  },
+  "summary": {
+    "final_true_performance": 0.985086890957612,
+    "final_observed_performance": 0.9838325696557095,
+    "final_gap": -0.0012543213019025057,
+    "final_true_mse": 0.015138876762323667,
+    "final_observed_mse": 0.016433111530296553,
+    "final_lambda_min": 1.4712556859317665,
+    "final_condition_number": 6.638009534704975,
+    "late_true_performance": 0.9783148534829198,
+    "late_observed_performance": 0.9790705597337734,
+    "late_lambda_min": 1.4903357924207965,
+    "late_weak_skill_error": 0.017678989441977877,
+    "mean_true_performance": 0.9748480619696557,
+    "mean_observed_performance": 0.9777137360124493,
+    "cumulative_regret": 0.18942526829337486,
+    "mean_feedback_cost": 0.1921875,
+    "realized_audit_fraction": 0.1921875,
+    "expected_audit_fraction": 0.19999999999999998,
+    "runtime_s": 0.004026750102639198,
+    "final_skill_error": [
+      0.0010129652003261214,
+      0.0004895694444146947,
+      0.019017917326438205
+    ],
+    "final_skill_observation_rate": [
+      0.5454545454545454,
+      0.8,
+      0.0
+    ],
+    "trace_W_over_T": 19.89302935921533,
+    "lambda_min_conditional": 1.4922623342966412
+  },
+  "theta_final": [
+    1.201012965200326,
+    1.0495104305555853,
+    0.9809820826735618
+  ],
+  "python_executable": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+  "python_version": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "numpy_version": "2.5.4",
+  "torch_installed": false
+}

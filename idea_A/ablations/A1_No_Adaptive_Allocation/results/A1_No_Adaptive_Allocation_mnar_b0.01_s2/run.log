@@ -1,0 +1,4 @@
+utc=2026-10-30T15:12:53.834215+00:00
+ablation=A1_No_Adaptive_Allocation
+mechanism=mnar seed=2 budget=0.01
+methods=['a1_uniform_ipw', 'neyman_ipw_reference']

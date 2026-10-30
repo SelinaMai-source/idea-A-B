@@ -1,0 +1,14 @@
+utc=2026-10-30T16:14:27.956155+00:00
+idea=A
+protocol=adapted_to_common_protocol
+volume_note=Adapted max-variance / posterior-volume allocation on strata, then audit IPW with known q. Not AMPLe official; AMPLe volume needs RM-scored preference pairs and an MH posterior on the simplex.
+mechanism=mnar
+seed=1
+n=2000
+budget=0.05
+truth_population_mean=0.2915848554749893
+
+methods:
+  uniform_ipw: estimate=0.14995626098227152 truth=0.2915848554749893 bias=-0.14162859449271778 expected_q=0.05000000000000001 realized_q=0.052
+  neyman_ipw: estimate=0.364671864354974 truth=0.2915848554749893 bias=0.0730870088799847 expected_q=0.05 realized_q=0.0505
+  volume_adapted_ipw: estimate=0.1766856707625974 truth=0.2915848554749893 bias=-0.11489918471239191 expected_q=0.05 realized_q=0.0515

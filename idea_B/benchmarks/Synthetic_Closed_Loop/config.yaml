@@ -1,0 +1,30 @@
+idea: Feedback-Induced Observability Collapse
+d: 3
+horizon: 32
+population_per_round: 40
+noise_std: 0.15
+feature_noise: 0.05
+mix: [0.42, 0.42, 0.16]
+theta_star: [1.2, 1.05, 1.0]
+weak_skill: 2
+seeds: [0, 1, 2]
+budgets: [0.01, 0.05, 0.10, 0.20]
+environments:
+  B1:
+    class: B1ExogenousMissing
+    policy_affects_feedback: false
+    collapse_type: exogenous_missing
+  B2:
+    class: B2PolicyInducedCollapse
+    policy_affects_feedback: true
+    collapse_type: endogenous_closed_loop
+    serve_fraction: 0.35
+  B3_recoverable:
+    class: B3Recoverable
+    policy_affects_feedback: true
+    collapse_type: recoverable
+  B3_unrecoverable:
+    class: B3Unrecoverable
+    policy_affects_feedback: true
+    collapse_type: unrecoverable
+    audits_identify_weak_skill: false

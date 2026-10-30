@@ -1,0 +1,84 @@
+{
+  "recorded_at_utc": "2026-10-30T15:13:00.209932+00:00",
+  "os": {
+    "system": "Darwin",
+    "release": "23.5.0",
+    "version": "Darwin Kernel Version 23.5.0: Wed May  1 20:14:59 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8122",
+    "platform": "macOS-14.5-arm64-arm-64bit",
+    "mac_ver": {
+      "release": "14.5",
+      "versioninfo": [
+        "",
+        "",
+        ""
+      ],
+      "machine": "arm64"
+    },
+    "machine": "arm64",
+    "processor": "arm",
+    "uname": {
+      "system": "Darwin",
+      "node": "GrantdeMacBook-Air.local",
+      "release": "23.5.0",
+      "version": "Darwin Kernel Version 23.5.0: Wed May  1 20:14:59 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8122",
+      "machine": "arm64"
+    }
+  },
+  "python": {
+    "version": "3.12.4",
+    "implementation": "CPython",
+    "executable": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+    "version_string": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "ram_bytes": 17179869184,
+  "ram_gib": 16.0,
+  "disk": {
+    "path": "/Users/grantwright/Research/idea-A-B",
+    "total_bytes": 494384795648,
+    "used_bytes": 481283125248,
+    "free_bytes": 13101670400,
+    "free_gib": 12.201881408691406
+  },
+  "torch": {
+    "installed": false,
+    "version": null,
+    "mps_built": null,
+    "mps_available": null,
+    "mps_functional_check": "not_run",
+    "cuda_available": null,
+    "import_error": "ModuleNotFoundError: No module named 'torch'",
+    "pip_log_tail": "Collecting torch\n  Downloading torch-2.15.0-cp312-cp312-macosx_14_0_arm64.whl.metadata (36 kB)\nCollecting filelock (from torch)\n  Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)\nCollecting typing-extensions>=4.13.0 (from torch)\n  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)\nCollecting setuptools>=77.0.3 (from torch)\n  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)\nCollecting sympy>=1.13.3 (from torch)\n  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)\nCollecting networkx>=2.5.1 (from torch)\n  Using cached networkx-3.7-py3-none-any.whl.metadata (6.7 kB)\nCollecting jinja2 (from torch)\n  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)\nCollecting fsspec>=0.8.5 (from torch)\n  Using cached fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)\nCollecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)\n  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)\nCollecting MarkupSafe>=2.0 (from jinja2->torch)\n  Downloading markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.7 kB)\nDownloading torch-2.15.0-cp312-cp312-macosx_14_0_arm64.whl (138.6 MB)\n\nINSTALL_STOPPED: pip install torch was terminated with exit 143 during download of torch-2.15.0-cp312-cp312-macosx_14_0_arm64.whl (138.6 MB). The transfer was about 64 KB/s and still incomplete, so the install was capped. Torch is not installed. MPS was not probed. The NumPy stack remains installed."
+  },
+  "git": {
+    "version": "git version 2.39.3 (Apple Git-146)",
+    "version_error": null,
+    "branch": "v1",
+    "branch_error": null,
+    "commit": null,
+    "commit_error": "fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.0",
+    "pyyaml": "6.0.3",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0",
+    "torch": null,
+    "pip": "26.2.2",
+    "setuptools": null,
+    "transformers": null,
+    "datasets": null,
+    "vllm": null,
+    "bitsandbytes": null,
+    "flash-attn": null
+  },
+  "experiments_run": true,
+  "notes": [
+    "Scaffolding phase only. No Idea A or Idea B experiment has been executed.",
+    "MPS availability is torch.backends.mps.is_available(). No MPS tensor was allocated.",
+    "transformers and datasets are recorded if present; this phase does not install them."
+  ],
+  "ablation": "A5_Misspecified_Propensity"
+}

@@ -1,0 +1,16 @@
+# NumPy stack used by the shared estimators. Install with scripts/setup_mac.sh.
+numpy
+scipy
+scikit-learn
+pandas
+pyyaml
+matplotlib
+pytest
+
+# Default PyPI wheel for this Mac (arm64, MPS when the build provides it).
+# Do not point this file at a CUDA index.
+# vLLM, bitsandbytes, flash-attn, and NCCL are intentionally omitted.
+torch
+
+# transformers and datasets are intentionally omitted until a later phase
+# checks remaining disk space.

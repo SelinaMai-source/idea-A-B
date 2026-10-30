@@ -1,0 +1,9 @@
+experiment_id=synthetic_B1_GreedyDeployment_budget0p05_seed0
+environment=B1 method=GreedyDeployment seed=0 budget=0.05
+policy_affects_feedback=False
+collapse={'endogenous_collapse': False, 'reason': 'feedback distribution does not depend on the policy'}
+final_true_performance=0.9847409902467951
+final_lambda_min=0.2866297346741409
+runtime_s=0.0044
+generic_control=True
+official_reproduction=False

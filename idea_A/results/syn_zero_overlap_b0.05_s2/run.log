@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:51.984307+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=zero_overlap
+seed=2
+n=2000
+budget=0.05
+truth_population_mean=0.34369506765738533
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Zero overlap: P(S=1|stratum)=0 for some strata [6, 7]. Those stratum means are not identified from the natural channel.', 'zero_overlap_strata': [6, 7]}
+
+methods:
+  observed_only: estimate=-0.03234703855142541 truth=0.34369506765738533 bias=-0.37604210620881073 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=-0.026994373838749065 truth=0.34369506765738533 bias=-0.3706894414961344 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.2108270161140597 truth=0.34369506765738533 bias=-0.13286805154332562 expected_q=0.05000000000000001 realized_q=0.046
+  uniform_snips: estimate=0.22915980012397796 truth=0.34369506765738533 bias=-0.11453526753340737 expected_q=0.05000000000000001 realized_q=0.046
+  uniform_dr: estimate=0.36269367587551277 truth=0.34369506765738533 bias=0.018998608218127433 expected_q=0.05000000000000001 realized_q=0.046
+  fixed_stratified_ipw: estimate=0.28225050868494334 truth=0.34369506765738533 bias=-0.061444558972442 expected_q=0.05 realized_q=0.046
+  neyman_ipw: estimate=0.05396767560940306 truth=0.34369506765738533 bias=-0.28972739204798226 expected_q=0.05 realized_q=0.0495
+  neyman_snips: estimate=0.05524421260371519 truth=0.34369506765738533 bias=-0.28845085505367013 expected_q=0.05 realized_q=0.0495
+  neyman_dr: estimate=0.17722262691493632 truth=0.34369506765738533 bias=-0.16647244074244902 expected_q=0.05 realized_q=0.0495
+  uncertainty_ipw: estimate=0.4717950376555583 truth=0.34369506765738533 bias=0.12809996999817297 expected_q=0.05 realized_q=0.0505
+  full_feedback_oracle: estimate=0.34369506765738533 truth=0.34369506765738533 bias=0.0 expected_q=1.0 realized_q=1.0

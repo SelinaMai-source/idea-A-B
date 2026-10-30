@@ -1,0 +1,23 @@
+utc=2026-10-30T15:12:52.037437+00:00
+idea=Adaptive Identification under Endogenous Feedback Censoring
+version=1.0
+allocation_note=Classical stratified Neyman + exploration floor. Not a novel algorithm.
+mechanism=zero_overlap
+seed=0
+n=2000
+budget=0.1
+truth_population_mean=0.357690705047082
+natural_identification={'status': 'identification_failure', 'channel': 'natural', 'reason': 'Zero overlap: P(S=1|stratum)=0 for some strata [6, 7]. Those stratum means are not identified from the natural channel.', 'zero_overlap_strata': [6, 7]}
+
+methods:
+  observed_only: estimate=-0.01850492581222782 truth=0.357690705047082 bias=-0.37619563085930985 expected_q=0.0 realized_q=0.0
+  naive_ips: estimate=-0.015376712163017843 truth=0.357690705047082 bias=-0.37306741721009984 expected_q=0.0 realized_q=0.0
+  uniform_ipw: estimate=0.39494928152791636 truth=0.357690705047082 bias=0.03725857648083436 expected_q=0.10000000000000002 realized_q=0.092
+  uniform_snips: estimate=0.42929269731295255 truth=0.357690705047082 bias=0.07160199226587055 expected_q=0.10000000000000002 realized_q=0.092
+  uniform_dr: estimate=0.41750629459664856 truth=0.357690705047082 bias=0.05981558954956656 expected_q=0.10000000000000002 realized_q=0.092
+  fixed_stratified_ipw: estimate=0.3273227069467219 truth=0.357690705047082 bias=-0.030367998100360116 expected_q=0.1 realized_q=0.1095
+  neyman_ipw: estimate=0.08596833413957658 truth=0.357690705047082 bias=-0.2717223709075054 expected_q=0.10000000000000003 realized_q=0.091
+  neyman_snips: estimate=0.09203790186991337 truth=0.357690705047082 bias=-0.26565280317716866 expected_q=0.10000000000000003 realized_q=0.091
+  neyman_dr: estimate=0.2839419581458455 truth=0.357690705047082 bias=-0.0737487469012365 expected_q=0.10000000000000003 realized_q=0.091
+  uncertainty_ipw: estimate=0.4249930672151693 truth=0.357690705047082 bias=0.06730236216808727 expected_q=0.1 realized_q=0.103
+  full_feedback_oracle: estimate=0.357690705047082 truth=0.357690705047082 bias=0.0 expected_q=1.0 realized_q=1.0

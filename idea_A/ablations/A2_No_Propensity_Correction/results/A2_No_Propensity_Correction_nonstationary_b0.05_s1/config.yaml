@@ -1,0 +1,39 @@
+ablation: A2_No_Propensity_Correction
+experiment_id: A2_No_Propensity_Correction_nonstationary_b0.05_s1
+mechanism: nonstationary
+seed: 1
+budget: 0.05
+methods:
+- a2_neyman_unweighted
+- neyman_ipw_reference
+one_component_change: true
+config:
+  ablation: A2_No_Propensity_Correction
+  component_changed: estimator
+  description: 'Keep Neyman allocation with known q, but estimate with the unweighted
+    mean of audited outcomes instead of IPW/Hájek/AIPW. One component change.
+
+    '
+  n: 2000
+  seeds:
+  - 0
+  - 1
+  - 2
+  budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  mechanisms:
+  - mcar
+  - mar
+  - mnar
+  - policy_dependent
+  - low_overlap
+  - zero_overlap
+  - nonstationary
+  exploration_mix: 0.15
+  q_floor: 1.0e-06
+  ridge_lambda: 0.001
+  allocation: neyman
+  estimator: observed_only

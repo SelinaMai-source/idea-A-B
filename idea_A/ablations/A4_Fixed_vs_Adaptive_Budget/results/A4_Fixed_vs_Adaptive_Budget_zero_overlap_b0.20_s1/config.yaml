@@ -1,0 +1,41 @@
+ablation: A4_Fixed_vs_Adaptive_Budget
+experiment_id: A4_Fixed_vs_Adaptive_Budget_zero_overlap_b0.20_s1
+mechanism: zero_overlap
+seed: 1
+budget: 0.2
+methods:
+- a4_neyman_oneshot
+- a4_neyman_batched
+one_component_change: true
+config:
+  ablation: A4_Fixed_vs_Adaptive_Budget
+  component_changed: budget_schedule
+  description: 'Same Neyman rule and IPW estimator. Compare one-shot allocation of
+    the whole budget from natural observations versus sequential batches that spend
+    the remaining budget after updating stratum SDs. One component change.
+
+    '
+  n: 2000
+  seeds:
+  - 0
+  - 1
+  - 2
+  budgets:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.2
+  mechanisms:
+  - mcar
+  - mar
+  - mnar
+  - policy_dependent
+  - low_overlap
+  - zero_overlap
+  - nonstationary
+  exploration_mix: 0.15
+  q_floor: 1.0e-06
+  ridge_lambda: 0.001
+  n_batches_adaptive_budget: 4
+  allocation: neyman
+  estimator: ipw

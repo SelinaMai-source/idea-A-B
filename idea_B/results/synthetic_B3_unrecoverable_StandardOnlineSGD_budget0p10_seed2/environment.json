@@ -1,0 +1,88 @@
+{
+  "benchmark": "Synthetic_Closed_Loop",
+  "idea": "Feedback-Induced Observability Collapse",
+  "name": "B3_unrecoverable",
+  "d": 3,
+  "mix": [
+    0.42,
+    0.42,
+    0.16
+  ],
+  "theta_star": [
+    1.2,
+    1.05,
+    1.0
+  ],
+  "noise_std": 0.15,
+  "feature_noise": 0.05,
+  "population_per_round": 40,
+  "weak_skill": 2,
+  "policy_affects_feedback": true,
+  "audits_identify_weak_skill": false,
+  "collapse_type": "unrecoverable",
+  "description": "Unrecoverable information loss. Weak-skill queries are projected off the missing coordinate, so neither natural feedback nor audits can identify that skill parameter.",
+  "extra": {
+    "serve_fraction": 0.35,
+    "logit_temperature": 0.0
+  },
+  "collapse": {
+    "endogenous_collapse": false,
+    "reason": "policy-dependent loop did not jointly show stable observed performance, shrinking lambda_min, and rising weak-skill error",
+    "early_observed_performance": 0.9487144176342927,
+    "late_observed_performance": 0.9756661244127725,
+    "early_lambda_min": 0.03092963992022809,
+    "late_lambda_min": 0.04082336169622661,
+    "early_weak_skill_error": 0.9745986517707844,
+    "late_weak_skill_error": 0.9418109427008194,
+    "observed_stable": true,
+    "lambda_min_worsened": false,
+    "weak_skill_error_worsened": false
+  },
+  "method_meta": {
+    "theta_is_fixed": false,
+    "sampling_is_fixed": false,
+    "generic_control": true,
+    "official_reproduction": false
+  },
+  "summary": {
+    "final_true_performance": 0.820401068816389,
+    "final_observed_performance": 0.9722312323744386,
+    "final_gap": 0.15183016355804968,
+    "final_true_mse": 0.218916013167465,
+    "final_observed_mse": 0.02856189628648626,
+    "final_lambda_min": 0.04165847342798191,
+    "final_condition_number": 329.06221741957916,
+    "late_true_performance": 0.8312442181489051,
+    "late_observed_performance": 0.9756661244127725,
+    "late_lambda_min": 0.04082336169622661,
+    "late_weak_skill_error": 0.9418109427008194,
+    "mean_true_performance": 0.8306181809652915,
+    "mean_observed_performance": 0.9687012321190691,
+    "cumulative_regret": 5.91945793377721,
+    "mean_feedback_cost": 0.0953125,
+    "realized_audit_fraction": 0.0953125,
+    "expected_audit_fraction": 0.09999999999999999,
+    "runtime_s": 0.004789958242326975,
+    "final_skill_error": [
+      0.024748537904847545,
+      0.03959713092314754,
+      0.9372406810898881
+    ],
+    "final_skill_observation_rate": [
+      0.7222222222222222,
+      0.14285714285714285,
+      0.0
+    ],
+    "trace_W_over_T": 16.637247103753676,
+    "lambda_min_conditional": 0.04145710463355873
+  },
+  "theta_final": [
+    1.1752514620951524,
+    1.0104028690768525,
+    0.06275931891011183
+  ],
+  "python_executable": "/Users/grantwright/Research/idea-A-B/.venv/bin/python",
+  "python_version": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "numpy_version": "2.5.4",
+  "torch_installed": false
+}

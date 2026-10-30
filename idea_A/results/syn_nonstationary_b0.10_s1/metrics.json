@@ -1,0 +1,1730 @@
+{
+  "experiment_id": "syn_nonstationary_b0.10_s1",
+  "mechanism": "nonstationary",
+  "seed": 1,
+  "budget": 0.1,
+  "truths": {
+    "population_mean_reward": 0.2915848554749893,
+    "preference_rate": 0.5125,
+    "policy_value_target_distribution": 0.610062586170745,
+    "context_conditioned_reward": [
+      -1.3456878984690095,
+      -0.7091868303382638,
+      -0.09656277650388673,
+      0.392927673225282,
+      0.9582801924081077,
+      1.3857501919876465,
+      1.9244241216551008,
+      2.3705560154009833
+    ]
+  },
+  "methods": [
+    {
+      "method": "observed_only",
+      "allocation": "none",
+      "estimator": "observed_only",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": false,
+      "notes": "Natural observations only.",
+      "expected_audit_fraction": 0.0,
+      "realized_audit_fraction": 0.0,
+      "min_q": 0.0,
+      "max_q": 0.0,
+      "min_q_for_estimator": 0.0,
+      "n_audited": 0,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identification_failure",
+          "channel": "audit",
+          "reason": "Audit propensity is zero on at least one unit. Those units are not identified by the audit channel. If they are also missing from the natural channel, this is identification failure.",
+          "min_q": 0.0
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.29719759924277267,
+          "truth": 0.2915848554749893,
+          "bias": 0.005612743767783368,
+          "mae": 0.005612743767783368,
+          "rmse": 0.005612743767783368
+        },
+        "preference_rate": {
+          "estimate": 0.5365853658536586,
+          "truth": 0.5125,
+          "bias": 0.024085365853658613,
+          "mae": 0.024085365853658613,
+          "rmse": 0.024085365853658613
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.5673381017453338,
+          "truth": 0.610062586170745,
+          "bias": -0.04272448442541121,
+          "mae": 0.04272448442541121,
+          "rmse": 0.04272448442541121
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.3018793449651072,
+            -0.6948206943887547,
+            -0.04679284136205448,
+            0.4182278180763824,
+            1.0464651705994998,
+            1.5496274468094806,
+            1.5693681184764687,
+            1.7803159258080206
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.16632538690389564,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.29719759924277267,
+        "truth": 0.2915848554749893,
+        "bias": 0.005612743767783368,
+        "mae": 0.005612743767783368,
+        "rmse": 0.005612743767783368
+      },
+      "preference_rate": {
+        "estimate": 0.5365853658536586,
+        "truth": 0.5125,
+        "bias": 0.024085365853658613,
+        "mae": 0.024085365853658613,
+        "rmse": 0.024085365853658613
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.5673381017453338,
+        "truth": 0.610062586170745,
+        "bias": -0.04272448442541121,
+        "mae": 0.04272448442541121,
+        "rmse": 0.04272448442541121
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.3018793449651072,
+          -0.6948206943887547,
+          -0.04679284136205448,
+          0.4182278180763824,
+          1.0464651705994998,
+          1.5496274468094806,
+          1.5693681184764687,
+          1.7803159258080206
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.16632538690389564,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "naive_ips",
+      "allocation": "none",
+      "estimator": "naive_ips",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": false,
+      "notes": "Natural IPS pretending P(S=1|stratum) is known.",
+      "expected_audit_fraction": 0.0,
+      "realized_audit_fraction": 0.0,
+      "min_q": 0.0,
+      "max_q": 0.0,
+      "min_q_for_estimator": 0.0,
+      "n_audited": 0,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identification_failure",
+          "channel": "audit",
+          "reason": "Audit propensity is zero on at least one unit. Those units are not identified by the audit channel. If they are also missing from the natural channel, this is identification failure.",
+          "min_q": 0.0
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.3024717725205909,
+          "truth": 0.2915848554749893,
+          "bias": 0.010886917045601574,
+          "mae": 0.010886917045601574,
+          "rmse": 0.010886917045601574
+        },
+        "preference_rate": {
+          "estimate": 0.550982734803363,
+          "truth": 0.5125,
+          "bias": 0.03848273480336306,
+          "mae": 0.03848273480336306,
+          "rmse": 0.03848273480336306
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.5785421261158865,
+          "truth": 0.610062586170745,
+          "bias": -0.031520460054858535,
+          "mae": 0.031520460054858535,
+          "rmse": 0.031520460054858535
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.3530836037167382,
+            -0.6131244012227263,
+            -0.047876923189852025,
+            0.46575640711455,
+            1.1673761224846773,
+            1.581243961251872,
+            1.703251706483916,
+            1.7247937397213942
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.18706213896976723,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.3024717725205909,
+        "truth": 0.2915848554749893,
+        "bias": 0.010886917045601574,
+        "mae": 0.010886917045601574,
+        "rmse": 0.010886917045601574
+      },
+      "preference_rate": {
+        "estimate": 0.550982734803363,
+        "truth": 0.5125,
+        "bias": 0.03848273480336306,
+        "mae": 0.03848273480336306,
+        "rmse": 0.03848273480336306
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.5785421261158865,
+        "truth": 0.610062586170745,
+        "bias": -0.031520460054858535,
+        "mae": 0.031520460054858535,
+        "rmse": 0.031520460054858535
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.3530836037167382,
+          -0.6131244012227263,
+          -0.047876923189852025,
+          0.46575640711455,
+          1.1673761224846773,
+          1.581243961251872,
+          1.703251706483916,
+          1.7247937397213942
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.18706213896976723,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "uniform_ipw",
+      "allocation": "uniform",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Uniform random audit + audit IPW.",
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1065,
+      "min_q": 0.1,
+      "max_q": 0.1,
+      "min_q_for_estimator": 0.1,
+      "n_audited": 213,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.1
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.06903231143984705,
+          "truth": 0.2915848554749893,
+          "bias": -0.22255254403514224,
+          "mae": 0.22255254403514224,
+          "rmse": 0.22255254403514224
+        },
+        "preference_rate": {
+          "estimate": 0.455,
+          "truth": 0.5125,
+          "bias": -0.05749999999999994,
+          "mae": 0.05749999999999994,
+          "rmse": 0.05749999999999994
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.36153633298109944,
+          "truth": 0.610062586170745,
+          "bias": -0.2485262531896456,
+          "mae": 0.2485262531896456,
+          "rmse": 0.2485262531896456
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.6493372178892522,
+            -0.972306977826754,
+            -0.16879516097543418,
+            -0.06382746837279615,
+            0.5868402170760324,
+            1.9960485966102746,
+            2.35712546713821,
+            0.8065432080885154
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.5092761907160799,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.06903231143984705,
+        "truth": 0.2915848554749893,
+        "bias": -0.22255254403514224,
+        "mae": 0.22255254403514224,
+        "rmse": 0.22255254403514224
+      },
+      "preference_rate": {
+        "estimate": 0.455,
+        "truth": 0.5125,
+        "bias": -0.05749999999999994,
+        "mae": 0.05749999999999994,
+        "rmse": 0.05749999999999994
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.36153633298109944,
+        "truth": 0.610062586170745,
+        "bias": -0.2485262531896456,
+        "mae": 0.2485262531896456,
+        "rmse": 0.2485262531896456
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.6493372178892522,
+          -0.972306977826754,
+          -0.16879516097543418,
+          -0.06382746837279615,
+          0.5868402170760324,
+          1.9960485966102746,
+          2.35712546713821,
+          0.8065432080885154
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.5092761907160799,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "uniform_snips",
+      "allocation": "uniform",
+      "estimator": "snips",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Uniform random audit + Hájek/SNIPS.",
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1065,
+      "min_q": 0.1,
+      "max_q": 0.1,
+      "min_q_for_estimator": 0.1,
+      "n_audited": 213,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.1
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.06481907177450426,
+          "truth": 0.2915848554749893,
+          "bias": -0.22676578370048506,
+          "mae": 0.22676578370048506,
+          "rmse": 0.22676578370048506
+        },
+        "preference_rate": {
+          "estimate": 0.4272300469483568,
+          "truth": 0.5125,
+          "bias": -0.08526995305164314,
+          "mae": 0.08526995305164314,
+          "rmse": 0.08526995305164314
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.3394707351935206,
+          "truth": 0.610062586170745,
+          "bias": -0.27059185097722444,
+          "mae": 0.27059185097722444,
+          "rmse": 0.27059185097722444
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.2969788122492754,
+            -0.7639554825781639,
+            -0.18004817170712978,
+            -0.07047616299496239,
+            0.5375456388416456,
+            1.8283805144950116,
+            2.2462019157434705,
+            1.3532002713485092
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.3566081730122241,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.06481907177450426,
+        "truth": 0.2915848554749893,
+        "bias": -0.22676578370048506,
+        "mae": 0.22676578370048506,
+        "rmse": 0.22676578370048506
+      },
+      "preference_rate": {
+        "estimate": 0.4272300469483568,
+        "truth": 0.5125,
+        "bias": -0.08526995305164314,
+        "mae": 0.08526995305164314,
+        "rmse": 0.08526995305164314
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.3394707351935206,
+        "truth": 0.610062586170745,
+        "bias": -0.27059185097722444,
+        "mae": 0.27059185097722444,
+        "rmse": 0.27059185097722444
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.2969788122492754,
+          -0.7639554825781639,
+          -0.18004817170712978,
+          -0.07047616299496239,
+          0.5375456388416456,
+          1.8283805144950116,
+          2.2462019157434705,
+          1.3532002713485092
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.3566081730122241,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "uniform_dr",
+      "allocation": "uniform",
+      "estimator": "dr",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Uniform random audit + AIPW.",
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1065,
+      "min_q": 0.1,
+      "max_q": 0.1,
+      "min_q_for_estimator": 0.1,
+      "n_audited": 213,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.1
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.2881196851942631,
+          "truth": 0.2915848554749893,
+          "bias": -0.003465170280726182,
+          "mae": 0.003465170280726182,
+          "rmse": 0.003465170280726182
+        },
+        "preference_rate": {
+          "estimate": 0.6740873737544162,
+          "truth": 0.5125,
+          "bias": 0.16158737375441623,
+          "mae": 0.16158737375441623,
+          "rmse": 0.16158737375441623
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.5806237067355154,
+          "truth": 0.610062586170745,
+          "bias": -0.029438879435229603,
+          "mae": 0.029438879435229603,
+          "rmse": 0.029438879435229603
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.3563773618437212,
+            -0.7129193874742966,
+            -0.1006175955402726,
+            0.1439060620464898,
+            0.8317681678869804,
+            1.7601016264955487,
+            2.350849690918862,
+            1.9687169780383815
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.19957831454766436,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.2881196851942631,
+        "truth": 0.2915848554749893,
+        "bias": -0.003465170280726182,
+        "mae": 0.003465170280726182,
+        "rmse": 0.003465170280726182
+      },
+      "preference_rate": {
+        "estimate": 0.6740873737544162,
+        "truth": 0.5125,
+        "bias": 0.16158737375441623,
+        "mae": 0.16158737375441623,
+        "rmse": 0.16158737375441623
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.5806237067355154,
+        "truth": 0.610062586170745,
+        "bias": -0.029438879435229603,
+        "mae": 0.029438879435229603,
+        "rmse": 0.029438879435229603
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.3563773618437212,
+          -0.7129193874742966,
+          -0.1006175955402726,
+          0.1439060620464898,
+          0.8317681678869804,
+          1.7601016264955487,
+          2.350849690918862,
+          1.9687169780383815
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.19957831454766436,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "fixed_stratified_ipw",
+      "allocation": "fixed_stratified",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Equal expected audits per stratum + IPW.",
+      "expected_audit_fraction": 0.1,
+      "realized_audit_fraction": 0.106,
+      "min_q": 0.07225433526011561,
+      "max_q": 0.16556291390728478,
+      "min_q_for_estimator": 0.07225433526011561,
+      "n_audited": 212,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.07225433526011561
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.2399752816779934,
+          "truth": 0.2915848554749893,
+          "bias": -0.051609573796995906,
+          "mae": 0.051609573796995906,
+          "rmse": 0.051609573796995906
+        },
+        "preference_rate": {
+          "estimate": 0.5491600000000001,
+          "truth": 0.5125,
+          "bias": 0.03666000000000014,
+          "mae": 0.03666000000000014,
+          "rmse": 0.03666000000000014
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.5330280850257915,
+          "truth": 0.610062586170745,
+          "bias": -0.07703450114495358,
+          "mae": 0.07703450114495358,
+          "rmse": 0.07703450114495358
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.7879358790018485,
+            -0.535528964973497,
+            -0.14431660781551703,
+            0.6302957390938932,
+            0.8746618795872267,
+            1.7843710749270398,
+            1.9157189402142123,
+            1.5269584981748219
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.2794462046881464,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.2399752816779934,
+        "truth": 0.2915848554749893,
+        "bias": -0.051609573796995906,
+        "mae": 0.051609573796995906,
+        "rmse": 0.051609573796995906
+      },
+      "preference_rate": {
+        "estimate": 0.5491600000000001,
+        "truth": 0.5125,
+        "bias": 0.03666000000000014,
+        "mae": 0.03666000000000014,
+        "rmse": 0.03666000000000014
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.5330280850257915,
+        "truth": 0.610062586170745,
+        "bias": -0.07703450114495358,
+        "mae": 0.07703450114495358,
+        "rmse": 0.07703450114495358
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.7879358790018485,
+          -0.535528964973497,
+          -0.14431660781551703,
+          0.6302957390938932,
+          0.8746618795872267,
+          1.7843710749270398,
+          1.9157189402142123,
+          1.5269584981748219
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.2794462046881464,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "neyman_ipw",
+      "allocation": "neyman",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Classical Neyman + exploration floor + IPW. Not a novel algorithm.",
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1175,
+      "min_q": 0.07415310817186853,
+      "max_q": 0.1623150896625044,
+      "min_q_for_estimator": 0.07415310817186853,
+      "n_audited": 235,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.07415310817186853
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.40793012652246696,
+          "truth": 0.2915848554749893,
+          "bias": 0.11634527104747766,
+          "mae": 0.11634527104747766,
+          "rmse": 0.11634527104747766
+        },
+        "preference_rate": {
+          "estimate": 0.6327857090807024,
+          "truth": 0.5125,
+          "bias": 0.12028570908070246,
+          "mae": 0.12028570908070246,
+          "rmse": 0.12028570908070246
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.7894035754417255,
+          "truth": 0.610062586170745,
+          "bias": 0.1793409892709804,
+          "mae": 0.1793409892709804,
+          "rmse": 0.1793409892709804
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.8068684179717418,
+            -0.7750756610844147,
+            0.2179536261989805,
+            0.32279742077273205,
+            1.5964554508257593,
+            1.7530238551742419,
+            2.310970920416125,
+            2.695971409202122
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.3286408899463388,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.40793012652246696,
+        "truth": 0.2915848554749893,
+        "bias": 0.11634527104747766,
+        "mae": 0.11634527104747766,
+        "rmse": 0.11634527104747766
+      },
+      "preference_rate": {
+        "estimate": 0.6327857090807024,
+        "truth": 0.5125,
+        "bias": 0.12028570908070246,
+        "mae": 0.12028570908070246,
+        "rmse": 0.12028570908070246
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.7894035754417255,
+        "truth": 0.610062586170745,
+        "bias": 0.1793409892709804,
+        "mae": 0.1793409892709804,
+        "rmse": 0.1793409892709804
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.8068684179717418,
+          -0.7750756610844147,
+          0.2179536261989805,
+          0.32279742077273205,
+          1.5964554508257593,
+          1.7530238551742419,
+          2.310970920416125,
+          2.695971409202122
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.3286408899463388,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "neyman_snips",
+      "allocation": "neyman",
+      "estimator": "snips",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Classical Neyman + Hájek/SNIPS.",
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1175,
+      "min_q": 0.07415310817186853,
+      "max_q": 0.1623150896625044,
+      "min_q_for_estimator": 0.07415310817186853,
+      "n_audited": 235,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.07415310817186853
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.3535799668629844,
+          "truth": 0.2915848554749893,
+          "bias": 0.06199511138799507,
+          "mae": 0.06199511138799507,
+          "rmse": 0.06199511138799507
+        },
+        "preference_rate": {
+          "estimate": 0.5484771422877547,
+          "truth": 0.5125,
+          "bias": 0.035977142287754726,
+          "mae": 0.035977142287754726,
+          "rmse": 0.035977142287754726
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.6842281849238075,
+          "truth": 0.610062586170745,
+          "bias": 0.0741655987530625,
+          "mae": 0.0741655987530625,
+          "rmse": 0.0741655987530625
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.4487118312676959,
+            -0.9413058025208377,
+            0.24644956073494265,
+            0.23850433521755612,
+            1.2201233661087059,
+            1.3729721650886477,
+            1.7497508397747248,
+            2.202570766428027
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.1812322889600931,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.3535799668629844,
+        "truth": 0.2915848554749893,
+        "bias": 0.06199511138799507,
+        "mae": 0.06199511138799507,
+        "rmse": 0.06199511138799507
+      },
+      "preference_rate": {
+        "estimate": 0.5484771422877547,
+        "truth": 0.5125,
+        "bias": 0.035977142287754726,
+        "mae": 0.035977142287754726,
+        "rmse": 0.035977142287754726
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.6842281849238075,
+        "truth": 0.610062586170745,
+        "bias": 0.0741655987530625,
+        "mae": 0.0741655987530625,
+        "rmse": 0.0741655987530625
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.4487118312676959,
+          -0.9413058025208377,
+          0.24644956073494265,
+          0.23850433521755612,
+          1.2201233661087059,
+          1.3729721650886477,
+          1.7497508397747248,
+          2.202570766428027
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.1812322889600931,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "neyman_dr",
+      "allocation": "neyman",
+      "estimator": "dr",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Classical Neyman + AIPW.",
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1175,
+      "min_q": 0.07415310817186853,
+      "max_q": 0.1623150896625044,
+      "min_q_for_estimator": 0.07415310817186853,
+      "n_audited": 235,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.07415310817186853
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.26476773586995234,
+          "truth": 0.2915848554749893,
+          "bias": -0.026817119605036965,
+          "mae": 0.026817119605036965,
+          "rmse": 0.026817119605036965
+        },
+        "preference_rate": {
+          "estimate": 0.4896233184281879,
+          "truth": 0.5125,
+          "bias": -0.022876681571812052,
+          "mae": 0.022876681571812052,
+          "rmse": 0.022876681571812052
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.6462411847892109,
+          "truth": 0.610062586170745,
+          "bias": 0.03617859861846584,
+          "mae": 0.03617859861846584,
+          "rmse": 0.03617859861846584
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.3470881857881771,
+            -0.7403832501461889,
+            0.03132035973503459,
+            0.26623892736098365,
+            1.0736931355892776,
+            1.3414781487310243,
+            1.696934430713716,
+            2.201346194248573
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.10544413597023747,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.26476773586995234,
+        "truth": 0.2915848554749893,
+        "bias": -0.026817119605036965,
+        "mae": 0.026817119605036965,
+        "rmse": 0.026817119605036965
+      },
+      "preference_rate": {
+        "estimate": 0.4896233184281879,
+        "truth": 0.5125,
+        "bias": -0.022876681571812052,
+        "mae": 0.022876681571812052,
+        "rmse": 0.022876681571812052
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.6462411847892109,
+        "truth": 0.610062586170745,
+        "bias": 0.03617859861846584,
+        "mae": 0.03617859861846584,
+        "rmse": 0.03617859861846584
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.3470881857881771,
+          -0.7403832501461889,
+          0.03132035973503459,
+          0.26623892736098365,
+          1.0736931355892776,
+          1.3414781487310243,
+          1.696934430713716,
+          2.201346194248573
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.10544413597023747,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "uncertainty_ipw",
+      "allocation": "uncertainty",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "notes": "Uncertainty sampling with known q ∝ predictive SD.",
+      "expected_audit_fraction": 0.1,
+      "realized_audit_fraction": 0.105,
+      "min_q": 0.09974633167817677,
+      "max_q": 0.10103717017882935,
+      "min_q_for_estimator": 0.09974633167817677,
+      "n_audited": 210,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 0.09974633167817677
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.24104283153625253,
+          "truth": 0.2915848554749893,
+          "bias": -0.050542023938736774,
+          "mae": 0.050542023938736774,
+          "rmse": 0.050542023938736774
+        },
+        "preference_rate": {
+          "estimate": 0.5246169632722337,
+          "truth": 0.5125,
+          "bias": 0.012116963272233772,
+          "mae": 0.012116963272233772,
+          "rmse": 0.012116963272233772
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.5997420585546475,
+          "truth": 0.610062586170745,
+          "bias": -0.010320527616097586,
+          "mae": 0.010320527616097586,
+          "rmse": 0.010320527616097586
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.3362269494230727,
+            -0.9361724848590777,
+            -0.22897494508731167,
+            0.5432031033634602,
+            0.39079666028492377,
+            1.3370854648122594,
+            1.855090381973809,
+            3.1731352373721897
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.2508994279049279,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.24104283153625253,
+        "truth": 0.2915848554749893,
+        "bias": -0.050542023938736774,
+        "mae": 0.050542023938736774,
+        "rmse": 0.050542023938736774
+      },
+      "preference_rate": {
+        "estimate": 0.5246169632722337,
+        "truth": 0.5125,
+        "bias": 0.012116963272233772,
+        "mae": 0.012116963272233772,
+        "rmse": 0.012116963272233772
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.5997420585546475,
+        "truth": 0.610062586170745,
+        "bias": -0.010320527616097586,
+        "mae": 0.010320527616097586,
+        "rmse": 0.010320527616097586
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.3362269494230727,
+          -0.9361724848590777,
+          -0.22897494508731167,
+          0.5432031033634602,
+          0.39079666028492377,
+          1.3370854648122594,
+          1.855090381973809,
+          3.1731352373721897
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.2508994279049279,
+        "n_identified_strata": 8
+      }
+    },
+    {
+      "method": "full_feedback_oracle",
+      "allocation": "full_oracle",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "n": 2000,
+      "budget_requested": 0.1,
+      "uses_budget": false,
+      "notes": "q=1 oracle. Does not respect the audit budget.",
+      "expected_audit_fraction": 1.0,
+      "realized_audit_fraction": 1.0,
+      "min_q": 1.0,
+      "max_q": 1.0,
+      "min_q_for_estimator": 1.0,
+      "n_audited": 2000,
+      "n_natural": 738,
+      "identification": {
+        "natural": {
+          "status": "identified_if_overlap",
+          "channel": "natural",
+          "reason": "Natural observation does not depend on unobserved Y."
+        },
+        "audit": {
+          "status": "identified",
+          "channel": "audit",
+          "reason": "Independent audits with known q_t > 0 identify the finite-population mean by Horvitz–Thompson / Hájek / AIPW, including under MNAR of the natural observation S.",
+          "min_q": 1.0
+        },
+        "note": "Natural-channel MNAR or zero overlap is identification failure for estimators that use only S. It is not an estimator bug. The audit channel is a separate design with a known propensity."
+      },
+      "estimands": {
+        "population_mean_reward": {
+          "estimate": 0.2915848554749893,
+          "truth": 0.2915848554749893,
+          "bias": 0.0,
+          "mae": 0.0,
+          "rmse": 0.0
+        },
+        "preference_rate": {
+          "estimate": 0.5125,
+          "truth": 0.5125,
+          "bias": 0.0,
+          "mae": 0.0,
+          "rmse": 0.0
+        },
+        "policy_value_target_distribution": {
+          "estimate": 0.610062586170745,
+          "truth": 0.610062586170745,
+          "bias": 0.0,
+          "mae": 0.0,
+          "rmse": 0.0
+        },
+        "context_conditioned_reward": {
+          "estimate": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "truth": [
+            -1.3456878984690095,
+            -0.7091868303382638,
+            -0.09656277650388673,
+            0.392927673225282,
+            0.9582801924081077,
+            1.3857501919876465,
+            1.9244241216551008,
+            2.3705560154009833
+          ],
+          "mae": 0.0,
+          "n_identified_strata": 8
+        }
+      },
+      "population_mean_reward": {
+        "estimate": 0.2915848554749893,
+        "truth": 0.2915848554749893,
+        "bias": 0.0,
+        "mae": 0.0,
+        "rmse": 0.0
+      },
+      "preference_rate": {
+        "estimate": 0.5125,
+        "truth": 0.5125,
+        "bias": 0.0,
+        "mae": 0.0,
+        "rmse": 0.0
+      },
+      "policy_value_target_distribution": {
+        "estimate": 0.610062586170745,
+        "truth": 0.610062586170745,
+        "bias": 0.0,
+        "mae": 0.0,
+        "rmse": 0.0
+      },
+      "context_conditioned_reward": {
+        "estimate": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "truth": [
+          -1.3456878984690095,
+          -0.7091868303382638,
+          -0.09656277650388673,
+          0.392927673225282,
+          0.9582801924081077,
+          1.3857501919876465,
+          1.9244241216551008,
+          2.3705560154009833
+        ],
+        "mae": 0.0,
+        "n_identified_strata": 8
+      }
+    }
+  ],
+  "rows": [
+    {
+      "method": "observed_only",
+      "allocation": "none",
+      "estimator": "observed_only",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": false,
+      "expected_audit_fraction": 0.0,
+      "realized_audit_fraction": 0.0,
+      "min_q": 0.0,
+      "n_audited": 0,
+      "notes": "Natural observations only.",
+      "population_mean_reward_estimate": 0.29719759924277267,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": 0.005612743767783368,
+      "population_mean_reward_mae": 0.005612743767783368,
+      "population_mean_reward_rmse": 0.005612743767783368,
+      "preference_rate_estimate": 0.5365853658536586,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.024085365853658613,
+      "preference_rate_mae": 0.024085365853658613,
+      "preference_rate_rmse": 0.024085365853658613,
+      "policy_value_target_distribution_estimate": 0.5673381017453338,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.04272448442541121,
+      "policy_value_target_distribution_mae": 0.04272448442541121,
+      "policy_value_target_distribution_rmse": 0.04272448442541121,
+      "context_conditioned_mae": 0.16632538690389564,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "naive_ips",
+      "allocation": "none",
+      "estimator": "naive_ips",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": false,
+      "expected_audit_fraction": 0.0,
+      "realized_audit_fraction": 0.0,
+      "min_q": 0.0,
+      "n_audited": 0,
+      "notes": "Natural IPS pretending P(S=1|stratum) is known.",
+      "population_mean_reward_estimate": 0.3024717725205909,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": 0.010886917045601574,
+      "population_mean_reward_mae": 0.010886917045601574,
+      "population_mean_reward_rmse": 0.010886917045601574,
+      "preference_rate_estimate": 0.550982734803363,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.03848273480336306,
+      "preference_rate_mae": 0.03848273480336306,
+      "preference_rate_rmse": 0.03848273480336306,
+      "policy_value_target_distribution_estimate": 0.5785421261158865,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.031520460054858535,
+      "policy_value_target_distribution_mae": 0.031520460054858535,
+      "policy_value_target_distribution_rmse": 0.031520460054858535,
+      "context_conditioned_mae": 0.18706213896976723,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "uniform_ipw",
+      "allocation": "uniform",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1065,
+      "min_q": 0.1,
+      "n_audited": 213,
+      "notes": "Uniform random audit + audit IPW.",
+      "population_mean_reward_estimate": 0.06903231143984705,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": -0.22255254403514224,
+      "population_mean_reward_mae": 0.22255254403514224,
+      "population_mean_reward_rmse": 0.22255254403514224,
+      "preference_rate_estimate": 0.455,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": -0.05749999999999994,
+      "preference_rate_mae": 0.05749999999999994,
+      "preference_rate_rmse": 0.05749999999999994,
+      "policy_value_target_distribution_estimate": 0.36153633298109944,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.2485262531896456,
+      "policy_value_target_distribution_mae": 0.2485262531896456,
+      "policy_value_target_distribution_rmse": 0.2485262531896456,
+      "context_conditioned_mae": 0.5092761907160799,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "uniform_snips",
+      "allocation": "uniform",
+      "estimator": "snips",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1065,
+      "min_q": 0.1,
+      "n_audited": 213,
+      "notes": "Uniform random audit + Hájek/SNIPS.",
+      "population_mean_reward_estimate": 0.06481907177450426,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": -0.22676578370048506,
+      "population_mean_reward_mae": 0.22676578370048506,
+      "population_mean_reward_rmse": 0.22676578370048506,
+      "preference_rate_estimate": 0.4272300469483568,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": -0.08526995305164314,
+      "preference_rate_mae": 0.08526995305164314,
+      "preference_rate_rmse": 0.08526995305164314,
+      "policy_value_target_distribution_estimate": 0.3394707351935206,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.27059185097722444,
+      "policy_value_target_distribution_mae": 0.27059185097722444,
+      "policy_value_target_distribution_rmse": 0.27059185097722444,
+      "context_conditioned_mae": 0.3566081730122241,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "uniform_dr",
+      "allocation": "uniform",
+      "estimator": "dr",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1065,
+      "min_q": 0.1,
+      "n_audited": 213,
+      "notes": "Uniform random audit + AIPW.",
+      "population_mean_reward_estimate": 0.2881196851942631,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": -0.003465170280726182,
+      "population_mean_reward_mae": 0.003465170280726182,
+      "population_mean_reward_rmse": 0.003465170280726182,
+      "preference_rate_estimate": 0.6740873737544162,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.16158737375441623,
+      "preference_rate_mae": 0.16158737375441623,
+      "preference_rate_rmse": 0.16158737375441623,
+      "policy_value_target_distribution_estimate": 0.5806237067355154,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.029438879435229603,
+      "policy_value_target_distribution_mae": 0.029438879435229603,
+      "policy_value_target_distribution_rmse": 0.029438879435229603,
+      "context_conditioned_mae": 0.19957831454766436,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "fixed_stratified_ipw",
+      "allocation": "fixed_stratified",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.1,
+      "realized_audit_fraction": 0.106,
+      "min_q": 0.07225433526011561,
+      "n_audited": 212,
+      "notes": "Equal expected audits per stratum + IPW.",
+      "population_mean_reward_estimate": 0.2399752816779934,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": -0.051609573796995906,
+      "population_mean_reward_mae": 0.051609573796995906,
+      "population_mean_reward_rmse": 0.051609573796995906,
+      "preference_rate_estimate": 0.5491600000000001,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.03666000000000014,
+      "preference_rate_mae": 0.03666000000000014,
+      "preference_rate_rmse": 0.03666000000000014,
+      "policy_value_target_distribution_estimate": 0.5330280850257915,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.07703450114495358,
+      "policy_value_target_distribution_mae": 0.07703450114495358,
+      "policy_value_target_distribution_rmse": 0.07703450114495358,
+      "context_conditioned_mae": 0.2794462046881464,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "neyman_ipw",
+      "allocation": "neyman",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1175,
+      "min_q": 0.07415310817186853,
+      "n_audited": 235,
+      "notes": "Classical Neyman + exploration floor + IPW. Not a novel algorithm.",
+      "population_mean_reward_estimate": 0.40793012652246696,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": 0.11634527104747766,
+      "population_mean_reward_mae": 0.11634527104747766,
+      "population_mean_reward_rmse": 0.11634527104747766,
+      "preference_rate_estimate": 0.6327857090807024,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.12028570908070246,
+      "preference_rate_mae": 0.12028570908070246,
+      "preference_rate_rmse": 0.12028570908070246,
+      "policy_value_target_distribution_estimate": 0.7894035754417255,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": 0.1793409892709804,
+      "policy_value_target_distribution_mae": 0.1793409892709804,
+      "policy_value_target_distribution_rmse": 0.1793409892709804,
+      "context_conditioned_mae": 0.3286408899463388,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "neyman_snips",
+      "allocation": "neyman",
+      "estimator": "snips",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1175,
+      "min_q": 0.07415310817186853,
+      "n_audited": 235,
+      "notes": "Classical Neyman + Hájek/SNIPS.",
+      "population_mean_reward_estimate": 0.3535799668629844,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": 0.06199511138799507,
+      "population_mean_reward_mae": 0.06199511138799507,
+      "population_mean_reward_rmse": 0.06199511138799507,
+      "preference_rate_estimate": 0.5484771422877547,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.035977142287754726,
+      "preference_rate_mae": 0.035977142287754726,
+      "preference_rate_rmse": 0.035977142287754726,
+      "policy_value_target_distribution_estimate": 0.6842281849238075,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": 0.0741655987530625,
+      "policy_value_target_distribution_mae": 0.0741655987530625,
+      "policy_value_target_distribution_rmse": 0.0741655987530625,
+      "context_conditioned_mae": 0.1812322889600931,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "neyman_dr",
+      "allocation": "neyman",
+      "estimator": "dr",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.10000000000000002,
+      "realized_audit_fraction": 0.1175,
+      "min_q": 0.07415310817186853,
+      "n_audited": 235,
+      "notes": "Classical Neyman + AIPW.",
+      "population_mean_reward_estimate": 0.26476773586995234,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": -0.026817119605036965,
+      "population_mean_reward_mae": 0.026817119605036965,
+      "population_mean_reward_rmse": 0.026817119605036965,
+      "preference_rate_estimate": 0.4896233184281879,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": -0.022876681571812052,
+      "preference_rate_mae": 0.022876681571812052,
+      "preference_rate_rmse": 0.022876681571812052,
+      "policy_value_target_distribution_estimate": 0.6462411847892109,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": 0.03617859861846584,
+      "policy_value_target_distribution_mae": 0.03617859861846584,
+      "policy_value_target_distribution_rmse": 0.03617859861846584,
+      "context_conditioned_mae": 0.10544413597023747,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "uncertainty_ipw",
+      "allocation": "uncertainty",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": true,
+      "expected_audit_fraction": 0.1,
+      "realized_audit_fraction": 0.105,
+      "min_q": 0.09974633167817677,
+      "n_audited": 210,
+      "notes": "Uncertainty sampling with known q ∝ predictive SD.",
+      "population_mean_reward_estimate": 0.24104283153625253,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": -0.050542023938736774,
+      "population_mean_reward_mae": 0.050542023938736774,
+      "population_mean_reward_rmse": 0.050542023938736774,
+      "preference_rate_estimate": 0.5246169632722337,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.012116963272233772,
+      "preference_rate_mae": 0.012116963272233772,
+      "preference_rate_rmse": 0.012116963272233772,
+      "policy_value_target_distribution_estimate": 0.5997420585546475,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": -0.010320527616097586,
+      "policy_value_target_distribution_mae": 0.010320527616097586,
+      "policy_value_target_distribution_rmse": 0.010320527616097586,
+      "context_conditioned_mae": 0.2508994279049279,
+      "n_identified_strata": 8
+    },
+    {
+      "method": "full_feedback_oracle",
+      "allocation": "full_oracle",
+      "estimator": "ipw",
+      "mechanism": "nonstationary",
+      "seed": 1,
+      "budget_requested": 0.1,
+      "uses_budget": false,
+      "expected_audit_fraction": 1.0,
+      "realized_audit_fraction": 1.0,
+      "min_q": 1.0,
+      "n_audited": 2000,
+      "notes": "q=1 oracle. Does not respect the audit budget.",
+      "population_mean_reward_estimate": 0.2915848554749893,
+      "population_mean_reward_truth": 0.2915848554749893,
+      "population_mean_reward_bias": 0.0,
+      "population_mean_reward_mae": 0.0,
+      "population_mean_reward_rmse": 0.0,
+      "preference_rate_estimate": 0.5125,
+      "preference_rate_truth": 0.5125,
+      "preference_rate_bias": 0.0,
+      "preference_rate_mae": 0.0,
+      "preference_rate_rmse": 0.0,
+      "policy_value_target_distribution_estimate": 0.610062586170745,
+      "policy_value_target_distribution_truth": 0.610062586170745,
+      "policy_value_target_distribution_bias": 0.0,
+      "policy_value_target_distribution_mae": 0.0,
+      "policy_value_target_distribution_rmse": 0.0,
+      "context_conditioned_mae": 0.0,
+      "n_identified_strata": 8
+    }
+  ]
+}

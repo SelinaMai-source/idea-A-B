@@ -1,0 +1,4 @@
+utc=2026-10-30T15:12:57.295436+00:00
+ablation=A3_No_Anchor_Intervention
+mechanism=mnar seed=0 budget=0.1
+methods=['a3_observed_only', 'a3_naive_ips']
