@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-10-30T16:34:58.654293+00:00",
+  "recorded_at_utc": "2026-10-30T16:37:01.069960+00:00",
   "os": {
     "system": "Darwin",
     "release": "23.5.0",
@@ -35,9 +35,9 @@
   "disk": {
     "path": "/Users/grantwright/Research/idea-A-B",
     "total_bytes": 494384795648,
-    "used_bytes": 487324459008,
-    "free_bytes": 7060336640,
-    "free_gib": 6.575450897216797
+    "used_bytes": 486327255040,
+    "free_bytes": 8057540608,
+    "free_gib": 7.504169464111328
   },
   "torch": {
     "installed": false,
@@ -54,8 +54,8 @@
     "version_error": null,
     "branch": "v1",
     "branch_error": null,
-    "commit": null,
-    "commit_error": "fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'"
+    "commit": "494fe90f8e08e40d5f2bb8a6020e25ce74646c20",
+    "commit_error": null
   },
   "packages": {
     "numpy": "2.5.4",

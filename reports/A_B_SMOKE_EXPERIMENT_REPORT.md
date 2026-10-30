@@ -2,13 +2,11 @@
 
 本文件由 `scripts/generate_report.py` 从磁盘 JSON/CSV 生成。报告中的数字均来自下列产物，没有手填。
 
-- 生成时间（UTC）：`2026-10-30T16:34:58.731304+00:00`
+- 生成时间（UTC）：`2026-10-30T16:37:01.143137+00:00`
 - 仓库：`/Users/grantwright/Research/idea-A-B`
 - 分支：`v1`
-- commit：`UNAVAILABLE (fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]')`
-- remote：`https://github.com/SelinaMai-source/idea-A-B.git`
+- commit：`494fe90f8e08e40d5f2bb8a6020e25ce74646c20`
+- remote：`git@github.com:SelinaMai-source/idea-A-B.git`
 - 缺失的主 JSON：无（所列主源均在磁盘上）
 - `n_seeds=3`：n_seeds=3 只是初步证据，不是 confirmatory 结论。
 
@@ -38,7 +36,7 @@ Idea A v1.0 的分配规则是经典分层 Neyman 分配加探索下界，估计
 | arch | arm64 |
 | 审计记录的机型 | MacBook Air M3 16GB |
 | RAM GiB | 16 |
-| 磁盘 free GiB（probe） | 6.57545 |
+| 磁盘 free GiB（probe） | 7.50417 |
 | 审计 disk_free_after_experiments | 9.7Gi |
 | Python | 3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)] |
 | 主解释器 | /Users/grantwright/Research/idea-A-B/.venv/bin/python |
@@ -57,9 +55,7 @@ Idea A v1.0 的分配规则是经典分层 Neyman 分配加探索下界，估计
 | MultiPref revision | 12910233a0238a997ebe425656e9dfed7b0ff031 |
 | RewardBench revision | 168d848cdbbea9764fae4a544dc9ca1e6cca4931 |
 | git branch（probe） | v1 |
-| git commit（probe） | UNAVAILABLE (fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]') |
+| git commit（probe） | 494fe90f8e08e40d5f2bb8a6020e25ce74646c20 |
 | 不安装 | vLLM / bitsandbytes / flash-attn / CUDA / NCCL |
 
 - 清单路径：`reports/environment_manifest.json` 与 `shared/hardware/environment_manifest.json`
@@ -589,12 +585,8 @@ python main.py --seed=1 --task=assistant --rm_names harmless helpful humor --n_r
 
 ### Git
 
-- branch `v1` commit `UNAVAILABLE (fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]')` remote `https://github.com/SelinaMai-source/idea-A-B.git`
-- probe 记录的 commit：`None` error=`fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]'`
+- branch `v1` commit `494fe90f8e08e40d5f2bb8a6020e25ce74646c20` remote `git@github.com:SelinaMai-source/idea-A-B.git`
+- probe 记录的 commit：`494fe90f8e08e40d5f2bb8a6020e25ce74646c20` error=`None`
 
 ---
 
