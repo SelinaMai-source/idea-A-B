@@ -1,0 +1,58 @@
+name: Adaptive Identification under Endogenous Feedback Censoring
+version: "1.1"
+novelty_claim: false
+novelty_note: >
+  A-v1.1a is Uniform audit + 2-fold cross-fit AIPW (the required competitor).
+  A-v1.1b allocates q_h from a computable approximation of stratified AIPW
+  variance using audit residuals only; it is not a new optimality theorem.
+  A-v1.1c adds remaining-budget spending and policy-drift upweighting.
+  The main proposal is A-v1.1c. A-v1.0 calls the existing v1.0 Neyman+IPW
+  path unchanged.
+ridge_lambda: 0.001
+n_folds: 2
+q_floor: 1.0e-6
+sigma_floor: 1.0e-8
+logistic_max_iter: 40
+logistic_tol: 1.0e-8
+ci_method: influence_wald
+ci_z: 1.959963984540054
+pilot_fraction: 0.5
+policy_explore_mix: 0.1
+policy_ridge_lambda: 0.001
+drift_kappa: 1.0
+drift_scale: 0.10
+drift_factor_cap: 2.0
+preference_threshold: 0.0
+target_distribution: uniform_over_strata
+sequential:
+  n_per_round: 200
+  n_rounds: 8
+configs:
+  A-v1.0:
+    allocation: v1.0_neyman
+    estimator: ipw
+    notes: Existing v1.0 Neyman + exploration floor + IPW. Behavior unchanged.
+  A-v1.1a:
+    allocation: uniform
+    estimator: cross_fit_dr
+    notes: Uniform audit + 2-fold cross-fit AIPW. Required competitor.
+  A-v1.1b:
+    allocation: aipw_variance
+    estimator: cross_fit_dr
+    notes: >
+      q_h from estimated AIPW variance contribution (audit residuals only),
+      E[q]=b. Computable stratified HT/AIPW variance approximation.
+  A-v1.1c:
+    allocation: aipw_variance_remaining_drift
+    estimator: cross_fit_dr
+    is_main_proposal: true
+    notes: A-v1.1b plus remaining-budget spending and policy-drift upweighting.
+assumptions:
+  - Known audit q is the MNAR identification channel.
+  - Combined P(O=1)=1-(1-p_S)(1-q) is used only when p_S does not depend on unobserved Y.
+  - Ordinary DR double robustness holds only for audit missingness with known q and A ⊥ Y | X, history.
+  - An audit does not convert MNAR of S into MAR.
+  - Static data: 2-fold cross-fit, out-of-fold predictions, never hidden labels.
+  - Sequential data: history-respecting nuisances (fit on past rounds, estimate the current round).
+  - Ordinary shuffled CV leaks under adaptive sampling.
+  - mu_Y is ridge on audited units. mu_P is a separate logistic. mu_V = w(x) mu_Y(x) when w is a known stratum density ratio.
