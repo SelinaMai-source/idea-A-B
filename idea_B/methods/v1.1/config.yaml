@@ -1,0 +1,44 @@
+name: idea_B_v1.1
+idea: Feedback-Induced Observability Collapse
+version: v1.1
+information_matrix: observed_design_gramian
+formula: W_T = sum_t S_t phi_t phi_t^T
+conditional_formula: W_T_cond = sum_t q_t phi_t phi_t^T
+candidates_formula: W_T_cand = sum_t phi_t phi_t^T
+d: 3
+horizon: 32
+population_per_round: 40
+ridge_lambda: 0.5
+sgd_learning_rate: 0.15
+lazy_period: 5
+noise_std: 0.15
+noise_floor: 0.0225
+mix: [0.42, 0.42, 0.16]
+theta_star: [1.2, 1.05, 1.0]
+weak_skill: 2
+serve_fraction: 0.35
+feature_noise: 0.05
+env3_change_round: 16
+recovery_consecutive: 4
+recovery_pre_window: 8
+# Locked before any Tier 1 run. Do not retune on evaluation seeds.
+information_discount: 0.90
+sliding_window: 8
+e_optimal_iterations: 12
+d_optimal_iterations: 12
+detection_cusum_threshold: 3.0
+detection_cusum_allowance: 0.05
+env1_weak_init_value: 0.55
+# v1.0 reference arm only. Matches the v1 run config, not the unused yaml 0.65.
+v1_0_smoothing: 0.6
+v1_0_mix_uniform: 0.1
+v1_0_information_metric: lambda_min
+seeds_tier1: [0, 1, 2]
+primary_budget: 0.05
+notes:
+  - Primary metrics are excess MSE, worst-skill MSE, population-weighted MSE, parameter error, cumulative regret, and Env3 recovery time.
+  - 1/(1+MSE) is secondary only. A larger eigenvalue is not success.
+  - EqualSkill is equal expected audit COUNT per skill, not constant q_i.
+  - E-optimal and D-optimal are classical controls, not a novelty claim.
+  - B-v1.1c is the proposal. Not beating E-optimal is a negative result.
+  - B-v1.0 wraps the original controller unchanged, including smoothing and mix_uniform.
