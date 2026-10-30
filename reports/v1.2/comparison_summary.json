@@ -1,0 +1,256 @@
+{
+  "verdict": "PUBLISHED BASELINE COMPARISON NOT ESTABLISHED",
+  "n_scientifically_valid_direct_comparisons": 0,
+  "n_scientifically_defensible_adapted_comparisons": 0,
+  "protocol_a2": "BLOCKED_INCOMPARABLE",
+  "protocol_b2": "INCOMPARABLE",
+  "v13_algorithmic_iteration_justified": false,
+  "performance_rule": "performance is filled only for DIRECT or scientifically defensible ADAPTED head-to-head cells; otherwise null",
+  "rows": [
+    {
+      "run_id": "C-AMPLe-A",
+      "protocol": "original_AMPLe_vs_IdeaA_RMSE",
+      "method": "AMPLe volume vs A-v1.1",
+      "metric": "preference_vector_L2 vs functional_RMSE",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-HyPER-A",
+      "protocol": "HyPER_route_vs_IdeaA",
+      "method": "HyPER vs A-v1.1",
+      "metric": "RewardBench vs functional_RMSE",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-Drago-A",
+      "protocol": "Drago_theory_vs_IdeaA",
+      "method": "Drago et al. vs A-v1.1",
+      "metric": "compatible_reward_identification vs audit_RMSE",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-ActiveUF-full-A",
+      "protocol": "ActiveUF_full_RM_DPO_vs_IdeaA",
+      "method": "ActiveUF full pipeline vs A-v1.1",
+      "metric": "GSM8K/RewardBench vs functional_RMSE",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-A2-Av11-ActiveUF",
+      "protocol": "Protocol_A2",
+      "method": "A-v1.1b/c vs official DRTS/DeltaUCB/InfoMax",
+      "metric": "head_to_head_unavailable",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-A2-UniformDR-ActiveUF",
+      "protocol": "Protocol_A2_auxiliary",
+      "method": "Uniform cross-fit DR vs official selectors",
+      "metric": "head_to_head_unavailable",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-UCBOGD-vision",
+      "protocol": "UCB-OGD_Table1",
+      "method": "UCB-OGD CIFAR/VOC/VQA/testbed vs A/B",
+      "metric": "class_acc/mAP vs RMSE/worst-skill",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-UCBOGD-logistic",
+      "protocol": "independent_paper_based_logistic",
+      "method": "UCB-OGD Algorithm 1 (not instantiated)",
+      "metric": "not_run",
+      "seed_count": 0,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "DIAGNOSTIC",
+      "performance": null
+    },
+    {
+      "run_id": "C-PPbandit-B",
+      "protocol": "original_PP-bandit_1D_vs_IdeaB",
+      "method": "PP-bandit ZO vs B-v1.1",
+      "metric": "performative_risk vs worst-skill_MSE",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-B2-Bv11-ZO",
+      "protocol": "Protocol_B2",
+      "method": "B-v1.1 vs official two-layer ZO + partial feedback",
+      "metric": "head_to_head_unavailable",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "C-ncvxpp-B",
+      "protocol": "ncvxpp_SGD_vs_IdeaB",
+      "method": "ncvxpp performative SGD vs B-v1.1",
+      "metric": "loss/acc vs worst-skill_MSE",
+      "seed_count": null,
+      "source_file": "reports/v1.2/03_COMPARABILITY_AUDIT.md",
+      "classification": "INCOMPARABLE",
+      "performance": null
+    },
+    {
+      "run_id": "ample_official_partial",
+      "protocol": "original_AMPLe_n_rounds=3",
+      "method": "AMPLe volume",
+      "metric": "l2_to_true_preference",
+      "seed_count": 1,
+      "source_file": "idea_A/baselines/AMPLe/official_reproduction/metrics.json",
+      "classification": "ORIGINAL_SETTING",
+      "performance": null,
+      "original_setting_value": {
+        "l2_to_true_t0": 0.4688851731916284,
+        "l2_to_true_t3": 0.3647449275776112,
+        "n_rounds": 3,
+        "burnin": 50000,
+        "acquisition": "volume"
+      }
+    },
+    {
+      "run_id": "ppbandit_official_numerical",
+      "protocol": "original_PP-bandit_1D",
+      "method": "PP-bandit two-layer ZO reparameterization",
+      "metric": "performative_risk",
+      "seed_count": 1,
+      "source_file": "idea_B/baselines/Performative_Bandit_ICML2024/official_reproduction/metrics.json",
+      "classification": "ORIGINAL_SETTING",
+      "performance": null,
+      "original_setting_value": {
+        "numpy_seed": 0,
+        "single_run_final_PR_phi": -0.28164988861568363,
+        "single_run_final_PR_theta": -0.2962457875065718,
+        "multi_run_PR_phi_final_mean": -0.2883591540722531,
+        "multi_run_PR_theta_final_mean": -0.291834361799254
+      }
+    },
+    {
+      "run_id": "ncvxpp_synthetic_iter_single_process",
+      "protocol": "original_ncvxpp_synthetic-iter_rank0",
+      "method": "ncvxpp performative SGD-GD (size=1 stub)",
+      "metric": "loss_last/train_acc_last/test_acc_last",
+      "seed_count": 1,
+      "source_file": "idea_B/baselines/REPRODUCTION_AUDIT.json",
+      "classification": "ORIGINAL_SETTING",
+      "performance": null,
+      "original_setting_value": {
+        "local_status": "partial",
+        "eps_list": [
+          0,
+          0.1,
+          10,
+          100
+        ],
+        "batch": 5,
+        "wall_sec": 540.486,
+        "npy": {
+          "eps0-batch5-res0.npy": {
+            "iter_last": 99426,
+            "loss_last": 0.3281349241733551,
+            "train_acc_last": 0.9004424778761062,
+            "test_acc_last": 1.0,
+            "grd_last": 1.559475437673541e-09
+          },
+          "eps0.1-batch5-res0.npy": {
+            "iter_last": 99426,
+            "loss_last": 0.3458000421524048,
+            "train_acc_last": 0.9004424778761062,
+            "test_acc_last": 1.0,
+            "grd_last": 8.505186777085783e-09
+          },
+          "eps10-batch5-res0.npy": {
+            "iter_last": 99426,
+            "loss_last": 0.3553709387779236,
+            "train_acc_last": 0.9004424778761062,
+            "test_acc_last": 1.0,
+            "grd_last": 2.0597110506059835e-06
+          },
+          "eps100-batch5-res0.npy": {
+            "iter_last": 99426,
+            "loss_last": 0.9450080394744873,
+            "train_acc_last": 0.09955752212389381,
+            "test_acc_last": 0.0,
+            "grd_last": 1.3713279123361843e-10
+          }
+        }
+      }
+    },
+    {
+      "run_id": "activeuf_selector_unit_check",
+      "protocol": null,
+      "method": "official DRTS/DeltaUCB/InfoMax",
+      "metric": "selected_pairs_on_synthetic_RM_UQ",
+      "seed_count": 1,
+      "source_file": "results/v1.2/idea_A/original/activeuf_selector_unit_check/metrics.json",
+      "classification": "DIAGNOSTIC",
+      "performance": null,
+      "note": "selector_unit_check is NOT a head-to-head. Protocol A2 remains BLOCKED_INCOMPARABLE.",
+      "diagnostic_value": {
+        "status": "ok",
+        "comparability_cell": null,
+        "protocol_a2": "BLOCKED_INCOMPARABLE",
+        "vllm_imported": false,
+        "all_official_files": true,
+        "selected_pairs": {
+          "drts": [
+            [
+              3,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "deltaucb": [
+            [
+              3,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "infomax": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

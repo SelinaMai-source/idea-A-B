@@ -21,9 +21,21 @@ v1.1 判定（由 `scripts/generate_v1_1_report.py` 按冻结协议 `reports/V1_
 | A v1.1 | **NOT PROMISING** | identification-via-audit 仍支持；v1.1c 序贯分配未赢 Uniform DR，闭环格子更差。 |
 | B v1.1 | **NOT PROMISING** | v1.1c 未在 worst-skill MSE 上赢 E-optimal；H_B1 要求 worst-skill **并且** regret 同时优于 E 与 D。 |
 
+v1.2 判定（由 `scripts/generate_v1_2_report.py` 从锁定审计与已有 JSON 写出；**DIRECT = 0，可辩护 ADAPTED = 0**。不得把 Uniform DR / E-optimal 的内部结果当成击败 CCF-A 论文）：
+
+| 问题 | Verdict |
+| --- | --- |
+| 相对已发表 CCF-A Main | **PUBLISHED BASELINE COMPARISON NOT ESTABLISHED** |
+| Idea A vs DRTS / DeltaUCB / AMPLe / HyPER | 无合法 head-to-head（Protocol A2 BLOCKED / INCOMPARABLE） |
+| Idea B vs PP-bandit / ncvxpp | 无合法 head-to-head（Protocol B2 INCOMPARABLE） |
+| A/B 是否 PROMISING | **否**（v1.1 已相对经典对照判定 NOT PROMISING；v1.2 不改口） |
+| v1.3 算法迭代 | **不成立**（本机无 live RM UQ / skill-free 映射） |
+
 v1 主报告：[`reports/A_B_SMOKE_EXPERIMENT_REPORT.md`](reports/A_B_SMOKE_EXPERIMENT_REPORT.md)
 
 v1.1 主报告：[`reports/V1_1_FULL_EXPERIMENT_REPORT.md`](reports/V1_1_FULL_EXPERIMENT_REPORT.md)
+
+v1.2 主报告：[`reports/v1.2/CCFA_PUBLISHED_BASELINE_COMPARISON.md`](reports/v1.2/CCFA_PUBLISHED_BASELINE_COMPARISON.md)
 
 ## Environment / 环境
 
@@ -84,6 +96,10 @@ bash scripts/run_B_v1_1.sh
 
 # Rebuild v1.1 Chinese reports from JSON
 .venv/bin/python scripts/generate_v1_1_report.py
+
+# Rebuild v1.2 Chinese published-baseline reports from locked audits / JSON
+# (does not run Protocol A2/B2; those cells are INCOMPARABLE)
+.venv/bin/python scripts/generate_v1_2_report.py
 ```
 
 真实数据 / 模型（隔离 venv，不是合成矩阵的一部分）：
@@ -112,6 +128,7 @@ PP-bandit 官方 1-D 数值实验：
 | RewardBench leaderboard | **skipped** | 没有兼容的小 reward model；Qwen2.5-0.5B-Instruct 是因果 LM |
 | Qwen MPS `generate` | **partial** | MPS abort；同一 revision 的 CPU float32 generate 成功 |
 | CCF-A 论文对比 | **not claimed** | 协议不可比时标 `NOT DIRECTLY COMPARABLE`，不进同一排行榜 |
+| v1.2 published head-to-head | **PUBLISHED BASELINE COMPARISON NOT ESTABLISHED** | DIRECT=0，ADAPTED=0；Protocol A2/B2 INCOMPARABLE/BLOCKED；selector_unit_check 不是对照 |
 
 ## Artifacts
 
@@ -123,6 +140,8 @@ PP-bandit 官方 1-D 数值实验：
 - 图：`idea_A/results/aggregate_plots/`，`idea_B/results/plots/`；v1.1 轻量汇总图在 `idea_A/results/v1.1/plots/` 与 `idea_B/results/v1.1/plots/`
 - v1 报告：`reports/A_B_SMOKE_EXPERIMENT_REPORT.md`，`reports/BASELINE_REPRODUCTION_AUDIT.md`，`reports/NOVELTY_AND_FAILURE_ANALYSIS.md`
 - v1.1 报告：`reports/V1_1_FULL_EXPERIMENT_REPORT.md`，`reports/V1_1_BASELINE_REPRODUCTION.md`，`reports/V1_1_NOVELTY_ASSESSMENT.md`，`reports/V1_1_NEXT_RESEARCH_STEPS.md`；协议 `reports/V1_1_EVALUATION_PROTOCOL.md`；审计 `reports/V1_TO_V1_1_AUDIT.md`
+- v1.2 报告：`reports/v1.2/CCFA_PUBLISHED_BASELINE_COMPARISON.md`，`reports/v1.2/ORIGINAL_BASELINE_REPRODUCTION.md`，`reports/v1.2/BENCHMARK_COMPATIBILITY.md`，`reports/v1.2/A_B_RESEARCH_DECISION.md`，`reports/v1.2/comparison_summary.json`；锁文件 `reports/v1.2/00_EXISTING_EVIDENCE_AUDIT.md`–`03_COMPARABILITY_AUDIT.md`
+- v1.2 selector_unit_check（不是对照格）：`results/v1.2/idea_A/original/activeuf_selector_unit_check/`
 - 模型权重（gitignore）：`.cache/models/Qwen2.5-0.5B-Instruct/`；`idea_A/models/` 与 `idea_B/models/` 只有 manifest 和相对符号链接
 - MultiPref 小子集：`idea_A/benchmarks/MultiPref/`
 - RewardBench schema sample：`idea_A/benchmarks/RewardBench/`
