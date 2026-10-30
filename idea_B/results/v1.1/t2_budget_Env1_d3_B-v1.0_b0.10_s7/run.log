@@ -1,0 +1,9 @@
+utc=2026-10-30T17:54:06.794268+00:00
+experiment_id=t2_budget_Env1_d3_B-v1.0_b0.10_s7
+env=Env1 method=B-v1.0 seed=7 budget=0.1 d=3
+late_worst_skill_mse=0.02924433429586132
+cumulative_regret=0.5284301480665295
+realized_audit_fraction=0.09609375
+recovery_time=nan
+runtime_s=0.0115
+higher_eigenvalue_is_not_success=True

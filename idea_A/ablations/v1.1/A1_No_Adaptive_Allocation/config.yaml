@@ -1,0 +1,11 @@
+ablation: A1_No_Adaptive_Allocation
+idea: A
+version: v1.1
+component_changed: allocation
+description: 'Replace AIPW-variance / remaining / drift allocation with uniform q=b.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c', 'uniform_dr']
+one_component_change: true

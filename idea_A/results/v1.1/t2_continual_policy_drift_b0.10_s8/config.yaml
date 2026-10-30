@@ -1,0 +1,15 @@
+experiment_id: t2_continual_policy_drift_b0.10_s8
+idea: A
+version: v1.1
+track: continual
+scenario: policy_drift
+seed: 8
+budget: 0.1
+n_per_round: 200
+n_rounds: 8
+methods:
+- uniform_dr
+- neyman_dr
+- v1.1c
+paired_world: true
+novelty_claim: false

@@ -1,0 +1,11 @@
+ablation: A6_IPW_Instead_Of_DR
+idea: A
+version: v1.1
+component_changed: estimator
+description: 'Keep v1.1c allocation; replace history-respecting DR with IPW.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c']
+one_component_change: true

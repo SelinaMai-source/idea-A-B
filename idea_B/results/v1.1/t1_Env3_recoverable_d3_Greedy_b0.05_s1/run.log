@@ -1,0 +1,9 @@
+utc=2026-10-30T17:49:33.172930+00:00
+experiment_id=t1_Env3_recoverable_d3_Greedy_b0.05_s1
+env=Env3_recoverable method=Greedy seed=1 budget=0.05 d=3
+late_worst_skill_mse=0.32650381358604263
+cumulative_regret=2.1221936468584657
+realized_audit_fraction=0.05
+recovery_time=29
+runtime_s=0.0084
+higher_eigenvalue_is_not_success=True

@@ -1,0 +1,12 @@
+utc=2026-10-30T17:56:20.319962+00:00
+idea=A
+version=v1.1
+mechanism=mnar_audit
+seed=0
+n=1600
+budget=0.05
+truth_population_mean=0.5161544772848111
+track=continual prefix=ablation_A5_Misspecified_Propensity
+
+methods:
+  v1.1c_wrong_q: estimate=0.7396280380511052 truth=0.5161544772848111 bias=0.2234735607662941 rmse=0.2234735607662941 cover=True expected_q=0.05 realized_q=0.049375

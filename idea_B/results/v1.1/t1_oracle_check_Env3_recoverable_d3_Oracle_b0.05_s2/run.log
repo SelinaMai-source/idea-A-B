@@ -1,0 +1,9 @@
+utc=2026-10-30T17:49:55.330421+00:00
+experiment_id=t1_oracle_check_Env3_recoverable_d3_Oracle_b0.05_s2
+env=Env3_recoverable method=Oracle seed=2 budget=0.05 d=3
+late_worst_skill_mse=0.6306848143456752
+cumulative_regret=2.6575722986497494
+realized_audit_fraction=1.0
+recovery_time=32
+runtime_s=0.0077
+higher_eigenvalue_is_not_success=True

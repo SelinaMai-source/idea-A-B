@@ -1,0 +1,48 @@
+idea: Feedback-Induced Observability Collapse
+version: v1.1
+method: EqualSkill
+method_label: B-v1.1a equal expected audit count per skill
+generic_control: false
+classical_control: false
+proposal: false
+official_reproduction: false
+novelty_claim_e_or_d_optimal: false
+seed: 11
+budget: 0.05
+horizon: 32
+ridge_lambda: 0.5
+smoothing: 0.6
+mix_uniform: 0.1
+sgd_learning_rate: 0.15
+lazy_period: 5
+freeze_theta: false
+freeze_sampling: false
+information_metric: lambda_min
+update_rule: ridge
+information_discount: 0.9
+sliding_window: 8
+e_optimal_iterations: 12
+d_optimal_iterations: 12
+noise_std: 0.15
+noise_floor: 0.0225
+information_matrix: observed_design_gramian W_T = sum_t S_t phi_t phi_t^T
+conditional_information_matrix: W_T_cond = sum_t q_t phi_t phi_t^T
+candidates_information_matrix: W_T_cand = sum_t phi_t phi_t^T
+higher_eigenvalue_is_not_success: true
+primary_metrics:
+- excess_mse
+- worst_skill_mse
+- population_weighted_mse
+- parameter_error
+- cumulative_regret
+- recovery_time
+secondary_metrics:
+- true_performance_secondary
+- lambda_min_realized
+experiment_id: t2_primary_Env1_d3_EqualSkill_b0.05_s11
+environment: Env1
+env_name: B-Env1
+d: 3
+prefix: t2_primary
+paired_world_seed: 11
+novelty_claim: false

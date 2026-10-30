@@ -1,0 +1,158 @@
+{
+  "B1_No_Observability_Control": {
+    "component": "allocation",
+    "note": "Replace v1.1c allocation with uniform q=b.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B1_No_Observability_Control_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B1_No_Observability_Control_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B1_No_Observability_Control_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B1_No_Observability_Control_Env1_d3_Uniform_b0.05_s0",
+      "ablation_B1_No_Observability_Control_Env1_d3_Uniform_b0.05_s1",
+      "ablation_B1_No_Observability_Control_Env1_d3_Uniform_b0.05_s2"
+    ]
+  },
+  "B2_EqualSkill_Instead": {
+    "component": "equal_skill",
+    "note": "Corrected EqualSkill (equal expected audit count) vs v1.1c.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B2_EqualSkill_Instead_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B2_EqualSkill_Instead_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B2_EqualSkill_Instead_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B2_EqualSkill_Instead_Env1_d3_EqualSkill_b0.05_s0",
+      "ablation_B2_EqualSkill_Instead_Env1_d3_EqualSkill_b0.05_s1",
+      "ablation_B2_EqualSkill_Instead_Env1_d3_EqualSkill_b0.05_s2"
+    ]
+  },
+  "B3_No_Information_Discount": {
+    "component": "information_discount",
+    "note": "v1.1c with information_discount=1 (no discounting of stale Gramian).",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B3_No_Information_Discount_Env1_d3_B-v1.1c_no_discount_b0.05_s0",
+      "ablation_B3_No_Information_Discount_Env1_d3_B-v1.1c_no_discount_b0.05_s1",
+      "ablation_B3_No_Information_Discount_Env1_d3_B-v1.1c_no_discount_b0.05_s2"
+    ]
+  },
+  "B4_E_Optimal": {
+    "component": "e_optimal_control",
+    "note": "Classical E-optimal vs full v1.1c controller.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B4_E_Optimal_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B4_E_Optimal_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B4_E_Optimal_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B4_E_Optimal_Env1_d3_E-optimal_b0.05_s0",
+      "ablation_B4_E_Optimal_Env1_d3_E-optimal_b0.05_s1",
+      "ablation_B4_E_Optimal_Env1_d3_E-optimal_b0.05_s2"
+    ]
+  },
+  "B5_D_Optimal": {
+    "component": "d_optimal_control",
+    "note": "Classical D-optimal vs full v1.1c controller.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B5_D_Optimal_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B5_D_Optimal_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B5_D_Optimal_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B5_D_Optimal_Env1_d3_D-optimal_b0.05_s0",
+      "ablation_B5_D_Optimal_Env1_d3_D-optimal_b0.05_s1",
+      "ablation_B5_D_Optimal_Env1_d3_D-optimal_b0.05_s2"
+    ]
+  },
+  "B6_No_Endogenous_Feedback": {
+    "component": "endogenous_feedback",
+    "note": "Turn off endogenous feedback by freezing theta on Env1.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B6_No_Endogenous_Feedback_Env1_d3_B-v1.1c_frozen_theta_b0.05_s0",
+      "ablation_B6_No_Endogenous_Feedback_Env1_d3_B-v1.1c_frozen_theta_b0.05_s1",
+      "ablation_B6_No_Endogenous_Feedback_Env1_d3_B-v1.1c_frozen_theta_b0.05_s2"
+    ]
+  },
+  "B7_Greedy": {
+    "component": "greedy",
+    "note": "Greedy vs v1.1c. Greedy may coincide with natural serving on Env1.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B7_Greedy_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B7_Greedy_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B7_Greedy_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B7_Greedy_Env1_d3_Greedy_b0.05_s0",
+      "ablation_B7_Greedy_Env1_d3_Greedy_b0.05_s1",
+      "ablation_B7_Greedy_Env1_d3_Greedy_b0.05_s2"
+    ]
+  },
+  "B8_V10_Controller": {
+    "component": "v1_0_controller",
+    "note": "Unchanged v1.0 observability controller vs v1.1c.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B8_V10_Controller_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B8_V10_Controller_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B8_V10_Controller_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B8_V10_Controller_Env1_d3_B-v1.0_b0.05_s0",
+      "ablation_B8_V10_Controller_Env1_d3_B-v1.0_b0.05_s1",
+      "ablation_B8_V10_Controller_Env1_d3_B-v1.0_b0.05_s2"
+    ]
+  },
+  "B9_Proportional_Frequency": {
+    "component": "proportional_frequency",
+    "note": "Frequency-proportional allocation vs v1.1c.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_B9_Proportional_Frequency_Env1_d3_B-v1.1c_b0.05_s0",
+      "ablation_B9_Proportional_Frequency_Env1_d3_B-v1.1c_b0.05_s1",
+      "ablation_B9_Proportional_Frequency_Env1_d3_B-v1.1c_b0.05_s2",
+      "ablation_B9_Proportional_Frequency_Env1_d3_Proportional_b0.05_s0",
+      "ablation_B9_Proportional_Frequency_Env1_d3_Proportional_b0.05_s1",
+      "ablation_B9_Proportional_Frequency_Env1_d3_Proportional_b0.05_s2"
+    ]
+  }
+}

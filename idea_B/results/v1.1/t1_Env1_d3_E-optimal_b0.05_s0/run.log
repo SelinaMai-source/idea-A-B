@@ -1,0 +1,9 @@
+utc=2026-10-30T17:49:18.727125+00:00
+experiment_id=t1_Env1_d3_E-optimal_b0.05_s0
+env=Env1 method=E-optimal seed=0 budget=0.05 d=3
+late_worst_skill_mse=0.03217045152757872
+cumulative_regret=0.31900984236210406
+realized_audit_fraction=0.05390625
+recovery_time=nan
+runtime_s=0.1135
+higher_eigenvalue_is_not_success=True

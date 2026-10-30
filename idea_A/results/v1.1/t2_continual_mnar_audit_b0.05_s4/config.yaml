@@ -1,0 +1,15 @@
+experiment_id: t2_continual_mnar_audit_b0.05_s4
+idea: A
+version: v1.1
+track: continual
+scenario: mnar_audit
+seed: 4
+budget: 0.05
+n_per_round: 200
+n_rounds: 8
+methods:
+- uniform_dr
+- neyman_dr
+- v1.1c
+paired_world: true
+novelty_claim: false

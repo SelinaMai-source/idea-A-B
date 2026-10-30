@@ -1,0 +1,9 @@
+utc=2026-10-30T17:52:41.196651+00:00
+experiment_id=t2_primary_Env1_d3_Greedy_b0.05_s22
+env=Env1 method=Greedy seed=22 budget=0.05 d=3
+late_worst_skill_mse=0.14331769840141834
+cumulative_regret=1.703310360074664
+realized_audit_fraction=0.05
+recovery_time=nan
+runtime_s=0.0097
+higher_eigenvalue_is_not_success=True

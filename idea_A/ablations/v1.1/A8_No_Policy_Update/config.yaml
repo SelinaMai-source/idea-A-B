@@ -1,0 +1,11 @@
+ablation: A8_No_Policy_Update
+idea: A
+version: v1.1
+component_changed: policy_update
+description: 'Same MNAR-audit world; freeze the policy (no outcome-driven update).'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c']
+one_component_change: true

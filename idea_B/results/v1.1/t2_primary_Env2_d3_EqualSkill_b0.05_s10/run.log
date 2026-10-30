@@ -1,0 +1,9 @@
+utc=2026-10-30T17:52:54.325996+00:00
+experiment_id=t2_primary_Env2_d3_EqualSkill_b0.05_s10
+env=Env2 method=EqualSkill seed=10 budget=0.05 d=3
+late_worst_skill_mse=0.03818551104003498
+cumulative_regret=0.09125175849194093
+realized_audit_fraction=0.05390625
+recovery_time=nan
+runtime_s=0.0209
+higher_eigenvalue_is_not_success=True

@@ -1,0 +1,9 @@
+utc=2026-10-30T17:49:34.395486+00:00
+experiment_id=t1_Env3_unrecoverable_d3_EqualSkill_b0.05_s1
+env=Env3_unrecoverable method=EqualSkill seed=1 budget=0.05 d=3
+late_worst_skill_mse=0.16387710730605937
+cumulative_regret=0.7938110912506228
+realized_audit_fraction=0.0515625
+recovery_time=32
+runtime_s=0.0173
+higher_eigenvalue_is_not_success=True

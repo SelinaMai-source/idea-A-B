@@ -1,0 +1,14 @@
+experiment_id: ablation_A1_No_Adaptive_Allocation_mnar_audit_b0.05_s2
+idea: A
+version: v1.1
+track: continual
+scenario: mnar_audit
+seed: 2
+budget: 0.05
+n_per_round: 200
+n_rounds: 8
+methods:
+- v1.1c
+- uniform_dr
+paired_world: true
+novelty_claim: false

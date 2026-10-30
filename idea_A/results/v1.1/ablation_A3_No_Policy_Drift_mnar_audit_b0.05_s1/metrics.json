@@ -1,0 +1,93 @@
+{
+  "experiment_id": "ablation_A3_No_Policy_Drift_mnar_audit_b0.05_s1",
+  "track": "continual",
+  "scenario": "mnar_audit",
+  "seed": 1,
+  "budget": 0.05,
+  "n_per_round": 200,
+  "n_rounds": 8,
+  "methods": [
+    {
+      "method": "v1.1c_no_drift",
+      "base_method": "v1.1c",
+      "config_id": "A-v1.1c",
+      "estimator": "dr",
+      "track": "continual_adaptation",
+      "scenario": "mnar_audit",
+      "seed": 1,
+      "n": 1600,
+      "n_per_round": 200,
+      "n_rounds": 8,
+      "budget_requested": 0.05,
+      "notes": "A-v1.1c: remaining-budget + policy-drift on top of v1.1b. Main proposal.",
+      "expected_audit_fraction": 0.05,
+      "realized_audit_fraction": 0.0525,
+      "population_mean_reward": {
+        "estimate": 0.7908550284739452,
+        "truth": 0.5993516566560791,
+        "bias": 0.19150337181786603,
+        "mae": 0.19150337181786603,
+        "rmse": 0.19150337181786603
+      },
+      "ci": {
+        "estimate": 0.7908550284739452,
+        "se": 0.14707105652688046,
+        "ci_low": 0.5026010545130051,
+        "ci_high": 1.0791090024348853,
+        "z": 1.959963984540054,
+        "formula": "influence_wald_95",
+        "n": 1600.0
+      },
+      "ci_coverage": true,
+      "ci_low": 0.5026010545130051,
+      "ci_high": 1.0791090024348853,
+      "ci_formula": "influence_wald_95",
+      "policy_adapted": true,
+      "mean_pi_by_round": [
+        0.28,
+        0.735,
+        0.895,
+        0.875,
+        0.945,
+        0.885,
+        0.965,
+        0.94
+      ],
+      "mean_p_natural_by_round": [
+        0.3900393199720878,
+        0.48224470775321704,
+        0.512127288855507,
+        0.49740551975396236,
+        0.5162276202461789,
+        0.5277639959029368,
+        0.4877572975356618,
+        0.5127313072964307
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "method": "v1.1c_no_drift",
+      "allocation": null,
+      "estimator": "dr",
+      "mechanism": "mnar_audit",
+      "seed": 1,
+      "n": 1600,
+      "budget_requested": 0.05,
+      "expected_audit_fraction": 0.05,
+      "realized_audit_fraction": 0.0525,
+      "n_audited": null,
+      "population_mean_reward_estimate": 0.7908550284739452,
+      "population_mean_reward_truth": 0.5993516566560791,
+      "population_mean_reward_bias": 0.19150337181786603,
+      "population_mean_reward_mae": 0.19150337181786603,
+      "population_mean_reward_rmse": 0.19150337181786603,
+      "ci_coverage": true,
+      "ci_low": 0.5026010545130051,
+      "ci_high": 1.0791090024348853,
+      "ci_formula": "influence_wald_95",
+      "notes": "A-v1.1c: remaining-budget + policy-drift on top of v1.1b. Main proposal.",
+      "track": "continual_adaptation"
+    }
+  ]
+}

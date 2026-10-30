@@ -1,0 +1,49 @@
+idea: B
+version: v1.1
+horizon: 32
+population_per_round: 40
+d: 3
+noise_std: 0.15
+noise_floor: 0.0225
+feature_noise: 0.05
+mix: [0.42, 0.42, 0.16]
+theta_star: [1.2, 1.05, 1.0]
+weak_skill: 2
+serve_fraction: 0.35
+ridge_lambda: 0.5
+information_discount: 0.90
+v1_0_smoothing: 0.6
+v1_0_mix_uniform: 0.1
+tier1:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  environments: [Env1, Env2, Env3_recoverable, Env3_unrecoverable]
+  methods: [Uniform, EqualSkill, E-optimal, D-optimal, B-v1.0, B-v1.1c, Greedy]
+tier2:
+  primary:
+    environments: [Env1, Env2]
+    d: 3
+    budget: 0.05
+    seeds: 30
+    methods: [Uniform, EqualSkill, E-optimal, D-optimal, B-v1.0, B-v1.1c, Greedy]
+  budget_robustness:
+    environment: Env1
+    budget: 0.10
+    seeds: 10
+    methods: [Uniform, EqualSkill, E-optimal, D-optimal, B-v1.0, B-v1.1c, Greedy]
+  skill_count:
+    environment: Env1
+    budget: 0.05
+    d: [2, 5]
+    seeds: 10
+    methods: [Uniform, E-optimal, B-v1.1c]
+  env3:
+    seeds: 10
+    methods: [Uniform, E-optimal, B-v1.1c]
+ablations:
+  primary_cell: {environment: Env1, budget: 0.05, seeds: [0, 1, 2]}
+notes:
+  - Primary metrics are late worst-skill MSE and cumulative regret. Eigenvalues are secondary.
+  - Main controls are E-optimal and D-optimal, not only Uniform.
+  - n_seeds<=3 is PRELIMINARY. JSON files report numbers; they do not claim PROMISING if thresholds fail.
+  - Greedy on Env1 may audit inside the naturally served set; that coincidence is recorded, not scored as an information win.

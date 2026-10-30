@@ -1,0 +1,4037 @@
+{
+  "idea": "B",
+  "tier": 1,
+  "preliminary": true,
+  "n_seeds": 3,
+  "label": "PRELIMINARY",
+  "n_runs": 84,
+  "cells": {
+    "Env1": {
+      "methods": {
+        "B-v1.0": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.029735344052010722,
+            "std": 0.0037653735850333783,
+            "n": 3,
+            "values": [
+              0.03243493833783893,
+              0.025433906474726285,
+              0.03133718734346695
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.43286309558993996,
+            "std": 0.08295896742128472,
+            "n": 3,
+            "values": [
+              0.5157546136640481,
+              0.34983684293949624,
+              0.4329978301662756
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05182291666666666,
+            "std": 0.004577707247720557,
+            "n": 3,
+            "values": [
+              0.0484375,
+              0.05703125,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_B-v1.0_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_B-v1.0_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_B-v1.0_b0.05_s2"
+          ]
+        },
+        "B-v1.1c": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.030545627779991185,
+            "std": 0.004001095779128367,
+            "n": 3,
+            "values": [
+              0.03253302232846347,
+              0.02593994149479642,
+              0.03316391951671365
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.12629159949051047,
+            "std": 0.06164614263513237,
+            "n": 3,
+            "values": [
+              0.18398577273560632,
+              0.061336568008628134,
+              0.13355245772729699
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05442708333333333,
+            "std": 0.005651701670367371,
+            "n": 3,
+            "values": [
+              0.05078125,
+              0.0609375,
+              0.0515625
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_B-v1.1c_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_B-v1.1c_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_B-v1.1c_b0.05_s2"
+          ]
+        },
+        "D-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.03071202887810373,
+            "std": 0.004651356336988958,
+            "n": 3,
+            "values": [
+              0.03264984165443603,
+              0.025405061055776022,
+              0.03408118392409913
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.2561412190079495,
+            "std": 0.04718714415607604,
+            "n": 3,
+            "values": [
+              0.2788724321323238,
+              0.2876602896163673,
+              0.2018909352751574
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.056249999999999994,
+            "std": 0.006765823467065923,
+            "n": 3,
+            "values": [
+              0.05234375,
+              0.0640625,
+              0.05234375
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_D-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_D-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_D-optimal_b0.05_s2"
+          ]
+        },
+        "E-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.029654581115065554,
+            "std": 0.0036363249830637183,
+            "n": 3,
+            "values": [
+              0.03217045152757872,
+              0.02548534784213253,
+              0.031307943975485406
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.2020327462068934,
+            "std": 0.10233621706456894,
+            "n": 3,
+            "values": [
+              0.31900984236210406,
+              0.15803455887039874,
+              0.1290538373881774
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05286458333333333,
+            "std": 0.002511367385675248,
+            "n": 3,
+            "values": [
+              0.05390625,
+              0.0546875,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_E-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_E-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_E-optimal_b0.05_s2"
+          ]
+        },
+        "EqualSkill": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.030891233085475357,
+            "std": 0.004712097130231506,
+            "n": 3,
+            "values": [
+              0.03329933659466881,
+              0.02546170650767904,
+              0.03391265615407822
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.36610532743431135,
+            "std": 0.18438315323307267,
+            "n": 3,
+            "values": [
+              0.48989199740625183,
+              0.45422796642816143,
+              0.1541960184685206
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05572916666666666,
+            "std": 0.006068323019651585,
+            "n": 3,
+            "values": [
+              0.05078125,
+              0.0625,
+              0.05390625
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_EqualSkill_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_EqualSkill_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_EqualSkill_b0.05_s2"
+          ]
+        },
+        "Greedy": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.1720399023601866,
+            "std": 0.08543876305734004,
+            "n": 3,
+            "values": [
+              0.0739160620579409,
+              0.21223806450339708,
+              0.2299655805192218
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 1.6213391586971841,
+            "std": 0.29635069079904736,
+            "n": 3,
+            "values": [
+              1.3165439570035131,
+              1.6390198500431763,
+              1.9084536690448628
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3,
+            "values": [
+              0.05,
+              0.05,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_Greedy_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_Greedy_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_Greedy_b0.05_s2"
+          ]
+        },
+        "Uniform": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.03390250880149508,
+            "std": 0.008115171444675114,
+            "n": 3,
+            "values": [
+              0.03471189873116067,
+              0.0254129716283822,
+              0.041582656044942386
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.4936683914429099,
+            "std": 0.24605432789609158,
+            "n": 3,
+            "values": [
+              0.7508762185644235,
+              0.4695911851247019,
+              0.26053777063960426
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05494791666666667,
+            "std": 0.006644453553215144,
+            "n": 3,
+            "values": [
+              0.0484375,
+              0.06171875,
+              0.0546875
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_Uniform_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_Uniform_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env1_d3_Uniform_b0.05_s2"
+          ]
+        }
+      },
+      "paired_vs_E_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 8.076293694517002e-05,
+            "ci_low": -5.144136740624361e-05,
+            "ci_high": 0.00026448681026020743,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03243493833783893,
+              0.025433906474726285,
+              0.03133718734346695
+            ],
+            "baseline_values": [
+              0.03217045152757872,
+              0.02548534784213253,
+              0.031307943975485406
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.23083034938304656,
+            "ci_low": 0.1918022840690975,
+            "ci_high": 0.30394399277809814,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.5157546136640481,
+              0.34983684293949624,
+              0.4329978301662756
+            ],
+            "baseline_values": [
+              0.31900984236210406,
+              0.15803455887039874,
+              0.1290538373881774
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.0008910466649256302,
+            "ci_low": 0.0003625708008847539,
+            "ci_high": 0.0018559755412282455,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03253302232846347,
+              0.02593994149479642,
+              0.03316391951671365
+            ],
+            "baseline_values": [
+              0.03217045152757872,
+              0.02548534784213253,
+              0.031307943975485406
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.07574114671638292,
+            "ci_low": -0.13502406962649774,
+            "ci_high": 0.0044986203391195745,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.18398577273560632,
+              0.061336568008628134,
+              0.13355245772729699
+            ],
+            "baseline_values": [
+              0.31900984236210406,
+              0.15803455887039874,
+              0.1290538373881774
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.0012366519704098064,
+            "ci_low": -2.3641334453490537e-05,
+            "ci_high": 0.0026047121785928162,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03329933659466881,
+              0.02546170650767904,
+              0.03391265615407822
+            ],
+            "baseline_values": [
+              0.03217045152757872,
+              0.02548534784213253,
+              0.031307943975485406
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.16407258122741789,
+            "ci_low": 0.02514218108034319,
+            "ci_high": 0.2961934075577627,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.48989199740625183,
+              0.45422796642816143,
+              0.1541960184685206
+            ],
+            "baseline_values": [
+              0.31900984236210406,
+              0.15803455887039874,
+              0.1290538373881774
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.14238532124512104,
+            "ci_low": 0.04174561053036219,
+            "ci_high": 0.1986576365437364,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.0739160620579409,
+              0.21223806450339708,
+              0.2299655805192218
+            ],
+            "baseline_values": [
+              0.03217045152757872,
+              0.02548534784213253,
+              0.031307943975485406
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 1.4193064124902908,
+            "ci_low": 0.9975341146414091,
+            "ci_high": 1.7793998316566855,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              1.3165439570035131,
+              1.6390198500431763,
+              1.9084536690448628
+            ],
+            "baseline_values": [
+              0.31900984236210406,
+              0.15803455887039874,
+              0.1290538373881774
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.004247927686429534,
+            "ci_low": -7.237621375032893e-05,
+            "ci_high": 0.01027471206945698,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03471189873116067,
+              0.0254129716283822,
+              0.041582656044942386
+            ],
+            "baseline_values": [
+              0.03217045152757872,
+              0.02548534784213253,
+              0.031307943975485406
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.2916356452360165,
+            "ci_low": 0.13148393325142685,
+            "ci_high": 0.43186637620231955,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.7508762185644235,
+              0.4695911851247019,
+              0.26053777063960426
+            ],
+            "baseline_values": [
+              0.31900984236210406,
+              0.15803455887039874,
+              0.1290538373881774
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      },
+      "paired_vs_D_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.0009766848260930074,
+            "ci_low": -0.0027439965806321798,
+            "ci_high": 2.8845418950262935e-05,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03243493833783893,
+              0.025433906474726285,
+              0.03133718734346695
+            ],
+            "baseline_values": [
+              0.03264984165443603,
+              0.025405061055776022,
+              0.03408118392409913
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.17672187658199046,
+            "ci_low": 0.062176553323128936,
+            "ci_high": 0.23688218153172425,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.5157546136640481,
+              0.34983684293949624,
+              0.4329978301662756
+            ],
+            "baseline_values": [
+              0.2788724321323238,
+              0.2876602896163673,
+              0.2018909352751574
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.00016640109811254708,
+            "ci_low": -0.0009172644073854805,
+            "ci_high": 0.0005348804390203979,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03253302232846347,
+              0.02593994149479642,
+              0.03316391951671365
+            ],
+            "baseline_values": [
+              0.03264984165443603,
+              0.025405061055776022,
+              0.03408118392409913
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.129849619517439,
+            "ci_low": -0.22632372160773917,
+            "ci_high": -0.0683384775478604,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.18398577273560632,
+              0.061336568008628134,
+              0.13355245772729699
+            ],
+            "baseline_values": [
+              0.2788724321323238,
+              0.2876602896163673,
+              0.2018909352751574
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.00017920420737162907,
+            "ci_low": -0.0001685277700209098,
+            "ci_high": 0.000649494940232781,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03329933659466881,
+              0.02546170650767904,
+              0.03391265615407822
+            ],
+            "baseline_values": [
+              0.03264984165443603,
+              0.025405061055776022,
+              0.03408118392409913
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.10996410842636178,
+            "ci_low": -0.04769491680663679,
+            "ci_high": 0.21101956527392804,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.48989199740625183,
+              0.45422796642816143,
+              0.1541960184685206
+            ],
+            "baseline_values": [
+              0.2788724321323238,
+              0.2876602896163673,
+              0.2018909352751574
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.14132787348208287,
+            "ci_low": 0.041266220403504875,
+            "ci_high": 0.1958843965951227,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.0739160620579409,
+              0.21223806450339708,
+              0.2299655805192218
+            ],
+            "baseline_values": [
+              0.03264984165443603,
+              0.025405061055776022,
+              0.03408118392409913
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 1.3651979396892344,
+            "ci_low": 1.0376715248711892,
+            "ci_high": 1.7065627337697054,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              1.3165439570035131,
+              1.6390198500431763,
+              1.9084536690448628
+            ],
+            "baseline_values": [
+              0.2788724321323238,
+              0.2876602896163673,
+              0.2018909352751574
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.0031904799233913573,
+            "ci_low": 7.910572606177613e-06,
+            "ci_high": 0.007501472120843254,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03471189873116067,
+              0.0254129716283822,
+              0.041582656044942386
+            ],
+            "baseline_values": [
+              0.03264984165443603,
+              0.025405061055776022,
+              0.03408118392409913
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.23752717243496044,
+            "ci_low": 0.05864683536444687,
+            "ci_high": 0.47200378643209967,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.7508762185644235,
+              0.4695911851247019,
+              0.26053777063960426
+            ],
+            "baseline_values": [
+              0.2788724321323238,
+              0.2876602896163673,
+              0.2018909352751574
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Env2": {
+      "methods": {
+        "B-v1.0": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.029591403942363027,
+            "std": 0.0036954516082153125,
+            "n": 3,
+            "values": [
+              0.03201254701655228,
+              0.02533782201268178,
+              0.031423842797855026
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.46496880007486824,
+            "std": 0.09839063689186615,
+            "n": 3,
+            "values": [
+              0.47739780698558815,
+              0.3609542083353099,
+              0.5565543849037068
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05260416666666667,
+            "std": 0.0040090636245678785,
+            "n": 3,
+            "values": [
+              0.0515625,
+              0.05703125,
+              0.04921875
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_B-v1.0_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_B-v1.0_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_B-v1.0_b0.05_s2"
+          ]
+        },
+        "B-v1.1c": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.03048761817245821,
+            "std": 0.004126678102959947,
+            "n": 3,
+            "values": [
+              0.03238918040118211,
+              0.02575298743328728,
+              0.033320686682905234
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.22877444507913838,
+            "std": 0.18748914467839128,
+            "n": 3,
+            "values": [
+              0.19268585344553527,
+              0.06195287185121335,
+              0.4316846099406666
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.053385416666666664,
+            "std": 0.005201818842562023,
+            "n": 3,
+            "values": [
+              0.05078125,
+              0.059375,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_B-v1.1c_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_B-v1.1c_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_B-v1.1c_b0.05_s2"
+          ]
+        },
+        "D-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.030194071907740243,
+            "std": 0.004123187656190084,
+            "n": 3,
+            "values": [
+              0.03226361888098066,
+              0.025446023863223477,
+              0.032872572979016586
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.2982672810477785,
+            "std": 0.02954774514238413,
+            "n": 3,
+            "values": [
+              0.270747154696124,
+              0.2945616284583984,
+              0.3294930599888131
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05625,
+            "std": 0.0054126587736527424,
+            "n": 3,
+            "values": [
+              0.053125,
+              0.0625,
+              0.053125
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_D-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_D-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_D-optimal_b0.05_s2"
+          ]
+        },
+        "E-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.029693147290910726,
+            "std": 0.003784161520168406,
+            "n": 3,
+            "values": [
+              0.03221545662347598,
+              0.02534195295920891,
+              0.03152203229004728
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.23915790813460025,
+            "std": 0.08631771234988996,
+            "n": 3,
+            "values": [
+              0.33368242012725036,
+              0.16451710324079247,
+              0.21927420103575793
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.052604166666666674,
+            "std": 0.0023867581744561653,
+            "n": 3,
+            "values": [
+              0.053125,
+              0.0546875,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_E-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_E-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_E-optimal_b0.05_s2"
+          ]
+        },
+        "EqualSkill": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.030726850815404286,
+            "std": 0.004615502760555995,
+            "n": 3,
+            "values": [
+              0.0328701305830258,
+              0.02542938206485292,
+              0.03388103979833414
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.40090873553604817,
+            "std": 0.13027474116691976,
+            "n": 3,
+            "values": [
+              0.4837025062766377,
+              0.4682795008300201,
+              0.2507441995014867
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05572916666666666,
+            "std": 0.006068323019651585,
+            "n": 3,
+            "values": [
+              0.05078125,
+              0.0625,
+              0.05390625
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_EqualSkill_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_EqualSkill_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_EqualSkill_b0.05_s2"
+          ]
+        },
+        "Greedy": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.17263577034567335,
+            "std": 0.09797590138291054,
+            "n": 3,
+            "values": [
+              0.06133335234974581,
+              0.2107340290791181,
+              0.24583992960815618
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 1.6734180671673675,
+            "std": 0.4509451647131516,
+            "n": 3,
+            "values": [
+              1.2344763395315588,
+              1.6503004700411452,
+              2.1354773919293986
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3,
+            "values": [
+              0.05,
+              0.05,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_Greedy_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_Greedy_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_Greedy_b0.05_s2"
+          ]
+        },
+        "Uniform": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.03354193026464398,
+            "std": 0.008372317244146976,
+            "n": 3,
+            "values": [
+              0.03300330911621571,
+              0.025451927979508362,
+              0.04217055369820787
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 0.5200823288305908,
+            "std": 0.21111958882747395,
+            "n": 3,
+            "values": [
+              0.747121845757813,
+              0.48344738097201306,
+              0.3296777597619464
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05494791666666667,
+            "std": 0.006644453553215144,
+            "n": 3,
+            "values": [
+              0.0484375,
+              0.06171875,
+              0.0546875
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": null,
+            "n": 0
+          },
+          "recovery_censored_fraction": 0.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_Uniform_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_Uniform_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env2_d3_Uniform_b0.05_s2"
+          ]
+        }
+      },
+      "paired_vs_E_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.00010174334854769669,
+            "ci_low": -0.00020290960692369991,
+            "ci_high": -4.130946527132473e-06,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03201254701655228,
+              0.02533782201268178,
+              0.031423842797855026
+            ],
+            "baseline_values": [
+              0.03221545662347598,
+              0.02534195295920891,
+              0.03152203229004728
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.22581089194026804,
+            "ci_low": 0.1437153868583378,
+            "ci_high": 0.3372801838679489,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.47739780698558815,
+              0.3609542083353099,
+              0.5565543849037068
+            ],
+            "baseline_values": [
+              0.33368242012725036,
+              0.16451710324079247,
+              0.21927420103575793
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.0007944708815474828,
+            "ci_low": 0.0001737237777061293,
+            "ci_high": 0.0017986543928579513,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03238918040118211,
+              0.02575298743328728,
+              0.033320686682905234
+            ],
+            "baseline_values": [
+              0.03221545662347598,
+              0.02534195295920891,
+              0.03152203229004728
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.010383463055461848,
+            "ci_low": -0.1409965666817151,
+            "ci_high": 0.21241040890490867,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.19268585344553527,
+              0.06195287185121335,
+              0.4316846099406666
+            ],
+            "baseline_values": [
+              0.33368242012725036,
+              0.16451710324079247,
+              0.21927420103575793
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.001033703524493559,
+            "ci_low": 8.742910564400741e-05,
+            "ci_high": 0.0023590075082868533,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.0328701305830258,
+              0.02542938206485292,
+              0.03388103979833414
+            ],
+            "baseline_values": [
+              0.03221545662347598,
+              0.02534195295920891,
+              0.03152203229004728
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.1617508274014479,
+            "ci_low": 0.03146999846572876,
+            "ci_high": 0.30376239758922763,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.4837025062766377,
+              0.4682795008300201,
+              0.2507441995014867
+            ],
+            "baseline_values": [
+              0.33368242012725036,
+              0.16451710324079247,
+              0.21927420103575793
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.14294262305476266,
+            "ci_low": 0.029117895726269827,
+            "ci_high": 0.2143178973181089,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.06133335234974581,
+              0.2107340290791181,
+              0.24583992960815618
+            ],
+            "baseline_values": [
+              0.03221545662347598,
+              0.02534195295920891,
+              0.03152203229004728
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 1.4342601590327673,
+            "ci_low": 0.9007939194043084,
+            "ci_high": 1.9162031908936406,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              1.2344763395315588,
+              1.6503004700411452,
+              2.1354773919293986
+            ],
+            "baseline_values": [
+              0.33368242012725036,
+              0.16451710324079247,
+              0.21927420103575793
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.003848782973733257,
+            "ci_low": 0.00010997502029945136,
+            "ci_high": 0.01064852140816059,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.03300330911621571,
+              0.025451927979508362,
+              0.04217055369820787
+            ],
+            "baseline_values": [
+              0.03221545662347598,
+              0.02534195295920891,
+              0.03152203229004728
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.2809244206959906,
+            "ci_low": 0.1104035587261885,
+            "ci_high": 0.4134394256305627,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.747121845757813,
+              0.48344738097201306,
+              0.3296777597619464
+            ],
+            "baseline_values": [
+              0.33368242012725036,
+              0.16451710324079247,
+              0.21927420103575793
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      },
+      "paired_vs_D_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.0006026679653772111,
+            "ci_low": -0.0014487301811615602,
+            "ci_high": -0.00010820185054169831,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03201254701655228,
+              0.02533782201268178,
+              0.031423842797855026
+            ],
+            "baseline_values": [
+              0.03226361888098066,
+              0.025446023863223477,
+              0.032872572979016586
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.16670151902708977,
+            "ci_low": 0.0663925798769115,
+            "ci_high": 0.2270613249148937,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.47739780698558815,
+              0.3609542083353099,
+              0.5565543849037068
+            ],
+            "baseline_values": [
+              0.270747154696124,
+              0.2945616284583984,
+              0.3294930599888131
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.00029354626471796846,
+            "ci_low": 0.00012556152020145456,
+            "ci_high": 0.00044811370388864874,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03238918040118211,
+              0.02575298743328728,
+              0.033320686682905234
+            ],
+            "baseline_values": [
+              0.03226361888098066,
+              0.025446023863223477,
+              0.032872572979016586
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.0694928359686401,
+            "ci_low": -0.23260875660718505,
+            "ci_high": 0.10219154995185348,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.19268585344553527,
+              0.06195287185121335,
+              0.4316846099406666
+            ],
+            "baseline_values": [
+              0.270747154696124,
+              0.2945616284583984,
+              0.3294930599888131
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.0005327789076640445,
+            "ci_low": -1.664179837055843e-05,
+            "ci_high": 0.0010084668193175508,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.0328701305830258,
+              0.02542938206485292,
+              0.03388103979833414
+            ],
+            "baseline_values": [
+              0.03226361888098066,
+              0.025446023863223477,
+              0.032872572979016586
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.10264145448826967,
+            "ci_low": -0.07874886048732643,
+            "ci_high": 0.2129553515805137,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.4837025062766377,
+              0.4682795008300201,
+              0.2507441995014867
+            ],
+            "baseline_values": [
+              0.270747154696124,
+              0.2945616284583984,
+              0.3294930599888131
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.1424416984379331,
+            "ci_low": 0.029069733468765152,
+            "ci_high": 0.2129673566291396,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.06133335234974581,
+              0.2107340290791181,
+              0.24583992960815618
+            ],
+            "baseline_values": [
+              0.03226361888098066,
+              0.025446023863223477,
+              0.032872572979016586
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 1.3751507861195889,
+            "ci_low": 0.9637291848354348,
+            "ci_high": 1.8059843319405855,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              1.2344763395315588,
+              1.6503004700411452,
+              2.1354773919293986
+            ],
+            "baseline_values": [
+              0.270747154696124,
+              0.2945616284583984,
+              0.3294930599888131
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.0033478583569037427,
+            "ci_low": 5.904116284885519e-06,
+            "ci_high": 0.009297980719191287,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.03300330911621571,
+              0.025451927979508362,
+              0.04217055369820787
+            ],
+            "baseline_values": [
+              0.03226361888098066,
+              0.025446023863223477,
+              0.032872572979016586
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.22181504778281236,
+            "ci_low": 0.00018469977313329,
+            "ci_high": 0.47637469106168906,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.747121845757813,
+              0.48344738097201306,
+              0.3296777597619464
+            ],
+            "baseline_values": [
+              0.270747154696124,
+              0.2945616284583984,
+              0.3294930599888131
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Env3_recoverable": {
+      "methods": {
+        "B-v1.0": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.396448008989762,
+            "std": 0.2145481589538287,
+            "n": 3,
+            "values": [
+              0.16574980972426379,
+              0.5899934522212991,
+              0.43360076502372324
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 2.2430974744649945,
+            "std": 0.33609606396865854,
+            "n": 3,
+            "values": [
+              1.8615678378744482,
+              2.495400220232185,
+              2.3723243652883497
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05182291666666666,
+            "std": 0.004577707247720557,
+            "n": 3,
+            "values": [
+              0.0484375,
+              0.05703125,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_B-v1.0_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_B-v1.0_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_B-v1.0_b0.05_s2"
+          ]
+        },
+        "B-v1.1c": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.11990735609867832,
+            "std": 0.08633306793449816,
+            "n": 3,
+            "values": [
+              0.04627986579718375,
+              0.21492456440163132,
+              0.09851763809721993
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 1.0780442939173536,
+            "std": 0.2213799026163308,
+            "n": 3,
+            "values": [
+              0.8717327386198557,
+              1.3119124194734892,
+              1.0504877236587153
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05442708333333333,
+            "std": 0.006735686018946648,
+            "n": 3,
+            "values": [
+              0.053125,
+              0.06171875,
+              0.0484375
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_B-v1.1c_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_B-v1.1c_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_B-v1.1c_b0.05_s2"
+          ]
+        },
+        "D-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.36307027074223575,
+            "std": 0.22668383943470438,
+            "n": 3,
+            "values": [
+              0.11381340637738903,
+              0.556900037710284,
+              0.4184973681390344
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 1.884345453997616,
+            "std": 0.4061081930704104,
+            "n": 3,
+            "values": [
+              1.4727661110785297,
+              2.284751922883881,
+              1.895518328030437
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05520833333333333,
+            "std": 0.007088884160841767,
+            "n": 3,
+            "values": [
+              0.05,
+              0.06328125,
+              0.05234375
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_D-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_D-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_D-optimal_b0.05_s2"
+          ]
+        },
+        "E-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.502969855187321,
+            "std": 0.2468042540352514,
+            "n": 3,
+            "values": [
+              0.24420486215991763,
+              0.7357585826426001,
+              0.5289461207594451
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 2.3245307273921587,
+            "std": 0.3588946005971365,
+            "n": 3,
+            "values": [
+              1.928287204656412,
+              2.6277649873282445,
+              2.4175399901918198
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.053125,
+            "std": 0.003405389799641151,
+            "n": 3,
+            "values": [
+              0.05546875,
+              0.0546875,
+              0.04921875
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_E-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_E-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_E-optimal_b0.05_s2"
+          ]
+        },
+        "EqualSkill": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.3998974204778342,
+            "std": 0.2813427220196091,
+            "n": 3,
+            "values": [
+              0.07981250296684037,
+              0.6080331367637609,
+              0.5118466217029012
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 2.1734994486613566,
+            "std": 0.6579552427580819,
+            "n": 3,
+            "values": [
+              1.5212549898041041,
+              2.837020516099769,
+              2.162222840080197
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05572916666666666,
+            "std": 0.006068323019651585,
+            "n": 3,
+            "values": [
+              0.05078125,
+              0.0625,
+              0.05390625
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_EqualSkill_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_EqualSkill_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_EqualSkill_b0.05_s2"
+          ]
+        },
+        "Greedy": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.3406375813908147,
+            "std": 0.01285100012903902,
+            "n": 3,
+            "values": [
+              0.34378966516456655,
+              0.32650381358604263,
+              0.35161926542183475
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 3.1128243406661738,
+            "std": 1.2029073500190792,
+            "n": 3,
+            "values": [
+              4.451332556428907,
+              2.1221936468584657,
+              2.764946818711148
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3,
+            "values": [
+              0.05,
+              0.05,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 30.0,
+            "std": 1.7320508075688772,
+            "n": 3,
+            "values": [
+              29.0,
+              29.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 0.3333333333333333,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_Greedy_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_Greedy_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_Greedy_b0.05_s2"
+          ]
+        },
+        "Uniform": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 0.5141780728396053,
+            "std": 0.40366230215487725,
+            "n": 3,
+            "values": [
+              0.04835309843717299,
+              0.7611821922459775,
+              0.7329989278356654
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 2.504015673341398,
+            "std": 0.7980022453798136,
+            "n": 3,
+            "values": [
+              1.698228865978951,
+              3.293998600830358,
+              2.519819553214885
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05494791666666667,
+            "std": 0.006644453553215144,
+            "n": 3,
+            "values": [
+              0.0484375,
+              0.06171875,
+              0.0546875
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_Uniform_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_Uniform_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_recoverable_d3_Uniform_b0.05_s2"
+          ]
+        }
+      },
+      "paired_vs_E_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.10652184619755893,
+            "ci_low": -0.14576513042130101,
+            "ci_high": -0.07845505243565384,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.16574980972426379,
+              0.5899934522212991,
+              0.43360076502372324
+            ],
+            "baseline_values": [
+              0.24420486215991763,
+              0.7357585826426001,
+              0.5289461207594451
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.08143325292716441,
+            "ci_low": -0.1323647670960595,
+            "ci_high": -0.045215624903470086,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              1.8615678378744482,
+              2.495400220232185,
+              2.3723243652883497
+            ],
+            "baseline_values": [
+              1.928287204656412,
+              2.6277649873282445,
+              2.4175399901918198
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.38306249908864265,
+            "ci_low": -0.5208340182409688,
+            "ci_high": -0.19792499636273386,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.04627986579718375,
+              0.21492456440163132,
+              0.09851763809721993
+            ],
+            "baseline_values": [
+              0.24420486215991763,
+              0.7357585826426001,
+              0.5289461207594451
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -1.2464864334748054,
+            "ci_low": -1.3670522665331044,
+            "ci_high": -1.0565544660365562,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.8717327386198557,
+              1.3119124194734892,
+              1.0504877236587153
+            ],
+            "baseline_values": [
+              1.928287204656412,
+              2.6277649873282445,
+              2.4175399901918198
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.1030724347094868,
+            "ci_low": -0.16439235919307726,
+            "ci_high": -0.017099499056543954,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.07981250296684037,
+              0.6080331367637609,
+              0.5118466217029012
+            ],
+            "baseline_values": [
+              0.24420486215991763,
+              0.7357585826426001,
+              0.5289461207594451
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.15103127873080205,
+            "ci_low": -0.4070322148523078,
+            "ci_high": 0.20925552877152453,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              1.5212549898041041,
+              2.837020516099769,
+              2.162222840080197
+            ],
+            "baseline_values": [
+              1.928287204656412,
+              2.6277649873282445,
+              2.4175399901918198
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.1623322737965063,
+            "ci_low": -0.4092547690565575,
+            "ci_high": 0.09958480300464893,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.34378966516456655,
+              0.32650381358604263,
+              0.35161926542183475
+            ],
+            "baseline_values": [
+              0.24420486215991763,
+              0.7357585826426001,
+              0.5289461207594451
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.7882936132740149,
+            "ci_low": -0.5055713404697788,
+            "ci_high": 2.5230453517724953,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              4.451332556428907,
+              2.1221936468584657,
+              2.764946818711148
+            ],
+            "baseline_values": [
+              1.928287204656412,
+              2.6277649873282445,
+              2.4175399901918198
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.011208217652284358,
+            "ci_low": -0.19585176372274468,
+            "ci_high": 0.2040528070762203,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              0.04835309843717299,
+              0.7611821922459775,
+              0.7329989278356654
+            ],
+            "baseline_values": [
+              0.24420486215991763,
+              0.7357585826426001,
+              0.5289461207594451
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.17948494594923936,
+            "ci_low": -0.23005833867746084,
+            "ci_high": 0.6662336135021136,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              1.698228865978951,
+              3.293998600830358,
+              2.519819553214885
+            ],
+            "baseline_values": [
+              1.928287204656412,
+              2.6277649873282445,
+              2.4175399901918198
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      },
+      "paired_vs_D_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.03337773824752625,
+            "ci_low": 0.015103396884688869,
+            "ci_high": 0.05193640334687475,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.16574980972426379,
+              0.5899934522212991,
+              0.43360076502372324
+            ],
+            "baseline_values": [
+              0.11381340637738903,
+              0.556900037710284,
+              0.4184973681390344
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.3587520204673784,
+            "ci_low": 0.21064829734830415,
+            "ci_high": 0.4768060372579126,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              1.8615678378744482,
+              2.495400220232185,
+              2.3723243652883497
+            ],
+            "baseline_values": [
+              1.4727661110785297,
+              2.284751922883881,
+              1.895518328030437
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.24316291464355744,
+            "ci_low": -0.34197547330865263,
+            "ci_high": -0.06753354058020528,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.04627986579718375,
+              0.21492456440163132,
+              0.09851763809721993
+            ],
+            "baseline_values": [
+              0.11381340637738903,
+              0.556900037710284,
+              0.4184973681390344
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.8063011600802624,
+            "ci_low": -0.9728395034103916,
+            "ci_high": -0.601033372458674,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.8717327386198557,
+              1.3119124194734892,
+              1.0504877236587153
+            ],
+            "baseline_values": [
+              1.4727661110785297,
+              2.284751922883881,
+              1.895518328030437
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.03682714973559837,
+            "ci_low": -0.034000903410548663,
+            "ci_high": 0.09334925356386681,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.07981250296684037,
+              0.6080331367637609,
+              0.5118466217029012
+            ],
+            "baseline_values": [
+              0.11381340637738903,
+              0.556900037710284,
+              0.4184973681390344
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.28915399466374075,
+            "ci_low": 0.04848887872557439,
+            "ci_high": 0.5522685932158882,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              1.5212549898041041,
+              2.837020516099769,
+              2.162222840080197
+            ],
+            "baseline_values": [
+              1.4727661110785297,
+              2.284751922883881,
+              1.895518328030437
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.022432689351421137,
+            "ci_low": -0.23039622412424132,
+            "ci_high": 0.22997625878717753,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.34378966516456655,
+              0.32650381358604263,
+              0.35161926542183475
+            ],
+            "baseline_values": [
+              0.11381340637738903,
+              0.556900037710284,
+              0.4184973681390344
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 1.2284788866685579,
+            "ci_low": -0.16255827602541517,
+            "ci_high": 2.9785664453503777,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              4.451332556428907,
+              2.1221936468584657,
+              2.764946818711148
+            ],
+            "baseline_values": [
+              1.4727661110785297,
+              2.284751922883881,
+              1.895518328030437
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.15110780209736951,
+            "ci_low": -0.06546030794021604,
+            "ci_high": 0.3145015596966311,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              0.04835309843717299,
+              0.7611821922459775,
+              0.7329989278356654
+            ],
+            "baseline_values": [
+              0.11381340637738903,
+              0.556900037710284,
+              0.4184973681390344
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.6196702193437822,
+            "ci_low": 0.22546275490042134,
+            "ci_high": 1.0092466779464773,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              1.698228865978951,
+              3.293998600830358,
+              2.519819553214885
+            ],
+            "baseline_values": [
+              1.4727661110785297,
+              2.284751922883881,
+              1.895518328030437
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      }
+    },
+    "Env3_unrecoverable": {
+      "methods": {
+        "B-v1.0": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.0783623029529976,
+            "std": 3.2914760264519543,
+            "n": 3,
+            "values": [
+              5.878996616945804,
+              0.16395468168923094,
+              0.19213561022395795
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 5.8171530503300595,
+            "std": 8.710822766464846,
+            "n": 3,
+            "values": [
+              15.87489511097837,
+              0.6892782328980884,
+              0.8872858071137217
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.03229166666666666,
+            "std": 0.002743659831472068,
+            "n": 3,
+            "values": [
+              0.03203125,
+              0.03515625,
+              0.0296875
+            ]
+          },
+          "budget_band_ok": false,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_B-v1.0_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_B-v1.0_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_B-v1.0_b0.05_s2"
+          ]
+        },
+        "B-v1.1c": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.0785541908832266,
+            "std": 3.2918579108266757,
+            "n": 3,
+            "values": [
+              5.879629439096736,
+              0.16391964739243337,
+              0.19211348616050922
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 5.504118435199331,
+            "std": 8.690637737615791,
+            "n": 3,
+            "values": [
+              15.538643623117048,
+              0.39513628904257575,
+              0.578575393438368
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.053385416666666664,
+            "std": 0.0009021097956087911,
+            "n": 3,
+            "values": [
+              0.05390625,
+              0.05234375,
+              0.05390625
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_B-v1.1c_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_B-v1.1c_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_B-v1.1c_b0.05_s2"
+          ]
+        },
+        "D-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.078585907331584,
+            "std": 3.291971664498827,
+            "n": 3,
+            "values": [
+              5.879792055753021,
+              0.16379471254497546,
+              0.19217095369675613
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 5.636189756579173,
+            "std": 8.656560597805717,
+            "n": 3,
+            "values": [
+              15.631915436461988,
+              0.626390297313237,
+              0.6502635359622952
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05651041666666667,
+            "std": 0.0043027894900672685,
+            "n": 3,
+            "values": [
+              0.0515625,
+              0.059375,
+              0.05859375
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_D-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_D-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_D-optimal_b0.05_s2"
+          ]
+        },
+        "E-optimal": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.0784787212132865,
+            "std": 3.2918634662052364,
+            "n": 3,
+            "values": [
+              5.879559887595726,
+              0.1637411289606984,
+              0.19213514708343554
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 5.58422313534015,
+            "std": 8.738085040081774,
+            "n": 3,
+            "values": [
+              15.67396547959684,
+              0.49513954882304734,
+              0.5835643776005671
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.0546875,
+            "std": 0.0028168369339562423,
+            "n": 3,
+            "values": [
+              0.05390625,
+              0.05234375,
+              0.0578125
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_E-optimal_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_E-optimal_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_E-optimal_b0.05_s2"
+          ]
+        },
+        "EqualSkill": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.0786088581802784,
+            "std": 3.291976476463703,
+            "n": 3,
+            "values": [
+              5.879820872781036,
+              0.16387710730605937,
+              0.19212859445373875
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 5.745986522983294,
+            "std": 8.742732564797459,
+            "n": 3,
+            "values": [
+              15.840626697786789,
+              0.7938110912506228,
+              0.6035217799124715
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.046093749999999996,
+            "std": 0.004752158226795484,
+            "n": 3,
+            "values": [
+              0.04296875,
+              0.0515625,
+              0.04375
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_EqualSkill_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_EqualSkill_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_EqualSkill_b0.05_s2"
+          ]
+        },
+        "Greedy": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.078316167520476,
+            "std": 3.291426728015326,
+            "n": 3,
+            "values": [
+              5.8788937683538185,
+              0.16397991443148174,
+              0.192074819776128
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 6.60185453979453,
+            "std": 8.577919332597281,
+            "n": 3,
+            "values": [
+              16.50431891592649,
+              1.4593122993938543,
+              1.8419324040632477
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.05000000000000001,
+            "std": 8.498374721940739e-18,
+            "n": 3,
+            "values": [
+              0.05,
+              0.05,
+              0.05
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 23.333333333333332,
+            "std": 7.505553499465135,
+            "n": 3,
+            "values": [
+              32.0,
+              19.0,
+              19.0
+            ]
+          },
+          "recovery_censored_fraction": 0.3333333333333333,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_Greedy_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_Greedy_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_Greedy_b0.05_s2"
+          ]
+        },
+        "Uniform": {
+          "n_seeds": 3,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "preliminary": true,
+          "late_worst_skill_mse": {
+            "mean": 2.0786337503115657,
+            "std": 3.2920428826713533,
+            "n": 3,
+            "values": [
+              5.879922380498615,
+              0.163850699238111,
+              0.19212817119797077
+            ]
+          },
+          "cumulative_regret": {
+            "mean": 5.866996987321147,
+            "std": 8.86071908922254,
+            "n": 3,
+            "values": [
+              16.09826705519933,
+              0.8077301777439921,
+              0.6949937290201208
+            ]
+          },
+          "realized_audit_fraction": {
+            "mean": 0.052083333333333336,
+            "std": 0.0040090636245678785,
+            "n": 3,
+            "values": [
+              0.04765625,
+              0.05546875,
+              0.053125
+            ]
+          },
+          "budget_band_ok": true,
+          "recovery_time": {
+            "mean": 32.0,
+            "std": 0.0,
+            "n": 3,
+            "values": [
+              32.0,
+              32.0,
+              32.0
+            ]
+          },
+          "recovery_censored_fraction": 1.0,
+          "noise_floor": 0.0225,
+          "paths": [
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_Uniform_b0.05_s0",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_Uniform_b0.05_s1",
+            "/Users/grantwright/Desktop/科研/10.30新课题/v0/idea_B/results/v1.1/t1_Env3_unrecoverable_d3_Uniform_b0.05_s2"
+          ]
+        }
+      },
+      "paired_vs_E_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.00011641826028920461,
+            "ci_low": -0.0005632706499225648,
+            "ci_high": 0.0002135527285325456,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              5.878996616945804,
+              0.16395468168923094,
+              0.19213561022395795
+            ],
+            "baseline_values": [
+              5.879559887595726,
+              0.1637411289606984,
+              0.19213514708343554
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.23292991498990875,
+            "ci_low": 0.1941386840750411,
+            "ci_high": 0.3037214295131546,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              15.87489511097837,
+              0.6892782328980884,
+              0.8872858071137217
+            ],
+            "baseline_values": [
+              15.67396547959684,
+              0.49513954882304734,
+              0.5835643776005671
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 7.546966993957072e-05,
+            "ci_low": -2.1660922926325377e-05,
+            "ci_high": 0.00017851843173496973,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              5.879629439096736,
+              0.16391964739243337,
+              0.19211348616050922
+            ],
+            "baseline_values": [
+              5.879559887595726,
+              0.1637411289606984,
+              0.19213514708343554
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.0801047001408207,
+            "ci_low": -0.13532185647979134,
+            "ci_high": -0.004988984162199173,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              15.538643623117048,
+              0.39513628904257575,
+              0.578575393438368
+            ],
+            "baseline_values": [
+              15.67396547959684,
+              0.49513954882304734,
+              0.5835643776005671
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.00013013696699144353,
+            "ci_low": -6.552629696787715e-06,
+            "ci_high": 0.00026098518531014747,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              5.879820872781036,
+              0.16387710730605937,
+              0.19212859445373875
+            ],
+            "baseline_values": [
+              5.879559887595726,
+              0.1637411289606984,
+              0.19213514708343554
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.161763387643143,
+            "ci_low": 0.01995740231190435,
+            "ci_high": 0.29867154242757543,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              15.840626697786789,
+              0.7938110912506228,
+              0.6035217799124715
+            ],
+            "baseline_values": [
+              15.67396547959684,
+              0.49513954882304734,
+              0.5835643776005671
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.00016255369281064266,
+            "ci_low": -0.0006661192419077366,
+            "ci_high": 0.0002387854707833481,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              5.8788937683538185,
+              0.16397991443148174,
+              0.192074819776128
+            ],
+            "baseline_values": [
+              5.879559887595726,
+              0.1637411289606984,
+              0.19213514708343554
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 1.0176314044543793,
+            "ci_low": 0.8303534363296503,
+            "ci_high": 1.2583680264626804,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              16.50431891592649,
+              1.4593122993938543,
+              1.8419324040632477
+            ],
+            "baseline_values": [
+              15.67396547959684,
+              0.49513954882304734,
+              0.5835643776005671
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 0.00015502909827898778,
+            "ci_low": -6.975885464777232e-06,
+            "ci_high": 0.0003624929028891444,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              5.879922380498615,
+              0.163850699238111,
+              0.19212817119797077
+            ],
+            "baseline_values": [
+              5.879559887595726,
+              0.1637411289606984,
+              0.19213514708343554
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.28277385198099614,
+            "ci_low": 0.11142935141955368,
+            "ci_high": 0.42430157560248993,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "E-optimal",
+            "candidate_values": [
+              16.09826705519933,
+              0.8077301777439921,
+              0.6949937290201208
+            ],
+            "baseline_values": [
+              15.67396547959684,
+              0.49513954882304734,
+              0.5835643776005671
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      },
+      "paired_vs_D_optimal": {
+        "B-v1.0": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.00022360437858667814,
+            "ci_low": -0.0007954388072173302,
+            "ci_high": 0.00015996914425547848,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              5.878996616945804,
+              0.16395468168923094,
+              0.19213561022395795
+            ],
+            "baseline_values": [
+              5.879792055753021,
+              0.16379471254497546,
+              0.19217095369675613
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.18096329375088674,
+            "ci_low": 0.0628879355848514,
+            "ci_high": 0.24297967451638236,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.0",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              15.87489511097837,
+              0.6892782328980884,
+              0.8872858071137217
+            ],
+            "baseline_values": [
+              15.631915436461988,
+              0.626390297313237,
+              0.6502635359622952
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "B-v1.1c": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -3.1716448357902806e-05,
+            "ci_low": -0.00016261665628469757,
+            "ci_high": 0.00012493484745790262,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              5.879629439096736,
+              0.16391964739243337,
+              0.19211348616050922
+            ],
+            "baseline_values": [
+              5.879792055753021,
+              0.16379471254497546,
+              0.19217095369675613
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": -0.1320713213798427,
+            "ci_low": -0.23125400827066125,
+            "ci_high": -0.0716881425239273,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_negative",
+            "field": "cumulative_regret",
+            "candidate": "B-v1.1c",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              15.538643623117048,
+              0.39513628904257575,
+              0.578575393438368
+            ],
+            "baseline_values": [
+              15.631915436461988,
+              0.626390297313237,
+              0.6502635359622952
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "EqualSkill": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 2.2950848693970016e-05,
+            "ci_low": -4.2359243017375814e-05,
+            "ci_high": 8.239476108390376e-05,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              5.879820872781036,
+              0.16387710730605937,
+              0.19212859445373875
+            ],
+            "baseline_values": [
+              5.879792055753021,
+              0.16379471254497546,
+              0.19217095369675613
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.10979676640412099,
+            "ci_low": -0.04674175604982378,
+            "ci_high": 0.208711261324801,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "cumulative_regret",
+            "candidate": "EqualSkill",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              15.840626697786789,
+              0.7938110912506228,
+              0.6035217799124715
+            ],
+            "baseline_values": [
+              15.631915436461988,
+              0.626390297313237,
+              0.6502635359622952
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Greedy": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": -0.0002697398111081162,
+            "ci_low": -0.000898287399202502,
+            "ci_high": 0.000185201886506281,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              5.8788937683538185,
+              0.16397991443148174,
+              0.192074819776128
+            ],
+            "baseline_values": [
+              5.879792055753021,
+              0.16379471254497546,
+              0.19217095369675613
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.9656647832153573,
+            "ci_low": 0.8329220020806173,
+            "ci_high": 1.1916688681009524,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Greedy",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              16.50431891592649,
+              1.4593122993938543,
+              1.8419324040632477
+            ],
+            "baseline_values": [
+              15.631915436461988,
+              0.626390297313237,
+              0.6502635359622952
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "Uniform": {
+          "late_worst_skill_mse": {
+            "n_seeds": 3,
+            "mean_difference": 4.7842979981514246e-05,
+            "ci_low": -4.278249878536533e-05,
+            "ci_high": 0.000130324745594379,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "covers_zero",
+            "field": "late_worst_skill_mse",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              5.879922380498615,
+              0.163850699238111,
+              0.19212817119797077
+            ],
+            "baseline_values": [
+              5.879792055753021,
+              0.16379471254497546,
+              0.19217095369675613
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          },
+          "cumulative_regret": {
+            "n_seeds": 3,
+            "mean_difference": 0.23080723074197415,
+            "ci_low": 0.04473019305782555,
+            "ci_high": 0.46635161873734177,
+            "alpha": 0.05,
+            "n_boot": 10000,
+            "seed": 0,
+            "preliminary": true,
+            "note": "n_seeds=3 is preliminary statistical evidence. This interval uses n_seeds=3 and is not a confirmatory superiority claim.",
+            "interval_side": "entirely_positive",
+            "field": "cumulative_regret",
+            "candidate": "Uniform",
+            "baseline": "D-optimal",
+            "candidate_values": [
+              16.09826705519933,
+              0.8077301777439921,
+              0.6949937290201208
+            ],
+            "baseline_values": [
+              15.631915436461988,
+              0.626390297313237,
+              0.6502635359622952
+            ],
+            "seeds": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      }
+    }
+  },
+  "noise_floor": 0.0225,
+  "promising_not_claimed": true,
+  "note": "Tier 1 is a correctness smoke. Eigenvalues are not used to decide success."
+}

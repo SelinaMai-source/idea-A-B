@@ -368,9 +368,13 @@ def allocate_round(
     q_floor = float(cfg.get("q_floor", 1e-6))
     name = str(config_id)
     n = int(np.asarray(stratum).shape[0])
-    if name == "A-v1.0":
+    if name in {"observed_only", "none"}:
+        return np.zeros(n, dtype=float)
+    if name in {"uniform_ipw"}:
+        return allocate_uniform(n, float(budget))
+    if name in {"A-v1.0", "neyman_ipw", "neyman_dr", "Neyman+DR"}:
         if y_visible is None or observed_mask is None:
-            raise ValueError("A-v1.0 sequential allocation needs visible labels and the natural mask")
+            raise ValueError("Neyman sequential allocation needs visible labels and the natural mask")
         return _v1_algorithm.allocate_neyman(
             stratum,
             y_visible,
@@ -380,7 +384,7 @@ def allocate_round(
             exploration_mix=float(cfg.get("exploration_mix", 0.15)),
             q_floor=q_floor,
         )
-    if name == "A-v1.1a":
+    if name in {"A-v1.1a", "uniform_dr"}:
         local_b = float(budget)
         return allocate_uniform(n, local_b)
     if name == "A-v1.1b":

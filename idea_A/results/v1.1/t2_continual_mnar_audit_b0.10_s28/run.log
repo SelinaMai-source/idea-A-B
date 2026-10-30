@@ -1,0 +1,14 @@
+utc=2026-10-30T17:50:54.709548+00:00
+idea=A
+version=v1.1
+mechanism=mnar_audit
+seed=28
+n=1600
+budget=0.1
+truth_population_mean=0.5966632768849923
+track=continual prefix=t2_continual
+
+methods:
+  uniform_dr: estimate=0.6317574132497199 truth=0.5966632768849923 bias=0.03509413636472758 rmse=0.03509413636472758 cover=True expected_q=0.1 realized_q=0.084375
+  neyman_dr: estimate=0.6389203736334514 truth=0.6074579831114044 bias=0.03146239052204702 rmse=0.03146239052204702 cover=True expected_q=0.1 realized_q=0.1075
+  v1.1c: estimate=0.7162164265736672 truth=0.6148090933489733 bias=0.10140733322469397 rmse=0.10140733322469397 cover=True expected_q=0.1 realized_q=0.099375

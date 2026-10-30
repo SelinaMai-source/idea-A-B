@@ -1,0 +1,9 @@
+utc=2026-10-30T17:56:39.966281+00:00
+experiment_id=ablation_B9_Proportional_Frequency_Env1_d3_Proportional_b0.05_s2
+env=Env1 method=Proportional seed=2 budget=0.05 d=3
+late_worst_skill_mse=0.05008849222013216
+cumulative_regret=1.3576788766305192
+realized_audit_fraction=0.05625
+recovery_time=nan
+runtime_s=0.0207
+higher_eigenvalue_is_not_success=True

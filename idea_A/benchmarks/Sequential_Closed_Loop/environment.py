@@ -17,6 +17,7 @@ this environment with different policy rules. They are not one experiment.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from collections.abc import Callable
 from typing import Any
 
 import numpy as np
@@ -204,12 +205,18 @@ def run_loop(
     audit_rng: np.random.Generator,
     policy_kind: str = "linear",
     config: dict[str, Any] | None = None,
+    estimator: str = "dr",
+    q_transform: Callable[[np.ndarray], np.ndarray] | None = None,
 ) -> dict[str, Any]:
     """Fill factual outcomes round by round. ``adapt_policy`` selects the track.
 
     Static Estimation passes ``adapt_policy=False``. Continual Adaptation
     passes ``adapt_policy=True``. They must be invoked from their own track
     modules, not mixed into one result object.
+
+    ``estimator`` is ``dr`` (history-respecting AIPW), ``ipw`` (mu=0), or
+    ``observed_only`` (mean of naturally observed labels). Default remains DR
+    so existing tests are unchanged.
     """
     cfg = _algorithm.load_config()
     if config:
@@ -281,6 +288,8 @@ def run_loop(
             observed_mask=s_t,
             config=cfg,
         )
+        if q_transform is not None:
+            q_t = np.asarray(q_transform(q_t), dtype=float)
         a_t = _v1_int.draw_audit(q_t, audit_rng)
         pop.q[idx] = q_t
         pop.a[idx] = a_t
@@ -303,8 +312,18 @@ def run_loop(
             target_weights=pop.target_weights[idx],
             n_strata=pop.n_strata,
         )
-        est = _algorithm.sequential_round_estimate(snap, state)
-        influences.append(est["influence"])
+        est_name = str(estimator)
+        if est_name == "ipw":
+            inf = _seq.aipw_influence(y_vis_t, a_t, q_t, np.zeros(y_t.shape[0], dtype=float))
+            influences.append(inf)
+        elif est_name == "observed_only":
+            inf = np.full(y_t.shape[0], np.nan, dtype=float)
+            nat = s_t.astype(bool)
+            inf[nat] = y_t[nat]
+            influences.append(inf)
+        else:
+            est = _algorithm.sequential_round_estimate(snap, state)
+            influences.append(est["influence"])
         state.append(snap)
 
         mean_pi.append(float(np.mean(pi_t)))
@@ -342,10 +361,41 @@ def run_loop(
                     explore_mix=float(cfg.get("policy_explore_mix", 0.1)),
                 )
 
-    ci = _algorithm.sequential_combined_ci(influences)
+    est_name = str(estimator)
+    if est_name == "observed_only":
+        y_all = np.asarray(pop.y, dtype=float)
+        nat = np.asarray(pop.s).astype(bool)
+        obs = y_all[nat]
+        n_obs = int(obs.shape[0])
+        estimate = float(np.mean(obs)) if n_obs else float("nan")
+        if n_obs >= 2:
+            se = float(np.std(obs, ddof=1) / np.sqrt(n_obs))
+            z = float(_seq.WALD_Z)
+            ci = {
+                "estimate": estimate,
+                "se": se,
+                "ci_low": estimate - z * se,
+                "ci_high": estimate + z * se,
+                "z": z,
+                "formula": "observed_only_wald_95",
+                "n": float(n_obs),
+            }
+        else:
+            ci = {
+                "estimate": estimate,
+                "se": float("nan"),
+                "ci_low": float("nan"),
+                "ci_high": float("nan"),
+                "z": float(_seq.WALD_Z),
+                "formula": "observed_only_wald_95",
+                "n": float(n_obs),
+            }
+    else:
+        ci = _algorithm.sequential_combined_ci(influences)
     truths = pop.truths()
     return {
         "config_id": str(config_id),
+        "estimator": est_name,
         "scenario": pop.scenario,
         "seed": pop.seed,
         "n": pop.n,

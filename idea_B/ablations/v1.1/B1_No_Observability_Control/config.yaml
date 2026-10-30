@@ -1,0 +1,11 @@
+ablation: B1_No_Observability_Control
+idea: B
+version: v1.1
+component_changed: allocation
+description: 'Replace v1.1c allocation with uniform q=b.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  environment: Env1
+methods: ['B-v1.1c', 'Uniform']
+one_component_change: true

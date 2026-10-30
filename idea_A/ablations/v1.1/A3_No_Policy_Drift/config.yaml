@@ -1,0 +1,11 @@
+ablation: A3_No_Policy_Drift
+idea: A
+version: v1.1
+component_changed: policy_drift
+description: 'A-v1.1c with drift_kappa=0 (no policy-drift upweighting).'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c']
+one_component_change: true

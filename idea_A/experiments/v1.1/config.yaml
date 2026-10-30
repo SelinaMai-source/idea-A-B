@@ -1,0 +1,40 @@
+idea: A
+version: v1.1
+n: 2000
+ridge_lambda: 0.001
+n_folds: 2
+tier1:
+  seeds: [0, 1, 2]
+  mechanisms: [mnar, zero_overlap]
+  budget: 0.05
+  static_methods:
+    - observed_only
+    - uniform_ipw
+    - uniform_dr
+    - neyman_ipw
+    - neyman_dr
+    - v1.1b
+    - v1.1c
+  continual:
+    scenario: mnar_audit
+    n_per_round: 80
+    n_rounds: 4
+tier2:
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+  static:
+    mechanisms: [mnar, zero_overlap]
+    budgets: [0.05, 0.10]
+    methods: [observed_only, uniform_ipw, uniform_dr, neyman_dr, v1.1b, v1.1c]
+  continual:
+    scenarios: [policy_drift, mnar_audit]
+    budgets: [0.05, 0.10]
+    methods: [uniform_dr, neyman_dr, v1.1c]
+    n_per_round: 200
+    n_rounds: 8
+ablations:
+  primary_cell: {scenario: mnar_audit, budget: 0.05, seeds: [0, 1, 2]}
+notes:
+  - Paired methods share the same simulated world (same seed, same DGP draw).
+  - Main competitor is Uniform cross-fit DR (uniform_dr / A-v1.1a).
+  - n_seeds<=3 is PRELIMINARY. Do not write PROMISING from these JSON files unless protocol thresholds pass.
+  - b=0.01 and b=0.20 are leftover-time only and not in the main conclusion.

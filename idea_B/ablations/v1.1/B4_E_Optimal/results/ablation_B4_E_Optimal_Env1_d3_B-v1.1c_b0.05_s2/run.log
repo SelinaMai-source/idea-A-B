@@ -1,0 +1,9 @@
+utc=2026-10-30T17:56:29.039190+00:00
+experiment_id=ablation_B4_E_Optimal_Env1_d3_B-v1.1c_b0.05_s2
+env=Env1 method=B-v1.1c seed=2 budget=0.05 d=3
+late_worst_skill_mse=0.03316391951671365
+cumulative_regret=0.13355245772729699
+realized_audit_fraction=0.0515625
+recovery_time=nan
+runtime_s=0.1880
+higher_eigenvalue_is_not_success=True

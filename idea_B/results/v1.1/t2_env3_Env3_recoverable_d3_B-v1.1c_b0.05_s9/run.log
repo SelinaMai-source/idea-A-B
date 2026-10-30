@@ -1,0 +1,9 @@
+utc=2026-10-30T17:54:47.413397+00:00
+experiment_id=t2_env3_Env3_recoverable_d3_B-v1.1c_b0.05_s9
+env=Env3_recoverable method=B-v1.1c seed=9 budget=0.05 d=3
+late_worst_skill_mse=0.06006456684527067
+cumulative_regret=1.105699490004462
+realized_audit_fraction=0.0515625
+recovery_time=32
+runtime_s=0.1773
+higher_eigenvalue_is_not_success=True

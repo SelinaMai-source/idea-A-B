@@ -1,0 +1,9 @@
+utc=2026-10-30T17:54:27.089249+00:00
+experiment_id=t2_skills_Env1_d5_Uniform_b0.05_s7
+env=Env1 method=Uniform seed=7 budget=0.05 d=5
+late_worst_skill_mse=0.05226671024082699
+cumulative_regret=0.7159194981671496
+realized_audit_fraction=0.040625
+recovery_time=nan
+runtime_s=0.0121
+higher_eigenvalue_is_not_success=True

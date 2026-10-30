@@ -1,0 +1,11 @@
+ablation: A2_No_Remaining_Budget
+idea: A
+version: v1.1
+component_changed: remaining_budget
+description: 'Drop remaining-budget spending and drift; keep AIPW-variance allocation.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c', 'v1.1b']
+one_component_change: true

@@ -1,0 +1,11 @@
+ablation: B6_No_Endogenous_Feedback
+idea: B
+version: v1.1
+component_changed: endogenous_feedback
+description: 'Turn off endogenous feedback by freezing theta on Env1.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  environment: Env1
+methods: ['B-v1.1c']
+one_component_change: true

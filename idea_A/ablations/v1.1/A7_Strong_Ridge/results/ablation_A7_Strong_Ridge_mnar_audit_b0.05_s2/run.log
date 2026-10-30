@@ -1,0 +1,12 @@
+utc=2026-10-30T17:56:21.286650+00:00
+idea=A
+version=v1.1
+mechanism=mnar_audit
+seed=2
+n=1600
+budget=0.05
+truth_population_mean=0.5311550738836188
+track=continual prefix=ablation_A7_Strong_Ridge
+
+methods:
+  v1.1c_strong_ridge: estimate=0.9297177583521381 truth=0.5311550738836188 bias=0.3985626844685193 rmse=0.3985626844685193 cover=True expected_q=0.05 realized_q=0.04875

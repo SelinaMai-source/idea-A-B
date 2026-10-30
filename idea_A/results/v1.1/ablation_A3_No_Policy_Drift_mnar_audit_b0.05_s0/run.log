@@ -1,0 +1,12 @@
+utc=2026-10-30T17:56:19.574594+00:00
+idea=A
+version=v1.1
+mechanism=mnar_audit
+seed=0
+n=1600
+budget=0.05
+truth_population_mean=0.516294717272109
+track=continual prefix=ablation_A3_No_Policy_Drift
+
+methods:
+  v1.1c_no_drift: estimate=0.9020213343418465 truth=0.516294717272109 bias=0.38572661706973754 rmse=0.38572661706973754 cover=False expected_q=0.05 realized_q=0.05125

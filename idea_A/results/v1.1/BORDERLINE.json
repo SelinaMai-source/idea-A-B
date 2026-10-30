@@ -1,0 +1,22 @@
+{
+  "cells": [
+    {
+      "track": "static",
+      "mechanism": "mnar",
+      "budget_key": "b=0.05",
+      "candidate": "v1.1c",
+      "ci_low": -0.060844194103290075,
+      "ci_high": 0.5810840822098843,
+      "cheap": true
+    },
+    {
+      "track": "static",
+      "mechanism": "zero_overlap",
+      "budget_key": "b=0.05",
+      "candidate": "v1.1c",
+      "ci_low": -0.060844194103290075,
+      "ci_high": 0.5810840822098843,
+      "cheap": true
+    }
+  ]
+}

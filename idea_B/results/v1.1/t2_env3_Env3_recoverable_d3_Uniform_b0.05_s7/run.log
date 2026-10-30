@@ -1,0 +1,9 @@
+utc=2026-10-30T17:54:38.204648+00:00
+experiment_id=t2_env3_Env3_recoverable_d3_Uniform_b0.05_s7
+env=Env3_recoverable method=Uniform seed=7 budget=0.05 d=3
+late_worst_skill_mse=0.05461781150203874
+cumulative_regret=2.335099646530799
+realized_audit_fraction=0.040625
+recovery_time=32
+runtime_s=0.0109
+higher_eigenvalue_is_not_success=True

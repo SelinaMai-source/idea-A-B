@@ -1,0 +1,122 @@
+{
+  "A1_No_Adaptive_Allocation": {
+    "component": "allocation",
+    "note": "Replace AIPW-variance / remaining / drift allocation with uniform q=b.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A1_No_Adaptive_Allocation_mnar_audit_b0.05_s0",
+      "ablation_A1_No_Adaptive_Allocation_mnar_audit_b0.05_s1",
+      "ablation_A1_No_Adaptive_Allocation_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A2_No_Remaining_Budget": {
+    "component": "remaining_budget",
+    "note": "Drop remaining-budget spending and drift; keep AIPW-variance allocation.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A2_No_Remaining_Budget_mnar_audit_b0.05_s0",
+      "ablation_A2_No_Remaining_Budget_mnar_audit_b0.05_s1",
+      "ablation_A2_No_Remaining_Budget_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A3_No_Policy_Drift": {
+    "component": "policy_drift",
+    "note": "A-v1.1c with drift_kappa=0 (no policy-drift upweighting).",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A3_No_Policy_Drift_mnar_audit_b0.05_s0",
+      "ablation_A3_No_Policy_Drift_mnar_audit_b0.05_s1",
+      "ablation_A3_No_Policy_Drift_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A4_Logistic_Policy": {
+    "component": "policy_class",
+    "note": "A-v1.1c with logistic policy instead of linear.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A4_Logistic_Policy_mnar_audit_b0.05_s0",
+      "ablation_A4_Logistic_Policy_mnar_audit_b0.05_s1",
+      "ablation_A4_Logistic_Policy_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A5_Misspecified_Propensity": {
+    "component": "propensity",
+    "note": "Estimator uses q mixed 50/50 with its mean. Allocation unchanged.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A5_Misspecified_Propensity_mnar_audit_b0.05_s0",
+      "ablation_A5_Misspecified_Propensity_mnar_audit_b0.05_s1",
+      "ablation_A5_Misspecified_Propensity_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A6_IPW_Instead_Of_DR": {
+    "component": "estimator",
+    "note": "Keep v1.1c allocation; replace history-respecting DR with IPW.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A6_IPW_Instead_Of_DR_mnar_audit_b0.05_s0",
+      "ablation_A6_IPW_Instead_Of_DR_mnar_audit_b0.05_s1",
+      "ablation_A6_IPW_Instead_Of_DR_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A7_Strong_Ridge": {
+    "component": "outcome_model",
+    "note": "A-v1.1c with ridge_lambda=1.0 (stronger shrinkage; not tuned on eval seeds).",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A7_Strong_Ridge_mnar_audit_b0.05_s0",
+      "ablation_A7_Strong_Ridge_mnar_audit_b0.05_s1",
+      "ablation_A7_Strong_Ridge_mnar_audit_b0.05_s2"
+    ]
+  },
+  "A8_No_Policy_Update": {
+    "component": "policy_update",
+    "note": "Same MNAR-audit world; freeze the policy (no outcome-driven update).",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "preliminary": true,
+    "experiment_ids": [
+      "ablation_A8_No_Policy_Update_mnar_audit_b0.05_s0",
+      "ablation_A8_No_Policy_Update_mnar_audit_b0.05_s1",
+      "ablation_A8_No_Policy_Update_mnar_audit_b0.05_s2"
+    ]
+  }
+}

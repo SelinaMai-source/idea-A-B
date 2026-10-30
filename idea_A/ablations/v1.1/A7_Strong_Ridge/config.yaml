@@ -1,0 +1,11 @@
+ablation: A7_Strong_Ridge
+idea: A
+version: v1.1
+component_changed: outcome_model
+description: 'A-v1.1c with ridge_lambda=1.0 (stronger shrinkage; not tuned on eval seeds).'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c']
+one_component_change: true

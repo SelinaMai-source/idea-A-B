@@ -1,0 +1,17 @@
+experiment_id: t2_static_zero_overlap_b0.05_s39
+idea: A
+version: v1.1
+track: static
+mechanism: zero_overlap
+seed: 39
+budget: 0.05
+n: 2000
+methods:
+- observed_only
+- uniform_ipw
+- uniform_dr
+- neyman_dr
+- v1.1b
+- v1.1c
+paired_world: true
+novelty_claim: false

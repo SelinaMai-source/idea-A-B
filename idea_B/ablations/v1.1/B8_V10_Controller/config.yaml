@@ -1,0 +1,11 @@
+ablation: B8_V10_Controller
+idea: B
+version: v1.1
+component_changed: v1_0_controller
+description: 'Unchanged v1.0 observability controller vs v1.1c.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  environment: Env1
+methods: ['B-v1.1c', 'B-v1.0']
+one_component_change: true

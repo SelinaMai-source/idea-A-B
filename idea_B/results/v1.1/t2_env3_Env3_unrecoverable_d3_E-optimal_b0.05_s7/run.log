@@ -1,0 +1,9 @@
+utc=2026-10-30T17:54:53.353502+00:00
+experiment_id=t2_env3_Env3_unrecoverable_d3_E-optimal_b0.05_s7
+env=Env3_unrecoverable method=E-optimal seed=7 budget=0.05 d=3
+late_worst_skill_mse=5.790052352150591
+cumulative_regret=16.055659851682204
+realized_audit_fraction=0.0421875
+recovery_time=32
+runtime_s=0.1375
+higher_eigenvalue_is_not_success=True

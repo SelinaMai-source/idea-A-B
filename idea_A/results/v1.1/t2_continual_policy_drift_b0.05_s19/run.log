@@ -1,0 +1,14 @@
+utc=2026-10-30T17:50:30.031002+00:00
+idea=A
+version=v1.1
+mechanism=policy_drift
+seed=19
+n=1600
+budget=0.05
+truth_population_mean=0.4084434697087343
+track=continual prefix=t2_continual
+
+methods:
+  uniform_dr: estimate=0.7065124341452776 truth=0.4084434697087343 bias=0.29806896443654335 rmse=0.29806896443654335 cover=True expected_q=0.05 realized_q=0.05
+  neyman_dr: estimate=0.6146912865526698 truth=0.4692406349850765 bias=0.1454506515675933 rmse=0.1454506515675933 cover=True expected_q=0.05 realized_q=0.055625
+  v1.1c: estimate=1.1414855664377024 truth=0.4592451038709381 bias=0.6822404625667643 rmse=0.6822404625667643 cover=True expected_q=0.05 realized_q=0.05625

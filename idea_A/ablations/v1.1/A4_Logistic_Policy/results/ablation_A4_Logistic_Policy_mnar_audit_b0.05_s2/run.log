@@ -1,0 +1,12 @@
+utc=2026-10-30T17:56:20.201493+00:00
+idea=A
+version=v1.1
+mechanism=mnar_audit
+seed=2
+n=1600
+budget=0.05
+truth_population_mean=0.5518187750874898
+track=continual prefix=ablation_A4_Logistic_Policy
+
+methods:
+  v1.1c_logistic_policy: estimate=0.39571250091568344 truth=0.5518187750874898 bias=-0.15610627417180634 rmse=0.15610627417180634 cover=True expected_q=0.05 realized_q=0.048125

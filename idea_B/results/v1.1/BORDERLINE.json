@@ -1,0 +1,12 @@
+{
+  "cells": [
+    {
+      "env": "Env2",
+      "baseline": "paired_vs_E_optimal",
+      "field": "cumulative_regret",
+      "ci_low": -0.06008691015554336,
+      "ci_high": 0.0035636212020930835,
+      "cheap": true
+    }
+  ]
+}

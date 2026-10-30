@@ -1,0 +1,11 @@
+ablation: A5_Misspecified_Propensity
+idea: A
+version: v1.1
+component_changed: propensity
+description: 'Estimator uses q mixed 50/50 with its mean. Allocation unchanged.'
+primary_cell:
+  seeds: [0, 1, 2]
+  budget: 0.05
+  scenario: mnar_audit
+methods: ['v1.1c']
+one_component_change: true
