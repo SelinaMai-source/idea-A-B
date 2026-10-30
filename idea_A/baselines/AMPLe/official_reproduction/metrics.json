@@ -1,0 +1,93 @@
+{
+  "paper": "Comparison-based Active Preference Learning for Multi-dimensional Personalization",
+  "venue": "ACL 2025",
+  "upstream_commit": "0cad341f6a9e77063ef451c27732bf5c1534c797",
+  "local_status": "partial",
+  "command": "python main.py --seed=1 --task=assistant --rm_names harmless helpful humor --n_rounds=3 --true_preference 0.2 0.7 0.1 --true_beta=10 --beta=2.0 --jitter=0.01 --alpha=10 --init=previous --acquisition=volume --burnin=50000 --gamma=0.0 --mode=likelihood --margin=none --inputs=0",
+  "notes": "n_rounds shortened from README 100 to 3; burnin and acquisition unchanged. --dims omitted because it would request a non-public dataset.",
+  "true_preference": [
+    0.2,
+    0.7,
+    0.1
+  ],
+  "wandb_run": "/Users/grantwright/Research/idea-A-B/idea_A/baselines/AMPLe/official_reproduction/wandb/wandb/offline-run-20261030_235617-443d9ynn",
+  "estimation": {
+    "0": [
+      0.3249063193798065,
+      0.32413744926452637,
+      0.3509562909603119
+    ],
+    "1": [
+      0.0032763418275862932,
+      0.9646931886672974,
+      0.03203044831752777
+    ],
+    "2": [
+      0.004937611985951662,
+      0.9925509095191956,
+      0.002511475933715701
+    ],
+    "3": [
+      0.0035132216289639473,
+      0.9920580983161926,
+      0.004428689833730459
+    ]
+  },
+  "chosen": {
+    "1": {
+      "index": 737,
+      "a": [
+        -0.30000001192092896,
+        0.30000001192092896,
+        2.299999952316284
+      ],
+      "b": [
+        1.2999999523162842,
+        -1.2999999523162842,
+        2.299999952316284
+      ],
+      "comparison": 1,
+      "noise": 0.0
+    },
+    "2": {
+      "index": 95,
+      "a": [
+        -1.399999976158142,
+        0.6000000238418579,
+        2.0999999046325684
+      ],
+      "b": [
+        1.399999976158142,
+        2.0999999046325684,
+        -2.0
+      ],
+      "comparison": -1,
+      "noise": 0.0
+    },
+    "3": {
+      "index": 135,
+      "a": [
+        1.2999999523162842,
+        -1.2999999523162842,
+        2.299999952316284
+      ],
+      "b": [
+        -0.4000000059604645,
+        0.8999999761581421,
+        -1.7999999523162842
+      ],
+      "comparison": -1,
+      "noise": 0.0
+    }
+  },
+  "wandb_summary": null,
+  "l2_to_true": {
+    "0": 0.4688851731916284,
+    "1": 0.33672324209581145,
+    "2": 0.3648826964969348,
+    "3": 0.3647449275776112
+  },
+  "pool_std_diff": 11.289824485778809,
+  "pool_noise_rate": 0.04100000113248825,
+  "elapsed_wall_sec_approx": 97.8
+}

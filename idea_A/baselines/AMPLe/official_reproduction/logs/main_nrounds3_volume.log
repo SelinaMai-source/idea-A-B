@@ -1,0 +1,30 @@
+Namespace(seed=1, task='assistant', rm_names=['harmless', 'helpful', 'humor'], n_rounds=3, true_preference=[0.2, 0.7, 0.1], true_beta=10.0, beta=2.0, n_samples=1000, burnin=50000, thin=10, jitter=0.01, alpha=10.0, init='previous', propose='uniform', acquisition='volume', inputs='0', mode='likelihood', learning_rate=None, maxiter=1000, nofeedback_size=1000, distrust=False, F=None, E=None, gamma=0.0, dims=None, margin=None)
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /Users/grantwright/Research/idea-A-B/idea_A/baselines/AMPLe/official_reproduction/wandb/wandb/offline-run-20261030_235617-443d9ynn
+wandb: View this run in the terminal with `wandb leet`
+Namespace(seed=1, task='assistant', rm_names=['harmless', 'helpful', 'humor'], n_rounds=3, true_preference=[0.2, 0.7, 0.1], true_beta=10.0, beta=2.0, n_samples=1000, burnin=50000, thin=10, jitter=0.01, alpha=10.0, init='previous', propose='uniform', acquisition='volume', inputs='0', mode='likelihood', learning_rate=None, maxiter=1000, nofeedback_size=1000, distrust=False, F=None, E=None, gamma=0.0, dims=None, margin=None)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/10240 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 10240/10240 [00:00<00:00, 395383.08 examples/s]
+Dataset({
+    features: ['input', 'response_a', 'reward_a', 'response_b', 'reward_b', 'comparison'],
+    num_rows: 10240
+})
+standard deviation of diff is 11.289824485778809
+noise = 41 / 1000 = 0.04100000113248825
+1
+0.0
+chosen=737 a=tensor([-0.3000,  0.3000,  2.3000]) b=tensor([ 1.3000, -1.3000,  2.3000]) comparison=1 isnoise=0.0
+estimation=tensor([0.0033, 0.9647, 0.0320])
+2
+0.0
+chosen=95 a=tensor([-1.4000,  0.6000,  2.1000]) b=tensor([ 1.4000,  2.1000, -2.0000]) comparison=-1 isnoise=0.0
+estimation=tensor([0.0049, 0.9926, 0.0025])
+3
+0.0
+chosen=135 a=tensor([ 1.3000, -1.3000,  2.3000]) b=tensor([-0.4000,  0.9000, -1.8000]) comparison=-1 isnoise=0.0
+estimation=tensor([0.0035, 0.9921, 0.0044])
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /Users/grantwright/Research/idea-A-B/idea_A/baselines/AMPLe/official_reproduction/wandb/wandb/offline-run-20261030_235617-443d9ynn[0m
+[1;34mwandb[0m: Find logs at: [1;35mofficial_reproduction/wandb/wandb/offline-run-20261030_235617-443d9ynn/logs[0m

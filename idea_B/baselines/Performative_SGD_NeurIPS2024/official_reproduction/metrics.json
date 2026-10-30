@@ -1,0 +1,93 @@
+{
+  "paper": "Stochastic Optimization Schemes for Performative Prediction with Nonconvex Loss",
+  "venue": "NeurIPS 2024",
+  "upstream_commit": "ccbeeddfbf9237aa06dca3a1579529faabd8fe99",
+  "local_status": "partial",
+  "official_full_command": "cd synthetic-iter && mpiexec -np 10 python main.py",
+  "official_full_status": "blocked",
+  "blocker_full": "mpi4py and mpiexec/OpenMPI missing; official launch is 10 MPI replicas",
+  "what_ran": "single-process subset of original synthetic-iter/main.py simu1() via mpi4py stub rank=0 size=1. Algorithm is original SGD-GD with performative shift; not a 10-replica paper reproduction.",
+  "wall_sec": 540.486,
+  "settings": {
+    "eps_list": [
+      0,
+      0.1,
+      10,
+      100
+    ],
+    "batch": 5,
+    "log_maxiter": 5,
+    "lambda_reg": 0.001,
+    "c": 0.1,
+    "grd_type": "sgd",
+    "device": "cpu",
+    "a0": 50
+  },
+  "npy_summaries": {
+    "eps0-batch5-res0.npy": {
+      "iter_last": 99426,
+      "iter_len": 1276,
+      "grd_last": 1.559475437673541e-09,
+      "grd_len": 1276,
+      "loss_last": 0.3281349241733551,
+      "loss_len": 1276,
+      "train_acc_last": 0.9004424778761062,
+      "train_acc_len": 1276,
+      "test_acc_last": 1.0,
+      "test_acc_len": 1276,
+      "train_acc_unshift_last": 0.9004424778761062,
+      "train_acc_unshift_len": 1276,
+      "test_acc_unshift_last": 1.0,
+      "test_acc_unshift_len": 1276
+    },
+    "eps0.1-batch5-res0.npy": {
+      "iter_last": 99426,
+      "iter_len": 1276,
+      "grd_last": 8.505186777085783e-09,
+      "grd_len": 1276,
+      "loss_last": 0.3458000421524048,
+      "loss_len": 1276,
+      "train_acc_last": 0.9004424778761062,
+      "train_acc_len": 1276,
+      "test_acc_last": 1.0,
+      "test_acc_len": 1276,
+      "train_acc_unshift_last": 0.9004424778761062,
+      "train_acc_unshift_len": 1276,
+      "test_acc_unshift_last": 1.0,
+      "test_acc_unshift_len": 1276
+    },
+    "eps10-batch5-res0.npy": {
+      "iter_last": 99426,
+      "iter_len": 1276,
+      "grd_last": 2.0597110506059835e-06,
+      "grd_len": 1276,
+      "loss_last": 0.3553709387779236,
+      "loss_len": 1276,
+      "train_acc_last": 0.9004424778761062,
+      "train_acc_len": 1276,
+      "test_acc_last": 1.0,
+      "test_acc_len": 1276,
+      "train_acc_unshift_last": 0.9004424778761062,
+      "train_acc_unshift_len": 1276,
+      "test_acc_unshift_last": 1.0,
+      "test_acc_unshift_len": 1276
+    },
+    "eps100-batch5-res0.npy": {
+      "iter_last": 99426,
+      "iter_len": 1276,
+      "grd_last": 1.3713279123361843e-10,
+      "grd_len": 1276,
+      "loss_last": 0.9450080394744873,
+      "loss_len": 1276,
+      "train_acc_last": 0.09955752212389381,
+      "train_acc_len": 1276,
+      "test_acc_last": 0.0,
+      "test_acc_len": 1276,
+      "train_acc_unshift_last": 0.10176991150442478,
+      "train_acc_unshift_len": 1276,
+      "test_acc_unshift_last": 0.008849557522123894,
+      "test_acc_unshift_len": 1276
+    }
+  },
+  "note_labels": "dataset.py balances Y==1 vs Y==0, but data.csv uses labels {+1,-1}, so only class +1 survived in this run (official code/data interaction)."
+}

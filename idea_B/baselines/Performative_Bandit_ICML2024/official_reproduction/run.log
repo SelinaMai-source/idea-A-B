@@ -1,0 +1,12 @@
+official_source: bandit-icml24.ipynb
+numpy_seed: 0  # local reproducibility only; notebook did not set a seed
+entropy_imported: True
+=== single-run: reparameterized (phi) ===
+x_opt_g [0.3328991] final_g -0.28164988861568363
+=== single-run: vanilla two-point (theta) ===
+x_opt_f [0.66162858] final_f -0.2962457875065718
+initial_points_x [0.25, 0.3111111111111111, 0.37222222222222223, 0.43333333333333335, 0.49444444444444446, 0.5555555555555556, 0.6166666666666667, 0.6777777777777778, 0.7388888888888889, 0.8]
+wrote /Users/grantwright/Research/idea-A-B/idea_B/baselines/Performative_Bandit_ICML2024/official_reproduction/metrics.json
+wrote /Users/grantwright/Research/idea-A-B/idea_B/baselines/Performative_Bandit_ICML2024/official_reproduction/pr_comparison.png
+elapsed_sec=0.814
+multi_run_final PR_phi -0.2883591540722531 +/- 0.0071395956688855965 PR_theta -0.291834361799254 +/- 0.007228858237631779
