@@ -1,0 +1,86 @@
+{
+  "_comment": "v0.1 P1-A2 post-burn-in. Does not replace p1a_contaminated.json (historical horizon=22600=KB). Horizon is strictly greater than KB. Lévy α/scale unspecified_in_paper. Not paper-scale 200/500.",
+  "table_id": "overlap_a_contaminated",
+  "protocol": "ADAPTED_PROTOCOL",
+  "version": "C-v0.1",
+  "code_status": "independent_reimplementation",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu,1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "K": 50,
+    "n_nonnull": 2,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5,
+      "stability_alpha": 1.5,
+      "scale": 1.0,
+      "unspecified_in_paper": true,
+      "unspecified_fields": [
+        "stability_alpha",
+        "scale"
+      ]
+    }
+  },
+  "K": 50,
+  "n_nonnull": 2,
+  "alpha": 0.05,
+  "delta": 0.05,
+  "algo_eps": 0.1,
+  "burnin": {
+    "B_per_arm": 452,
+    "KB": 22600,
+    "do_not_shorten_B": true,
+    "horizon_must_be_strictly_greater_than_KB": true,
+    "never_left_burnin_status": "INVALID_PROTOCOL"
+  },
+  "horizon": {
+    "smoke": 22601,
+    "pilot": 30000
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30
+  },
+  "methods": [
+    "uniform",
+    "greedy",
+    "eps_oracle",
+    "eps_adaptive",
+    "mean_based",
+    "eprocess_based"
+  ],
+  "record_post_burnin_arm_frequencies": true,
+  "stress_test_methods": [
+    "greedy",
+    "eps_oracle",
+    "eps_adaptive"
+  ],
+  "stress_test_note": "contaminated e-PS Oracle/Adaptive increment and Greedy are NOT_COMPARABLE to FDR theory",
+  "e_ps_oracle_alternatives": "adapted: hypothesized μ=1 for every arm (common protocol), not e-PS paper θ_alt=0.02k",
+  "greedy_eprocess": "adaptive",
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true
+  },
+  "historical_v0_horizon": 22600,
+  "status": "NOT_RUN",
+  "method": "mean_based",
+  "setting": "contaminated",
+  "scale": "smoke",
+  "seed0": 0,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "horizon_used": 22601,
+  "n_trials_used": 3,
+  "burnin_KB": 22600,
+  "stress_test": false,
+  "validity_label": "comparable_on_this_DGP",
+  "label": "C-v0.1_RERUN"
+}

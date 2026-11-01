@@ -1,0 +1,6 @@
+run_id=v01_eps.fig2c_eps_oracle_smoke_seed0
+sampler=eps
+eprocess=oracle
+status=ok
+wall_s=0.696769
+rss_mb=89.84375

@@ -1,4 +1,4 @@
-**Current Idea C v0 Experimental Results:** [`idea_C/v0实验版本+结果.md`](idea_C/v0实验版本+结果.md)
+**Current Idea C v0 / v0.1 Experimental Results:** [`idea_C/v0实验版本+结果.md`](idea_C/v0实验版本+结果.md) · v0.1 对照 [`idea_C/reports/v0.1/PAPER_VS_REPRODUCTION.md`](idea_C/reports/v0.1/PAPER_VS_REPRODUCTION.md) · 图 [`idea_C/results/v0.1/figures/`](idea_C/results/v0.1/figures/)
 
 # Idea A / Idea B：v1 烟测与 v1.1 确认性比较
 

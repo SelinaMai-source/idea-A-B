@@ -1,0 +1,17 @@
+run_id=score_gaussian_mixture_SCORE--SAFFRON_smoke_pi0.8_T1000_seed0
+method=SCORE+-SAFFRON
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+T=1000
+pi1=0.8
+assume_cpqd=True
+code_status=independent_reimplementation
+protocol=paper T=1000 protocol
+status=ok
+wall_s=0.019376
+fdps=[0.0, 0.0024937655860349127, 0.0]
+powers=[0.4796954314720812, 0.5102040816326531, 0.4791929382093317]
+nrejs=[378.0, 401.0, 380.0]
+metrics={'FDR↓': 0.0008312551953449709, 'Power↑': 0.4896974837713553, 'Rejections↑': 386.3333333333333, 'Runtime↓': 0.01937554171308875}
+method_status=ok

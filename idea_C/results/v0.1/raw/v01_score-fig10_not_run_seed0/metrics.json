@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_score-fig10_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_score.fig10_NOT_RUN",
+  "content": "Figure 10 NOT_RUN independent_reimplementation",
+  "data": "AR(1): X_t = phi_t X_{t-1} + eps_t, eps~N(0,1), X_0~N(0,4/3). phi_0=0.5, phi_1=3.0, p1=0.3. Conditional p_t=1-Phi(X_t - phi_0 X_{t-1}). e_t = f_N(phi_1 X_{t-1},1)(X_t) / f_N(phi_0 X_{t-1},1)(X_t).",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: AR(1) 12-method conditional p-value runner not wired.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

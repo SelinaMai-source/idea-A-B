@@ -24,7 +24,13 @@ if str(IDEA_C.parent) not in sys.path:
 
 from idea_C.baselines.eps.algorithms import run_eps
 from idea_C.baselines.eps.dgp import draw_theta, make_eps_instance
-from idea_C.shared.metrics import fdr, samples_at_target_tpr, tpp
+from idea_C.shared.metrics import (
+    fdr,
+    samples_at_target_metric_cells,
+    samples_at_target_tpr,
+    summarize_samples_at_target,
+    tpp,
+)
 from idea_C.shared.seeds import seed_everything
 from idea_C.shared.serialize import write_run
 from idea_C.shared.stats import mean_std_ci
@@ -80,15 +86,20 @@ def run_trials(
         tpps.append(tpp_path[-1] if tpp_path else 0.0)
         samples.append(samples_at_target_tpr(tpp_path, delta=alpha))
     runtime = time.perf_counter() - t0
+    summary = summarize_samples_at_target(
+        samples, target_tpr=1.0 - alpha, max_horizon=horizon, method=f"{sampler}/{eprocess}"
+    )
+    cells = samples_at_target_metric_cells(summary)
     return {
         "FDR↓": mean_std_ci(fdps)["mean"],
         "TPR↑": mean_std_ci(tpps)["mean"],
         "TPP↑": mean_std_ci(tpps)["mean"],
-        "Samples@Target TPR↓": mean_std_ci(samples)["mean"],
+        "Samples@Target TPR↓": cells["Samples@Target TPR↓"],
         "Runtime↓": runtime,
         "n_trials": n_trials,
         "horizon": horizon,
         "scale": scale,
+        "samples_at_target": summary,
     }
 
 

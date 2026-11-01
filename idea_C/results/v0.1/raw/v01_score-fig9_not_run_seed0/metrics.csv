@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit
+v01_score-fig9_not_run_seed0,v01_blocked,C-v0.1_INDEPENDENT_score.fig9_NOT_RUN,Figure 9 NOT_RUN independent_reimplementation,"T=1000, alpha=0.05. Odd hypotheses non-null, even null. e_t = I{X_t <= alpha_t}/alpha_t. Null X~Unif(0,1). Non-null X=alpha_t/2 until a null trap, then X=(1+alpha_t)/2.",NOT_RUN,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4

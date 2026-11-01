@@ -1,0 +1,27 @@
+{
+  "run_id": "uai_local_dependence_Closed-r-LOND_paper_pi0.3_m3000_seed0",
+  "table_id": "uai_local_dependence",
+  "version": "C-v0.1_closed_r_lond_paper_pi0.3_m3000",
+  "content": "Closed r-LOND paper runtime m=3000 n=80 BLOCKED_COMPUTE independent_reimplementation (NOT CCF-A)",
+  "data": "UAI Fig2 runtime $m=3000,L=100,\\delta=0.1$ π1=0.3",
+  "metrics": {},
+  "status": "BLOCKED_COMPUTE",
+  "result_explanation": "BLOCKED_COMPUTE: Closed is O(m^3) DP recomputed from scratch. Measured 1-seed: m=200 0.425s, m=400 3.929s. Cubic extrapolate m=3000 n=80 ≈ 31.89h > 8h on M3 16GB. Do not shrink closure search. Resume: PYTHONPATH=. OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python idea_C/scripts/run_v0_1.py --object uai.fig2_runtime --scale paper --paper-scale --run --resume",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "wall_s": 4.354304832872003,
+  "rss_mb": 106.390625,
+  "small_m_timings": [
+    {
+      "m": 200,
+      "closed_e_lond_1seed_s": 0.4251905418932438,
+      "rss_mb": 92.015625
+    },
+    {
+      "m": 400,
+      "closed_e_lond_1seed_s": 3.9291142909787595,
+      "rss_mb": 106.390625
+    }
+  ]
+}

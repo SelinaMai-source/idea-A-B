@@ -24,11 +24,18 @@ from idea_C.shared.seeds import seed_everything
 
 def test_code_status_and_levy_deviation_are_documented() -> None:
     from idea_C.baselines.robust_bandit import CODE_STATUS
-    from idea_C.baselines.robust_bandit.dgp import LEVY_ALPHA, LEVY_SCALE
+    from idea_C.baselines.robust_bandit.dgp import (
+        LEVY_ALPHA,
+        LEVY_SCALE,
+        LEVY_UNSPECIFIED_FIELDS,
+        LEVY_UNSPECIFIED_IN_PAPER,
+    )
 
     assert CODE_STATUS == "independent_reimplementation"
     assert LEVY_ALPHA == 1.5
     assert LEVY_SCALE == 1.0
+    assert LEVY_UNSPECIFIED_IN_PAPER is True
+    assert LEVY_UNSPECIFIED_FIELDS == ("stability_alpha", "scale")
 
 
 def test_catoni_phi_bounds_and_log1p() -> None:

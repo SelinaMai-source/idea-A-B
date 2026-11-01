@@ -15,11 +15,13 @@ import traceback
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+IDEA_C = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-CONFIG = Path(__file__).resolve().parents[1] / "experiments" / "configs" / "overlap_streaming.json"
-SCORE_CFG = Path(__file__).resolve().parents[1] / "configs" / "score_gaussian_mixture.json"
+CONFIG = IDEA_C / "experiments" / "configs" / "overlap_streaming.json"
+SCORE_CFG = IDEA_C / "configs" / "score_gaussian_mixture.json"
+V01_RAW = IDEA_C / "results" / "v0.1" / "raw"
 
 METHOD_VERSION = {
     "e-LOND": "v0_ob_elond",
@@ -81,7 +83,19 @@ def write_skip(version: str, content: str, data: str, reason: str) -> str:
     return run_id
 
 
-def run_and_write(*, reps: int, T: int, pi1: float, seed0: int, scale: str, assume_cpqd: bool) -> list[str]:
+def run_and_write(
+    *,
+    reps: int,
+    T: int,
+    pi1: float,
+    seed0: int,
+    scale: str,
+    assume_cpqd: bool,
+    raw_dir: Path | None = None,
+    version_prefix: str = "",
+    run_id_prefix: str = "",
+    skip_methods: set[str] | None = None,
+) -> list[str]:
     from idea_C.baselines.eclosure import (
         closed_e_lond,
         donation_e_lond,
@@ -103,8 +117,12 @@ def run_and_write(*, reps: int, T: int, pi1: float, seed0: int, scale: str, assu
     score_cfg = json.loads(SCORE_CFG.read_text())
     seeds = [seed0 + r for r in range(reps)]
     alpha = float(cfg["dgp"].get("alpha", 0.05))
-    data = f"P1-B streaming SCORE-like mix T={T} $\\pi_1={pi1}$"
-    print(f"Running P1-B streams reps={reps} T={T} pi1={pi1} seed0={seed0} scale={scale}")
+    data = f"P1-B streaming SCORE-like mix T={T} $\\pi_1={pi1}$ ADAPTED_PROTOCOL"
+    skip_methods = skip_methods or set()
+    print(
+        f"Running P1-B streams reps={reps} T={T} pi1={pi1} seed0={seed0} "
+        f"scale={scale} skip={sorted(skip_methods)}"
+    )
     streams = [independent_gaussian_mixture(T=T, pi1=pi1, seed=s) for s in seeds]
 
     dispatch = {
@@ -117,8 +135,16 @@ def run_and_write(*, reps: int, T: int, pi1: float, seed0: int, scale: str, assu
     }
     run_ids: list[str] = []
     for name in list(cfg.get("methods") or dispatch):
+        if name in skip_methods:
+            print(f"  skip {name}: {skip_methods}")
+            continue
         version = f"{METHOD_VERSION.get(name, 'v0_ob_' + _slug(name))}_{scale}"
-        run_id = f"overlap_b_streaming_{_slug(name)}_{scale}_T{T}_seed{seed0}"
+        if version_prefix:
+            if version.startswith("v0_"):
+                version = f"{version_prefix}_{version[3:]}"
+            elif not version.startswith(version_prefix):
+                version = f"{version_prefix}_{version}"
+        run_id = f"{run_id_prefix}overlap_b_streaming_{_slug(name)}_{scale}_T{T}_seed{seed0}"
         fdps: list[float] = []
         sups: list[float] = []
         powers: list[float] = []
@@ -136,7 +162,12 @@ def run_and_write(*, reps: int, T: int, pi1: float, seed0: int, scale: str, assu
         ]
         t0 = time.perf_counter()
         status = "ok"
-        note = f"自动追加，P1-B {scale} {reps}-seed，independent_reimplementation，结果解释待人工填写"
+        note = (
+            f"C-v0.1_RERUN P1-B {scale} {reps}-seed ADAPTED_PROTOCOL "
+            f"independent_reimplementation same SCORE §6.1 stream T={T} π1={pi1} "
+            f"assume_cpqd={assume_cpqd}. FDR and SupFDR are separate. "
+            "Not paper-scale. Closed 30-seed skipped when tens of minutes."
+        )
         metrics: dict = {}
         runtime = 0.0
         try:
@@ -187,7 +218,7 @@ def run_and_write(*, reps: int, T: int, pi1: float, seed0: int, scale: str, assu
             run_id,
             table_id="overlap_b_streaming",
             version=version,
-            content=f"{name} P1-B {scale} {reps}-seed independent_reimplementation",
+            content=f"{name} P1-B {scale} {reps}-seed ADAPTED_PROTOCOL C-v0.1_RERUN independent_reimplementation",
             data=data,
             config={
                 **cfg,
@@ -200,12 +231,21 @@ def run_and_write(*, reps: int, T: int, pi1: float, seed0: int, scale: str, assu
                 "seeds": seeds,
                 "assume_cpqd": assume_cpqd,
                 "score_cfg_assume_cpqd": score_cfg.get("assume_cpqd_for_score_plus"),
+                "protocol": "ADAPTED_PROTOCOL",
+                "label": "C-v0.1_RERUN",
             },
             seed=seed0,
             metrics=metrics,
             status=status,
             result_explanation=note,
-            extra={"seeds": seeds, "wall_s": runtime, "fdps": fdps, "sup_fdps": sups},
+            raw_dir=raw_dir,
+            extra={
+                "seeds": seeds,
+                "wall_s": runtime,
+                "fdps": fdps,
+                "sup_fdps": sups,
+                "protocol": "ADAPTED_PROTOCOL",
+            },
         )
         _finalize(directory, seeds=seeds, log_text="\n".join(log_lines) + "\n")
         run_ids.append(run_id)
@@ -224,6 +264,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--paper-scale", action="store_true")
     parser.add_argument("--assume-cpqd", action="store_true")
     parser.add_argument("--no-assume-cpqd", action="store_true")
+    parser.add_argument(
+        "--v01",
+        action="store_true",
+        help="write C-v0.1_RERUN rows under results/v0.1/raw (never overwrite v0)",
+    )
+    parser.add_argument("--raw-dir", type=Path, default=None)
+    parser.add_argument("--skip-closed", action="store_true")
     args = parser.parse_args(argv)
 
     if args.list or not args.run:
@@ -245,6 +292,10 @@ def main(argv: list[str] | None = None) -> int:
         assume = False
     if args.assume_cpqd:
         assume = True
+    raw_dir = args.raw_dir or (V01_RAW if args.v01 else None)
+    version_prefix = "C-v0.1_RERUN" if args.v01 else ""
+    run_id_prefix = "v01_p1b_" if args.v01 else ""
+    skip_methods = {"Closed e-LOND"} if args.skip_closed else set()
     written = run_and_write(
         reps=args.reps,
         T=T,
@@ -252,6 +303,10 @@ def main(argv: list[str] | None = None) -> int:
         seed0=args.seed0,
         scale=args.scale,
         assume_cpqd=assume,
+        raw_dir=raw_dir,
+        version_prefix=version_prefix,
+        run_id_prefix=run_id_prefix,
+        skip_methods=skip_methods,
     )
     print("wrote run_ids:")
     for rid in written:

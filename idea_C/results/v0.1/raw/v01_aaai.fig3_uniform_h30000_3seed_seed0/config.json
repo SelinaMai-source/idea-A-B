@@ -1,0 +1,72 @@
+{
+  "_comment": "v0.1 post-burn-in / paper-scale AAAI Fig.3 config. Does not replace aaai_heavy_tailed.json. B is per-arm and is not shortened. Lévy α/scale still unspecified_in_paper.",
+  "table_id": "aaai_heavy_tailed",
+  "version": "C-v0.1",
+  "code_status": "independent_reimplementation",
+  "implementation_mode": "INDEPENDENT_REIMPLEMENTATION",
+  "paper": "On the Robustness of Bandit Multiple Testing",
+  "venue": "AAAI 2026 Main",
+  "dgp": {
+    "family": "student_t",
+    "df": 2,
+    "mu_null": 0.0,
+    "mu_nonnull": 5.0,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5,
+      "stability_alpha": 1.5,
+      "scale": 1.0,
+      "unspecified_in_paper": true,
+      "unspecified_fields": [
+        "stability_alpha",
+        "scale"
+      ]
+    },
+    "p": 1.85,
+    "kappa": 50,
+    "lambda_eprocess": "(eps/kappa)**(1/p)"
+  },
+  "K": 50,
+  "n_nonnull": 2,
+  "delta": 0.05,
+  "eps": 0.1,
+  "methods": [
+    "uniform",
+    "algo3_heavytail"
+  ],
+  "burnin": {
+    "B_per_arm": 452,
+    "KB": 22600,
+    "formula": "B=ceil(4*eps^{-1}*log(4K/delta^2)); KB=K*B",
+    "do_not_shorten_B": true,
+    "horizon_must_be_strictly_greater_than_KB": true,
+    "never_left_burnin_status": "INVALID_PROTOCOL"
+  },
+  "horizon": {
+    "smoke": 30000,
+    "pilot": 30000,
+    "paper": 80000
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30,
+    "paper": 500
+  },
+  "record_post_burnin_arm_frequencies": true,
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true,
+    "paper_scale_requires_flag": "--allow-paper-scale"
+  },
+  "skipped_by_default": [
+    "multi-agent Algorithm 4 / Figure 4"
+  ],
+  "status": "NOT_RUN",
+  "method": "uniform",
+  "scale": "smoke",
+  "horizon_override": 30000,
+  "n_trials_override": 3,
+  "object_id": "aaai.fig3"
+}

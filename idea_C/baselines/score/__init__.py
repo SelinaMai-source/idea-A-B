@@ -1,7 +1,9 @@
 """ICML 2026 SCORE (Kuang, Gang, Xia). independent_reimplementation.
 
 No official repository was found. Algorithms follow paper §4.1–4.3 (SCORE)
-and §5.2–5.3 (SCORE+). SCORE+ is returned as N/A unless ``assume_cpqd=True``.
+and §5.2–5.3 (SCORE+). SCORE+ is returned as N/A /
+``INVALID_PROTOCOL`` unless ``assume_cpqd=True``; it must not claim an
+FDR guarantee without that flag.
 
 Power: AP(t) = expected fraction of arrived non-nulls rejected by time t;
 power ratio is pointwise vs the same-family baseline (e-LORD / e-SAFFRON).
@@ -46,7 +48,15 @@ from .procedures import (
     score_saffron,
 )
 from .result import CODE_STATUS, PAPER, VENUE, ProcedureResult
-from .wealth import lond_refund, overshoot, saffron_score_cost, score_cost
+from .wealth import (
+    lond_refund,
+    overshoot,
+    saffron_score_cost,
+    score_cost,
+    score_plus_lord_alpha,
+    score_plus_saffron_alpha,
+    score_plus_wealth,
+)
 
 __all__ = [
     "CODE_STATUS",
@@ -86,7 +96,10 @@ __all__ = [
     "score_lond",
     "score_lord",
     "score_plus_lord",
+    "score_plus_lord_alpha",
     "score_plus_saffron",
+    "score_plus_saffron_alpha",
+    "score_plus_wealth",
     "score_saffron",
     "saffron_score_cost",
 ]

@@ -1,0 +1,22 @@
+{
+  "run_id": "uai_local_dependence_Donation-e-LOND_paper_pi0.3_m3000_seed0",
+  "table_id": "uai_local_dependence",
+  "version": "C-v0.1_donation_e_lond_paper_pi0.3_m3000",
+  "content": "Donation e-LOND paper runtime m=3000 n=80 independent_reimplementation (NOT CCF-A)",
+  "data": "UAI Fig2 runtime $m=3000,L=100,\\delta=0.1$ π1=0.3",
+  "metrics": {
+    "FDR↓": 0.0008333333333333333,
+    "SupFDR↓": 0.0008928571428571428,
+    "Power↑": 0.006306046586999915,
+    "Rejections↑": 5.7375,
+    "Runtime↓": 801.5366270840168
+  },
+  "status": "ok",
+  "result_explanation": "C-v0.1_INDEPENDENT uai.fig2_runtime Donation e-LOND m=3000 n=80 wall=801.537s Power=0.006306046586999915 FDR=0.0008333333333333333 Paper=FIGURE_ONLY (runtime curve). UAI is not CCF-A. INDEPENDENT_REIMPLEMENTATION",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "wall_s": 801.5366270840168,
+  "rss_mb": 915.9375,
+  "n_reps": 80
+}

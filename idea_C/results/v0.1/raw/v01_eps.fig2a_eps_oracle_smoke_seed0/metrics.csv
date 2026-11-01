@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Samples@Target TPR↓,Runtime↓
+v01_eps.fig2a_eps_oracle_smoke_seed0,eps_gaussian,C-v0.1_INDEPENDENT_eps_oracle_smoke,eps + oracle smoke independent_reimplementation,"K=50. P_k=N(theta_k,1). B_k ~ Bern(0.1), theta_k=0.02 k B_k, drawn once and held fixed across 500 trials. Oracle (simple-vs-simple) vs Adaptive (simple-vs-composite) as line styles, not mixed.",ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.0,0.1111111111111111,0.1111111111111111,CENSORED,0.4647118332795799

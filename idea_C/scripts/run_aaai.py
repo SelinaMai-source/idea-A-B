@@ -23,7 +23,13 @@ if str(IDEA_C.parent) not in sys.path:
 
 from idea_C.baselines.robust_bandit.algorithms import run_bandit_mt
 from idea_C.baselines.robust_bandit.dgp import make_gaussian_instance, make_heavytail_instance
-from idea_C.shared.metrics import fdr, samples_at_target_tpr, tpp
+from idea_C.shared.metrics import (
+    fdr,
+    samples_at_target_metric_cells,
+    samples_at_target_tpr,
+    summarize_samples_at_target,
+    tpp,
+)
 from idea_C.shared.seeds import seed_everything
 from idea_C.shared.serialize import write_run
 from idea_C.shared.stats import mean_std_ci
@@ -65,6 +71,8 @@ def run_trials(cfg: dict, *, method: str, scale: str, seed0: int, table_id: str)
     fdps: list[float] = []
     tpps: list[float] = []
     samples: list[float] = []
+    protocol_statuses: list[str] = []
+    post_burnin: list[dict] = []
     t0 = time.perf_counter()
     for i in range(n_trials):
         rng = seed_everything(seed0 + i)
@@ -78,16 +86,49 @@ def run_trials(cfg: dict, *, method: str, scale: str, seed0: int, table_id: str)
         tpp_path = [tpp(row, is_null) for row in result.rejected_path]
         tpps.append(tpp_path[-1] if tpp_path else 0.0)
         samples.append(samples_at_target_tpr(tpp_path, delta=delta))
+        protocol_statuses.append(str(result.protocol_status))
+        post_burnin.append(
+            {
+                "seed": seed0 + i,
+                "n_post_burnin_pulls": int(result.n_post_burnin_pulls),
+                "entered_adaptive_phase": bool(result.entered_adaptive_phase),
+                "burnin_per_arm": int(result.burnin_per_arm),
+                "burnin_total": int(result.burnin_total),
+                "post_burnin_counts": [int(x) for x in result.post_burnin_counts.tolist()],
+                "post_burnin_frequencies": [float(x) for x in result.post_burnin_frequencies.tolist()],
+                "n_pulls": [int(x) for x in result.n_pulls.tolist()],
+                "protocol_status": str(result.protocol_status),
+            }
+        )
+        print(
+            f"  {method} seed={seed0 + i} protocol={result.protocol_status} "
+            f"post_burnin={result.n_post_burnin_pulls} "
+            f"KB={result.burnin_total} pulls={result.n_pulls.tolist()} "
+            f"freq={result.post_burnin_frequencies.tolist()}"
+        )
     runtime = time.perf_counter() - t0
+    summary = summarize_samples_at_target(
+        samples, target_tpr=1.0 - delta, max_horizon=horizon, method=method
+    )
+    cells = samples_at_target_metric_cells(summary)
+    protocol = (
+        "INVALID_PROTOCOL"
+        if any(status == "INVALID_PROTOCOL" for status in protocol_statuses)
+        else "ok"
+    )
     return {
         "FDR↓": mean_std_ci(fdps)["mean"],
         "TPR↑": mean_std_ci(tpps)["mean"],
         "TPP↑": mean_std_ci(tpps)["mean"],
-        "Samples@Target TPR↓": mean_std_ci(samples)["mean"],
+        "Samples@Target TPR↓": cells["Samples@Target TPR↓"],
         "Runtime↓": runtime,
         "n_trials": n_trials,
         "horizon": horizon,
         "scale": scale,
+        "protocol_status": protocol,
+        "samples_at_target": summary,
+        "post_burnin": post_burnin,
+        "entered_adaptive_phase": any(item["entered_adaptive_phase"] for item in post_burnin),
     }
 
 

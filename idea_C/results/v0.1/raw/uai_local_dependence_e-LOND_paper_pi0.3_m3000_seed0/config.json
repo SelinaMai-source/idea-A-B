@@ -1,0 +1,7 @@
+{
+  "m": 3000,
+  "reps": 80,
+  "method": "e-LOND",
+  "pi1": 0.3,
+  "shared_cov": true
+}

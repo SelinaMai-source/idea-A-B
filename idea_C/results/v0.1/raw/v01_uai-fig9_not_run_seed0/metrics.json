@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_uai-fig9_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_uai.fig9_NOT_RUN",
+  "content": "Figure 9 NOT_RUN independent_reimplementation",
+  "data": "Same local-dep setup as main simulations; mu in {3,4}.",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: randomized donation not wired.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

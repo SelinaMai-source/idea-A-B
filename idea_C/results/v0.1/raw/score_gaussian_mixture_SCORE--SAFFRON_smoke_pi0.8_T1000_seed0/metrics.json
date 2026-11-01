@@ -1,0 +1,43 @@
+{
+  "run_id": "score_gaussian_mixture_SCORE--SAFFRON_smoke_pi0.8_T1000_seed0",
+  "table_id": "score_gaussian_mixture",
+  "version": "C-v0.1_scoreplus_saffron_smoke_pi0.8",
+  "content": "SCORE+-SAFFRON smoke 3-seed independent_reimplementation",
+  "data": "SCORE §6.1 $\\pi_1=0.8$ $T=1000$",
+  "metrics": {
+    "FDR↓": 0.0008312551953449709,
+    "Power↑": 0.4896974837713553,
+    "Rejections↑": 386.3333333333333,
+    "Runtime↓": 0.01937554171308875
+  },
+  "status": "ok",
+  "result_explanation": "自动追加，smoke 3-seed，independent_reimplementation，paper T=1000 protocol，结果解释待人工填写",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "n_reps": 3,
+  "scale": "smoke",
+  "wall_s": 0.01937554171308875,
+  "assume_cpqd": true,
+  "reduced_horizon": false,
+  "fdps": [
+    0.0,
+    0.0024937655860349127,
+    0.0
+  ],
+  "powers": [
+    0.4796954314720812,
+    0.5102040816326531,
+    0.4791929382093317
+  ],
+  "n_rejections": [
+    378.0,
+    401.0,
+    380.0
+  ]
+}

@@ -28,6 +28,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 SCALES = ("smoke", "pilot")
+V01_RAW = IDEA_C / "results" / "v0.1" / "raw"
 
 # AAAI Algorithm 2 burn-in B(δ,ε)=4 ε^{-1} log(4K/δ²); KB at K=50,δ=0.05,ε=0.1.
 DEFAULT_HORIZON = 22600
@@ -187,6 +188,7 @@ def explanation(
         "common protocol：同一 arm 分布 N(μ,1) μ∈{0,1}，K=50，|H1|=2，同一预算，同一评估时点。",
         f"horizon={horizon}，Algorithm 2 KB≈{burnin_total}（ε_algo=0.1，δ=0.05）。",
         f"seeds={seeds}。code_status=independent_reimplementation / adapted。",
+        "protocol=ADAPTED_PROTOCOL label=C-v0.1_RERUN（v0.1 post-burn-in rerun，不是 paper-scale 500）。",
         "Lévy-stable 稳定性指数/尺度原文未给，代码用 alpha=1.5 scale=1.0。",
         "e-PS Oracle 适应：假设备择 μ=1（共同协议），不是原文 θ_alt=0.02k。",
         "Greedy 配对 Adaptive plug-in（已有 e-PS 实现，不是新方法）。",
@@ -234,10 +236,19 @@ def run_one_method(
     seed0: int,
     n_trials: int,
     horizon: int,
+    raw_dir: Path | None = None,
+    version_prefix: str = "",
+    run_id_prefix: str = "",
 ) -> str:
     from idea_C.baselines.eps.algorithms import run_eps
     from idea_C.baselines.robust_bandit.algorithms import run_bandit_mt
-    from idea_C.shared.metrics import fdr, samples_at_target_tpr, tpp
+    from idea_C.shared.metrics import (
+        fdr,
+        samples_at_target_metric_cells,
+        samples_at_target_tpr,
+        summarize_samples_at_target,
+        tpp,
+    )
     from idea_C.shared.seeds import seed_everything
     from idea_C.shared.serialize import write_run
     from idea_C.shared.stats import mean_std_ci
@@ -253,14 +264,19 @@ def run_one_method(
     seeds = [seed0 + i for i in range(n_trials)]
     version = spec["version_contaminated"] if contaminated else spec["version_clean"]
     version = f"{version}_{scale}"
+    if version_prefix:
+        if version.startswith("v0_"):
+            version = f"{version_prefix}_{version[3:]}"
+        elif not version.startswith(version_prefix):
+            version = f"{version_prefix}_{version}"
     display = spec["display_contaminated"] if contaminated else spec["display_clean"]
     stress = bool(contaminated and spec["stress_under_contamination"])
     data = (
-        "P1-A2 contaminated Gaussian"
+        "P1-A2 contaminated Gaussian ADAPTED_PROTOCOL"
         if contaminated
-        else "P1-A1 clean Gaussian"
+        else "P1-A1 clean Gaussian ADAPTED_PROTOCOL"
     )
-    run_id = f"{table_id}_{method_key}_{scale}_seed{seed0}"
+    run_id = f"{run_id_prefix}{table_id}_{method_key}_{scale}_h{horizon}_seed{seed0}"
     log_lines = [
         f"run_id={run_id}",
         f"method={method_key}",
@@ -278,6 +294,7 @@ def run_one_method(
     fdps: list[float] = []
     tpps: list[float] = []
     samples: list[float] = []
+    sat = None
     status = "ok"
     error = None
     t0 = time.perf_counter()
@@ -320,10 +337,17 @@ def run_one_method(
             "TPP↑": mean_std_ci(tpps)["mean"],
             "Runtime↓": runtime,
         }
-        samp_mean = mean_std_ci(samples)["mean"]
-        if samp_mean is not None and isinstance(samp_mean, float) and math.isfinite(samp_mean):
-            metrics["Samples@Target TPR↓"] = samp_mean
-        content = f"{display} {scale} {n_trials}-seed independent_reimplementation"
+        sat = summarize_samples_at_target(
+            samples,
+            target_tpr=1.0 - delta,
+            max_horizon=horizon,
+            method=method_key,
+        )
+        metrics.update(samples_at_target_metric_cells(sat))
+        content = (
+            f"{display} {scale} {n_trials}-seed ADAPTED_PROTOCOL "
+            f"C-v0.1_RERUN independent_reimplementation"
+        )
         if stress:
             content += " NOT_COMPARABLE stress test"
     except Exception as exc:
@@ -367,21 +391,27 @@ def run_one_method(
             "burnin_KB": burnin_total,
             "stress_test": stress,
             "validity_label": "NOT_COMPARABLE" if stress else "comparable_on_this_DGP",
+            "protocol": "ADAPTED_PROTOCOL",
+            "label": "C-v0.1_RERUN",
         },
         seed=seed0,
         metrics=metrics,
         status=status,
         result_explanation=note,
+        raw_dir=raw_dir,
         extra={
             "seeds": seeds,
             "wall_s": runtime,
             "fdps": fdps,
             "tpps": tpps,
             "stress_test": stress,
+            "protocol": "ADAPTED_PROTOCOL",
+            "samples_at_target": sat if status == "ok" else None,
         },
     )
     _finalize(directory, seeds=seeds, log_text="\n".join(log_lines) + "\n")
-    print(f"  wrote results/v0/raw/{run_id} status={status} wall={runtime:.3f}s", flush=True)
+    dest = raw_dir if raw_dir is not None else Path("results/v0/raw")
+    print(f"  wrote {dest}/{run_id} status={status} wall={runtime:.3f}s", flush=True)
     return run_id
 
 
@@ -412,10 +442,33 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--horizon", type=int, default=None)
     parser.add_argument("--n-trials", type=int, default=None)
     parser.add_argument("--allow-paper-scale", action="store_true")
+    parser.add_argument(
+        "--v01",
+        action="store_true",
+        help="write C-v0.1_RERUN rows under results/v0.1/raw (never overwrite v0)",
+    )
+    parser.add_argument("--raw-dir", type=Path, default=None)
+    parser.add_argument("--version-prefix", default="")
+    parser.add_argument("--run-id-prefix", default="")
     args = parser.parse_args(argv)
 
-    default_name = "p1a_clean.json" if args.setting == "clean" else "p1a_contaminated.json"
-    cfg = load_config(args.config or default_name)
+    if args.v01:
+        default_name = (
+            "p1a_clean_post_burnin.json"
+            if args.setting == "clean"
+            else "p1a_contaminated_post_burnin.json"
+        )
+        raw_dir = args.raw_dir or V01_RAW
+        version_prefix = args.version_prefix or "C-v0.1_RERUN"
+        run_id_prefix = args.run_id_prefix or "v01_p1a_"
+    else:
+        default_name = "p1a_clean.json" if args.setting == "clean" else "p1a_contaminated.json"
+        raw_dir = args.raw_dir
+        version_prefix = args.version_prefix
+        run_id_prefix = args.run_id_prefix
+    if args.config:
+        default_name = args.config
+    cfg = load_config(default_name)
     if args.scale == "pilot":
         label = "pilot"
     else:
@@ -468,6 +521,9 @@ def main(argv: list[str] | None = None) -> int:
                 seed0=args.seed,
                 n_trials=n_trials,
                 horizon=horizon,
+                raw_dir=raw_dir,
+                version_prefix=version_prefix,
+                run_id_prefix=run_id_prefix,
             )
         )
     print("wrote run_ids:")

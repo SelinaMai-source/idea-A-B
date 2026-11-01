@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig2d_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig2d_NOT_RUN",
+  "content": "Figure 2(d) NOT_RUN independent_reimplementation",
+  "data": "K=50. Multivariate t with noncentrality theta_k 1_5, df=5.",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: 5D Student-t DGP not wired.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

@@ -1,0 +1,5 @@
+run_id=v01_aaai.fig3_algo3-heavytail_h30000_3seed_seed0
+method=algo3_heavytail
+status=ok
+wall_s=3.244555
+rss_mb=127.921875

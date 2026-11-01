@@ -1,0 +1,5 @@
+run_id=v01_aaai.fig3_uniform_h30000_3seed_seed0
+method=uniform
+status=ok
+wall_s=3.131772
+rss_mb=127.921875

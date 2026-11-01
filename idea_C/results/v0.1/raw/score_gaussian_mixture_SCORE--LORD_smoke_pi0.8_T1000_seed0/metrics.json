@@ -1,0 +1,43 @@
+{
+  "run_id": "score_gaussian_mixture_SCORE--LORD_smoke_pi0.8_T1000_seed0",
+  "table_id": "score_gaussian_mixture",
+  "version": "C-v0.1_scoreplus_lord_smoke_pi0.8",
+  "content": "SCORE+-LORD smoke 3-seed independent_reimplementation",
+  "data": "SCORE §6.1 $\\pi_1=0.8$ $T=1000$",
+  "metrics": {
+    "FDR↓": 0.0008190008190008189,
+    "Power↑": 0.4985803460360338,
+    "Rejections↑": 393.3333333333333,
+    "Runtime↓": 0.012124999891966581
+  },
+  "status": "ok",
+  "result_explanation": "自动追加，smoke 3-seed，independent_reimplementation，paper T=1000 protocol，结果解释待人工填写",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "n_reps": 3,
+  "scale": "smoke",
+  "wall_s": 0.012124999891966581,
+  "assume_cpqd": true,
+  "reduced_horizon": false,
+  "fdps": [
+    0.0,
+    0.002457002457002457,
+    0.0
+  ],
+  "powers": [
+    0.49238578680203043,
+    0.5178571428571429,
+    0.4854981084489281
+  ],
+  "n_rejections": [
+    388.0,
+    407.0,
+    385.0
+  ]
+}

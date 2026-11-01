@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig4_blocked_no_data_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig4_BLOCKED_NO_DATA",
+  "content": "Figure 4 BLOCKED_NO_DATA independent_reimplementation",
+  "data": "Five pools of 1000 OPT-1.3B streams (200 Gumbel-max watermarked + 800 non-watermarked), 20 prompts, 5 temperatures in [0.5,0.8], lengths 200-1200. Each trial samples K=500 streams without replacement from one pool.",
+  "metrics": {},
+  "status": "BLOCKED_NO_DATA",
+  "result_explanation": "BLOCKED_NO_DATA: OPT-1.3B pregenerated watermark streams were not released. Do not substitute another model. Missing author streams for arXiv:2609.26651 Figure 4.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

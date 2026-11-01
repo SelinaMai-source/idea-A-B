@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig1_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig1_NOT_RUN",
+  "content": "Figure 1 NOT_RUN independent_reimplementation",
+  "data": "Preview of multivariate Gaussian mean-shift from §6. Average budget to a target TPR vs uniform, plus realized FDR vs budget.",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: intro 5D preview stub; 5D DGP not in run_eps.py.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

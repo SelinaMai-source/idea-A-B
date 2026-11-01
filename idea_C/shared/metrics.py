@@ -21,14 +21,22 @@ Definitions (single rejection set ``S``, truth partition ``H0``, ``H1``):
 
 ``samples_at_target_tpr`` is the first time index ``t`` (1-based sample
 count) at which TPP ≥ ``1 - delta``. Returns NaN if the target is never
-met — callers must serialize that as missing / ``NOT_RUN``, never as 0.
+met. An unreached trial is **right-censored** (``CENSORED``), not dropped,
+not 0, and not ``NOT_RUN``. Aggregate with ``summarize_samples_at_target``;
+do not average only the successful seeds. If success rates differ across
+methods, do not rank by the conditional mean among successes alone.
 """
 
 from __future__ import annotations
 
-from typing import Iterable
+from typing import Any, Iterable, Sequence
 
 import numpy as np
+
+CENSORED = "CENSORED"
+NOT_RUN = "NOT_RUN"
+UNDEFINED = "undefined"
+NOT_IDENTIFIABLE = "not_identifiable"
 
 
 def _as_bool_mask(values: np.ndarray, n: int, name: str) -> np.ndarray:
@@ -110,8 +118,9 @@ def samples_at_target_tpr(
 ) -> float:
     """First sample count at which TPP ≥ ``1 - delta``.
 
-    Returns ``nan`` if the target is never reached so serializers can leave
-    the cell as ``NOT_RUN`` rather than writing a fake 0.
+    Returns ``nan`` if the target is never reached. Call
+    ``summarize_samples_at_target`` so the unreached trial is serialized as
+    ``CENSORED`` rather than dropped, 0, or ``NOT_RUN``.
     """
     path = np.asarray(tpp_path, dtype=float).reshape(-1)
     target = 1.0 - float(delta)
@@ -123,3 +132,119 @@ def samples_at_target_tpr(
         return float(idx + 1)
     index = np.asarray(sample_index, dtype=float).reshape(-1)
     return float(index[idx])
+
+
+def _is_reached_time(value: Any) -> bool:
+    """Finite positive reaching time. 0 / NaN / None are not successes."""
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return False
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return False
+    return bool(np.isfinite(number) and number > 0.0)
+
+
+def summarize_samples_at_target(
+    reaching_times: Sequence[Any],
+    *,
+    target_tpr: float,
+    max_horizon: float,
+    method: str | None = None,
+) -> dict[str, Any]:
+    """Right-censored Samples@Target summary for one method.
+
+    Unreached trials stay in the denominator as ``CENSORED``. The
+    conditional mean is reported only among successes and is **not** a
+    ranking statistic when success rates differ across methods.
+    """
+    raw = list(reaching_times)
+    n_trials = len(raw)
+    reached = [float(value) for value in raw if _is_reached_time(value)]
+    n_reached = len(reached)
+    n_censored = n_trials - n_reached
+    success_rate = float(n_reached / n_trials) if n_trials else float("nan")
+    censoring_rate = float(n_censored / n_trials) if n_trials else float("nan")
+    if n_reached:
+        conditional_mean: float | str = float(np.mean(reached))
+    else:
+        conditional_mean = UNDEFINED
+
+    # Identifiable if the failure-time median is observed on or before the
+    # horizon. All-reached uses the ordinary sample median. With censoring,
+    # treat unreached as +∞ and take the ((n+1)//2)-th order statistic.
+    ordered: list[float] = sorted(reached + [float("inf")] * n_censored)
+    median: float | str = NOT_IDENTIFIABLE
+    if n_trials and n_censored == 0:
+        median = float(np.median(np.asarray(reached, dtype=float)))
+    elif n_trials:
+        rank = (n_trials + 1) // 2
+        candidate = ordered[rank - 1]
+        if np.isfinite(candidate):
+            median = float(candidate)
+
+    per_trial: list[float | str] = []
+    for value in raw:
+        if _is_reached_time(value):
+            per_trial.append(float(value))
+        else:
+            per_trial.append(CENSORED)
+
+    return {
+        "method": method,
+        "target_tpr": float(target_tpr),
+        "n_trials": int(n_trials),
+        "n_reached": int(n_reached),
+        "success_rate": success_rate,
+        "conditional_mean_among_successes": conditional_mean,
+        "median_reaching_time": median,
+        "right_censoring_rate": censoring_rate,
+        "max_horizon": float(max_horizon),
+        "unreached_status": CENSORED,
+        "per_trial_status": per_trial,
+        "rank_by_conditional_mean_alone": False,
+    }
+
+
+def can_rank_by_conditional_mean(
+    summaries: Sequence[dict[str, Any]],
+    *,
+    atol: float = 1e-12,
+) -> bool:
+    """False when success rates differ: do not rank by conditional mean alone."""
+    rates: list[float] = []
+    for summary in summaries:
+        rate = summary.get("success_rate")
+        if rate is None or not np.isfinite(rate):
+            return False
+        rates.append(float(rate))
+    if len(rates) < 2:
+        return True
+    return bool((max(rates) - min(rates)) <= float(atol))
+
+
+def samples_at_target_metric_cells(summary: dict[str, Any]) -> dict[str, Any]:
+    """Metric cells for ``write_run``. Partial success → ``CENSORED``, never 0."""
+    n_trials = int(summary.get("n_trials") or 0)
+    n_reached = int(summary.get("n_reached") or 0)
+    if n_trials <= 0:
+        scalar: float | str = NOT_RUN
+    elif n_reached < n_trials:
+        scalar = CENSORED
+    else:
+        scalar = summary["conditional_mean_among_successes"]
+    return {
+        "Samples@Target TPR↓": scalar,
+        "target_tpr": summary["target_tpr"],
+        "n_trials": summary["n_trials"],
+        "n_reached": summary["n_reached"],
+        "success_rate": summary["success_rate"],
+        "conditional_mean_among_successes": summary["conditional_mean_among_successes"],
+        "median_reaching_time": summary["median_reaching_time"],
+        "right_censoring_rate": summary["right_censoring_rate"],
+        "max_horizon": summary["max_horizon"],
+        "unreached_status": CENSORED,
+        "rank_by_conditional_mean_alone": False,
+    }

@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig2c_blocked_compute_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig2c_BLOCKED_COMPUTE",
+  "content": "Figure 2(c) BLOCKED_COMPUTE independent_reimplementation",
+  "data": "K=50. P_k = t_{theta_k, 5} (paper: noncentrality). Same B_k / theta_k.",
+  "metrics": {},
+  "status": "BLOCKED_COMPUTE",
+  "result_explanation": "BLOCKED_COMPUTE: 1-seed paper horizon H=50000 eps/oracle measured gaussian=44.562s (TPR=1.0 SAT=28253) student_t=51.641s (TPR=0.833 SAT=CENSORED) rss≈664MB. 500-seed extrapolate ≈6.2h (gaussian) / 7.2h (student-t) per sampler×eprocess combo; 6 combos × 2 families ≈ 80h. Do not label 30-seed as paper-scale. Resume one combo: PYTHONPATH=. OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python idea_C/scripts/run_v0_1.py --object eps.fig2c --scale paper --paper-scale --run --resume Smoke 3-seed H=400 already written. location-shift t, not noncentral-t.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

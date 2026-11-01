@@ -1,0 +1,6 @@
+run_id=v01_eps.fig2c_greedy_adaptive_smoke_seed0
+sampler=greedy
+eprocess=adaptive
+status=ok
+wall_s=0.133508
+rss_mb=89.828125

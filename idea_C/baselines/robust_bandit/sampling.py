@@ -18,8 +18,11 @@ Mean-based (Algorithm 1)
     new method.
 
 E-process-based (Algorithm 2)
-    Burn-in ``B(δ, ε) = 4 ε^{-1} log(4 K / δ²)`` uniform cycles
-    (``K B`` pulls), then ``argmax_{i ∉ S} e_{i,t−1}``.
+    Burn-in ``B(δ, ε) = 4 ε^{-1} log(4 K / δ²)`` is **per arm**.
+    Do not shorten ``B``. Uniform cycles last ``K B`` pulls, then
+    ``argmax_{i ∉ S} e_{i,t−1}``. A run that never leaves this uniform
+    phase (budget exhausted while unrejected arms remain) is
+    ``INVALID_PROTOCOL`` and must not be ranked.
     Deviation: the typeset Algorithm 2 nests the e-process update and
     e-BH under ``t > K B``. We update and run e-BH **every** pull,
     including burn-in; otherwise Figure 1 TPR would be identically 0
@@ -85,10 +88,36 @@ def mean_based_lcb(
 
 
 def eprocess_burnin_length(k: int, delta: float, eps: float) -> int:
-    """``B(δ, ε) = 4 ε^{-1} log(4 K / δ²)`` (Algorithm 2). Returns pulls *per arm*."""
+    """``B(δ, ε) = 4 ε^{-1} log(4 K / δ²)`` (Algorithm 2). Pulls *per arm*.
+
+    Never shorten this length to fit a small horizon. If ``ε≤0`` the paper
+    formula is undefined; the fallback ``B=1`` is only a clean-data hook.
+    """
     if eps <= 0.0:
         return 1
     return int(math.ceil(4.0 / float(eps) * math.log(4.0 * k / (delta**2))))
+
+
+def algo2_burnin_budget(k: int, delta: float, eps: float) -> tuple[int, int]:
+    """Return ``(B, KB)``. ``B`` is per-arm; ``KB`` is the uniform-phase length."""
+    burnin_per_arm = eprocess_burnin_length(k, delta, eps)
+    return burnin_per_arm, int(k) * int(burnin_per_arm)
+
+
+def classify_eprocess_protocol(
+    *,
+    method: str,
+    n_post_burnin_pulls: int,
+    remaining_unrejected: bool,
+) -> str:
+    """``INVALID_PROTOCOL`` if an e-process method never leaves uniform burn-in."""
+    if method not in {"eprocess_based", "algo3_heavytail"}:
+        return "ok"
+    if int(n_post_burnin_pulls) > 0:
+        return "ok"
+    if remaining_unrejected:
+        return "INVALID_PROTOCOL"
+    return "ok"
 
 
 def next_uniform_unrejected(

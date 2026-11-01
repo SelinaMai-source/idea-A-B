@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit
+v01_eps-fig7_not_run_seed0,v01_blocked,C-v0.1_INDEPENDENT_eps.fig7_NOT_RUN,Figure 7 NOT_RUN independent_reimplementation,"K=200, p=0.8, F0=N(0,I_d), F1=N(0.5 1_d, I_d), d in {1,5,10}. B_k redrawn each trial then held. Likelihood-ratio e-process.",NOT_RUN,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4

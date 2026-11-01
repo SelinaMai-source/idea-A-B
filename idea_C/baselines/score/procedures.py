@@ -19,7 +19,16 @@ import numpy as np
 
 from .gamma import gamma_inv_t_tplus1
 from .result import SCOREPLUS_NA_REASON, ProcedureResult
-from .wealth import lond_refund, overshoot, rejects, saffron_score_cost, score_cost
+from .wealth import (
+    lond_refund,
+    overshoot,
+    rejects,
+    saffron_score_cost,
+    score_cost,
+    score_plus_lord_alpha,
+    score_plus_saffron_alpha,
+    score_plus_wealth,
+)
 
 OmegaSpec = float | Sequence[float] | Callable[[int], float]
 
@@ -260,15 +269,16 @@ class ScorePlusLORD(_BaseEProcedure):
         self.alpha_level = float(alpha)
         self.omega = _as_callable(omega, 0.05)
         self.cost_history: list[float] = []
+        self.wealth_history: list[float] = []
+        self._pending_wealth = 0.0
 
     def next_alpha(self) -> float:
         t = len(self.alphas) + 1
-        denom = max(self.n_rej, 1)
-        spent = (sum(self.cost_history) / denom) if self.cost_history else 0.0
-        remaining = max(self.alpha_level - spent, 0.0)
-        return self.omega(t) * denom * remaining
+        self._pending_wealth = score_plus_wealth(self.alpha_level, self.cost_history, self.n_rej)
+        return score_plus_lord_alpha(self.omega(t), self.n_rej, self._pending_wealth)
 
     def _commit_cost(self, alpha: float, evalue: float, rejected: bool, o: float) -> float:
+        self.wealth_history.append(self._pending_wealth)
         cost = score_cost(alpha, o)
         self.cost_history.append(cost)
         return cost
@@ -290,16 +300,17 @@ class ScorePlusSAFFRON(_BaseEProcedure):
         self.omega = _as_callable(omega, 0.05)
         self.lam = _as_callable(lam, 0.5)
         self.cost_history: list[float] = []
+        self.wealth_history: list[float] = []
+        self._pending_wealth = 0.0
 
     def next_alpha(self) -> float:
         t = len(self.alphas) + 1
-        denom = max(self.n_rej, 1)
-        spent = (sum(self.cost_history) / denom) if self.cost_history else 0.0
-        remaining = max(self.alpha_level - spent, 0.0)
-        return self.omega(t) * (1.0 - self.lam(t)) * denom * remaining
+        self._pending_wealth = score_plus_wealth(self.alpha_level, self.cost_history, self.n_rej)
+        return score_plus_saffron_alpha(self.omega(t), self.lam(t), self.n_rej, self._pending_wealth)
 
     def _commit_cost(self, alpha: float, evalue: float, rejected: bool, o: float) -> float:
         t = len(self.alphas) + 1
+        self.wealth_history.append(self._pending_wealth)
         cost = saffron_score_cost(alpha, evalue, self.lam(t))
         self.cost_history.append(cost)
         return cost
@@ -352,8 +363,12 @@ def score_plus_lord(
 ) -> ProcedureResult:
     if not assume_cpqd:
         return ProcedureResult.na("SCORE+-LORD", SCOREPLUS_NA_REASON, assume_cpqd=False)
-    result = _run(ScorePlusLORD, evalues, alpha=alpha, omega=omega)
+    proc = ScorePlusLORD(alpha=alpha, omega=omega)
+    result = proc.run(evalues)
     result.assume_cpqd = True
+    result.protocol_status = "ok"
+    result.extra["wealth"] = list(proc.wealth_history)
+    result.extra["fdr_guarantee"] = True
     return result
 
 
@@ -367,8 +382,12 @@ def score_plus_saffron(
 ) -> ProcedureResult:
     if not assume_cpqd:
         return ProcedureResult.na("SCORE+-SAFFRON", SCOREPLUS_NA_REASON, assume_cpqd=False)
-    result = _run(ScorePlusSAFFRON, evalues, alpha=alpha, omega=omega, lam=lam)
+    proc = ScorePlusSAFFRON(alpha=alpha, omega=omega, lam=lam)
+    result = proc.run(evalues)
     result.assume_cpqd = True
+    result.protocol_status = "ok"
+    result.extra["wealth"] = list(proc.wealth_history)
+    result.extra["fdr_guarantee"] = True
     return result
 
 

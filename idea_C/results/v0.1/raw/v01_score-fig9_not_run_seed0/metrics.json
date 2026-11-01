@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_score-fig9_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_score.fig9_NOT_RUN",
+  "content": "Figure 9 NOT_RUN independent_reimplementation",
+  "data": "T=1000, alpha=0.05. Odd hypotheses non-null, even null. e_t = I{X_t <= alpha_t}/alpha_t. Null X~Unif(0,1). Non-null X=alpha_t/2 until a null trap, then X=(1+alpha_t)/2.",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: CPQD violation DGP stub not wired.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

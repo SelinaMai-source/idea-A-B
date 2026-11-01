@@ -1,0 +1,10 @@
+run_id=v01_p1b_overlap_b_streaming_e-LOND_smoke_T1000_seed0
+method=e-LOND
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+T=1000
+pi1=0.3
+assume_cpqd=True
+code_status=independent_reimplementation
+status=ok wall_s=0.002393 metrics={'FDR↓': 0.0, 'Power↑': 0.18501974932096296, 'Rejections↑': 57.666666666666664, 'Runtime↓': 0.0023932503536343575, 'SupFDR↓': 0.0}

@@ -1,0 +1,60 @@
+{
+  "_comment": "v0.1 SCORE §6.1 config. Handmade stepwise wealth tests must pass before any 500-rep paper-scale run. This file does not start Monte Carlo. SCORE+ without assume_cpqd is N/A / INVALID_PROTOCOL.",
+  "table_id": "score_gaussian_mixture",
+  "version": "C-v0.1",
+  "code_status": "independent_reimplementation",
+  "implementation_mode": "INDEPENDENT_REIMPLEMENTATION",
+  "source": {
+    "paper": "SCORE: A Unified Framework for Overshoot Refund in Online FDR Control (Kuang, Gang, Xia)",
+    "venue": "ICML 2026 Main",
+    "section": "6.1",
+    "arxiv": "2601.20386"
+  },
+  "dgp": {
+    "name": "independent_gaussian_mixture",
+    "T": 1000,
+    "pi1": [
+      0.3,
+      0.8
+    ]
+  },
+  "alpha": 0.05,
+  "gamma_t": "1/(t*(t+1))",
+  "lord_omega_t": 0.05,
+  "saffron_lambda_t": 0.5,
+  "assume_cpqd_for_score_plus": true,
+  "cpqd_justification": "Section 6.1 is independent e-values; SCORE+ thresholds are monotone in the rejection history (Appendix A sufficient condition).",
+  "score_plus_without_cpqd": {
+    "status": "N/A",
+    "protocol_status": "INVALID_PROTOCOL",
+    "fdr_guarantee": false
+  },
+  "handmade_wealth_tests_required_before_paper_scale": true,
+  "n_reps_paper": 500,
+  "n_reps_default": 3,
+  "n_reps_pilot": 30,
+  "paper_scale_requires_flag": true,
+  "do_not_run_500_in_fix_protocol": true,
+  "power_definition": "AP(t) = expected fraction of non-nulls arrived by t that are rejected; power ratio vs family baseline (e-LORD or e-SAFFRON), pointwise in t.",
+  "wealth_overshoot": "C_SCORE = (C - O)_+ with O=(alpha_j * e_j - 1)_+",
+  "score_plus_update": "alpha_t = omega_t * (R_{t-1} v 1) * W_t, W_t = alpha - sum_{j<t} (alpha_j - O_j)_+ / (R_{t-1} v 1)",
+  "methods": [
+    "e-LORD",
+    "SCORE-LORD",
+    "SCORE+-LORD"
+  ],
+  "method": "SCORE-LORD",
+  "scale": "smoke",
+  "reps": 3,
+  "T": 1000,
+  "pi1": 0.8,
+  "seed0": 0,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "assume_cpqd": true,
+  "reduced_horizon": false,
+  "protocol": "paper T=1000 protocol"
+}

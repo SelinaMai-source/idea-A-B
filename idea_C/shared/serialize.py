@@ -3,6 +3,8 @@
 Writes ``config.json``, ``seed.json``, ``commit.json``, ``metrics.json``,
 and ``metrics.csv``. Numeric metric cells that are missing or non-finite
 are omitted so ``update_v0_results_md.py`` fills ``NOT_RUN`` — never 0.
+Right-censored Samples@Target must be written as the token ``CENSORED``
+(via ``samples_at_target_metric_cells``), not omitted and not 0.
 
 Column names match ``v0实验版本+结果.md`` so a later agent can append
 without inventing numbers.
@@ -18,6 +20,8 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+
+from idea_C.shared.metrics import CENSORED, NOT_RUN, samples_at_target_metric_cells
 
 IDEA_C = Path(__file__).resolve().parents[1]
 DEFAULT_RAW = IDEA_C / "results" / "v0" / "raw"
@@ -72,10 +76,17 @@ def git_commit(repo: Path | None = None) -> str | None:
     return sha or None
 
 
+STATUS_TOKENS = {CENSORED, NOT_RUN, "N/A", "INVALID_PROTOCOL", "undefined", "not_identifiable"}
+
+
 def _finite_metrics(metrics: dict[str, Any]) -> dict[str, Any]:
+    """Keep finite numbers and status tokens. Drop NaN so it is not written as 0."""
     cleaned: dict[str, Any] = {}
     for key, value in metrics.items():
         if value is None:
+            continue
+        if isinstance(value, str):
+            cleaned[str(key)] = value
             continue
         if isinstance(value, float) and not math.isfinite(value):
             continue
@@ -83,6 +94,16 @@ def _finite_metrics(metrics: dict[str, Any]) -> dict[str, Any]:
             continue
         cleaned[str(key)] = value
     return cleaned
+
+
+def attach_censoring_metrics(
+    metrics: dict[str, Any] | None,
+    summary: dict[str, Any],
+) -> dict[str, Any]:
+    """Merge a Samples@Target censoring summary into run metrics."""
+    merged = dict(metrics or {})
+    merged.update(samples_at_target_metric_cells(summary))
+    return merged
 
 
 def write_run(

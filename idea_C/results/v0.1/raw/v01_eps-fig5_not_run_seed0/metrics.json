@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig5_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig5_NOT_RUN",
+  "content": "Figure 5 NOT_RUN independent_reimplementation",
+  "data": "Same four families as Figure 2. Figure 5 is 200 trials (not 500).",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: UCB synthetic Appendix D not wired. 200 trials.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

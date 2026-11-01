@@ -1,0 +1,9 @@
+{
+  "skipped": true,
+  "reason": "C-v0.1_RERUN P1-B Closed e-LOND 30-seed NOT_RUN. 3-seed T=1000 wall=192.656s; 30-seed extrapolate ~32 min (tens of minutes). Skip Closed 30-seed per Phase 4. Other methods 30-seed ran with --skip-closed. Resume on a larger machine: PYTHONPATH=. OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python idea_C/scripts/run_p1b.py --v01 --scale pilot --run --assume-cpqd",
+  "scale": "pilot",
+  "reps": 30,
+  "T": 1000,
+  "pi1": 0.3,
+  "protocol": "ADAPTED_PROTOCOL"
+}

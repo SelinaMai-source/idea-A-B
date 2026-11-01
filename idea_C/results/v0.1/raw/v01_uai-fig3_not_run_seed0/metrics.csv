@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit
+v01_uai-fig3_not_run_seed0,v01_blocked,C-v0.1_INDEPENDENT_uai.fig3_NOT_RUN,Figure 3 NOT_RUN independent_reimplementation,Same NYC taxi series as Table 2.,NOT_RUN,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4

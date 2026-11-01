@@ -1,0 +1,13 @@
+{
+  "run_id": "v01_p1b_overlap_b_streaming_Closed-e-LOND_pilot_T1000_seed0_NOT_RUN",
+  "table_id": "overlap_b_streaming",
+  "version": "C-v0.1_RERUN_ob_closed_elond_pilot30_skipped",
+  "content": "Closed e-LOND P1-B 30-seed ADAPTED_PROTOCOL C-v0.1_RERUN NOT_RUN",
+  "data": "P1-B streaming SCORE-like mix T=1000 $\\pi_1=0.3$ ADAPTED_PROTOCOL",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "C-v0.1_RERUN P1-B Closed e-LOND 30-seed NOT_RUN. 3-seed T=1000 wall=192.656s; 30-seed extrapolate ~32 min (tens of minutes). Skip Closed 30-seed per Phase 4. Other methods 30-seed ran with --skip-closed. Resume on a larger machine: PYTHONPATH=. OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 10 .venv/bin/python idea_C/scripts/run_p1b.py --v01 --scale pilot --run --assume-cpqd",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation"
+}

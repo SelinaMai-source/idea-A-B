@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit
+v01_eps-fig4_blocked_no_data_seed0,v01_blocked,C-v0.1_INDEPENDENT_eps.fig4_BLOCKED_NO_DATA,Figure 4 BLOCKED_NO_DATA independent_reimplementation,"Five pools of 1000 OPT-1.3B streams (200 Gumbel-max watermarked + 800 non-watermarked), 20 prompts, 5 temperatures in [0.5,0.8], lengths 200-1200. Each trial samples K=500 streams without replacement from one pool.",BLOCKED_NO_DATA,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4

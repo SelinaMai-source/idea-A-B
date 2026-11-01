@@ -1,0 +1,13 @@
+run_id=v01_p1a_overlap_a_contaminated_eps_adaptive_smoke_h22601_seed0
+method=eps_adaptive
+setting=contaminated
+scale=smoke
+n_trials=3
+seeds=[0, 1, 2]
+horizon=22601
+algo_eps=0.1
+burnin_KB=22600
+stress_test=True
+code_status=independent_reimplementation
+single_process=1
+status=ok wall_s=0.613508 metrics={'FDR↓': 0.96, 'TPR↑': 1.0, 'TPP↑': 1.0, 'Runtime↓': 0.6135077090002596, 'Samples@Target TPR↓': 372.0, 'target_tpr': 0.95, 'n_trials': 3, 'n_reached': 3, 'success_rate': 1.0, 'conditional_mean_among_successes': 372.0, 'median_reaching_time': 340.0, 'right_censoring_rate': 0.0, 'max_horizon': 22601.0, 'unreached_status': 'CENSORED', 'rank_by_conditional_mean_alone': False}

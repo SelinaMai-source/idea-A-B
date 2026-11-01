@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_uai-tab2_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_uai.tab2_NOT_RUN",
+  "content": "Table 2 NOT_RUN independent_reimplementation",
+  "data": "NYC taxi demand (Lavin & Ahmad 2015) with Zhang e-GAI likelihood-ratio e-values on STL residuals. Annotated anomaly windows are incomplete event labels, not exact true discoveries.",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: NYC taxi CSV is public and was downloaded to idea_C/results/v0.1/data_probes/nyc_taxi.csv (https://raw.githubusercontent.com/numenta/NAB/master/data/realKnownCause/nyc_taxi.csv , 10320 lines) plus NAB windows. STL residual / Zhang e-GAI density-ratio runner is not wired. Paper counts e-LOND=8, d-eLOND=16, Closed e-LOND=10 remain uncompared. Numeric cells NOT_RUN.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

@@ -17,6 +17,8 @@ never enter wealth updates.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
+
 import numpy as np
 
 __all__ = [
@@ -26,6 +28,9 @@ __all__ = [
     "saffron_tight_cost",
     "saffron_score_cost",
     "rejects",
+    "score_plus_wealth",
+    "score_plus_lord_alpha",
+    "score_plus_saffron_alpha",
 ]
 
 
@@ -70,3 +75,20 @@ def rejects(alpha: float, evalue: float) -> bool:
     if alpha <= 0.0 or not np.isfinite(alpha):
         return False
     return bool(evalue * alpha >= 1.0)
+
+
+def score_plus_wealth(alpha_level: float, costs: Sequence[float], r_prev: int) -> float:
+    """Prop. 5.3 / Thm. 5.4 remaining wealth ``W_t`` with denom ``R_{t-1} ∨ 1``."""
+    denom = max(int(r_prev), 1)
+    spent = (float(sum(costs)) / denom) if costs else 0.0
+    return float(max(float(alpha_level) - spent, 0.0))
+
+
+def score_plus_lord_alpha(omega_t: float, r_prev: int, wealth: float) -> float:
+    """``α_t = ω_t (R_{t-1} ∨ 1) W_t``. ``α_1 = ω_1 α`` when W_1=α and R_0=0."""
+    return float(omega_t) * max(int(r_prev), 1) * float(wealth)
+
+
+def score_plus_saffron_alpha(omega_t: float, lam_t: float, r_prev: int, wealth: float) -> float:
+    """``α_t = ω_t (1-λ_t) (R_{t-1} ∨ 1) W_t``."""
+    return float(omega_t) * (1.0 - float(lam_t)) * max(int(r_prev), 1) * float(wealth)

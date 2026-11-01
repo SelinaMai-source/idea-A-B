@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,SupFDR↓,Power↑,Rejections↑,Runtime↓
+uai_local_dependence_r-LOND_paper_pi0.3_m3000_seed0,uai_local_dependence,C-v0.1_r_lond_paper_pi0.3_m3000,r-LOND paper runtime m=3000 n=80 independent_reimplementation (NOT CCF-A),"UAI Fig2 runtime $m=3000,L=100,\delta=0.1$ π1=0.3",ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.003014496468443837,0.04583333333333333,0.029277612461146907,26.525,801.5481780827977

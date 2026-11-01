@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit
+v01_score-tab1_blocked_no_data_seed0,v01_blocked,C-v0.1_INDEPENDENT_score.tab1_BLOCKED_NO_DATA,Table 1 BLOCKED_NO_DATA independent_reimplementation,Wildenhain et al. 2016 chemical-genomics screen; 417026 sequential chemical-genetic interactions. p-values calibrated to e=(1-p+p log p)/(p (-log p)^2).,BLOCKED_NO_DATA,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4

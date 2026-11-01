@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_score-fig13_blocked_no_data_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_score.fig13_BLOCKED_NO_DATA",
+  "content": "Figure 13 BLOCKED_NO_DATA independent_reimplementation",
+  "data": "Golovenkin 2020 MI complications (figshare 12045261). Conformal e-values from logistic scores with shared calibration. SCORE+ not used (shared calibration breaks the independence sufficient condition).",
+  "metrics": {},
+  "status": "BLOCKED_NO_DATA",
+  "result_explanation": "BLOCKED_NO_DATA: MI conformal runner not wired AND figshare download blocked by WAF challenge. Missing usable file from https://figshare.le.ac.uk/articles/dataset/Myocardial_infarction_complications_Database/12045261 (HTTP 202 x-amzn-waf-action=challenge). Numeric cells NOT_RUN.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

@@ -31,9 +31,12 @@ def test_score_plus_na_without_cpqd() -> None:
     r2 = score_plus_saffron(e, alpha=0.05, assume_cpqd=False)
     assert r1.status == "N/A"
     assert r2.status == "N/A"
+    assert r1.protocol_status == "INVALID_PROTOCOL"
+    assert r2.protocol_status == "INVALID_PROTOCOL"
     assert r1.rejected.size == 0
     assert "CPQD" in (r1.na_reason or "")
     assert r1.assume_cpqd is False
+    assert r1.extra.get("fdr_guarantee") is False
 
 
 def test_score_plus_runs_when_cpqd_assumed() -> None:

@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig3_blocked_no_data_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig3_BLOCKED_NO_DATA",
+  "content": "Figure 3 BLOCKED_NO_DATA independent_reimplementation",
+  "data": "Jester ratings in [-10,10], K=140 jokes. Per joke, split ratings 50/50: first half labels non-null if empirical mean < 0; second half is the sampling pool with replacement. Test H0: E[Y]>=0 vs H1: E[Y]<0.",
+  "metrics": {},
+  "status": "BLOCKED_NO_DATA",
+  "result_explanation": "BLOCKED_NO_DATA: Jester ratings not downloaded. Failed URLs: https://eigentaste.berkeley.edu/dataset/jester_dataset_2.zip (TLS SSL_ERROR_SYSCALL); https://eigentaste.berkeley.edu/dataset/archive/jester_dataset_2.zip (TLS fail); https://goldberg.berkeley.edu/jester-data/jester_dataset_2.zip (HTTP 404); https://www.kaggle.com/datasets/vikashrajluhaniwal/jester-17m-jokes-ratings-dataset (curl HTTP 404, loginwall). No Jester runner wired. Numeric cells NOT_RUN.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

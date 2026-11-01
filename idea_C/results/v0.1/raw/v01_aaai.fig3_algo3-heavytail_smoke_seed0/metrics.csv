@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Samples@Target TPR↓,Runtime↓
+v01_aaai.fig3_algo3-heavytail_smoke_seed0,aaai_heavy_tailed,C-v0.1_INDEPENDENT_algo3-heavytail_smoke,algo3_heavytail smoke independent_reimplementation,"Student-t(2) infinite variance; null mean 0 / non-null 5; Lévy contamination as Fig 1; K=50, |H1|=2.",ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.0,1.0,1.0,9336.666666666666,2.8138548750430346

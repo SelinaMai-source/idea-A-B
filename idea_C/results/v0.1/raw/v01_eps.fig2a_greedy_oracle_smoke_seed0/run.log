@@ -1,0 +1,6 @@
+run_id=v01_eps.fig2a_greedy_oracle_smoke_seed0
+sampler=greedy
+eprocess=oracle
+status=ok
+wall_s=0.040018
+rss_mb=90.0

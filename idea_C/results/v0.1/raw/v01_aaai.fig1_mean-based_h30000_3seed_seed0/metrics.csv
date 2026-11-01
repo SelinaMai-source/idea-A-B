@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Samples@Target TPR↓,Runtime↓
+v01_aaai.fig1_mean-based_h30000_3seed_seed0,aaai_robust_gaussian,C-v0.1_INDEPENDENT_mean_based_h30000_3seed,mean_based 3-seed horizon=30000 tractability probe independent_reimplementation,aaai_robust_gaussian post-burn-in probe H=30000 n=3,ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.0,0.0,0.0,CENSORED,3.551790709141642

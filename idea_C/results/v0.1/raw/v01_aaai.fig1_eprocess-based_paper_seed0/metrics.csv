@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Samples@Target TPR↓,Runtime↓
+v01_aaai.fig1_eprocess-based_paper_seed0,aaai_robust_gaussian,C-v0.1_INDEPENDENT_eprocess-based_paper,eprocess_based paper independent_reimplementation,"P_i=N(mu_i,1); null mu=0; non-null mu=1; Lévy-stable contamination prob 1/10, location 1000, skewness 0.5. |H1| in {2, floor(log K), floor(sqrt K)}. K not printed in the HTML extract; v0 config uses K=50 pending PDF confirmation.",ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.0,1.0,1.0,6490.298,1696.3072810829617

@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_aaai-app_tables_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_aaai.app_tables_NOT_RUN",
+  "content": "Appendix numerical tables (if any) NOT_RUN independent_reimplementation",
+  "data": "unknown",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_LOCATED_IN_PDF / NOT_RUN: AAAI OJS PDF was Anubis HTML 7040 bytes.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

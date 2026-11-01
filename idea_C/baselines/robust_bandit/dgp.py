@@ -10,10 +10,12 @@ Heavy-tail Figure 3
     non-null mean 5, same Lévy contamination, ``K = 50``, ``|H1| = 2``.
 
 Deviation (paper-omitted Lévy parameters)
-    The main text specifies only location and skewness. Stability index
-    and scale are unspecified. We use ``alpha=1.5``, ``scale=1.0``
-    (``scipy.stats.levy_stable`` S0 parameterization) and mark every
-    call site. Do not treat this as an official default of the paper.
+    Re-checked AAAI HTML / DOI extract: location 1000 and skewness 0.5
+    are stated; stability index and scale are still unspecified
+    (``unspecified_in_paper=True``). We keep ``alpha=1.5``, ``scale=1.0``
+    (``scipy.stats.levy_stable`` S0) and do not claim they match the
+    authors. Figure contrasts that depend on these knobs are
+    ``INDEPENDENT_PARTIAL_MATCH``.
 
 Rewards are generated only when an arm is pulled. The environment never
 returns future observations or ground-truth labels to the algorithm.
@@ -31,7 +33,15 @@ LEVY_ALPHA = 1.5
 LEVY_SCALE = 1.0
 LEVY_LOC = 1000.0
 LEVY_BETA = 0.5
+LEVY_UNSPECIFIED_IN_PAPER = True
+LEVY_UNSPECIFIED_FIELDS = ("stability_alpha", "scale")
 DEFAULT_EPS = 0.1
+LEVY_PARAM_STATUS = {
+    "stability_alpha": {"value": LEVY_ALPHA, "unspecified_in_paper": True},
+    "scale": {"value": LEVY_SCALE, "unspecified_in_paper": True},
+    "location": {"value": LEVY_LOC, "unspecified_in_paper": False},
+    "skewness": {"value": LEVY_BETA, "unspecified_in_paper": False},
+}
 
 
 def n_nonnull_from_spec(spec: str | int, k: int) -> int:

@@ -1,0 +1,41 @@
+{
+  "run_id": "v01_eps.fig2a_eps_adaptive_smoke_seed0",
+  "table_id": "eps_gaussian",
+  "version": "C-v0.1_INDEPENDENT_eps_adaptive_smoke",
+  "content": "eps + adaptive smoke independent_reimplementation",
+  "data": "K=50. P_k=N(theta_k,1). B_k ~ Bern(0.1), theta_k=0.02 k B_k, drawn once and held fixed across 500 trials. Oracle (simple-vs-simple) vs Adaptive (simple-vs-composite) as line styles, not mixed.",
+  "metrics": {
+    "FDR↓": 0.0,
+    "TPR↑": 0.1111111111111111,
+    "TPP↑": 0.1111111111111111,
+    "Samples@Target TPR↓": "CENSORED",
+    "Runtime↓": 0.4586188751272857
+  },
+  "status": "ok",
+  "result_explanation": "C-v0.1_INDEPENDENT eps.fig2a eps/adaptive smoke n_reps=3 horizon=400 θ_k=0.02k·B_k (NOT μ=1) Samples@Target=CENSORED success_rate=0.0 right_censoring_rate=1.0 Paper=FIGURE_ONLY; e-PS is a preprint, not published CCF-A. INDEPENDENT_REIMPLEMENTATION",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "wall_s": 0.4591743750497699,
+  "rss_mb": 90.0625,
+  "rss_mb_before": 90.046875,
+  "samples_at_target": {
+    "method": "eps/adaptive",
+    "target_tpr": 0.95,
+    "n_trials": 3,
+    "n_reached": 0,
+    "success_rate": 0.0,
+    "conditional_mean_among_successes": "undefined",
+    "median_reaching_time": "not_identifiable",
+    "right_censoring_rate": 1.0,
+    "max_horizon": 400.0,
+    "unreached_status": "CENSORED",
+    "per_trial_status": [
+      "CENSORED",
+      "CENSORED",
+      "CENSORED"
+    ],
+    "rank_by_conditional_mean_alone": false
+  },
+  "object_id": "eps.fig2a"
+}

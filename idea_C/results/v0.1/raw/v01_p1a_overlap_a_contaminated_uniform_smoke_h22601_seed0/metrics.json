@@ -1,0 +1,65 @@
+{
+  "run_id": "v01_p1a_overlap_a_contaminated_uniform_smoke_h22601_seed0",
+  "table_id": "overlap_a_contaminated",
+  "version": "C-v0.1_RERUN_oa_c_uniform_smoke",
+  "content": "AAAI Uniform + robust e-process smoke 3-seed ADAPTED_PROTOCOL C-v0.1_RERUN independent_reimplementation",
+  "data": "P1-A2 contaminated Gaussian ADAPTED_PROTOCOL",
+  "metrics": {
+    "FDR↓": 0.0,
+    "TPR↑": 1.0,
+    "TPP↑": 1.0,
+    "Runtime↓": 3.198655708692968,
+    "Samples@Target TPR↓": 5260.333333333333,
+    "target_tpr": 0.95,
+    "n_trials": 3,
+    "n_reached": 3,
+    "success_rate": 1.0,
+    "conditional_mean_among_successes": 5260.333333333333,
+    "median_reaching_time": 5935.0,
+    "right_censoring_rate": 0.0,
+    "max_horizon": 22601.0,
+    "unreached_status": "CENSORED",
+    "rank_by_conditional_mean_alone": false
+  },
+  "status": "ok",
+  "result_explanation": "P1-A contaminated smoke 3-seed（标 smoke，不是 paper-scale / 500）。common protocol：同一 arm 分布 N(μ,1) μ∈{0,1}，K=50，|H1|=2，同一预算，同一评估时点。horizon=22601，Algorithm 2 KB≈22600（ε_algo=0.1，δ=0.05）。seeds=[0, 1, 2]。code_status=independent_reimplementation / adapted。protocol=ADAPTED_PROTOCOL label=C-v0.1_RERUN（v0.1 post-burn-in rerun，不是 paper-scale 500）。Lévy-stable 稳定性指数/尺度原文未给，代码用 alpha=1.5 scale=1.0。e-PS Oracle 适应：假设备择 μ=1（共同协议），不是原文 θ_alt=0.02k。Greedy 配对 Adaptive plug-in（已有 e-PS 实现，不是新方法）。AAAI 算法侧 ε=0.1（论文稳健参数）；Clean 数据 ε=0，Contaminated 数据 ε=1/10。Mean-based 用 Algorithm 1 的 t(s) 日程；t(1)≈3240/臂，22600 预算不足以完成全臂初始化。horizon=22601 > KB=22600，E-process-based 在 burn-in 后按 e-value 选臂。该行用 AAAI 稳健实现，可在污染设定下对照；仍标 independent_reimplementation。",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "wall_s": 3.198655708692968,
+  "fdps": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tpps": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "stress_test": false,
+  "protocol": "ADAPTED_PROTOCOL",
+  "samples_at_target": {
+    "method": "uniform",
+    "target_tpr": 0.95,
+    "n_trials": 3,
+    "n_reached": 3,
+    "success_rate": 1.0,
+    "conditional_mean_among_successes": 5260.333333333333,
+    "median_reaching_time": 5935.0,
+    "right_censoring_rate": 0.0,
+    "max_horizon": 22601.0,
+    "unreached_status": "CENSORED",
+    "per_trial_status": [
+      6201.0,
+      5935.0,
+      3645.0
+    ],
+    "rank_by_conditional_mean_alone": false
+  }
+}

@@ -8,7 +8,16 @@ import numpy as np
 import pytest
 
 from idea_C.shared.budget import SampleBudget
-from idea_C.shared.metrics import fdp, power, samples_at_target_tpr, sup_fdp, tpp, tpr
+from idea_C.shared.metrics import (
+    CENSORED,
+    fdp,
+    power,
+    samples_at_target_tpr,
+    summarize_samples_at_target,
+    sup_fdp,
+    tpp,
+    tpr,
+)
 from idea_C.shared.seeds import seed_everything
 from idea_C.shared.serialize import TABLE_METRIC_COLUMNS, write_run
 from idea_C.shared.stats import mean_std_ci
@@ -51,6 +60,12 @@ def test_sup_fdp_is_path_maximum() -> None:
 def test_samples_at_target_nan_if_never_reached() -> None:
     assert np.isnan(samples_at_target_tpr(np.array([0.1, 0.2]), delta=0.05))
     assert samples_at_target_tpr(np.array([0.1, 0.96]), delta=0.05) == 2.0
+    summary = summarize_samples_at_target(
+        [samples_at_target_tpr(np.array([0.1, 0.2]), delta=0.05)],
+        target_tpr=0.95,
+        max_horizon=2,
+    )
+    assert summary["per_trial_status"] == [CENSORED]
 
 
 def test_budget_cannot_overspend() -> None:

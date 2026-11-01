@@ -1,0 +1,13 @@
+run_id=v01_p1a_overlap_a_contaminated_eps_adaptive_pilot_h30000_seed0
+method=eps_adaptive
+setting=contaminated
+scale=pilot
+n_trials=30
+seeds=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+horizon=30000
+algo_eps=0.1
+burnin_KB=22600
+stress_test=True
+code_status=independent_reimplementation
+single_process=1
+status=ok wall_s=4.969145 metrics={'FDR↓': 0.9600000000000002, 'TPR↑': 1.0, 'TPP↑': 1.0, 'Runtime↓': 4.9691447908990085, 'Samples@Target TPR↓': 320.96666666666664, 'target_tpr': 0.95, 'n_trials': 30, 'n_reached': 30, 'success_rate': 1.0, 'conditional_mean_among_successes': 320.96666666666664, 'median_reaching_time': 333.0, 'right_censoring_rate': 0.0, 'max_horizon': 30000.0, 'unreached_status': 'CENSORED', 'rank_by_conditional_mean_alone': False}

@@ -1,0 +1,49 @@
+{
+  "run_id": "uai_local_dependence_Closed-r-LOND_smoke_pi0.3_m200_seed0",
+  "table_id": "uai_local_dependence",
+  "version": "C-v0.1_closed_rlond_smoke_pi0.3",
+  "content": "Closed r-LOND smoke 3-seed independent_reimplementation (NOT CCF-A Main; not lag_comp)",
+  "data": "UAI Fig2 local-dep $m=200,L=100,\\delta=0.1$",
+  "metrics": {
+    "FDR↓": 0.04270937604270938,
+    "SupFDR↓": 0.06,
+    "Power↑": 0.41265839974876717,
+    "Rejections↑": 25.0,
+    "Runtime↓": 1.7771090418100357
+  },
+  "status": "ok",
+  "result_explanation": "自动追加，smoke 3-seed，independent_reimplementation，UAI §4 local-dependent Gaussian (NOT AISTATS lag_comp)；C++ _cebh / offline closedeBH status=unavailable reason=offline e-Closure (arXiv:2509.02517 / neilzxu/eclosure). This is NOT UAI 2026 online closed e-LOND. C++ bindings unavailable: ImportError: The eclosure C++ bindings could not be imported. Run `pip install .` from the repository root to build the extension. (does not block online UAI methods)；结果解释待人工填写",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "n_reps": 3,
+  "scale": "smoke",
+  "wall_s": 1.7771090418100357,
+  "fdps": [
+    0.05405405405405406,
+    0.0,
+    0.07407407407407407
+  ],
+  "sup_fdps": [
+    0.1,
+    0.0,
+    0.08
+  ],
+  "powers": [
+    0.660377358490566,
+    0.19298245614035087,
+    0.38461538461538464
+  ],
+  "n_rejections": [
+    37.0,
+    11.0,
+    27.0
+  ],
+  "cebh_note": "C++ _cebh / offline closedeBH status=unavailable reason=offline e-Closure (arXiv:2509.02517 / neilzxu/eclosure). This is NOT UAI 2026 online closed e-LOND. C++ bindings unavailable: ImportError: The eclosure C++ bindings could not be imported. Run `pip install .` from the repository root to build the extension. (does not block online UAI methods)",
+  "dgp_note": "UAI 2026 §4 / Appendix C.3 local-dependent Gaussian; NOT AISTATS 2024 lag_comp"
+}

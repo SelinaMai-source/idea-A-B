@@ -1,0 +1,6 @@
+run_id=v01_eps.fig2c_eps_adaptive_smoke_seed0
+sampler=eps
+eprocess=adaptive
+status=ok
+wall_s=1.027144
+rss_mb=89.84375

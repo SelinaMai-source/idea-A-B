@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,Power↑,Rejections↑,Runtime↓,SupFDR↓
+v01_p1b_overlap_b_streaming_SCORE--LORD_smoke_T1000_seed0,overlap_b_streaming,C-v0.1_RERUN_ob_scoreplus_lord_smoke,SCORE+-LORD P1-B smoke 3-seed ADAPTED_PROTOCOL C-v0.1_RERUN independent_reimplementation,P1-B streaming SCORE-like mix T=1000 $\pi_1=0.3$ ADAPTED_PROTOCOL,ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.0,0.4049004517326578,125.66666666666667,0.011716291308403015,N/A

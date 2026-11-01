@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_score-tab1_blocked_no_data_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_score.tab1_BLOCKED_NO_DATA",
+  "content": "Table 1 BLOCKED_NO_DATA independent_reimplementation",
+  "data": "Wildenhain et al. 2016 chemical-genomics screen; 417026 sequential chemical-genetic interactions. p-values calibrated to e=(1-p+p log p)/(p (-log p)^2).",
+  "metrics": {},
+  "status": "BLOCKED_NO_DATA",
+  "result_explanation": "BLOCKED_NO_DATA: Yeast Wildenhain 2016 417026 p-value stream not on disk and not a free sequential CSV. Missing URL for the paper's p-value order: original ChemGRID page http://chemgrid.org/cgm/ returns HTTP 410 Gone. Nature Scientific Data 2016.95 is OD600/interaction scores, not the SCORE p→e stream. No official repo (NOT_FOUND). Do not buy paywalled supplements. Numeric cells NOT_RUN.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

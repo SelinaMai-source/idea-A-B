@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Samples@Target TPR↓,Runtime↓
+v01_eps.fig2c_uniform_oracle_smoke_seed0,eps_studentt,C-v0.1_INDEPENDENT_uniform_oracle_smoke,uniform + oracle smoke independent_reimplementation,"K=50. P_k = t_{theta_k, 5} (paper: noncentrality). Same B_k / theta_k.",ok,0,f5062fe5438d3df37e876b5fa5f13c68c37edab4,0.0,0.0,0.0,CENSORED,0.1542826248332858

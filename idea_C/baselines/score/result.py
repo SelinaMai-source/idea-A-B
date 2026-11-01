@@ -17,9 +17,10 @@ ARXIV = "2601.20386"
 class ProcedureResult:
     """Output of one online pass over an e-value stream.
 
-    ``status='N/A'`` is used when SCORE+ is requested without CPQD.
-    Arrays are empty in that case so later agents can skip the method
-    without inventing numbers.
+    ``status='N/A'`` and ``protocol_status='INVALID_PROTOCOL'`` are used
+    when SCORE+ is requested without CPQD. Arrays are empty in that case
+    so later agents can skip the method without inventing numbers or
+    claiming an FDR guarantee.
     """
 
     method: str
@@ -33,6 +34,7 @@ class ProcedureResult:
     n_rejections: int = 0
     assume_cpqd: bool | None = None
     na_reason: str | None = None
+    protocol_status: str | None = None
     extra: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
@@ -42,6 +44,8 @@ class ProcedureResult:
             status="N/A",
             assume_cpqd=assume_cpqd,
             na_reason=reason,
+            protocol_status="INVALID_PROTOCOL",
+            extra={"fdr_guarantee": False, "reported_as": "N/A"},
         )
 
     @classmethod
@@ -76,6 +80,7 @@ SCOREPLUS_NA_REASON = (
     "SCORE+ uses the retroactive denominator R_t ∨ 1 and is valid only under "
     "Conditional Positive Quadrant Dependence (CPQD, paper Assumption 5.1 / §5). "
     "Independent e-values plus monotone threshold updates are a sufficient "
-    "condition (Appendix A). This procedure returns N/A rather than silently "
-    "running SCORE+ when assume_cpqd is False."
+    "condition (Appendix A). Without assume_cpqd this procedure returns "
+    "status='N/A' and protocol_status='INVALID_PROTOCOL' and must not be used "
+    "to claim an FDR guarantee."
 )

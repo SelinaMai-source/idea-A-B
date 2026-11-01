@@ -1,0 +1,15 @@
+{
+  "run_id": "v01_eps-fig2b_not_run_seed0",
+  "table_id": "v01_blocked",
+  "version": "C-v0.1_INDEPENDENT_eps.fig2b_NOT_RUN",
+  "content": "Figure 2(b) NOT_RUN independent_reimplementation",
+  "data": "K=50. P_k=N(theta_k 1_5, I_5). Same B_k / theta_k as 1D.",
+  "metrics": {},
+  "status": "NOT_RUN",
+  "result_explanation": "NOT_RUN: 5D Gaussian DGP not wired. CPU not spent after 1D paper-scale estimate ~6h/combo.",
+  "seed": 0,
+  "commit": "f5062fe5438d3df37e876b5fa5f13c68c37edab4",
+  "code_status": "independent_reimplementation",
+  "n_reps": 0,
+  "rss_mb": 87.609375
+}

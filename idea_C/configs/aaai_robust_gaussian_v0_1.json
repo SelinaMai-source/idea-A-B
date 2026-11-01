@@ -1,0 +1,63 @@
+{
+  "_comment": "v0.1 post-burn-in / paper-scale AAAI Fig.1-2 config. Does not replace aaai_robust_gaussian.json. v0 P0 horizon=4000 stays a historical row. B is per-arm and is not shortened. Figure 1 x-axis is not numeric in the AAAI HTML/DOI extract; paper horizon keeps the v0 80000 slot because 80000 > KB.",
+  "table_id": "aaai_robust_gaussian",
+  "version": "C-v0.1",
+  "code_status": "independent_reimplementation",
+  "implementation_mode": "INDEPENDENT_REIMPLEMENTATION",
+  "paper": "On the Robustness of Bandit Multiple Testing",
+  "venue": "AAAI 2026 Main",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu_i, 1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5,
+      "stability_alpha": 1.5,
+      "scale": 1.0,
+      "unspecified_in_paper": true,
+      "unspecified_fields": ["stability_alpha", "scale"]
+    }
+  },
+  "K": 50,
+  "n_nonnull_grid": [2, "floor(log K)", "floor(sqrt K)"],
+  "n_nonnull_default": 2,
+  "delta": 0.05,
+  "eps": 0.1,
+  "mu0": 0.0,
+  "sigma": 1.0,
+  "methods": ["uniform", "mean_based", "eprocess_based"],
+  "burnin": {
+    "B_per_arm": 452,
+    "KB": 22600,
+    "formula": "B=ceil(4*eps^{-1}*log(4K/delta^2)); KB=K*B",
+    "do_not_shorten_B": true,
+    "horizon_must_be_strictly_greater_than_KB": true,
+    "never_left_burnin_status": "INVALID_PROTOCOL"
+  },
+  "horizon": {
+    "smoke": 22601,
+    "pilot": 30000,
+    "paper": 80000
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30,
+    "paper": 500
+  },
+  "record_post_burnin_arm_frequencies": true,
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true,
+    "paper_scale_requires_flag": "--allow-paper-scale",
+    "paper_scale_label": "paper-scale requires 500 trials; this config does not start that Monte Carlo"
+  },
+  "historical_v0_horizons_do_not_overwrite": {
+    "p0_pilot": 4000,
+    "p1a": 22600
+  },
+  "status": "NOT_RUN"
+}

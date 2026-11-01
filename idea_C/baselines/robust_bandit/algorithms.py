@@ -20,9 +20,10 @@ import numpy as np
 from idea_C.baselines.robust_bandit.dgp import ContaminatedBandit
 from idea_C.baselines.robust_bandit.eprocess import HeavyTailEProcess, NonRobustEProcess, RobustEProcess
 from idea_C.baselines.robust_bandit.sampling import (
+    algo2_burnin_budget,
     argmax_eprocess,
     argmax_mean_lcb,
-    eprocess_burnin_length,
+    classify_eprocess_protocol,
     mean_based_schedule_t,
     next_uniform_unrejected,
 )
@@ -51,6 +52,13 @@ class BanditMTResult:
     method: str
     code_status: str = CODE_STATUS
     notes: list[str] = field(default_factory=list)
+    burnin_per_arm: int = 0
+    burnin_total: int = 0
+    post_burnin_counts: np.ndarray = field(default_factory=lambda: np.zeros(0, dtype=int))
+    post_burnin_frequencies: np.ndarray = field(default_factory=lambda: np.zeros(0, dtype=float))
+    n_post_burnin_pulls: int = 0
+    entered_adaptive_phase: bool = False
+    protocol_status: str = "ok"
 
     @property
     def final_rejected(self) -> np.ndarray:
@@ -126,8 +134,8 @@ def run_bandit_mt(
         if unit_batches:
             notes.append("unit_batches=True: t(s)=s test hook, not the paper schedule.")
 
-    burnin_per_arm = eprocess_burnin_length(k, delta, eps)
-    burnin_total = k * burnin_per_arm
+    burnin_per_arm, burnin_total = algo2_burnin_budget(k, delta, eps)
+    post_burnin_counts = np.zeros(k, dtype=int)
     cursor: int | None = None
 
     def record(arm: int, reward: float) -> None:
@@ -169,13 +177,16 @@ def run_bandit_mt(
 
         if method in {"eprocess_based", "algo3_heavytail"}:
             t = len(arms) + 1
-            if t <= burnin_total:
+            adaptive = t > burnin_total
+            if not adaptive:
                 arm = next_uniform_unrejected(t, rejected, cursor)
                 cursor = arm
             else:
                 arm = argmax_eprocess(eproc.values, rejected)
             if not pull(arm):
                 break
+            if adaptive:
+                post_burnin_counts[arm] += 1
             continue
 
         if method == "mean_based":
@@ -202,6 +213,24 @@ def run_bandit_mt(
 
     purse.assert_not_overspent()
     env.assert_no_extra_generation(n_pulls)
+    n_post = int(post_burnin_counts.sum())
+    freq = (
+        post_burnin_counts.astype(float) / n_post
+        if n_post > 0
+        else np.zeros(k, dtype=float)
+    )
+    remaining_unrejected = bool(np.any(~rejected))
+    protocol_status = classify_eprocess_protocol(
+        method=method,
+        n_post_burnin_pulls=n_post,
+        remaining_unrejected=remaining_unrejected,
+    )
+    if protocol_status == "INVALID_PROTOCOL":
+        notes.append(
+            "INVALID_PROTOCOL: never left Algorithm 2 uniform burn-in "
+            f"(B={burnin_per_arm} per arm, KB={burnin_total}, budget={purse.spent}). "
+            "Do not use this run as a method ranking."
+        )
     if not arms:
         empty_e = eproc.values.copy()
         empty_r = rejected.copy()
@@ -214,6 +243,13 @@ def run_bandit_mt(
             budget_spent=purse.spent,
             method=method,
             notes=notes,
+            burnin_per_arm=burnin_per_arm,
+            burnin_total=burnin_total,
+            post_burnin_counts=post_burnin_counts,
+            post_burnin_frequencies=freq,
+            n_post_burnin_pulls=n_post,
+            entered_adaptive_phase=n_post > 0,
+            protocol_status=protocol_status,
         )
     return BanditMTResult(
         arms=np.asarray(arms, dtype=int),
@@ -224,4 +260,11 @@ def run_bandit_mt(
         budget_spent=purse.spent,
         method=method,
         notes=notes,
+        burnin_per_arm=burnin_per_arm,
+        burnin_total=burnin_total,
+        post_burnin_counts=post_burnin_counts,
+        post_burnin_frequencies=freq,
+        n_post_burnin_pulls=n_post,
+        entered_adaptive_phase=n_post > 0,
+        protocol_status=protocol_status,
     )

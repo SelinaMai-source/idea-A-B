@@ -1,0 +1,19 @@
+{
+  "m": 3000,
+  "reps": 80,
+  "method": "Closed r-LOND",
+  "blocked": "BLOCKED_COMPUTE",
+  "small_m_timings": [
+    {
+      "m": 200,
+      "closed_e_lond_1seed_s": 0.4251905418932438,
+      "rss_mb": 92.015625
+    },
+    {
+      "m": 400,
+      "closed_e_lond_1seed_s": 3.9291142909787595,
+      "rss_mb": 106.390625
+    }
+  ],
+  "pred_80_h": 31.889290641993284
+}
