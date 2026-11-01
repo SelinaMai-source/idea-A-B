@@ -1,0 +1,38 @@
+{
+  "_comment": "AAAI Figure 3. Do not copy Gaussian metric set mechanically.",
+  "table_id": "aaai_heavy_tailed",
+  "source": {
+    "paper": "On the Robustness of Bandit Multiple Testing",
+    "venue": "AAAI 2026 Main",
+    "figures": [
+      "Figure 3"
+    ]
+  },
+  "dgp": {
+    "family": "student_t",
+    "df": 2,
+    "mu_null": 0.0,
+    "mu_nonnull": 5.0,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5
+    },
+    "p": 1.85,
+    "kappa": 50,
+    "lambda_eprocess": "(eps/kappa)**(1/p)"
+  },
+  "K": 50,
+  "n_nonnull": 2,
+  "methods": [
+    "Uniform",
+    "Algorithm 3 robust e-process"
+  ],
+  "n_trials_paper": 500,
+  "status": "NOT_RUN",
+  "code_status": "independent_reimplementation",
+  "skipped_by_default": [
+    "multi-agent Algorithm 4 / Figure 4"
+  ]
+}

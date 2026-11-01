@@ -1,3 +1,5 @@
+**Current Idea C v0 Experimental Results:** [`idea_C/v0实验版本+结果.md`](idea_C/v0实验版本+结果.md)
+
 # Idea A / Idea B：v1 烟测与 v1.1 确认性比较
 
 本地根目录：`/Users/grantwright/Desktop/科研/10.30新课题/v0`。目标分支：`v1.1`（v1 烟测在 `v1`）。远程：https://github.com/SelinaMai-source/idea-A-B.git

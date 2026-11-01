@@ -1,0 +1,40 @@
+{
+  "_comment": "e-PS Section 6 univariate Gaussian. Skip 5D / Jester / watermark in v0 unless P0 finishes with spare time.",
+  "table_id": "eps_gaussian",
+  "source": {
+    "paper": "Sample-Efficient Multiple Testing with Adaptive Data Collection",
+    "arxiv": "2609.26651",
+    "venue": "preprint (NOT CCF-A)",
+    "section": "6 Simulation studies",
+    "figures": [
+      "Figure 2(a)"
+    ]
+  },
+  "dgp": {
+    "family": "univariate_gaussian",
+    "Pk": "N(theta_k, 1)",
+    "K": 50,
+    "simple_vs_simple": "H0: theta=0 vs H1: theta=0.02*k",
+    "simple_vs_composite": "H0: theta=0 vs H1: theta != 0",
+    "B_k": "Bernoulli(0.1), theta_k = 0.02*k*B_k, drawn once and held fixed"
+  },
+  "alpha": 0.05,
+  "methods": [
+    "Uniform",
+    "Greedy (Xu et al. 2021)",
+    "e-PS"
+  ],
+  "e_process": [
+    "Oracle LR (simple-vs-simple)",
+    "Adaptive plug-in LR (simple-vs-composite)"
+  ],
+  "e_ps_variance_proxy": "v_{k,t}=1.1 * sample_variance",
+  "n_trials_paper": 500,
+  "status": "NOT_RUN",
+  "code_status": "independent_reimplementation",
+  "skipped": [
+    "multivariate 5D",
+    "Jester",
+    "LLM watermark"
+  ]
+}

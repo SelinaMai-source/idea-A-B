@@ -1,0 +1,23 @@
+{
+  "_comment": "P1-A1 common multi-arm, clean. Same arms, budget, eval time across methods.",
+  "table_id": "overlap_a_clean",
+  "protocol": "P1-A1",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu,1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "contamination": null,
+    "K": 50,
+    "n_nonnull": 2
+  },
+  "alpha": 0.05,
+  "methods": [
+    "Uniform",
+    "Greedy",
+    "e-PS",
+    "AAAI Mean-based",
+    "AAAI E-process-based"
+  ],
+  "status": "NOT_RUN"
+}

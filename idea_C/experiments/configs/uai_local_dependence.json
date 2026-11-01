@@ -1,0 +1,39 @@
+{
+  "_comment": "UAI 2026 Section 4 / Appendix C.3 local dependence. Venue is UAI, NOT CCF-A Main. Paper uses n=200 trials, m=200, L=100, delta=0.1.",
+  "table_id": "uai_local_dependence",
+  "source": {
+    "paper": "Improving online FDR procedures via online analogs of e-closure and compound e-values",
+    "venue": "UAI 2026 (NOT CCF-A Main)",
+    "section": "4 Simulations",
+    "figures": [
+      "Figure 2"
+    ]
+  },
+  "dgp": {
+    "m": 200,
+    "mu0": 0.0,
+    "mu1": 3.0,
+    "lag_L": 100,
+    "covariance": "Sigma_ij = 0.5^|i-j| for |i-j|<=L else 0 (Gaussian copula / Gaussian vector; PSD checked numerically)",
+    "e_value": "Gaussian likelihood ratio",
+    "p_value": "one-sided Gaussian CDF",
+    "gamma_t": "1/(t*(t+1))"
+  },
+  "delta": 0.1,
+  "n_trials_paper": 200,
+  "methods": [
+    "e-LOND",
+    "Closed e-LOND",
+    "Donation e-LOND",
+    "r-LOND",
+    "Closed r-LOND",
+    "Donation r-LOND"
+  ],
+  "official_related_exp_name": "evalue-omt lag_comp is AISTATS 2024, not this UAI paper; use paper Section 4 DGP as source of truth",
+  "status": "NOT_RUN",
+  "code_status": "official_clone_related_but_not_this_paper; online UAI methods need independent_reimplementation or wrapper if found later",
+  "skipped_by_default": [
+    "NYC taxi",
+    "m=3000 runtime grid (n=80)"
+  ]
+}

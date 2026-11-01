@@ -1,0 +1,29 @@
+{
+  "_comment": "P1-A2 common multi-arm, contaminated. Non-robust e-PS is invalidity stress test, NOT_COMPARABLE to theoretical guarantees.",
+  "table_id": "overlap_a_contaminated",
+  "protocol": "P1-A2",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu,1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "K": 50,
+    "n_nonnull": 2,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5
+    }
+  },
+  "alpha": 0.05,
+  "methods": [
+    "Uniform",
+    "Greedy",
+    "e-PS (non-robust increment, stress test)",
+    "AAAI Mean-based",
+    "AAAI E-process-based"
+  ],
+  "stress_test_note": "contaminated e-PS with non-robust increment is NOT_COMPARABLE to FDR theory",
+  "status": "NOT_RUN"
+}

@@ -8,6 +8,10 @@ env/
 # idea_A/baselines/ActiveUltraFeedback_MANIFEST.md; do not vendor the tree.
 idea_A/baselines/ActiveUltraFeedback/
 
+# Nested official clones for Idea C. Parent records only MANIFEST files.
+idea_C/baselines/eclosure/official/
+idea_C/baselines/eclosure/evalue-omt/
+
 # Python caches
 __pycache__/
 *.py[cod]

@@ -1,0 +1,31 @@
+{
+  "_comment": "e-PS Section 6 univariate Student-t(5).",
+  "table_id": "eps_studentt",
+  "source": {
+    "paper": "Sample-Efficient Multiple Testing with Adaptive Data Collection",
+    "arxiv": "2609.26651",
+    "venue": "preprint (NOT CCF-A)",
+    "section": "6 Simulation studies",
+    "figures": [
+      "Figure 2(c)"
+    ]
+  },
+  "dgp": {
+    "family": "univariate_student_t",
+    "Pk": "t_{theta_k, 5}",
+    "df": 5,
+    "K": 50,
+    "simple_vs_simple": "H0: theta=0 vs H1: theta=0.02*k",
+    "simple_vs_composite": "H0: theta=0 vs H1: theta != 0",
+    "B_k": "Bernoulli(0.1), theta_k = 0.02*k*B_k, drawn once and held fixed"
+  },
+  "alpha": 0.05,
+  "methods": [
+    "Uniform",
+    "Greedy",
+    "e-PS"
+  ],
+  "n_trials_paper": 500,
+  "status": "NOT_RUN",
+  "code_status": "independent_reimplementation"
+}

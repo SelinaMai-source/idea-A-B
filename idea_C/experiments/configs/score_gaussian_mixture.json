@@ -1,0 +1,47 @@
+{
+  "_comment": "SCORE Section 6.1 independent Gaussian mixture. SCORE+ only under CPQD; otherwise N/A.",
+  "table_id": "score_gaussian_mixture",
+  "source": {
+    "paper": "SCORE: A Unified Framework for Overshoot Refund in Online FDR Control",
+    "venue": "ICML 2026 Main",
+    "section": "6.1",
+    "figures": [
+      "Figure 1",
+      "Figure 2"
+    ]
+  },
+  "dgp": {
+    "T": 1000,
+    "theta_t": "Bernoulli(pi1)",
+    "mu_t_given_theta": "(1-theta)*delta_0 + theta*N(3,5)",
+    "X_t_given_mu": "N(mu_t, 1)",
+    "e_value": "phi(X_t; mean=3, var=6) / phi(X_t; mean=0, var=1)",
+    "pi1": [
+      0.3,
+      0.8
+    ]
+  },
+  "alpha": 0.05,
+  "lord_omega_t": 0.05,
+  "saffron_lambda_t": 0.5,
+  "n_reps_paper": 500,
+  "power_definition": "average power = mean fraction of non-nulls rejected at each time; power ratio vs family baseline (e-LORD or e-SAFFRON)",
+  "wealth_overshoot": "C_SCORE = (C - O)_+ with O=(alpha_j * e_j - 1)_+",
+  "score_plus": "retroactive denominator needs CPQD; else N/A",
+  "methods": [
+    "e-LOND",
+    "SCORE-LOND",
+    "e-LORD",
+    "SCORE-LORD",
+    "e-SAFFRON",
+    "SCORE-SAFFRON",
+    "SCORE+-LORD",
+    "SCORE+-SAFFRON"
+  ],
+  "status": "NOT_RUN",
+  "code_status": "independent_reimplementation",
+  "skipped_by_default": [
+    "Section 6.2 AR exponential",
+    "NYC taxi / real data"
+  ]
+}
