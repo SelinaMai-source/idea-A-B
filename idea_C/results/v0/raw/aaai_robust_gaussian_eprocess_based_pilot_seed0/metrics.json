@@ -1,0 +1,19 @@
+{
+  "run_id": "aaai_robust_gaussian_eprocess_based_pilot_seed0",
+  "table_id": "aaai_robust_gaussian",
+  "version": "v0_eprocess_based_pilot",
+  "content": "eprocess_based pilot 30-seed",
+  "data": "aaai_robust_gaussian",
+  "metrics": {
+    "FDR↓": 0.0,
+    "TPR↑": 0.2,
+    "TPP↑": 0.2,
+    "Samples@Target TPR↓": 3520.5,
+    "Runtime↓": 5.225845958571881
+  },
+  "status": "ok",
+  "result_explanation": "P0 AAAI Robust Gaussian pilot 30-seed（标 pilot，不是 paper-scale / 500）。K=50（config 默认，未扫全部 K），|H1|=2，α=δ=0.05，horizon=4000。seed0=0，trial seeds=list(range(30))。Lévy-stable α/scale 原文未给，代码用 1.5 / 1.0。Algorithm 2 每步更新 e-process（非仅 t>KB）。Algorithm 1 为 trimmed-mean LCB argmax。Algorithm 3 = Alg2 sampling + eq(13)，本切片未跑。污染下非鲁棒 e-process 是 stress test / NOT_COMPARABLE，本 P0 切片未跑该 stress。",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation"
+}

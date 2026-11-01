@@ -1,0 +1,10 @@
+run_id=overlap_b_streaming_SCORE-LORD_smoke_T1000_seed0
+method=SCORE-LORD
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+T=1000
+pi1=0.3
+assume_cpqd=True
+code_status=independent_reimplementation
+status=ok wall_s=0.006402 metrics={'FDR↓': 0.0, 'Power↑': 0.07890220635994484, 'Rejections↑': 24.666666666666668, 'Runtime↓': 0.006402458064258099, 'SupFDR↓': 'N/A'}

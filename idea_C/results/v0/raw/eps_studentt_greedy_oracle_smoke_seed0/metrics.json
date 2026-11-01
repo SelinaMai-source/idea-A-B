@@ -1,0 +1,18 @@
+{
+  "run_id": "eps_studentt_greedy_oracle_smoke_seed0",
+  "table_id": "eps_studentt",
+  "version": "v0_eps_greedy_oracle_smoke",
+  "content": "greedy + oracle smoke 3-seed",
+  "data": "eps_studentt",
+  "metrics": {
+    "FDR↓": 0.0,
+    "TPR↑": 0.1111111111111111,
+    "TPP↑": 0.1111111111111111,
+    "Runtime↓": 0.24307512491941452
+  },
+  "status": "ok",
+  "result_explanation": "P0 e-PS 1D Student-t(5) smoke 3-seed（pilot/paper-scale 未宣称）。K=50，α=0.05，sampler=greedy，e-process=oracle 分行。e-PS 是预印本，不是已发表 CCF-A。Student-t 实现为 location-shift t_5+θ，不是 noncentral-t。v_{k,t}=1.1 σ̂²；n<2 用 1.0。seeds: theta seed0=0；trial seeds=[1, 2, 3]。未跑 multivariate 5D。污染下非鲁棒 increment 的 NOT_COMPARABLE stress 不在本 P0 切片。",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation"
+}

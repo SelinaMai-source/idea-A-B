@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓,Samples@Target TPR↓
+overlap_a_clean_greedy_smoke_seed0,overlap_a_clean,v0_oa_greedy_smoke,Greedy + Adaptive plug-in smoke 3-seed independent_reimplementation,P1-A1 clean Gaussian,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,1.0,1.0,2.1691112918779254,2711.3333333333335

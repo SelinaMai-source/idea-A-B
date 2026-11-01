@@ -15,3 +15,4 @@
 - **Paper experiment names in README:** `lag_comp`, `wor_comp`
 - **Parent-repo policy:** this manifest is the committed record. The clone keeps its own `.git` and is gitignored.
 - **Local path:** `idea_C/baselines/eclosure/evalue-omt/`
+- **v0 wrapper:** `official_wrappers.aistats_elond_on_evalues` loads official `alg.LOND` (AISTATS 2024) with a `methodtools` shim. Finite-horizon `easy` γ ≠ UAI `γ_t=1/(t(t+1))`. `lag_comp` is the related official experiment name; P0 local-dependence uses UAI Section 4 DGP. See `DEVIATION.md`.

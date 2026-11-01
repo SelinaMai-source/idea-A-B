@@ -1,0 +1,57 @@
+{
+  "_comment": "P1-A1 common multi-arm, clean. Same arms, budget, eval time across methods. DGP copied from AAAI audit / P0 aaai_robust_gaussian (K=50, |H1|=2, N(μ,1), μ∈{0,1}), contamination off. Algorithm ε stays 0.1 (paper robustness parameter) so Mean/E-process schedules match Contaminated.",
+  "table_id": "overlap_a_clean",
+  "protocol": "P1-A1",
+  "code_status": "independent_reimplementation",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu,1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "contamination": null,
+    "K": 50,
+    "n_nonnull": 2
+  },
+  "K": 50,
+  "n_nonnull": 2,
+  "alpha": 0.05,
+  "delta": 0.05,
+  "algo_eps": 0.1,
+  "horizon": {
+    "smoke": 22600,
+    "pilot": 22600
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30
+  },
+  "methods": [
+    "uniform",
+    "greedy",
+    "eps_oracle",
+    "eps_adaptive",
+    "mean_based",
+    "eprocess_based"
+  ],
+  "e_ps_oracle_alternatives": "adapted: hypothesized μ=1 for every arm (common protocol), not e-PS paper θ_alt=0.02k",
+  "greedy_eprocess": "adaptive",
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true
+  },
+  "status": "NOT_RUN",
+  "method": "greedy",
+  "setting": "clean",
+  "scale": "smoke",
+  "seed0": 0,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "horizon_used": 22600,
+  "n_trials_used": 3,
+  "burnin_KB": 22600,
+  "stress_test": false,
+  "validity_label": "comparable_on_this_DGP"
+}

@@ -2,8 +2,9 @@
 """Append-only updater for idea_C/v0实验版本+结果.md.
 
 Reads results/v0/raw/<run_id>/{metrics.json,metrics.csv} and appends rows.
-Never overwrites an existing data row or the human 结果解释 cell.
-Empty or malformed raw dirs must not crash.
+Supports P0 tables and P1-A Overlap A (overlap_a_clean / overlap_a_contaminated)
+plus P1-B. Never overwrites an existing data row or the human 结果解释 cell.
+Empty or malformed raw dirs must not crash. Missing numeric cells stay NOT_RUN.
 """
 
 from __future__ import annotations

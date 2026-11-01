@@ -1,0 +1,36 @@
+{
+  "run_id": "overlap_a_clean_eps_adaptive_smoke_seed0",
+  "table_id": "overlap_a_clean",
+  "version": "v0_oa_eps_adaptive_smoke",
+  "content": "e-PS Adaptive plug-in smoke 3-seed independent_reimplementation",
+  "data": "P1-A1 clean Gaussian",
+  "metrics": {
+    "FDR↓": 0.1111111111111111,
+    "TPR↑": 1.0,
+    "TPP↑": 1.0,
+    "Runtime↓": 49.5899010412395,
+    "Samples@Target TPR↓": 426.3333333333333
+  },
+  "status": "ok",
+  "result_explanation": "P1-A clean smoke 3-seed（标 smoke，不是 paper-scale / 500）。common protocol：同一 arm 分布 N(μ,1) μ∈{0,1}，K=50，|H1|=2，同一预算，同一评估时点。horizon=22600，Algorithm 2 KB≈22600（ε_algo=0.1，δ=0.05）。seeds=[0, 1, 2]。code_status=independent_reimplementation / adapted。Lévy-stable 稳定性指数/尺度原文未给，代码用 alpha=1.5 scale=1.0。e-PS Oracle 适应：假设备择 μ=1（共同协议），不是原文 θ_alt=0.02k。Greedy 配对 Adaptive plug-in（已有 e-PS 实现，不是新方法）。AAAI 算法侧 ε=0.1（论文稳健参数）；Clean 数据 ε=0，Contaminated 数据 ε=1/10。Mean-based 用 Algorithm 1 的 t(s) 日程；t(1)≈3240/臂，22600 预算不足以完成全臂初始化。预算达到 Algorithm 2 burn-in KB，E-process-based 可在 burn-in 后按 e-value 选臂。",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "wall_s": 49.5899010412395,
+  "fdps": [
+    0.0,
+    0.0,
+    0.3333333333333333
+  ],
+  "tpps": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "stress_test": false
+}

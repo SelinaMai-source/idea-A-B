@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,Power↑,Rejections↑,Runtime↓
+score_gaussian_mixture_e-LORD_pilot_pi0.3_T1000_seed0,score_gaussian_mixture,v0_elord_pilot_pi0.3,e-LORD pilot 30-seed independent_reimplementation,SCORE §6.1 $\pi_1=0.3$ $T=1000$,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,0.08347260729275957,25.266666666666666,0.07237845798954368

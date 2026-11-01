@@ -1,0 +1,18 @@
+{
+  "run_id": "eps_gaussian_uniform_oracle_smoke_seed0",
+  "table_id": "eps_gaussian",
+  "version": "v0_eps_uniform_oracle_smoke",
+  "content": "uniform + oracle smoke 3-seed",
+  "data": "eps_gaussian",
+  "metrics": {
+    "FDR↓": 0.0,
+    "TPR↑": 0.05555555555555555,
+    "TPP↑": 0.05555555555555555,
+    "Runtime↓": 0.03941133385524154
+  },
+  "status": "ok",
+  "result_explanation": "P0 e-PS 1D gaussian smoke 3-seed（pilot/paper-scale 未宣称）。K=50，α=0.05，sampler=uniform，e-process=oracle 分行。e-PS 是预印本，不是已发表 CCF-A。v_{k,t}=1.1 σ̂²；n<2 用 1.0。seeds: [0, 1, 2]（theta 用 seed0=0；trial seed=seed0+1+i → [1, 2, 3]）。未跑 5D / Jester / watermark。污染下非鲁棒 increment 的 NOT_COMPARABLE stress 不在本 P0 切片。",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation"
+}

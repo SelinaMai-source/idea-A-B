@@ -12,10 +12,23 @@
     "n_nonnull": 2
   },
   "alpha": 0.05,
+  "delta": 0.05,
+  "K": 50,
+  "n_nonnull": 2,
+  "algo_eps": 0.1,
+  "horizon": {
+    "smoke": 22600,
+    "pilot": 22600
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30
+  },
   "methods": [
     "Uniform",
     "Greedy",
-    "e-PS",
+    "e-PS Oracle LR",
+    "e-PS Adaptive plug-in",
     "AAAI Mean-based",
     "AAAI E-process-based"
   ],

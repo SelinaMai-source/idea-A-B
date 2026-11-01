@@ -1,0 +1,18 @@
+{
+  "run_id": "eps_gaussian_greedy_oracle_pilot_seed0",
+  "table_id": "eps_gaussian",
+  "version": "v0_eps_greedy_oracle_pilot",
+  "content": "greedy + oracle pilot 30-seed",
+  "data": "eps_gaussian",
+  "metrics": {
+    "FDR↓": 0.02333333333333333,
+    "TPR↑": 0.4277777777777777,
+    "TPP↑": 0.4277777777777777,
+    "Runtime↓": 3.865445792209357
+  },
+  "status": "ok",
+  "result_explanation": "P0 e-PS 1D gaussian pilot 30-seed（标 pilot，不是 paper-scale / 500）。K=50，α=0.05，horizon=4000，sampler=greedy，e-process=oracle 分行。e-PS 是预印本，不是已发表 CCF-A。v_{k,t}=1.1 σ̂²；n<2 用 1.0。seeds: theta seed0=0；trial seeds=[1..30]。未跑 5D / Jester / watermark。污染下非鲁棒 increment 的 NOT_COMPARABLE stress 不在本 P0 切片。",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation"
+}

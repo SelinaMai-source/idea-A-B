@@ -1,0 +1,20 @@
+run_id=uai_local_dependence_Closed-r-LOND_smoke_pi0.3_m200_seed0
+method=Closed r-LOND
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+m=200
+L=100
+pi1=0.3
+delta=0.1
+code_status=independent_reimplementation
+DGP=UAI §4 local-dependent Gaussian (NOT AISTATS lag_comp)
+C++ _cebh / offline closedeBH status=unavailable reason=offline e-Closure (arXiv:2509.02517 / neilzxu/eclosure). This is NOT UAI 2026 online closed e-LOND. C++ bindings unavailable: ImportError: The eclosure C++ bindings could not be imported. Run `pip install .` from the repository root to build the extension. (does not block online UAI methods)
+FDR=E[FDP_T]; SupFDR=E[sup_t FDP_t]; never mixed
+status=ok
+wall_s=2.081007
+fdps=[0.05405405405405406, 0.0, 0.07407407407407407]
+sups=[0.1, 0.0, 0.08]
+powers=[0.660377358490566, 0.19298245614035087, 0.38461538461538464]
+nrejs=[37.0, 11.0, 27.0]
+metrics={'FDR↓': 0.04270937604270938, 'SupFDR↓': 0.06, 'Power↑': 0.41265839974876717, 'Rejections↑': 25.0, 'Runtime↓': 2.0810072091408074}

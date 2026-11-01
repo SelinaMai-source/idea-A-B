@@ -1,0 +1,13 @@
+run_id=overlap_a_clean_greedy_smoke_seed0
+method=greedy
+setting=clean
+scale=smoke
+n_trials=3
+seeds=[0, 1, 2]
+horizon=22600
+algo_eps=0.1
+burnin_KB=22600
+stress_test=False
+code_status=independent_reimplementation
+single_process=1
+status=ok wall_s=2.169111 metrics={'FDR↓': 0.0, 'TPR↑': 1.0, 'TPP↑': 1.0, 'Runtime↓': 2.1691112918779254, 'Samples@Target TPR↓': 2711.3333333333335}

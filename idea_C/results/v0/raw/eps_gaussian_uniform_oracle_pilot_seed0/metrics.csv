@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓
+eps_gaussian_uniform_oracle_pilot_seed0,eps_gaussian,v0_eps_uniform_oracle_pilot,uniform + oracle pilot 30-seed,eps_gaussian,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.02222222222222222,0.3388888888888889,0.3388888888888889,3.9461118751205504

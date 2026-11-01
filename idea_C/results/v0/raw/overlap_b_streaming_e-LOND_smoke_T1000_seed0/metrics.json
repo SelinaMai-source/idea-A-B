@@ -1,0 +1,35 @@
+{
+  "run_id": "overlap_b_streaming_e-LOND_smoke_T1000_seed0",
+  "table_id": "overlap_b_streaming",
+  "version": "v0_ob_elond_smoke",
+  "content": "e-LOND P1-B smoke 3-seed independent_reimplementation",
+  "data": "P1-B streaming SCORE-like mix T=1000 $\\pi_1=0.3$",
+  "metrics": {
+    "FDR↓": 0.0,
+    "Power↑": 0.18501974932096296,
+    "Rejections↑": 57.666666666666664,
+    "Runtime↓": 0.0037377499975264072,
+    "SupFDR↓": 0.0
+  },
+  "status": "ok",
+  "result_explanation": "自动追加，P1-B smoke 3-seed，independent_reimplementation，结果解释待人工填写",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "wall_s": 0.0037377499975264072,
+  "fdps": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "sup_fdps": [
+    0.0,
+    0.0,
+    0.0
+  ]
+}

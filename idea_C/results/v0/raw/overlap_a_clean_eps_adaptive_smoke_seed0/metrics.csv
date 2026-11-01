@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓,Samples@Target TPR↓
+overlap_a_clean_eps_adaptive_smoke_seed0,overlap_a_clean,v0_oa_eps_adaptive_smoke,e-PS Adaptive plug-in smoke 3-seed independent_reimplementation,P1-A1 clean Gaussian,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.1111111111111111,1.0,1.0,49.5899010412395,426.3333333333333

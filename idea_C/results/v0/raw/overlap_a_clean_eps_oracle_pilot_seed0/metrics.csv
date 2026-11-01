@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓,Samples@Target TPR↓
+overlap_a_clean_eps_oracle_pilot_seed0,overlap_a_clean,v0_oa_eps_oracle_pilot,e-PS Oracle LR pilot 30-seed independent_reimplementation,P1-A1 clean Gaussian,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.03333333333333333,1.0,1.0,472.03827220760286,345.73333333333335

@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓,Samples@Target TPR↓
+overlap_a_contaminated_eps_adaptive_smoke_seed0,overlap_a_contaminated,v0_oa_c_eps_adaptive_stress_smoke,e-PS Adaptive plug-in 非鲁棒 increment（stress test） smoke 3-seed independent_reimplementation NOT_COMPARABLE stress test,P1-A2 contaminated Gaussian,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.96,1.0,1.0,0.5892169587314129,372.0

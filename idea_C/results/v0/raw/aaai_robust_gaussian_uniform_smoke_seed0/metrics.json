@@ -1,0 +1,18 @@
+{
+  "run_id": "aaai_robust_gaussian_uniform_smoke_seed0",
+  "table_id": "aaai_robust_gaussian",
+  "version": "v0_uniform_smoke",
+  "content": "uniform smoke 3-seed",
+  "data": "aaai_robust_gaussian",
+  "metrics": {
+    "FDR↓": 0.0,
+    "TPR↑": 0.0,
+    "TPP↑": 0.0,
+    "Runtime↓": 0.04758374998345971
+  },
+  "status": "ok",
+  "result_explanation": "P0 AAAI Robust Gaussian smoke 3-seed（pilot/paper-scale 未宣称）。K=50（config 默认，未扫全部 K），|H1|=2，α=δ=0.05，horizon=400。seed0=0，trial seeds=[0,1,2]。Lévy-stable α/scale 原文未给，代码用 1.5 / 1.0。Algorithm 2 每步更新 e-process（非仅 t>KB）。Algorithm 1 为 trimmed-mean LCB argmax。Algorithm 3 = Alg2 sampling + eq(13)，本切片未跑。污染下非鲁棒 e-process 是 stress test / NOT_COMPARABLE，本 P0 切片未跑该 stress。",
+  "seed": 0,
+  "commit": "3040ba30319c339e26e1f2a8261e8ab9ef795e90",
+  "code_status": "independent_reimplementation"
+}

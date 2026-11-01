@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,Power↑,Rejections↑,Runtime↓,SupFDR↓
+overlap_b_streaming_e-LORD_smoke_T1000_seed0,overlap_b_streaming,v0_ob_elord_smoke,e-LORD P1-B smoke 3-seed independent_reimplementation,P1-B streaming SCORE-like mix T=1000 $\pi_1=0.3$,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,0.0704288750037899,22.0,0.005757833831012249,N/A

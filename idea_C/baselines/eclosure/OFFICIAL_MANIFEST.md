@@ -18,3 +18,4 @@
 - **Extras initialized:** no (`pip install .[experiments]` / plotting / docs **not** run)
 - **Parent-repo policy:** this manifest is the committed record. The clone keeps its own `.git` and is gitignored. Do not vendor the tree.
 - **Local path:** `idea_C/baselines/eclosure/official/`
+- **v0 wrapper:** `official_wrappers.try_offline_closedeBH` calls `closedeBH` if `_cebh` imports. On this Mac/venv the C++ extension is missing; compile was skipped. Offline closedeBH is **not** UAI 2026 online closed e-LOND. See `DEVIATION.md` and `IMPLEMENTATION_NOTES.md`.

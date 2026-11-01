@@ -1,0 +1,10 @@
+run_id=overlap_b_streaming_Closed-e-LOND_smoke_T1000_seed0
+method=Closed e-LOND
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+T=1000
+pi1=0.3
+assume_cpqd=True
+code_status=independent_reimplementation
+status=ok wall_s=240.654104 metrics={'FDR↓': 0.0, 'Power↑': 0.2051017681343186, 'Rejections↑': 64.0, 'Runtime↓': 240.6541039161384, 'SupFDR↓': 0.0}

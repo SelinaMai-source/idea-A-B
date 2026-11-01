@@ -1,0 +1,17 @@
+run_id=score_gaussian_mixture_SCORE--LORD_smoke_pi0.8_T1000_seed0
+method=SCORE+-LORD
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+T=1000
+pi1=0.8
+assume_cpqd=True
+code_status=independent_reimplementation
+protocol=paper T=1000 protocol
+status=ok
+wall_s=0.013272
+fdps=[0.0, 0.002457002457002457, 0.0]
+powers=[0.49238578680203043, 0.5178571428571429, 0.4854981084489281]
+nrejs=[388.0, 407.0, 385.0]
+metrics={'FDR↓': 0.0008190008190008189, 'Power↑': 0.4985803460360338, 'Rejections↑': 393.3333333333333, 'Runtime↓': 0.013271875213831663}
+method_status=ok

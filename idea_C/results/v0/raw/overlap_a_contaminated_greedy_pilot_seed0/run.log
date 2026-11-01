@@ -1,0 +1,13 @@
+run_id=overlap_a_contaminated_greedy_pilot_seed0
+method=greedy
+setting=contaminated
+scale=pilot
+n_trials=30
+seeds=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+horizon=22600
+algo_eps=0.1
+burnin_KB=22600
+stress_test=True
+code_status=independent_reimplementation
+single_process=1
+status=ok wall_s=1.057074 metrics={'FDR↓': 0.9600000000000002, 'TPR↑': 1.0, 'TPP↑': 1.0, 'Runtime↓': 1.0570740001276135, 'Samples@Target TPR↓': 344.76666666666665}

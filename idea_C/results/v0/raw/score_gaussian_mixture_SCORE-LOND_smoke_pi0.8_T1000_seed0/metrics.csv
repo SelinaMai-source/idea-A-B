@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,Power↑,Rejections↑,Runtime↓
+score_gaussian_mixture_SCORE-LOND_smoke_pi0.8_T1000_seed0,score_gaussian_mixture,v0_score_lond_smoke_pi0.8,SCORE-LOND smoke 3-seed independent_reimplementation,SCORE §6.1 $\pi_1=0.8$ $T=1000$,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,0.233025889060792,183.66666666666666,0.008282833732664585

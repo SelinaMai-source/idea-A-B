@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,SupFDR↓,Power↑,Rejections↑,Runtime↓
+uai_local_dependence_e-LOND_pilot_pi0.3_m200_seed0,uai_local_dependence,v0_elond_uai_pilot_pi0.3,e-LOND pilot 30-seed independent_reimplementation (NOT CCF-A Main; not lag_comp),"UAI Fig2 local-dep $m=200,L=100,\delta=0.1$",ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.004166666666666667,0.006666666666666667,0.058288403388734096,3.4,0.006513584405183792

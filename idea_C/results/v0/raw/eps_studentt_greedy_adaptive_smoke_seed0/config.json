@@ -1,0 +1,53 @@
+{
+  "_comment": "e-PS §6 univariate Student-t(5). Location-shift implementation (paper says noncentrality). 30-seed is pilot, never paper-scale.",
+  "table_id": "eps_studentt",
+  "code_status": "independent_reimplementation",
+  "paper": "Sample-Efficient Multiple Testing with Adaptive Data Collection",
+  "arxiv": "2609.26651",
+  "venue": "preprint (NOT CCF-A)",
+  "dgp": {
+    "family": "univariate_student_t",
+    "Pk": "location-shift t_5 + theta_k",
+    "df": 5,
+    "K": 50,
+    "pi1": 0.1,
+    "theta_k": "0.02 * k * B_k, B_k ~ Bern(0.1), drawn once and held fixed",
+    "simple_vs_simple": "H0: theta=0 vs H1: theta=0.02*k (Oracle LR)",
+    "simple_vs_composite": "H0: theta=0 vs H1: theta != 0 (Adaptive plug-in)"
+  },
+  "K": 50,
+  "alpha": 0.05,
+  "methods": [
+    "uniform",
+    "greedy",
+    "eps"
+  ],
+  "e_process": [
+    "oracle",
+    "adaptive"
+  ],
+  "e_ps_variance_proxy": "v_{k,t}=1.1 * sample_variance(observations); n<2 uses 1.0",
+  "horizon": {
+    "smoke": 400,
+    "pilot": 4000,
+    "paper": 50000
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30,
+    "paper": 500
+  },
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true,
+    "paper_scale_requires_flag": "--allow-paper-scale"
+  },
+  "skipped": [
+    "multivariate Student-t 5D"
+  ],
+  "status": "NOT_RUN",
+  "sampler": "greedy",
+  "eprocess": "adaptive",
+  "scale": "smoke",
+  "seed0": 0
+}

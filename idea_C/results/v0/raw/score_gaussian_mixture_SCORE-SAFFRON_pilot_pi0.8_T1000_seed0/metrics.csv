@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,Power↑,Rejections↑,Runtime↓
+score_gaussian_mixture_SCORE-SAFFRON_pilot_pi0.8_T1000_seed0,score_gaussian_mixture,v0_score_saffron_pilot_pi0.8,SCORE-SAFFRON pilot 30-seed independent_reimplementation,SCORE §6.1 $\pi_1=0.8$ $T=1000$,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,0.2549770770367369,204.33333333333334,0.10237570805475116

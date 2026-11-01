@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,Power↑,Rejections↑,Runtime↓
+score_gaussian_mixture_SCORE--LORD_smoke_pi0.3_T1000_seed0,score_gaussian_mixture,v0_scoreplus_lord_smoke_pi0.3,SCORE+-LORD smoke 3-seed independent_reimplementation,SCORE §6.1 $\pi_1=0.3$ $T=1000$,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,0.4049004517326578,125.66666666666667,0.012894374784082174

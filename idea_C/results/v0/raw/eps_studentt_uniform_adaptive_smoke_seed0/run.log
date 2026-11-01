@@ -1,0 +1,11 @@
+cmd: /Users/grantwright/Desktop/科研/10.30新课题/v0/.venv/bin/python /Users/grantwright/Desktop/科研/10.30新课题/v0/idea_C/scripts/run_eps.py --config eps_studentt.json --sampler uniform --eprocess adaptive --scale smoke --seed 0 --run
+wall_seconds: 0.8071325840428472
+returncode: 0
+
+STDOUT:
+e-PS plan table_id=eps_studentt sampler=uniform eprocess=adaptive scale=smoke label=smoke trials=3 horizon=400 K=50 venue=preprint_not_CCF-A code_status=independent_reimplementation
+wrote results/v0/raw/eps_studentt_uniform_adaptive_smoke_seed0
+
+
+STDERR:
+

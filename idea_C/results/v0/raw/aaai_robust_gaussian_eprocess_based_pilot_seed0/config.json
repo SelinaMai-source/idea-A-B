@@ -1,0 +1,56 @@
+{
+  "_comment": "Copied from AAAI 2026 Zhou & Liu §4 / Figure 1-2. Figure 1 does not numerically state K in the HTML extract; v0 uses K=50 (same scale as Figure 3) pending visual confirmation. 30-seed is pilot, never paper-scale.",
+  "table_id": "aaai_robust_gaussian",
+  "code_status": "independent_reimplementation",
+  "paper": "On the Robustness of Bandit Multiple Testing",
+  "venue": "AAAI 2026 Main",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu_i, 1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5,
+      "stability_alpha_paper_omitted": 1.5,
+      "scale_paper_omitted": 1.0
+    }
+  },
+  "K": 50,
+  "n_nonnull_grid": [
+    2,
+    "floor(log K)",
+    "floor(sqrt K)"
+  ],
+  "n_nonnull_default": 2,
+  "delta": 0.05,
+  "mu0": 0.0,
+  "sigma": 1.0,
+  "methods": [
+    "uniform",
+    "mean_based",
+    "eprocess_based"
+  ],
+  "horizon": {
+    "smoke": 400,
+    "pilot": 4000,
+    "paper": 80000
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30,
+    "paper": 500
+  },
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true,
+    "paper_scale_requires_flag": "--allow-paper-scale",
+    "paper_scale_label": "paper-scale requires 500 trials; 30-seed is pilot only"
+  },
+  "status": "NOT_RUN",
+  "method": "eprocess_based",
+  "scale": "pilot",
+  "seed0": 0
+}

@@ -1,0 +1,17 @@
+run_id=score_gaussian_mixture_SCORE-LOND_smoke_pi0.3_T1000_seed0
+method=SCORE-LOND
+scale=smoke
+reps=3
+seeds=[0, 1, 2]
+T=1000
+pi1=0.3
+assume_cpqd=True
+code_status=independent_reimplementation
+protocol=paper T=1000 protocol
+status=ok
+wall_s=0.008106
+fdps=[0.0, 0.0, 0.0]
+powers=[0.21428571428571427, 0.2108626198083067, 0.13310580204778158]
+nrejs=[69.0, 66.0, 39.0]
+metrics={'FDR↓': 0.0, 'Power↑': 0.1860847120472675, 'Rejections↑': 58.0, 'Runtime↓': 0.008106124587357044}
+method_status=ok

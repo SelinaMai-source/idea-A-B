@@ -1,0 +1,99 @@
+{
+  "_comment": "UAI 2026 Section 4 local dependence. Venue is UAI, NOT CCF-A Main. Paper-scale 200 trials refused unless --paper-scale.",
+  "table_id": "uai_local_dependence",
+  "venue": "UAI 2026 (NOT CCF-A Main)",
+  "source": {
+    "paper": "Improving online FDR procedures via online analogs of e-closure and compound e-values (Xu, Fischer, Ramdas)",
+    "section": "4 Simulations / Appendix C.3",
+    "pmlr": "https://proceedings.mlr.press/v337/xu26a.html"
+  },
+  "dgp": {
+    "name": "uai_section4_local_dependent_gaussian",
+    "m": 200,
+    "mu0": 0.0,
+    "mu1": 3.0,
+    "lag_L": 100,
+    "rho": 0.5,
+    "covariance": "Sigma_ij = 0.5^|i-j| for |i-j|<=L else 0; PSD checked numerically",
+    "e_value": "Gaussian likelihood ratio",
+    "p_value": "one-sided Gaussian CDF",
+    "gamma_t": "1/(t*(t+1))"
+  },
+  "related_official_experiment": {
+    "name": "lag_comp",
+    "repo": "neilzxu/evalue-omt",
+    "what_it_is": "AISTATS 2024 local-dependence lag grid; NOT this UAI DGP. P0 uses UAI Section 4."
+  },
+  "delta": 0.1,
+  "n_trials_paper": 200,
+  "n_reps_default": 3,
+  "n_reps_pilot": 30,
+  "paper_scale_requires_flag": true,
+  "metrics": {
+    "FDR": "E[FDP_T]",
+    "SupFDR": "E[sup_t FDP_t]",
+    "note": "FDR and SupFDR are distinct; never mix"
+  },
+  "methods": [
+    "e-LOND",
+    "Closed e-LOND",
+    "Donation e-LOND",
+    "r-LOND",
+    "Closed r-LOND",
+    "Donation r-LOND"
+  ],
+  "p1b_streaming_methods": [
+    "e-LOND",
+    "Donation e-LOND",
+    "Closed e-LOND",
+    "e-LORD",
+    "SCORE-LORD",
+    "SCORE+-LORD"
+  ],
+  "code_status": {
+    "online_uai": "independent_reimplementation",
+    "aistats_elond_wrapper": "aistats2024_official_wrapper",
+    "offline_eclosure": "offline_eclosure_official_clone_arxiv2509.02517 (not this paper)"
+  },
+  "method": "e-LOND",
+  "scale": "pilot",
+  "reps": 30,
+  "m": 200,
+  "pi1": 0.3,
+  "seed0": 0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "reduced_m": false,
+  "protocol": "UAI §4 local-dependent Gaussian (NOT AISTATS lag_comp)",
+  "cebh_note": "C++ _cebh / offline closedeBH status=unavailable reason=offline e-Closure (arXiv:2509.02517 / neilzxu/eclosure). This is NOT UAI 2026 online closed e-LOND. C++ bindings unavailable: ImportError: The eclosure C++ bindings could not be imported. Run `pip install .` from the repository root to build the extension. (does not block online UAI methods)"
+}

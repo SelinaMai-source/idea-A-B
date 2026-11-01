@@ -1,0 +1,11 @@
+cmd: /Users/grantwright/Desktop/科研/10.30新课题/v0/.venv/bin/python /Users/grantwright/Desktop/科研/10.30新课题/v0/idea_C/scripts/run_aaai.py --config aaai_robust_gaussian.json --method eprocess_based --scale pilot --seed 0 --run
+wall_seconds: 5.850253416690975
+returncode: 0
+
+STDOUT:
+AAAI plan table_id=aaai_robust_gaussian method=eprocess_based scale=pilot label=pilot trials=30 horizon=4000 K=50 code_status=independent_reimplementation
+wrote results/v0/raw/aaai_robust_gaussian_eprocess_based_pilot_seed0
+
+
+STDERR:
+

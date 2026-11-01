@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓
+eps_studentt_greedy_adaptive_smoke_seed0,eps_studentt,v0_eps_greedy_adaptive_smoke,greedy + adaptive smoke 3-seed,eps_studentt,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.0,0.0,0.0,0.19075766718015075

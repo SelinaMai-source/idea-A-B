@@ -1,0 +1,2 @@
+run_id,table_id,version,content,data,status,seed,commit,FDR↓,TPR↑,TPP↑,Runtime↓,Samples@Target TPR↓
+overlap_a_contaminated_eps_oracle_pilot_seed0,overlap_a_contaminated,v0_oa_c_eps_oracle_stress_pilot,e-PS Oracle LR 非鲁棒 increment（stress test） pilot 30-seed independent_reimplementation NOT_COMPARABLE stress test,P1-A2 contaminated Gaussian,ok,0,3040ba30319c339e26e1f2a8261e8ab9ef795e90,0.9600000000000002,1.0,1.0,2.787647542078048,163.66666666666666

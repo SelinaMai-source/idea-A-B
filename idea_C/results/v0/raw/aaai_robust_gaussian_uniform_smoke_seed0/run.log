@@ -1,0 +1,11 @@
+cmd: /Users/grantwright/Desktop/科研/10.30新课题/v0/.venv/bin/python /Users/grantwright/Desktop/科研/10.30新课题/v0/idea_C/scripts/run_aaai.py --config aaai_robust_gaussian.json --method uniform --scale smoke --seed 0 --run
+wall_seconds: 0.6149333748035133
+returncode: 0
+
+STDOUT:
+AAAI plan table_id=aaai_robust_gaussian method=uniform scale=smoke label=smoke trials=3 horizon=400 K=50 code_status=independent_reimplementation
+wrote results/v0/raw/aaai_robust_gaussian_uniform_smoke_seed0
+
+
+STDERR:
+

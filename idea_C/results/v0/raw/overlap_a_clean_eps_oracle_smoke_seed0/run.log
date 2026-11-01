@@ -1,0 +1,13 @@
+run_id=overlap_a_clean_eps_oracle_smoke_seed0
+method=eps_oracle
+setting=clean
+scale=smoke
+n_trials=3
+seeds=[0, 1, 2]
+horizon=22600
+algo_eps=0.1
+burnin_KB=22600
+stress_test=False
+code_status=independent_reimplementation
+single_process=1
+status=ok wall_s=50.821530 metrics={'FDR↓': 0.0, 'TPR↑': 1.0, 'TPP↑': 1.0, 'Runtime↓': 50.8215302079916, 'Samples@Target TPR↓': 194.33333333333334}

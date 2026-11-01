@@ -1,0 +1,13 @@
+run_id=overlap_a_clean_uniform_pilot_seed0
+method=uniform
+setting=clean
+scale=pilot
+n_trials=30
+seeds=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+horizon=22600
+algo_eps=0.1
+burnin_KB=22600
+stress_test=False
+code_status=independent_reimplementation
+single_process=1
+status=ok wall_s=18.451752 metrics={'FDR↓': 0.0, 'TPR↑': 0.05, 'TPP↑': 0.05, 'Runtime↓': 18.451751791872084}

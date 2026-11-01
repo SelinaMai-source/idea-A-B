@@ -1,0 +1,97 @@
+{
+  "_comment": "P1-A2 common multi-arm, contaminated. Same arms/budget/eval time as p1a_clean. Non-robust e-PS increment is invalidity stress test, NOT_COMPARABLE to theoretical guarantees. Lévy α/scale paper-omitted: code uses 1.5 / 1.0.",
+  "table_id": "overlap_a_contaminated",
+  "protocol": "P1-A2",
+  "code_status": "independent_reimplementation",
+  "dgp": {
+    "family": "gaussian",
+    "Pi": "N(mu,1)",
+    "mu_null": 0.0,
+    "mu_nonnull": 1.0,
+    "K": 50,
+    "n_nonnull": 2,
+    "contamination": {
+      "prob": 0.1,
+      "family": "levy_stable",
+      "location": 1000.0,
+      "skewness": 0.5,
+      "stability_alpha_paper_omitted": 1.5,
+      "scale_paper_omitted": 1.0
+    }
+  },
+  "K": 50,
+  "n_nonnull": 2,
+  "alpha": 0.05,
+  "delta": 0.05,
+  "algo_eps": 0.1,
+  "horizon": {
+    "smoke": 22600,
+    "pilot": 22600
+  },
+  "n_trials": {
+    "smoke": 3,
+    "pilot": 30
+  },
+  "methods": [
+    "uniform",
+    "greedy",
+    "eps_oracle",
+    "eps_adaptive",
+    "mean_based",
+    "eprocess_based"
+  ],
+  "stress_test_methods": [
+    "greedy",
+    "eps_oracle",
+    "eps_adaptive"
+  ],
+  "stress_test_note": "contaminated e-PS Oracle/Adaptive increment and Greedy (same non-robust increment) are NOT_COMPARABLE to FDR theory; do not cite as theorem refutation",
+  "e_ps_oracle_alternatives": "adapted: hypothesized μ=1 for every arm (common protocol), not e-PS paper θ_alt=0.02k",
+  "greedy_eprocess": "adaptive",
+  "scale_policy": {
+    "default": "smoke",
+    "pilot_is_not_paper_scale": true
+  },
+  "status": "NOT_RUN",
+  "method": "greedy",
+  "setting": "contaminated",
+  "scale": "pilot",
+  "seed0": 0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "horizon_used": 22600,
+  "n_trials_used": 30,
+  "burnin_KB": 22600,
+  "stress_test": true,
+  "validity_label": "NOT_COMPARABLE"
+}
