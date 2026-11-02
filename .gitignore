@@ -73,6 +73,22 @@ models--*
 *.tgz
 *.7z
 
+# data_selection v0: official checkouts stay local. The parent repo records
+# manifests only. Do not vendor upstream trees or datasets.
+data_selection/baselines/*/official/
+data_selection/baselines/strap/official_robomimic_strap/
+data_selection/benchmarks/_sources/
+data_selection/references/hinflow/official/
+data_selection/policies/diffusion_policy_image/official/
+data_selection/artifacts/
+data_selection/**/downloads/
+data_selection/**/*.hdf5
+data_selection/**/*.h5
+data_selection/**/*.zarr/
+data_selection/**/*.zarr
+data_selection/manifests/http_probe.json
+data_selection/manifests/audit_scan.json
+
 # Editor and OS files
 .DS_Store
 .idea/

@@ -1,0 +1,485 @@
+repositories:
+- name: cupid
+  url: https://github.com/agiachris/cupid
+  local_path: baselines/cupid/official
+  role: published_selector
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:04.375415+00:00'
+  commit_sha: 2941eba9427a3398d3cbe26b10c01e3ece56bd18
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: INITIALIZED
+    detail: 'Submodule path ''third_party/trak'': checked out ''ff2fdc840dfdb51607b029777f16892a657b3978''
+
+      Submodule ''third_party/trak'' (https://github.com/agiachris/trak.git) registered
+      for path ''third_party/trak''
+
+      Cloning into ''/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/cupid/official/third_party/trak''...'
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/cupid/official'...
+- name: datamil
+  url: https://github.com/UT-Austin-RobIn/datamil
+  local_path: baselines/datamil/official
+  role: published_selector
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:04.376155+00:00'
+  commit_sha: f8fc4abccacd1e2b070e68128a7f2bce98f4b303
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/datamil/official'...
+- name: deminf
+  url: https://github.com/jhejna/demonstration-information
+  local_path: baselines/deminf/official
+  role: published_selector
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:04.375918+00:00'
+  commit_sha: 232151defb258b5ceb0a6b62644574b57d981b58
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/deminf/official'...
+- name: demo_score
+  url: https://github.com/alessing/demo-score
+  local_path: baselines/demo_score/official
+  role: published_selector
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:04.378853+00:00'
+  commit_sha: b82a5ece97b8975643b14703734afa8f24ab7b0a
+  license:
+    file: ''
+    first_line: ''
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/demo_score/official'...
+- name: diffusion_policy
+  url: https://github.com/real-stanford/diffusion_policy
+  local_path: policies/diffusion_policy_image/official
+  role: unified_policy
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:15.253032+00:00'
+  commit_sha: 5ba07ac6661db573af695b419a7947ecb704690f
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/policies/diffusion_policy_image/official'...
+- name: hinflow
+  url: https://github.com/yzc0731/HinFlow
+  local_path: references/hinflow/official
+  role: online_learning_reference
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:51:41.806221+00:00'
+  commit_sha: f80eeae61bc3e1b32b03b63f06e4add3943a473f
+  license:
+    file: ''
+    first_line: ''
+    spdx: UNVERIFIED
+  submodules:
+    status: SUBMODULE_FAILED
+    detail: 'submodule update timed out after 300s: Command ''[''git'', ''-C'', ''/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/references/hinflow/official'',
+      ''submodule'', ''update'', ''--init'', ''--depth'', ''1'', ''--recursive'']''
+      timed out after 300 seconds'
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: '/1341)
+
+    Updating files:  72% (966/1341)
+
+    Updating files:  73% (979/1341)
+
+    Updating files:  74% (993/1341)
+
+    Updating files:  75% (1006/1341)
+
+    Updating files:  76% (1020/1341)
+
+    Updating files:  77% (1033/1341)
+
+    Updating files:  78% (1046/1341)
+
+    Updating files:  79% (1060/1341)
+
+    Updating files:  80% (1073/1341)
+
+    Updating files:  81% (1087/1341)
+
+    Updating files:  82% (1100/1341)
+
+    Updating files:  83% (1114/1341)
+
+    Updating files:  84% (1127/1341)
+
+    Updating files:  85% (1140/1341)
+
+    Updating files:  86% (1154/1341)
+
+    Updating files:  87% (1167/1341)
+
+    Updating files:  88% (1181/1341)
+
+    Updating files:  89% (1194/1341)
+
+    Updating files:  90% (1207/1341)
+
+    Updating files:  91% (1221/1341)
+
+    Updating files:  92% (1234/1341)
+
+    Updating files:  93% (1248/1341)
+
+    Updating files:  94% (1261/1341)
+
+    Updating files:  95% (1274/1341)
+
+    Updating files:  96% (1288/1341)
+
+    Updating files:  97% (1301/1341)
+
+    Updating files:  98% (1315/1341)
+
+    Updating files:  99% (1328/1341)
+
+    Updating files: 100% (1341/1341)
+
+    Updating files: 100% (1341/1341), done.'
+- name: libero
+  url: https://github.com/Lifelong-Robot-Learning/LIBERO
+  local_path: benchmarks/_sources/libero
+  role: benchmark_source
+  clone_depth: 1
+  retrieved_at: '2026-11-02T14:06:54.303477+00:00'
+  commit_sha: 8f1084e3132a39270c3a13ebe37270a43ece2a01
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: 'iles:  71% (793/1116)
+
+    Updating files:  72% (804/1116)
+
+    Updating files:  73% (815/1116)
+
+    Updating files:  74% (826/1116)
+
+    Updating files:  75% (837/1116)
+
+    Updating files:  76% (849/1116)
+
+    Updating files:  77% (860/1116)
+
+    Updating files:  78% (871/1116)
+
+    Updating files:  79% (882/1116)
+
+    Updating files:  80% (893/1116)
+
+    Updating files:  81% (904/1116)
+
+    Updating files:  82% (916/1116)
+
+    Updating files:  83% (927/1116)
+
+    Updating files:  84% (938/1116)
+
+    Updating files:  85% (949/1116)
+
+    Updating files:  86% (960/1116)
+
+    Updating files:  87% (971/1116)
+
+    Updating files:  88% (983/1116)
+
+    Updating files:  89% (994/1116)
+
+    Updating files:  90% (1005/1116)
+
+    Updating files:  91% (1016/1116)
+
+    Updating files:  92% (1027/1116)
+
+    Updating files:  93% (1038/1116)
+
+    Updating files:  94% (1050/1116)
+
+    Updating files:  95% (1061/1116)
+
+    Updating files:  96% (1072/1116)
+
+    Updating files:  97% (1083/1116)
+
+    Updating files:  98% (1094/1116)
+
+    Updating files:  99% (1105/1116)
+
+    Updating files: 100% (1116/1116)
+
+    Updating files: 100% (1116/1116), done.'
+- name: robomimic
+  url: https://github.com/ARISE-Initiative/robomimic
+  local_path: benchmarks/_sources/robomimic
+  role: benchmark_source
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:55.391344+00:00'
+  commit_sha: d309eaecc18acf4152a830a895a6984b8ac71b05
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/benchmarks/_sources/robomimic'...
+- name: robomimic_strap
+  url: https://github.com/WEIRDLabUW/robomimic_strap
+  local_path: baselines/strap/official_robomimic_strap
+  role: strap_policy_companion
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:08.818218+00:00'
+  commit_sha: 3386adb5b664e9bedf88e7d26ced986439e67193
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: INITIALIZED
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/strap/official_robomimic_strap'...
+- name: robosuite
+  url: https://github.com/ARISE-Initiative/robosuite
+  local_path: benchmarks/_sources/robosuite
+  role: benchmark_source
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:58:55.157031+00:00'
+  commit_sha: 5ce6643f3092639d08f7b0f90ed1c6a84f50552c
+  license:
+    file: LICENSE
+    first_line: MIT License
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: '/1342)
+
+    Updating files:  72% (967/1342)
+
+    Updating files:  73% (980/1342)
+
+    Updating files:  74% (994/1342)
+
+    Updating files:  75% (1007/1342)
+
+    Updating files:  76% (1020/1342)
+
+    Updating files:  77% (1034/1342)
+
+    Updating files:  78% (1047/1342)
+
+    Updating files:  79% (1061/1342)
+
+    Updating files:  80% (1074/1342)
+
+    Updating files:  81% (1088/1342)
+
+    Updating files:  82% (1101/1342)
+
+    Updating files:  83% (1114/1342)
+
+    Updating files:  84% (1128/1342)
+
+    Updating files:  85% (1141/1342)
+
+    Updating files:  86% (1155/1342)
+
+    Updating files:  87% (1168/1342)
+
+    Updating files:  88% (1181/1342)
+
+    Updating files:  89% (1195/1342)
+
+    Updating files:  90% (1208/1342)
+
+    Updating files:  91% (1222/1342)
+
+    Updating files:  92% (1235/1342)
+
+    Updating files:  93% (1249/1342)
+
+    Updating files:  94% (1262/1342)
+
+    Updating files:  95% (1275/1342)
+
+    Updating files:  96% (1289/1342)
+
+    Updating files:  97% (1302/1342)
+
+    Updating files:  98% (1316/1342)
+
+    Updating files:  99% (1329/1342)
+
+    Updating files: 100% (1342/1342)
+
+    Updating files: 100% (1342/1342), done.'
+- name: strap
+  url: https://github.com/WEIRDLabUW/STRAP
+  local_path: baselines/strap/official
+  role: published_selector
+  clone_depth: 1
+  retrieved_at: '2026-11-02T13:45:08.760620+00:00'
+  commit_sha: a106da6cb178893923498f5cc0b4a51933c47ab3
+  license:
+    file: ''
+    first_line: ''
+    spdx: UNVERIFIED
+  submodules:
+    status: NO_SUBMODULES
+    detail: ''
+  clone_status: CLONED
+  failure_reason: ''
+  entrypoint_files: []
+  environment_files: []
+  citation: ''
+  original_tasks: []
+  data_artifacts_in_repo: false
+  weights_in_repo: false
+  seed_or_result_files: []
+  missing_artifacts: []
+  notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
+    full history.
+  clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/strap/official'...

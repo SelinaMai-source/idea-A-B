@@ -1,0 +1,10 @@
+name: hinflow_original
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: references/hinflow/official/environment.yml
+pins_from_upstream:
+  env_name: hinflow
+  python: "3.10.14"
+  pytorch: "2.4.0"
+  pytorch_cuda: ">=12.1"
+upgraded: false
+notes: "README also installs third_party robosuite, robomimic, and maniskill. ManiSkill is not a v0 benchmark. No LICENSE file was at the repo root."

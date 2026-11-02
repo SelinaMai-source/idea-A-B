@@ -1,0 +1,6 @@
+name: continual_learning
+benchmark: libero_continual
+matrix: "A[t, j] = success on task j after round t"
+forgetting_on_robomimic: N/A
+status: NOT_RUN
+note: "自建任务顺序，不混进 DataMIL 或 HinFlow 原文。"

@@ -1,0 +1,6 @@
+name: fixed_score
+kind: control
+paper_method: false
+selects: episode
+allowed_information: ["trajectory_score", "budget"]
+falls_back_to_random: false

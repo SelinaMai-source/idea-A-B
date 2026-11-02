@@ -1,0 +1,6 @@
+name: all_data
+kind: control
+paper_method: false
+selects: episode
+allowed_information: ["trajectory_ids", "budget"]
+falls_back_to_random: false

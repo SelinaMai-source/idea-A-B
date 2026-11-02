@@ -1,0 +1,20 @@
+family: image_cnn_conditional_unet_diffusion_policy
+official_repo: https://github.com/real-stanford/diffusion_policy
+pinned_checkout: policies/diffusion_policy_image/official
+workspace_file: diffusion_policy/config/train_diffusion_unet_image_workspace.yaml
+task_file_for_resolution: diffusion_policy/config/task/lift_image.yaml
+obs_horizon: 2
+prediction_horizon: 16
+action_horizon: 8
+image_resolution: [3, 84, 84]
+policy_target: diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy
+task_yaml_dataset_type: ph
+hyperparameters_status: READ_FROM_OFFICIAL_CONFIG
+notes: "lift_image.yaml 的 dataset_type 字面值是 ph。MH 是 experiments/image/<task>_mh/ 下的另一套目录，不能从 ph 字段推断。Transport 的 task yaml 动作维是 14，Lift/Can/Square 是 7。"
+forbidden_substitutes:
+  - octo
+  - bc_transformer
+  - hinflow_transformer
+  - mlp_only
+  - large_vla
+lowdim_counts_as_image_result: false

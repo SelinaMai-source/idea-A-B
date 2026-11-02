@@ -1,0 +1,19 @@
+name: hinflow_original
+leaderboard: none
+backbone: author_original_not_image_dp
+hindsight_injected_into_other_methods: false
+tasks_status: README_TASK_NAMES
+tasks:
+  - libero_butter
+  - libero_book
+  - libero_chocolate
+  - libero_microwave
+maniskill_tasks_not_in_v0:
+  - maniskill_pokecube
+  - maniskill_pullcubetool
+  - maniskill_placesphere
+entrypoints:
+  - scripts/train_planner.py
+  - scripts/train_hinflow_policy.py
+dataset_page: https://huggingface.co/datasets/Zhangchen0731/HinFlow
+formal_runs: NOT_RUN

@@ -1,5 +1,7 @@
 **Current Idea C v0 / v0.1 Experimental Results:** [`idea_C/v0实验版本+结果.md`](idea_C/v0实验版本+结果.md) · v0.1 对照 [`idea_C/reports/v0.1/PAPER_VS_REPRODUCTION.md`](idea_C/reports/v0.1/PAPER_VS_REPRODUCTION.md) · 图 [`idea_C/results/v0.1/figures/`](idea_C/results/v0.1/figures/)
 
+**Data Selection v0：** 具身在线数据选择复现框架在 [`data_selection/README.md`](data_selection/README.md)，总表 [`data_selection/data_selection_v0实验版本+结果.md`](data_selection/data_selection_v0实验版本+结果.md)。分支 `data_selection_v0`。论文格子在真实实验前保持 `NOT_RUN`。父测试路径不含该目录。
+
 # Idea A / Idea B：v1 烟测与 v1.1 确认性比较
 
 本地根目录：`/Users/grantwright/Desktop/科研/10.30新课题/v0`。目标分支：`v1.1`（v1 烟测在 `v1`）。远程：https://github.com/SelinaMai-source/idea-A-B.git

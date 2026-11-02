@@ -1,0 +1,5 @@
+name: original_reproduction
+uses_author_code: true
+uses_author_backbone: true
+counts_toward_image_dp_leaderboard: false
+status: NOT_RUN

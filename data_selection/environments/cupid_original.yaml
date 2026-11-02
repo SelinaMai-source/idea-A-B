@@ -1,0 +1,11 @@
+name: cupid_original
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: baselines/cupid/official/conda_environment.yaml
+pins_from_upstream:
+  env_name: cupid
+  python: "3.9"
+  pip: "22.2.2"
+  cudatoolkit: "11.6"
+  pytorch: "1.12.1"
+readme_notes: "README says Ubuntu 20.04, Python 3.9.15, mamba, and mujoco210."
+upgraded: false

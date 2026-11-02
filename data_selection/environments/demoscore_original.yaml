@@ -1,0 +1,8 @@
+name: demoscore_original
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: baselines/demo_score/official/README.md
+pins_from_readme:
+  python: "3.10"
+  envs: ["demoscore", "robodiff", "aloha"]
+upgraded: false
+notes: "Upstream asks for more than one Conda environment. None was created on this Mac."

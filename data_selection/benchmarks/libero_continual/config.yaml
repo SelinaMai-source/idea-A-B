@@ -1,0 +1,8 @@
+name: libero_continual
+family: libero
+task: task_incremental
+dataset_variant: constructed
+observation_mode: image
+forgetting_applicable: true
+image_keys_status: UNVERIFIED
+formal_runs: NOT_RUN

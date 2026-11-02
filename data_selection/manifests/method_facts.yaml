@@ -1,0 +1,79 @@
+methods:
+  cupid:
+    implementation_status: BLOCKED
+    entrypoint_verified: true
+    official_stack_executed: false
+    original_reproduction: BLOCKED_NO_CUDA
+    unified_adaptation: NOT_IMPLEMENTED
+    online_closed_loop: NOT_IMPLEMENTED
+    robomimic: SOURCE_PRESENT_RUNTIME_BLOCKED
+    libero: NOT_APPLICABLE
+    required_datasets: ["RoboMimic via the vendored Diffusion Policy stack"]
+    required_checkpoints: ["an initial Diffusion Policy checkpoint for influence scoring"]
+    estimated_run_cost: "unmeasured; README pins Ubuntu 20.04, Python 3.9, mujoco210"
+    reason: "CUPID README describes RoboMimic and PushT curation on Diffusion Policy. The influence entrypoints are present and were not executed. LIBERO is not an original CUPID benchmark in that README."
+  deminf:
+    implementation_status: BLOCKED
+    entrypoint_verified: true
+    official_stack_executed: false
+    original_reproduction: BLOCKED
+    unified_adaptation: NOT_IMPLEMENTED
+    online_closed_loop: NOT_IMPLEMENTED
+    robomimic: SOURCE_PRESENT_DIFFERENT_BACKBONE
+    libero: NOT_APPLICABLE
+    required_datasets: ["RoboMimic v0.2 datasets referenced by the DemInf README"]
+    required_checkpoints: []
+    estimated_run_cost: "unmeasured; README asks for Python 3.11 and jax 0.4.37"
+    reason: "DemInf estimates demonstration information with a JAX/OpenX stack and recommends relative actions. It is not the image CNN Diffusion Policy. The README does not mention LIBERO."
+  datamil:
+    implementation_status: BLOCKED
+    entrypoint_verified: true
+    official_stack_executed: false
+    original_reproduction: BLOCKED
+    unified_adaptation: NOT_IMPLEMENTED
+    online_closed_loop: NOT_IMPLEMENTED
+    robomimic: NOT_APPLICABLE
+    libero: SOURCE_PRESENT_OCTO_NOT_IMAGE_DP
+    required_datasets: ["LIBERO HDF5 converted to RLDS/MDS", "MetaWorld is out of this v0 scope"]
+    required_checkpoints: ["Octo is the LIBERO policy in the upstream README, not Diffusion Policy"]
+    estimated_run_cost: "unmeasured; README pins Python 3.10, TensorFlow 2.14.0, JAX 0.4.20, CUDA 11.8"
+    reason: "DataMIL's LIBERO path trains Octo. That is not swapped into the image Diffusion Policy leaderboard. MetaWorld is outside this phase."
+  demo_score:
+    implementation_status: BLOCKED
+    entrypoint_verified: true
+    official_stack_executed: false
+    original_reproduction: BLOCKED_NO_CUDA
+    unified_adaptation: NOT_IMPLEMENTED
+    online_closed_loop: NOT_IMPLEMENTED
+    robomimic: SOURCE_PRESENT_RUNTIME_BLOCKED
+    libero: NOT_APPLICABLE
+    required_datasets: ["successful and failed rollouts for the classifier"]
+    required_checkpoints: ["a base policy checkpoint before classifier filtering"]
+    estimated_run_cost: "unmeasured; README uses separate Python 3.10 environments for demoscore, robodiff, and aloha"
+    reason: "Demo-SCORE filters demos with a success/failure classifier. The vendored robodiff format can read robomimic-style data. LIBERO is not named in the upstream README. No classifier was trained."
+  strap:
+    implementation_status: BLOCKED
+    entrypoint_verified: true
+    official_stack_executed: false
+    original_reproduction: BLOCKED_NO_CUDA
+    unified_adaptation: NOT_IMPLEMENTED
+    online_closed_loop: NOT_IMPLEMENTED
+    robomimic: NOT_THE_PUBLISHED_LIBERO_PROTOCOL
+    libero: SOURCE_PRESENT_RUNTIME_BLOCKED
+    required_datasets: ["LIBERO-10", "LIBERO-90", "DINOv2 embeddings"]
+    required_checkpoints: []
+    estimated_run_cost: "unmeasured; README says encoding can take hours and retrieval returns sub-trajectories"
+    reason: "STRAP retrieves sub-trajectories with DINOv2 and subsequence DTW. Policy training lives in robomimic_strap. Episode-level budgets are not a substitute. Nothing was encoded or retrieved."
+  hinflow:
+    implementation_status: BLOCKED
+    entrypoint_verified: true
+    official_stack_executed: false
+    original_reproduction: BLOCKED_NO_CUDA
+    unified_adaptation: NOT_APPLICABLE
+    online_closed_loop: NOT_APPLICABLE
+    robomimic: NOT_APPLICABLE
+    libero: SEPARATE_HINFLOW_TASKS_NOT_LIBERO10
+    required_datasets: ["https://huggingface.co/datasets/Zhangchen0731/HinFlow"]
+    required_checkpoints: ["planner model_best.ckpt named by the README; not downloaded"]
+    estimated_run_cost: "unmeasured; environment.yml pins Python 3.10.14 and PyTorch 2.4.0"
+    reason: "README names libero_butter, libero_book, libero_chocolate, and libero_microwave, plus three ManiSkill tasks that are outside v0. The backbone is not image CNN Diffusion Policy. Entrypoints were not executed."

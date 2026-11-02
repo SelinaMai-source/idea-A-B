@@ -1,0 +1,289 @@
+rows:
+- method: all_data
+  kind: control
+  leaderboard_eligible: false
+  robomimic: SELECTOR_INTERFACE_ONLY
+  libero: SELECTOR_INTERFACE_ONLY
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: NOT_APPLICABLE
+  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
+  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  required_datasets: []
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
+  implementation_status: IMPLEMENTED_CPU_SELECTOR
+  selects: episode
+  reason: ''
+- method: cupid
+  kind: published_method
+  leaderboard_eligible: false
+  robomimic: SOURCE_PRESENT_RUNTIME_BLOCKED
+  libero: NOT_APPLICABLE
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: BLOCKED_NO_CUDA
+  unified_adaptation: NOT_IMPLEMENTED
+  online_closed_loop: NOT_IMPLEMENTED
+  required_datasets:
+  - RoboMimic via the vendored Diffusion Policy stack
+  required_checkpoints:
+  - an initial Diffusion Policy checkpoint for influence scoring
+  estimated_run_cost: unmeasured; README pins Ubuntu 20.04, Python 3.9, mujoco210
+  implementation_status: BLOCKED
+  selects: episode
+  reason: CUPID README describes RoboMimic and PushT curation on Diffusion Policy.
+    The influence entrypoints are present and were not executed. LIBERO is not an
+    original CUPID benchmark in that README.
+- method: datamil
+  kind: published_method
+  leaderboard_eligible: false
+  robomimic: NOT_APPLICABLE
+  libero: SOURCE_PRESENT_OCTO_NOT_IMAGE_DP
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: BLOCKED
+  unified_adaptation: NOT_IMPLEMENTED
+  online_closed_loop: NOT_IMPLEMENTED
+  required_datasets:
+  - LIBERO HDF5 converted to RLDS/MDS
+  - MetaWorld is out of this v0 scope
+  required_checkpoints:
+  - Octo is the LIBERO policy in the upstream README, not Diffusion Policy
+  estimated_run_cost: unmeasured; README pins Python 3.10, TensorFlow 2.14.0, JAX
+    0.4.20, CUDA 11.8
+  implementation_status: BLOCKED
+  selects: episode
+  reason: DataMIL's LIBERO path trains Octo. That is not swapped into the image Diffusion
+    Policy leaderboard. MetaWorld is outside this phase.
+- method: deminf
+  kind: published_method
+  leaderboard_eligible: false
+  robomimic: SOURCE_PRESENT_DIFFERENT_BACKBONE
+  libero: NOT_APPLICABLE
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: BLOCKED
+  unified_adaptation: NOT_IMPLEMENTED
+  online_closed_loop: NOT_IMPLEMENTED
+  required_datasets:
+  - RoboMimic v0.2 datasets referenced by the DemInf README
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; README asks for Python 3.11 and jax 0.4.37
+  implementation_status: BLOCKED
+  selects: episode
+  reason: DemInf estimates demonstration information with a JAX/OpenX stack and recommends
+    relative actions. It is not the image CNN Diffusion Policy. The README does not
+    mention LIBERO.
+- method: demo_score
+  kind: published_method
+  leaderboard_eligible: false
+  robomimic: SOURCE_PRESENT_RUNTIME_BLOCKED
+  libero: NOT_APPLICABLE
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: BLOCKED_NO_CUDA
+  unified_adaptation: NOT_IMPLEMENTED
+  online_closed_loop: NOT_IMPLEMENTED
+  required_datasets:
+  - successful and failed rollouts for the classifier
+  required_checkpoints:
+  - a base policy checkpoint before classifier filtering
+  estimated_run_cost: unmeasured; README uses separate Python 3.10 environments for
+    demoscore, robodiff, and aloha
+  implementation_status: BLOCKED
+  selects: episode
+  reason: Demo-SCORE filters demos with a success/failure classifier. The vendored
+    robodiff format can read robomimic-style data. LIBERO is not named in the upstream
+    README. No classifier was trained.
+- method: fifo
+  kind: control
+  leaderboard_eligible: false
+  robomimic: SELECTOR_INTERFACE_ONLY
+  libero: SELECTOR_INTERFACE_ONLY
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: NOT_APPLICABLE
+  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
+  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  required_datasets: []
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
+  implementation_status: IMPLEMENTED_CPU_SELECTOR
+  selects: episode
+  reason: ''
+- method: fixed_score
+  kind: control
+  leaderboard_eligible: false
+  robomimic: SELECTOR_INTERFACE_ONLY
+  libero: SELECTOR_INTERFACE_ONLY
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: NOT_APPLICABLE
+  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
+  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  required_datasets: []
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
+  implementation_status: IMPLEMENTED_CPU_SELECTOR
+  selects: episode
+  reason: ''
+- method: random
+  kind: control
+  leaderboard_eligible: false
+  robomimic: SELECTOR_INTERFACE_ONLY
+  libero: SELECTOR_INTERFACE_ONLY
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: NOT_APPLICABLE
+  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
+  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  required_datasets: []
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
+  implementation_status: IMPLEMENTED_CPU_SELECTOR
+  selects: episode
+  reason: ''
+- method: reservoir
+  kind: control
+  leaderboard_eligible: false
+  robomimic: SELECTOR_INTERFACE_ONLY
+  libero: SELECTOR_INTERFACE_ONLY
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: NOT_APPLICABLE
+  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
+  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  required_datasets: []
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
+  implementation_status: IMPLEMENTED_CPU_SELECTOR
+  selects: episode
+  reason: ''
+- method: strap
+  kind: published_method
+  leaderboard_eligible: false
+  robomimic: NOT_THE_PUBLISHED_LIBERO_PROTOCOL
+  libero: SOURCE_PRESENT_RUNTIME_BLOCKED
+  image_dp_compatibility: BLOCKED_NO_CUDA
+  original_paper_reproduction: BLOCKED_NO_CUDA
+  unified_adaptation: NOT_IMPLEMENTED
+  online_closed_loop: NOT_IMPLEMENTED
+  required_datasets:
+  - LIBERO-10
+  - LIBERO-90
+  - DINOv2 embeddings
+  required_checkpoints: []
+  estimated_run_cost: unmeasured; README says encoding can take hours and retrieval
+    returns sub-trajectories
+  implementation_status: BLOCKED
+  selects: subtrajectory
+  reason: STRAP retrieves sub-trajectories with DINOv2 and subsequence DTW. Policy
+    training lives in robomimic_strap. Episode-level budgets are not a substitute.
+    Nothing was encoded or retrieved.
+- method: hinflow
+  kind: online_learning_reference
+  leaderboard_eligible: false
+  robomimic: NOT_APPLICABLE
+  libero: SEPARATE_HINFLOW_TASKS_NOT_LIBERO10
+  image_dp_compatibility: NOT_APPLICABLE
+  original_paper_reproduction: BLOCKED_NO_CUDA
+  unified_adaptation: NOT_APPLICABLE
+  online_closed_loop: NOT_APPLICABLE
+  required_datasets:
+  - https://huggingface.co/datasets/Zhangchen0731/HinFlow
+  required_checkpoints:
+  - planner model_best.ckpt named by the README; not downloaded
+  estimated_run_cost: unmeasured; environment.yml pins Python 3.10.14 and PyTorch
+    2.4.0
+  implementation_status: BLOCKED
+  selects: not_a_selector
+  reason: README names libero_butter, libero_book, libero_chocolate, and libero_microwave,
+    plus three ManiSkill tasks that are outside v0. The backbone is not image CNN
+    Diffusion Policy. Entrypoints were not executed.
+unsupported:
+- method: all_data
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: cupid
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: datamil
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: deminf
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: demo_score
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: fifo
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: fixed_score
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: random
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: reservoir
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: strap
+  benchmark: libero_hinflow
+  reason: HinFlow's four-task protocol is not a cell of this selector's Image-DP comparison.
+- method: hinflow
+  benchmark: unified_image_dp_leaderboard
+  reason: HinFlow's backbone is not the image CNN Diffusion Policy, so it is excluded
+    from that leaderboard.
+- method: '*'
+  benchmark: libero_10
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+- method: '*'
+  benchmark: libero_90
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+- method: '*'
+  benchmark: libero_hinflow
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+- method: '*'
+  benchmark: robomimic_can_mh
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+- method: '*'
+  benchmark: robomimic_lift_mh
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+- method: '*'
+  benchmark: robomimic_square_mh
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+- method: '*'
+  benchmark: robomimic_transport_mh
+  metric: forgetting
+  reason: Forgetting and BWT apply only to the separate task-incremental LIBERO protocol.
+runnable_jobs:
+- method: all_data
+  benchmark: synthetic_vector
+  kind: cpu_selector_or_online_interface
+  device: cpu
+- method: fifo
+  benchmark: synthetic_vector
+  kind: cpu_selector_or_online_interface
+  device: cpu
+- method: fixed_score
+  benchmark: synthetic_vector
+  kind: cpu_selector_or_online_interface
+  device: cpu
+- method: random
+  benchmark: synthetic_vector
+  kind: cpu_selector_or_online_interface
+  device: cpu
+- method: reservoir
+  benchmark: synthetic_vector
+  kind: cpu_selector_or_online_interface
+  device: cpu
+benchmarks:
+- libero_10
+- libero_90
+- libero_continual
+- libero_hinflow
+- robomimic_can_mh
+- robomimic_lift_mh
+- robomimic_square_mh
+- robomimic_transport_mh
+note: No Image-DP or simulator job is runnable from this matrix. URLs are not implementation
+  evidence.

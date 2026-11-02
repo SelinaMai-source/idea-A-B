@@ -1,0 +1,9 @@
+name: deminf_original
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: baselines/deminf/official/requirements.txt
+pins_from_readme:
+  python: "3.11"
+  jax_cuda: "0.4.37"
+  extra: "jax[cuda12_pip]"
+upgraded: false
+notes: "Separate from the Diffusion Policy environment. GPU jaxlib is not installed here."

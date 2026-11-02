@@ -1,0 +1,8 @@
+name: robomimic_square_mh
+family: robomimic
+task: Square
+dataset_variant: MH
+observation_mode: image
+forgetting_applicable: false
+image_keys_status: UNVERIFIED
+formal_runs: NOT_RUN

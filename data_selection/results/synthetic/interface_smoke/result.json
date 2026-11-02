@@ -1,0 +1,60 @@
+{
+  "status": "SYNTHETIC_INTERFACE_SMOKE",
+  "protocol": "online_closed_loop_synthetic",
+  "policy_model": "NONE_SYNTHETIC_NO_DP_UPDATE",
+  "adaptation_status": "SYNTHETIC_INTERFACE_SMOKE",
+  "phases": [
+    "evaluate",
+    "collect",
+    "label",
+    "select",
+    "update",
+    "persist",
+    "evaluate",
+    "collect",
+    "label",
+    "select",
+    "update",
+    "persist"
+  ],
+  "expected_phase_cycle": [
+    "evaluate",
+    "collect",
+    "label",
+    "select",
+    "update",
+    "persist"
+  ],
+  "seed": 0,
+  "final_success_rate": 0.0,
+  "success_auc": 0.0,
+  "success_curve": [
+    [
+      8,
+      0.0
+    ],
+    [
+      16,
+      0.0
+    ]
+  ],
+  "environment_steps": 16,
+  "training_optimizer_steps": 0,
+  "selected_episodes": 1,
+  "selected_transitions": 4,
+  "selection_status": "OK",
+  "expert_query_count": 1,
+  "held_out": 4,
+  "imitation_pool": 1,
+  "hindsight_in_imitation": 0,
+  "selection_wallclock_seconds": 4.337448626756668e-05,
+  "rollout_wallclock_seconds": 5.7540833950042725e-05,
+  "training_wallclock_seconds": 0.0,
+  "total_wallclock_seconds": 0.00015629176050424576,
+  "gpu_hours": "N/A",
+  "cpu_hours": 4.3414377917846045e-08,
+  "paper_result": false,
+  "reason": "Synthetic interface smoke. Not a RoboMimic or LIBERO result and not a Diffusion Policy update.",
+  "requested_benchmark": "robomimic_lift_mh",
+  "method": "random"
+}

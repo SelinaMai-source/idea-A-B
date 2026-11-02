@@ -1,0 +1,13 @@
+name: datamil_original
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: baselines/datamil/official/README.md
+pins_from_readme:
+  python: "3.10"
+  tensorflow: "2.14.0"
+  numpy: "1.24.3"
+  jax: "0.4.20"
+  cudnn: "8.8"
+  cuda: "11.8"
+policy_for_libero: octo
+upgraded: false
+notes: "Octo stays in this environment. It is not the unified image Diffusion Policy."

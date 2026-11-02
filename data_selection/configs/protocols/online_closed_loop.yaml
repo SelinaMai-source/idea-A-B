@@ -1,0 +1,6 @@
+name: online_closed_loop
+phases: [evaluate, collect, label, select, update, persist]
+hindsight_injected_into_selectors: false
+failed_rollouts_are_imitation_targets: false
+mac_status: SYNTHETIC_INTERFACE_SMOKE
+paper_status: NOT_RUN

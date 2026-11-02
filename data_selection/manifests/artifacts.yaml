@@ -1,0 +1,65 @@
+# Measured on 2026-11-02 from HTTP HEAD/GET. Nothing in this list was downloaded.
+assets:
+  - name: robomimic_image
+    url: https://diffusion-policy.cs.columbia.edu/data/training/robomimic_image.zip
+    status: SOURCE_VERIFIED_DEFERRED
+    http_status: 200
+    content_length_bytes: 84754919326
+    sha256: ""
+    local_relative_path: ""
+    notes: "HEAD 200. Not downloaded. macOS downloader refuses this name."
+  - name: robomimic_lowdim
+    url: https://diffusion-policy.cs.columbia.edu/data/training/robomimic_lowdim.zip
+    status: SOURCE_VERIFIED_DEFERRED
+    http_status: 200
+    content_length_bytes: 1930261710
+    sha256: ""
+    local_relative_path: ""
+    notes: "HEAD 200. Not downloaded. Low-dimensional data is not an image Diffusion Policy result."
+  - name: libero_hdf5
+    url: https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets
+    status: SOURCE_VERIFIED_DEFERRED
+    http_status: 200
+    revision: f13aa24a3da8c43c7225569f28c562979fa0e35a
+    used_storage_bytes: 99830157042
+    sibling_size_bytes: 0
+    sha256: ""
+    local_relative_path: ""
+    notes: "HF and hf-mirror API both returned this revision and usedStorage. Sibling size fields were 0, so per-file sizes were not verified. HDF5 bodies were not downloaded. Suites visible in the tree: libero_10, libero_90, libero_goal, libero_object, libero_spatial."
+  - name: lerobot_libero
+    url: https://huggingface.co/datasets/lerobot/libero
+    status: NOT_YET_CHECKED
+    http_status: 200
+    content_length_bytes: 25012
+    sha256: ""
+    local_relative_path: ""
+    notes: "API HTTP 200, but the saved body was truncated at 20000 characters before a full sibling and revision parse. This is an adapted LeRobot schema, not the original LIBERO HDF5 protocol. Not downloaded."
+  - name: dp_image_lift_mh_cnn_train0_latest
+    url: https://diffusion-policy.cs.columbia.edu/data/experiments/image/lift_mh/diffusion_policy_cnn/train_0/checkpoints/latest.ckpt
+    status: SOURCE_VERIFIED_DEFERRED
+    http_status: 200
+    sha256: ""
+    local_relative_path: ""
+    notes: "Directory listing of train_0/checkpoints showed latest.ckpt and epoch=0250-test_mean_score=1.000.ckpt. The file body was not downloaded and its byte size was not requested."
+  - name: dp_image_lift_mh_cnn_train0_epoch
+    url: https://diffusion-policy.cs.columbia.edu/data/experiments/image/lift_mh/diffusion_policy_cnn/train_0/checkpoints/epoch=0250-test_mean_score=1.000.ckpt
+    status: SOURCE_VERIFIED_DEFERRED
+    http_status: 200
+    sha256: ""
+    local_relative_path: ""
+    notes: "Filename taken from the lift_mh train_0 listing only. Do not copy this epoch name onto can/square/transport."
+  - name: hinflow_hf
+    url: https://huggingface.co/datasets/Zhangchen0731/HinFlow
+    status: SOURCE_VERIFIED_DEFERRED
+    http_status: 200
+    revision: 63f6c6866538b32958e728d42c25d8a0e84b16b9
+    used_storage_bytes: 28527405288
+    sha256: ""
+    local_relative_path: ""
+    notes: "README points here. API lists planner model_best.ckpt and planner_dataset tar.zst for libero_butter, libero_book, libero_chocolate, libero_microwave, plus ManiSkill files and policy_dataset.tar.zst. Sibling sizes were absent. Nothing was downloaded."
+  - name: dp_image_other_task_checkpoints
+    url: https://diffusion-policy.cs.columbia.edu/data/experiments/image/
+    status: NOT_YET_CHECKED
+    sha256: ""
+    local_relative_path: ""
+    notes: "image/ listing contains can_mh, can_ph, lift_mh, lift_ph, pusht, square_mh, square_ph, tool_hang_ph, transport_mh, transport_ph. Checkpoint filenames inside those other task folders were not listed."

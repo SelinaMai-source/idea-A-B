@@ -1,0 +1,15 @@
+{
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "system": "Darwin",
+  "machine": "arm64",
+  "python": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "executable": "/Users/grantwright/Desktop/\u79d1\u7814/10.30\u65b0\u8bfe\u9898/v0/.venv/bin/python",
+  "nvidia_smi": "NOT_FOUND",
+  "torch": {
+    "importable": false,
+    "error": "ModuleNotFoundError: No module named 'torch'",
+    "cuda": false
+  },
+  "cuda_training_supported_here": false,
+  "notes": "Parent venv is used as-is. No system-wide install and no Conda environment was created."
+}

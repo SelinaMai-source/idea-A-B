@@ -1,0 +1,8 @@
+name: libero_hinflow
+family: libero
+task: HinFlow-LIBERO
+dataset_variant: hinflow_original
+observation_mode: image
+forgetting_applicable: false
+image_keys_status: UNVERIFIED
+formal_runs: NOT_RUN

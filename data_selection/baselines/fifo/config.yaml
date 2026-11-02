@@ -1,0 +1,6 @@
+name: fifo
+kind: control
+paper_method: false
+selects: episode
+allowed_information: ["trajectory_ids", "collected_step", "budget"]
+falls_back_to_random: false

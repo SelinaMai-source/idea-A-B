@@ -1,0 +1,12 @@
+name: unified_dp
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: policies/diffusion_policy_image/official/conda_environment.yaml
+pins_from_upstream:
+  env_name: robodiff
+  python: "3.9"
+  pip: "22.2.2"
+  cudatoolkit: "11.6"
+  pytorch: "1.12.1"
+  torchvision: "0.13.1"
+host_note: "Do not install this environment on the Mac. Linux NVIDIA only. Official README also asks for Ubuntu 20.04 mujoco apt packages."
+upgraded: false

@@ -1,0 +1,8 @@
+name: strap_original
+status: SPEC_RECORDED_NOT_INSTALLED
+source_file: baselines/strap/official/README.md
+pins_from_readme:
+  python: "3.10"
+companion_repo: baselines/strap/official_robomimic_strap
+upgraded: false
+notes: "Retrieval and policy training stay in separate upstream trees."

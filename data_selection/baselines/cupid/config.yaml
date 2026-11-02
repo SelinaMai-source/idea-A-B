@@ -1,0 +1,7 @@
+name: cupid
+kind: published_method
+paper_method: true
+selects: episode
+allowed_information: ("policy_checkpoint", "rollout_feedback", "influence_estimates")
+falls_back_to_random: false
+source_name: cupid

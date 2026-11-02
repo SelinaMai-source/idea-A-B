@@ -1,0 +1,7 @@
+name: deminf
+kind: published_method
+paper_method: true
+selects: episode
+allowed_information: ("demonstration_information",)
+falls_back_to_random: false
+source_name: deminf
