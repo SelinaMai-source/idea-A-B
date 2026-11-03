@@ -31,6 +31,13 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/cupid/official'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.578620+00:00'
+  observed_head: 2941eba9427a3398d3cbe26b10c01e3ece56bd18
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines:
+  - ' ff2fdc840dfdb51607b029777f16892a657b3978 third_party/trak (heads/main)'
 - name: datamil
   url: https://github.com/UT-Austin-RobIn/datamil
   local_path: baselines/datamil/official
@@ -58,6 +65,12 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/datamil/official'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.711945+00:00'
+  observed_head: f8fc4abccacd1e2b070e68128a7f2bce98f4b303
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: deminf
   url: https://github.com/jhejna/demonstration-information
   local_path: baselines/deminf/official
@@ -85,6 +98,12 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/deminf/official'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.731625+00:00'
+  observed_head: 232151defb258b5ceb0a6b62644574b57d981b58
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: demo_score
   url: https://github.com/alessing/demo-score
   local_path: baselines/demo_score/official
@@ -112,6 +131,12 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/demo_score/official'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.753006+00:00'
+  observed_head: b82a5ece97b8975643b14703734afa8f24ab7b0a
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: diffusion_policy
   url: https://github.com/real-stanford/diffusion_policy
   local_path: policies/diffusion_policy_image/official
@@ -139,6 +164,12 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/policies/diffusion_policy_image/official'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.792468+00:00'
+  observed_head: 5ba07ac6661db573af695b419a7947ecb704690f
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: hinflow
   url: https://github.com/yzc0731/HinFlow
   local_path: references/hinflow/official
@@ -228,6 +259,17 @@ repositories:
     Updating files: 100% (1341/1341)
 
     Updating files: 100% (1341/1341), done.'
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.819796+00:00'
+  observed_head: f80eeae61bc3e1b32b03b63f06e4add3943a473f
+  local_modifications:
+  - ' M third_party/co-tracker'
+  pin_verified: true
+  submodule_status_lines:
+  - +82e02e8029753ad4ef13cf06be7f4fc5facdda4d third_party/co-tracker (heads/main)
+  - -ac59dcadacd307e7acbbce22c708b6b1a28fb7bc third_party/maniskill
+  - -5dee58f9cc1235010d0877142b54d0e82dd23986 third_party/robomimic
+  - -eafb81f54ffc104f905ee48a16bb15f059176ad3 third_party/robosuite
 - name: libero
   url: https://github.com/Lifelong-Robot-Learning/LIBERO
   local_path: benchmarks/_sources/libero
@@ -315,6 +357,12 @@ repositories:
     Updating files: 100% (1116/1116)
 
     Updating files: 100% (1116/1116), done.'
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.936818+00:00'
+  observed_head: 8f1084e3132a39270c3a13ebe37270a43ece2a01
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: robomimic
   url: https://github.com/ARISE-Initiative/robomimic
   local_path: benchmarks/_sources/robomimic
@@ -342,6 +390,12 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/benchmarks/_sources/robomimic'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:33.978229+00:00'
+  observed_head: d309eaecc18acf4152a830a895a6984b8ac71b05
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: robomimic_strap
   url: https://github.com/WEIRDLabUW/robomimic_strap
   local_path: baselines/strap/official_robomimic_strap
@@ -369,6 +423,12 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/strap/official_robomimic_strap'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:34.001488+00:00'
+  observed_head: 3386adb5b664e9bedf88e7d26ced986439e67193
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: robosuite
   url: https://github.com/ARISE-Initiative/robosuite
   local_path: benchmarks/_sources/robosuite
@@ -456,6 +516,12 @@ repositories:
     Updating files: 100% (1342/1342)
 
     Updating files: 100% (1342/1342), done.'
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:34.068978+00:00'
+  observed_head: 5ce6643f3092639d08f7b0f90ed1c6a84f50552c
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
 - name: strap
   url: https://github.com/WEIRDLabUW/STRAP
   local_path: baselines/strap/official
@@ -483,3 +549,9 @@ repositories:
   notes: SHA is the remote HEAD observed at fetch time. Depth-1 clones do not contain
     full history.
   clone_log_tail: Cloning into '/Users/grantwright/Desktop/科研/10.30新课题/v0/data_selection/baselines/strap/official'...
+  expected_files_missing: []
+  verified_at: '2026-11-03T13:35:34.114681+00:00'
+  observed_head: a106da6cb178893923498f5cc0b4a51933c47ab3
+  local_modifications: []
+  pin_verified: true
+  submodule_status_lines: []
