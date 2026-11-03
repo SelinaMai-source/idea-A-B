@@ -1,33 +1,21 @@
 # Benchmark 协议
 
-四个 RoboMimic 任务、LIBERO-10、LIBERO-90、HinFlow 的 LIBERO 任务、自建任务增量，是四套协议，不共享「已经跑过」的结论。
+比较只用 RoboMimic 的 Lift / Can / Square / Transport MH，以及 LIBERO。统一策略是图像 CNN Diffusion Policy。Octo、BC-Transformer、HinFlow Transformer、纯 MLP、VLA 不进入这张表。
 
-## RoboMimic MH
+低维数据只保留接口，`formal_image_dp_result` 为 false。
 
-任务目录：`robomimic_lift_mh`、`robomimic_can_mh`、`robomimic_square_mh`、`robomimic_transport_mh`。
+## 变体
 
-官方图像实验目录已经列到：
+`diffusion_policy/config/task/lift_image.yaml` 和 `lift_image_abs.yaml` 的 `dataset_type` 都是 `ph`。这个字段不能写成 Lift MH。`benchmarks/common.py` 在路径或 HDF5 的 `env_args` 给出 `ph` 而 benchmark 要求 `MH` 时返回 `BLOCKED`。文件不存在也是 `BLOCKED`，不是成功。
 
-`https://diffusion-policy.cs.columbia.edu/data/experiments/image/{lift,can,square,transport}_mh/`
+各任务预期路径写在对应 `adapter.py` 的 `expected_dataset_path`，目前这些文件不在本机。
 
-每个任务目录下看得到 `diffusion_policy_cnn/`。只有 `image/lift_mh/diffusion_policy_cnn/train_0/checkpoints/` 被继续列过，里面是 `latest.ckpt` 和 `epoch=0250-test_mean_score=1.000.ckpt`。其他任务的 checkpoint 文件名没有列，状态是 `NOT_YET_CHECKED`。
+## 数据
 
-配置里的图像键，以 `lift_image.yaml` 为例，是 `agentview_image` 和 `robot0_eye_in_hand_image`。数据文件本身没打开。
+RoboMimic 图像包和低维包都只做了 HEAD，没有下载正文。LIBERO 使用官方 `benchmark_scripts/download_libero_datasets.py` 和 `yifengzhu-hf/LIBERO-datasets`。不用 `lerobot/libero` 代替官方 HDF5。没有要求时不下载 LIBERO-90 全量。
 
-遗忘：`N/A`。
+## 评估
 
-## LIBERO-10 与 LIBERO-90
+`load_dataset`、`validate_schema`、`make_environment`、`evaluate_policy` 在文件缺失或模拟器不可导入时失败关闭。`evaluate_policy` 没有环境对象时不填写成功率。
 
-LIBERO-10 是 DataMIL / STRAP 原文设定。LIBERO-90 在 STRAP README 里是检索库。二者都还没跑。
-
-Hugging Face `yifengzhu-hf/LIBERO-datasets` 的 revision 是 `f13aa24a3da8c43c7225569f28c562979fa0e35a`。`usedStorage` 是 99830157042 字节。同一次响应里单个文件的 `size` 是 0，所以没有逐文件大小。HDF5 没下载。
-
-`lerobot/libero` 的 API 返回了 HTTP 200，但保存的正文在 20000 字符处被截断，revision 和文件清单没有解析完。它是改编数据，不能和官方 HDF5 混用。
-
-## HinFlow 原文
-
-单独放在 `benchmarks/libero_hinflow/` 和 `references/hinflow/`。不进入 Image-DP 表。README 给出的 LIBERO 任务名是 `libero_butter`、`libero_book`、`libero_chocolate`、`libero_microwave`。ManiSkill 任务不在本阶段。子模块初始化超时，vendored 依赖可能不完整。
-
-## 自建持续学习
-
-`benchmarks/libero_continual/` 才记录 `A[t, j]`、遗忘和后向迁移。它不是 DataMIL 或 HinFlow 的原文设定。当前 `NOT_RUN`。
+遗忘、BWT、`average_success` 只属于 `libero_continual`。单任务 RoboMimic 是 `N/A`。`forward_transfer` 还没有定义。

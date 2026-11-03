@@ -193,3 +193,19 @@ HinFlow 不是数据选择 baseline，也不进入 Image-DP 排行榜。hindsigh
 |版本|Method|Benchmark|Task|Protocol|Model|Data Budget|Final Success|Success AUC|Forgetting|Total Compute|状态|结果解释|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 |SYNTHETIC_INTERFACE_SMOKE|random|synthetic_vector|synthetic_task|online_closed_loop_synthetic|NONE_SYNTHETIC_NO_DP_UPDATE|selected_episodes=1; selected_transitions=4|0.0|0.0|N/A|cpu_hours=4.3414377917846045e-08; gpu_hours=N/A|SYNTHETIC_INTERFACE_SMOKE|seed 0。环境步 16。专家查询 1。失败 rollout 没有进入模仿池。hindsight 没有注入。不是论文数字。|
+
+## 12. v0.1 工程里程碑
+
+这些行只记录 2026-11-03 的修复，不是论文成功率。旧行没有改。
+
+<!-- TABLE_ID: engineering_milestones -->
+
+|版本|Method|Benchmark|Task|Protocol|Model|Data Budget|Final Success|Success AUC|Forgetting|Total Compute|状态|结果解释|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|v0.1-source-audit|source_pins|official_checkouts|all_pinned_repos|source_audit|not_a_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED|11 个 pin 与 HEAD 一致。HinFlow 子模块未完成，不能当 ready。|
+|v0.1-dependency-repair|environments|host|macOS_arm64|environment|not_a_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED|父环境无 torch。conda 存在，但 Darwin 上 setup_environment.sh 退出码 2，没有创建环境。|
+|v0.1-asset-validation|assets|robomimic_and_lift_ckpt|Lift_MH|asset_head|not_a_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|SOURCE_VERIFIED_DEFERRED|图像 zip HEAD 84754919326。Lift MH 两个 ckpt HEAD 都是 4627773609。正文未下载。|
+|v0.1-policy-integration|all_data|robomimic_lift_mh|Lift MH|unified_offline|image_cnn_diffusion_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED|官方 workspace 路径已接上。本机无 CUDA、无 MH 数据，没有训练。ph 不是 MH。|
+|v0.1-baseline-integration|published_methods|robomimic_and_libero|all_tasks|original_and_unified|image_cnn_diffusion_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED|作者入口会调用或保持 BLOCKED。本机导入失败，没有随机分数。DataMIL 因 Octo 阻断。|
+|v0.1-tests|pytest|cpu|parent_venv|unit|not_a_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|COMPLETED_VERIFIED|49 tests，0 failed，2 skipped。skipped 是 CUDA 集成测试，不是论文通过。|
+|v0.1-gpu-smoke|all_data|robomimic_lift_mh|Lift MH|unified_offline|image_cnn_diffusion_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED_NO_CUDA|scripts/run_lift_mh_all_data.sh 在 Darwin 退出码 2。没有 GPU 训练。|

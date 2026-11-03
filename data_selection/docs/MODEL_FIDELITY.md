@@ -1,19 +1,25 @@
 # 模型保真
 
-统一比较只允许图像 CNN Conditional U-Net Diffusion Policy，类名来自官方配置：
+统一骨干是官方 `DiffusionUnetImagePolicy`，工作区类是 `TrainDiffusionUnetImageWorkspace`。适配器不重写扩散更新。`optimization_step` 调用 `policy.compute_loss`、`backward`、优化器和 scheduler。
 
-`diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy`
+2026-11-03 从 pin `5ba07ac6661db573af695b419a7947ecb704690f` 的 `diffusion_policy/config/train_diffusion_unet_image_workspace.yaml` 读到：
 
-读到的训练配置 `diffusion_policy/config/train_diffusion_unet_image_workspace.yaml`：
+- `n_obs_steps`: 2
+- `horizon`: 16
+- `n_action_steps`: 8
+- `policy._target_`: `diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy`
+- `optimizer._target_`: `torch.optim.AdamW`
+- `training.lr_scheduler`: cosine
+- `training.device`: `cuda:0`
+- 默认 task：`lift_image_abs`
 
-- `n_obs_steps` = 2
-- `horizon` = 16
-- `n_action_steps` = 8
+`lift_image.yaml` 的图像形状是 `[3, 84, 84]`，动作形状是 `[7]`，`dataset_type` 是 `ph`。`lift_image_abs.yaml` 的动作形状是 `[10]`，`dataset_type` 也是 `ph`。MH 必须来自 `mh` 数据集路径，不能从这两份 yaml 推断。
 
-`diffusion_policy/config/task/lift_image.yaml` 里 RGB 形状是 `[3, 84, 84]`，动作维是 7，`dataset_type` 的字面值是 `ph`。`transport_image.yaml` 的动作维是 14。这些是配置文件里的值。MH 的 HDF5/Zarr 没有打开，不能把 ph 配置说成 MH 数据已经核对。
+## Checkpoint 角色
 
-本机没有 torch，也没有 CUDA。策略探针状态是 `BLOCKED_NO_CUDA`。没有把骨干换成 Octo、BC-Transformer、HinFlow Transformer、纯 MLP 或大型 VLA。
+- `INITIAL_CHECKPOINT`：官方工作区自己的初始化。没有传入 checkpoint 时才是这条。
+- `PRETRAINED_EVALUATION_CHECKPOINT`：`epoch=0250-test_mean_score=1.000.ckpt`。不能当从零训练的初值。
+- `RETRAINED_CHECKPOINT`：同一次运行输出目录里的 checkpoint，只在 `--resume` 时使用。
+- `latest.ckpt` 不自动当成初值。Lift 路径里的文件不用于 Can、Square 或 Transport。
 
-低维数据包只允许做接口说明，不能填进图像结果表。
-
-原文复现必须用作者自己的骨干。DataMIL 的 LIBERO 路径在 README 里是 Octo。DemInf 是 JAX/OpenX。HinFlow 不是这个 U-Net。它们都不进入同一张 Image-DP 排行榜。
+本机没有 CUDA，也没有这些文件的正文。真实前向和反向留在带 `@pytest.mark.integration` 的测试里，Mac 上会 skip。skip 不是通过，也不是论文结果。

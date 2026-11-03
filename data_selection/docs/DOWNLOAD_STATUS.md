@@ -1,19 +1,20 @@
 # 下载状态
 
-本机只做了 HTTP 元数据。没有下载 zip、HDF5 或 checkpoint。
+2026-11-03 直接请求官方 URL，没有使用镜像。没有下载 zip 或 checkpoint 正文。`DOWNLOAD_FAILED` 只表示传输失败，和 `SOURCE_VERIFIED_DEFERRED` 不是一回事。
 
-| 资产 | URL | 状态 | 测到的大小 |
-| --- | --- | --- | --- |
-| RoboMimic 图像包 | https://diffusion-policy.cs.columbia.edu/data/training/robomimic_image.zip | SOURCE_VERIFIED_DEFERRED | HEAD `Content-Length` 84754919326 字节 |
-| RoboMimic 低维包 | https://diffusion-policy.cs.columbia.edu/data/training/robomimic_lowdim.zip | SOURCE_VERIFIED_DEFERRED | HEAD `Content-Length` 1930261710 字节 |
-| LIBERO HDF5 | https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets | SOURCE_VERIFIED_DEFERRED | revision `f13aa24a3da8c43c7225569f28c562979fa0e35a`；`usedStorage` 99830157042 字节；逐文件 size 为 0 |
-| LeRobot LIBERO | https://huggingface.co/datasets/lerobot/libero | NOT_YET_CHECKED | API HTTP 200，正文被截断，未解析完 |
-| Lift MH CNN train_0 | experiments/image/lift_mh/diffusion_policy_cnn/train_0/checkpoints/ | SOURCE_VERIFIED_DEFERRED | 目录里有 `latest.ckpt` 与 `epoch=0250-test_mean_score=1.000.ckpt`，未取文件大小 |
-| 其他任务 checkpoint | experiments/image/ 下的其余任务目录 | NOT_YET_CHECKED | 只确认了任务文件夹存在 |
-| HinFlow 数据与 planner | https://huggingface.co/datasets/Zhangchen0731/HinFlow | SOURCE_VERIFIED_DEFERRED | revision `63f6c6866538b32958e728d42c25d8a0e84b16b9`；`usedStorage` 28527405288 字节；逐文件大小缺失；未下载 |
+| 资产 | URL | 镜像 | HEAD | Content-Length | 本地大小 | sha256 | 状态 | 路径 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| robomimic_image | `https://diffusion-policy.cs.columbia.edu/data/training/robomimic_image.zip` | 无 | 200，`application/zip`，`Accept-Ranges: bytes` | 84754919326 | 未下载 | 空 | `SOURCE_VERIFIED_DEFERRED` | 空 |
+| robomimic_lowdim | `https://diffusion-policy.cs.columbia.edu/data/training/robomimic_lowdim.zip` | 无 | 200，`application/zip` | 1930261710 | 未下载 | 空 | `SOURCE_VERIFIED_DEFERRED` | 空 |
+| libero_hdf5 | `https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets` | 未改用 | 先前 API 200 | 仓库 `usedStorage` 99830157042；逐文件大小仍是 0 | 未下载 | 空 | `SOURCE_VERIFIED_DEFERRED` | 空 |
+| lerobot_libero | `https://huggingface.co/datasets/lerobot/libero` | 无 | 先前正文被截断 | 未作为官方 HDF5 | 未下载 | 空 | `NOT_YET_CHECKED` | 空 |
+| Lift MH `latest.ckpt` | `.../lift_mh/diffusion_policy_cnn/train_0/checkpoints/latest.ckpt` | 无 | 200 | 4627773609 | 未下载 | 空 | `SOURCE_VERIFIED_DEFERRED` | 空 |
+| Lift MH `epoch=0250-test_mean_score=1.000.ckpt` | 同目录 | 无 | 200 | 4627773609 | 未下载 | 空 | `SOURCE_VERIFIED_DEFERRED` | 空 |
+| 其他任务 checkpoint | `https://diffusion-policy.cs.columbia.edu/data/experiments/image/` | 无 | 目录 200 | 未逐文件 HEAD | 未下载 | 空 | `NOT_YET_CHECKED` | 空 |
+| HinFlow HF | `https://huggingface.co/datasets/Zhangchen0731/HinFlow` | 无 | 先前 API 200 | `usedStorage` 28527405288 | 未下载 | 空 | `SOURCE_VERIFIED_DEFERRED` | 空 |
 
-hf-mirror 对 `yifengzhu-hf/LIBERO-datasets` 返回了同一个 revision 和同一个 `usedStorage`。没有假设每个文件都被镜像。
+`image/` 下列出 `can_mh`、`can_ph`、`lift_mh`、`lift_ph`、`pusht`、`square_mh`、`square_ph`、`tool_hang_ph`、`transport_mh`、`transport_ph`。`can_mh`、`square_mh`、`transport_mh` 下面有 `diffusion_policy_cnn`、`diffusion_policy_transformer`、`ibc_dfo`、`lstm_gmm`。这些任务的 checkpoint 文件名没有打开。
 
-父仓库已经忽略 `*.parquet`，子目录不能把 parquet 重新放进 git。导出会写 CSV 和 JSONL。当前环境没有 pyarrow，parquet 记为未生成，不是空表冒充。
+Lift MH `train_0/checkpoints/` 只有 `latest.ckpt` 和 `epoch=0250-test_mean_score=1.000.ckpt`。后者是 `PRETRAINED_EVALUATION_CHECKPOINT`，不是 `INITIAL_CHECKPOINT`。`latest.ckpt` 也不当作从零训练的初值。
 
-校验和：官方响应里没有提供 sha256，清单里留空，不用自造哈希。
+本机下载器对 `robomimic_image` 和 `robomimic_lowdim` 返回 `SOURCE_VERIFIED_DEFERRED`，不把部分文件标成完成。

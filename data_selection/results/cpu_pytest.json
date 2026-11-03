@@ -1,0 +1,22 @@
+{
+  "command": "cd data_selection && ../.venv/bin/python -m pytest -q --tb=line --junitxml=/tmp/ds_pytest2.xml",
+  "returncode": 0,
+  "tests": 49,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 2,
+  "passed": 47,
+  "time_seconds": 1.586,
+  "python": "3.12.4",
+  "executable": "/Users/grantwright/Desktop/\u79d1\u7814/10.30\u65b0\u8bfe\u9898/v0/.venv/bin/python",
+  "platform": "macOS arm64",
+  "torch": "not installed",
+  "cuda": false,
+  "base_commit_before_repair_commits": "4597bafa1d0a05709c088dd3537587d61ff22f26",
+  "skipped_tests": [
+    "tests/test_integration_marker.py::test_simulator_rollout_requires_cuda",
+    "tests/test_pipeline_integrity.py::test_real_cuda_policy_forward_is_not_run_on_this_process"
+  ],
+  "paper_result": false,
+  "note": "Skipped tests require NVIDIA CUDA. They are not passes and not paper results."
+}
