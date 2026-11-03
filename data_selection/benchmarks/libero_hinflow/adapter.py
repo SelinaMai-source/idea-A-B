@@ -1,4 +1,7 @@
-class LiberoHinflowBenchmark:
+from benchmarks.common import BenchmarkBase
+
+
+class LiberoHinflowBenchmark(BenchmarkBase):
     name = "libero_hinflow"
     family = "libero"
     task = "HinFlow-LIBERO"
@@ -8,14 +11,7 @@ class LiberoHinflowBenchmark:
     forgetting_applicable = False
     protocol_id = "libero_hinflow"
     image_keys_status = "UNVERIFIED"
-
-    def schema(self):
-        return {
-            "image_keys_status": self.image_keys_status,
-            "action_convention": self.action_convention,
-            "forgetting_applicable": self.forgetting_applicable,
-            "formal_result_without_hdf5_or_zarr": False,
-        }
+    expected_dataset_path = ""
 
 
 BENCHMARK = LiberoHinflowBenchmark()

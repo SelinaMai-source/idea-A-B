@@ -1,4 +1,7 @@
-class RobomimicCanMhBenchmark:
+from benchmarks.common import BenchmarkBase
+
+
+class RobomimicCanMhBenchmark(BenchmarkBase):
     name = "robomimic_can_mh"
     family = "robomimic"
     task = "Can"
@@ -8,14 +11,7 @@ class RobomimicCanMhBenchmark:
     forgetting_applicable = False
     protocol_id = "robomimic_can_mh"
     image_keys_status = "UNVERIFIED"
-
-    def schema(self):
-        return {
-            "image_keys_status": self.image_keys_status,
-            "action_convention": self.action_convention,
-            "forgetting_applicable": self.forgetting_applicable,
-            "formal_result_without_hdf5_or_zarr": False,
-        }
+    expected_dataset_path = "artifacts/robomimic/can/mh/image.hdf5"
 
 
 BENCHMARK = RobomimicCanMhBenchmark()

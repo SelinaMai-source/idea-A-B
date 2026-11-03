@@ -1,4 +1,7 @@
-class Libero90Benchmark:
+from benchmarks.common import BenchmarkBase
+
+
+class Libero90Benchmark(BenchmarkBase):
     name = "libero_90"
     family = "libero"
     task = "LIBERO-90"
@@ -8,14 +11,7 @@ class Libero90Benchmark:
     forgetting_applicable = False
     protocol_id = "libero_90"
     image_keys_status = "UNVERIFIED"
-
-    def schema(self):
-        return {
-            "image_keys_status": self.image_keys_status,
-            "action_convention": self.action_convention,
-            "forgetting_applicable": self.forgetting_applicable,
-            "formal_result_without_hdf5_or_zarr": False,
-        }
+    expected_dataset_path = "artifacts/libero/libero_90"
 
 
 BENCHMARK = Libero90Benchmark()

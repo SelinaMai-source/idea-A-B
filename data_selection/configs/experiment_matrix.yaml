@@ -4,22 +4,31 @@ rows:
   leaderboard_eligible: false
   robomimic: SELECTOR_INTERFACE_ONLY
   libero: SELECTOR_INTERFACE_ONLY
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: NOT_APPLICABLE
-  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
-  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  unified_adaptation: NOT_YET_ADAPTED
+  online_closed_loop: NOT_IMPLEMENTED
   required_datasets: []
   required_checkpoints: []
   estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
   implementation_status: IMPLEMENTED_CPU_SELECTOR
   selects: episode
   reason: ''
+  SOURCE_STATUS: NOT_APPLICABLE
+  IMPLEMENTATION_STATUS: IMPLEMENTED_CPU_SELECTOR
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: NOT_APPLICABLE
+  UNIFIED_ADAPTATION_STATUS: NOT_YET_ADAPTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: cupid
   kind: published_method
   leaderboard_eligible: false
   robomimic: SOURCE_PRESENT_RUNTIME_BLOCKED
   libero: NOT_APPLICABLE
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: BLOCKED_NO_CUDA
   unified_adaptation: NOT_IMPLEMENTED
   online_closed_loop: NOT_IMPLEMENTED
@@ -28,17 +37,26 @@ rows:
   required_checkpoints:
   - an initial Diffusion Policy checkpoint for influence scoring
   estimated_run_cost: unmeasured; README pins Ubuntu 20.04, Python 3.9, mujoco210
-  implementation_status: BLOCKED
+  implementation_status: IMPLEMENTED
   selects: episode
   reason: CUPID README describes RoboMimic and PushT curation on Diffusion Policy.
     The influence entrypoints are present and were not executed. LIBERO is not an
     original CUPID benchmark in that README.
+  SOURCE_STATUS: CLONED
+  IMPLEMENTATION_STATUS: IMPLEMENTED
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: BLOCKED_NO_CUDA
+  UNIFIED_ADAPTATION_STATUS: NOT_IMPLEMENTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: datamil
   kind: published_method
   leaderboard_eligible: false
   robomimic: NOT_APPLICABLE
   libero: SOURCE_PRESENT_OCTO_NOT_IMAGE_DP
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: NOT_YET_ADAPTED
   original_paper_reproduction: BLOCKED
   unified_adaptation: NOT_IMPLEMENTED
   online_closed_loop: NOT_IMPLEMENTED
@@ -49,16 +67,25 @@ rows:
   - Octo is the LIBERO policy in the upstream README, not Diffusion Policy
   estimated_run_cost: unmeasured; README pins Python 3.10, TensorFlow 2.14.0, JAX
     0.4.20, CUDA 11.8
-  implementation_status: BLOCKED
+  implementation_status: IMPLEMENTED
   selects: episode
   reason: DataMIL's LIBERO path trains Octo. That is not swapped into the image Diffusion
     Policy leaderboard. MetaWorld is outside this phase.
+  SOURCE_STATUS: CLONED
+  IMPLEMENTATION_STATUS: IMPLEMENTED
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: BLOCKED
+  UNIFIED_ADAPTATION_STATUS: NOT_IMPLEMENTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: deminf
   kind: published_method
   leaderboard_eligible: false
   robomimic: SOURCE_PRESENT_DIFFERENT_BACKBONE
   libero: NOT_APPLICABLE
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: NOT_YET_ADAPTED
   original_paper_reproduction: BLOCKED
   unified_adaptation: NOT_IMPLEMENTED
   online_closed_loop: NOT_IMPLEMENTED
@@ -66,17 +93,26 @@ rows:
   - RoboMimic v0.2 datasets referenced by the DemInf README
   required_checkpoints: []
   estimated_run_cost: unmeasured; README asks for Python 3.11 and jax 0.4.37
-  implementation_status: BLOCKED
+  implementation_status: IMPLEMENTED
   selects: episode
   reason: DemInf estimates demonstration information with a JAX/OpenX stack and recommends
     relative actions. It is not the image CNN Diffusion Policy. The README does not
     mention LIBERO.
+  SOURCE_STATUS: CLONED
+  IMPLEMENTATION_STATUS: IMPLEMENTED
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: BLOCKED
+  UNIFIED_ADAPTATION_STATUS: NOT_IMPLEMENTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: demo_score
   kind: published_method
   leaderboard_eligible: false
   robomimic: SOURCE_PRESENT_RUNTIME_BLOCKED
   libero: NOT_APPLICABLE
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: BLOCKED_NO_CUDA
   unified_adaptation: NOT_IMPLEMENTED
   online_closed_loop: NOT_IMPLEMENTED
@@ -86,77 +122,122 @@ rows:
   - a base policy checkpoint before classifier filtering
   estimated_run_cost: unmeasured; README uses separate Python 3.10 environments for
     demoscore, robodiff, and aloha
-  implementation_status: BLOCKED
+  implementation_status: IMPLEMENTED
   selects: episode
   reason: Demo-SCORE filters demos with a success/failure classifier. The vendored
     robodiff format can read robomimic-style data. LIBERO is not named in the upstream
     README. No classifier was trained.
+  SOURCE_STATUS: CLONED
+  IMPLEMENTATION_STATUS: IMPLEMENTED
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: BLOCKED_NO_CUDA
+  UNIFIED_ADAPTATION_STATUS: NOT_IMPLEMENTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: fifo
   kind: control
   leaderboard_eligible: false
   robomimic: SELECTOR_INTERFACE_ONLY
   libero: SELECTOR_INTERFACE_ONLY
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: NOT_APPLICABLE
-  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
-  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  unified_adaptation: NOT_YET_ADAPTED
+  online_closed_loop: NOT_IMPLEMENTED
   required_datasets: []
   required_checkpoints: []
   estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
   implementation_status: IMPLEMENTED_CPU_SELECTOR
   selects: episode
   reason: ''
+  SOURCE_STATUS: NOT_APPLICABLE
+  IMPLEMENTATION_STATUS: IMPLEMENTED_CPU_SELECTOR
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: NOT_APPLICABLE
+  UNIFIED_ADAPTATION_STATUS: NOT_YET_ADAPTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: fixed_score
   kind: control
   leaderboard_eligible: false
   robomimic: SELECTOR_INTERFACE_ONLY
   libero: SELECTOR_INTERFACE_ONLY
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: NOT_APPLICABLE
-  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
-  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  unified_adaptation: NOT_YET_ADAPTED
+  online_closed_loop: NOT_IMPLEMENTED
   required_datasets: []
   required_checkpoints: []
   estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
   implementation_status: IMPLEMENTED_CPU_SELECTOR
   selects: episode
   reason: ''
+  SOURCE_STATUS: NOT_APPLICABLE
+  IMPLEMENTATION_STATUS: IMPLEMENTED_CPU_SELECTOR
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: NOT_APPLICABLE
+  UNIFIED_ADAPTATION_STATUS: NOT_YET_ADAPTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: random
   kind: control
   leaderboard_eligible: false
   robomimic: SELECTOR_INTERFACE_ONLY
   libero: SELECTOR_INTERFACE_ONLY
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: NOT_APPLICABLE
-  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
-  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  unified_adaptation: NOT_YET_ADAPTED
+  online_closed_loop: NOT_IMPLEMENTED
   required_datasets: []
   required_checkpoints: []
   estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
   implementation_status: IMPLEMENTED_CPU_SELECTOR
   selects: episode
   reason: ''
+  SOURCE_STATUS: NOT_APPLICABLE
+  IMPLEMENTATION_STATUS: IMPLEMENTED_CPU_SELECTOR
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: NOT_APPLICABLE
+  UNIFIED_ADAPTATION_STATUS: NOT_YET_ADAPTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: reservoir
   kind: control
   leaderboard_eligible: false
   robomimic: SELECTOR_INTERFACE_ONLY
   libero: SELECTOR_INTERFACE_ONLY
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: COMPATIBLE_IMAGE_CNN_DP
   original_paper_reproduction: NOT_APPLICABLE
-  unified_adaptation: INTERFACE_ONLY_NO_IMAGE_DP_TRAINING
-  online_closed_loop: SYNTHETIC_INTERFACE_ONLY
+  unified_adaptation: NOT_YET_ADAPTED
+  online_closed_loop: NOT_IMPLEMENTED
   required_datasets: []
   required_checkpoints: []
   estimated_run_cost: unmeasured; image DP training is not scheduled on this Mac
   implementation_status: IMPLEMENTED_CPU_SELECTOR
   selects: episode
   reason: ''
+  SOURCE_STATUS: NOT_APPLICABLE
+  IMPLEMENTATION_STATUS: IMPLEMENTED_CPU_SELECTOR
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: NOT_APPLICABLE
+  UNIFIED_ADAPTATION_STATUS: NOT_YET_ADAPTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: strap
   kind: published_method
   leaderboard_eligible: false
   robomimic: NOT_THE_PUBLISHED_LIBERO_PROTOCOL
   libero: SOURCE_PRESENT_RUNTIME_BLOCKED
-  image_dp_compatibility: BLOCKED_NO_CUDA
+  image_dp_compatibility: NOT_YET_ADAPTED
   original_paper_reproduction: BLOCKED_NO_CUDA
   unified_adaptation: NOT_IMPLEMENTED
   online_closed_loop: NOT_IMPLEMENTED
@@ -167,11 +248,20 @@ rows:
   required_checkpoints: []
   estimated_run_cost: unmeasured; README says encoding can take hours and retrieval
     returns sub-trajectories
-  implementation_status: BLOCKED
+  implementation_status: IMPLEMENTED
   selects: subtrajectory
   reason: STRAP retrieves sub-trajectories with DINOv2 and subsequence DTW. Policy
     training lives in robomimic_strap. Episode-level budgets are not a substitute.
     Nothing was encoded or retrieved.
+  SOURCE_STATUS: CLONED
+  IMPLEMENTATION_STATUS: IMPLEMENTED
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: BLOCKED_NO_CUDA
+  UNIFIED_ADAPTATION_STATUS: NOT_IMPLEMENTED
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 - method: hinflow
   kind: online_learning_reference
   leaderboard_eligible: false
@@ -192,6 +282,15 @@ rows:
   reason: README names libero_butter, libero_book, libero_chocolate, and libero_microwave,
     plus three ManiSkill tasks that are outside v0. The backbone is not image CNN
     Diffusion Policy. Entrypoints were not executed.
+  SOURCE_STATUS: CLONED_SUBMODULES_INCOMPLETE
+  IMPLEMENTATION_STATUS: NOT_APPLICABLE
+  DEPENDENCY_STATUS: NOT_INSTALLED
+  DATA_STATUS: NOT_PRESENT
+  MODEL_STATUS: NOT_TRAINED
+  ORIGINAL_FIDELITY_STATUS: BLOCKED_NO_CUDA
+  UNIFIED_ADAPTATION_STATUS: NOT_APPLICABLE
+  RUNTIME_READINESS: BLOCKED_NO_CUDA
+  EXPERIMENT_STATUS: NOT_RUN
 unsupported:
 - method: all_data
   benchmark: libero_hinflow
@@ -285,5 +384,6 @@ benchmarks:
 - robomimic_lift_mh
 - robomimic_square_mh
 - robomimic_transport_mh
-note: No Image-DP or simulator job is runnable from this matrix. URLs are not implementation
-  evidence.
+note: Runnable jobs are CPU selector checks only. Image-DP compatibility is not the
+  same field as RUNTIME_READINESS. A missing CUDA device does not mean the image CNN
+  policy code is absent.

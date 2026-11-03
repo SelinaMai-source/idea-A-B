@@ -1,0 +1,11 @@
+method: all_data
+benchmark: robomimic_lift_mh
+task: lift
+seed: 0
+device: cuda
+retention_ratio: 1.0
+dataset_env: ROBOMIMIC_LIFT_MH_DATASET
+dataset_path: ""
+policy_config: policies/diffusion_policy_image/config.yaml
+expected_variant: mh
+notes: "dataset_path stays empty until ROBOMIMIC_LIFT_MH_DATASET points at a real Lift MH image hdf5. lift_image.yaml dataset_type ph is not this file."

@@ -58,12 +58,15 @@ def main() -> int:
         return 0
     real = [row for row in rows if row.get("paper_result") is True]
     synthetic = [row for row in rows if row.get("status") == "SYNTHETIC_INTERFACE_SMOKE"]
+    failed = [row for row in rows if row.get("status") == "FAILED"]
     summary = {
         "paper_results": len(real),
         "synthetic_interface_rows": len(synthetic),
+        "failed_rows": len(failed),
         "other_rows": len(rows) - len(real) - len(synthetic),
         "benchmark_cells": "NOT_RUN" if not real else "SEE_ROWS",
         "sources": [row.get("_source") for row in rows],
+        "failed_sources": [row.get("_source") for row in failed],
     }
     text = json.dumps(summary, indent=2, ensure_ascii=False) + "\n"
     if args.output_dir:

@@ -151,3 +151,72 @@ class OnlineLoop:
             "paper_result": False,
             "reason": "Synthetic interface smoke. Not a RoboMimic or LIBERO result and not a Diffusion Policy update.",
         }
+
+
+class RealOnlineProtocol:
+    """evaluate → collect → label → select → update → persist.
+
+    The CLI keeps P2 BLOCKED until a real policy, simulator, and supervision
+    signal are all true. A unit test may inject fakes; that result is not a
+    paper number and does not copy the synthetic loop's optimizer count.
+    """
+
+    def run(
+        self,
+        *,
+        seed: int,
+        online_steps: int | None,
+        policy_ready: bool,
+        simulator_ready: bool,
+        supervision_ready: bool,
+        hooks: dict | None = None,
+        resume_state: dict | None = None,
+    ) -> dict:
+        missing = []
+        if not policy_ready:
+            missing.append("policy")
+        if not simulator_ready:
+            missing.append("simulator")
+        if not supervision_ready:
+            missing.append("supervision")
+        if missing or not hooks:
+            return {
+                "status": "BLOCKED",
+                "protocol": "online_closed_loop",
+                "paper_result": False,
+                "training_optimizer_steps": None,
+                "success_auc": "N/A",
+                "final_success_rate": "NOT_RUN",
+                "requested_online_steps": online_steps,
+                "seed": seed,
+                "missing": missing or ["hooks"],
+                "phases_defined": list(PHASES),
+                "phases_executed": [],
+                "reason": (
+                    "P2 online experiments stay BLOCKED until policy, simulator, "
+                    "and supervision actually work"
+                ),
+            }
+        state = dict(resume_state or {"completed_phases": [], "optimizer_steps": 0})
+        executed = []
+        for phase in PHASES:
+            hook = hooks[phase]
+            state = hook(state)
+            executed.append(phase)
+            state.setdefault("completed_phases", [])
+            state["completed_phases"].append(phase)
+        return {
+            "status": "STATE_MACHINE_EXERCISED_WITH_FAKES" if hooks.get("fakes") else "RUNNING",
+            "protocol": "online_closed_loop",
+            "paper_result": False,
+            "training_optimizer_steps": state.get("optimizer_steps"),
+            "success_auc": "N/A",
+            "final_success_rate": "NOT_RUN",
+            "requested_online_steps": online_steps,
+            "seed": seed,
+            "missing": [],
+            "phases_defined": list(PHASES),
+            "phases_executed": executed,
+            "state": state,
+            "reason": "State machine ran the injected hooks. This is not a RoboMimic or LIBERO result.",
+        }

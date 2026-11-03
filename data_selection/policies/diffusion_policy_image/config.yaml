@@ -10,7 +10,7 @@ image_resolution: [3, 84, 84]
 policy_target: diffusion_policy.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy
 task_yaml_dataset_type: ph
 hyperparameters_status: READ_FROM_OFFICIAL_CONFIG
-notes: "lift_image.yaml 的 dataset_type 字面值是 ph。MH 是 experiments/image/<task>_mh/ 下的另一套目录，不能从 ph 字段推断。Transport 的 task yaml 动作维是 14，Lift/Can/Square 是 7。"
+notes: "2026-11-03 从 pinned workspace yaml 读到 n_obs_steps=2、horizon=16、n_action_steps=8。这些数字来自文件，不是另行假设。workspace 默认 task 是 lift_image_abs。lift_image.yaml 与 lift_image_abs.yaml 的 dataset_type 都是 ph。ph 不是 Lift MH。相对动作维度是 7，绝对动作维度是 10。Transport 不能从 Lift 的文件推断。"
 forbidden_substitutes:
   - octo
   - bc_transformer

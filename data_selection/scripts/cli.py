@@ -1,11 +1,20 @@
-"""Shared CLI. ``--dry-run`` writes a plan JSON and does not train or download."""
+"""Shared CLI.
+
+``--dry-run`` writes a plan and does not train.
+``--synthetic`` stays on the synthetic interface.
+A real invocation calls the image Diffusion Policy path or fails closed.
+``--device cuda`` is blocked only when CUDA is actually unavailable.
+"""
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -16,7 +25,10 @@ from core.seeds import set_seed  # noqa: E402
 from core.status import BLOCKED_NO_CUDA, SYNTHETIC_INTERFACE_SMOKE  # noqa: E402
 from core.trajectories import make_synthetic_trajectory  # noqa: E402
 from core.types import SelectionBudget, SelectionContext  # noqa: E402
-from policies.diffusion_policy_image.adapter import probe  # noqa: E402
+from policies.diffusion_policy_image.adapter import (  # noqa: E402
+    probe,
+    real_device_blocker,
+)
 
 
 def build_parser(protocol: str) -> argparse.ArgumentParser:
@@ -58,6 +70,29 @@ def _benchmark(name: str | None):
     raise SystemExit(f"unknown or unregistered benchmark: {name}")
 
 
+def _load_config(args: argparse.Namespace) -> dict:
+    if not args.config:
+        return {}
+    path = Path(args.config)
+    if not path.is_file():
+        raise SystemExit(f"config file is absent: {path}")
+    payload = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    if not isinstance(payload, dict):
+        raise SystemExit(f"config must be a mapping: {path}")
+    return payload
+
+
+def _dataset_path(args: argparse.Namespace, bench, config: dict) -> str:
+    if config.get("dataset_path"):
+        return str(config["dataset_path"])
+    env_key = config.get("dataset_env")
+    if env_key and os.environ.get(str(env_key)):
+        return os.environ[str(env_key)]
+    if bench is not None and bench.name == "robomimic_lift_mh" and os.environ.get("ROBOMIMIC_LIFT_MH_DATASET"):
+        return os.environ["ROBOMIMIC_LIFT_MH_DATASET"]
+    return str(getattr(bench, "expected_dataset_path", "") or "")
+
+
 def _plan(args: argparse.Namespace, status: str, reason: str) -> dict:
     resume_from = None
     if args.resume and args.output_dir:
@@ -71,6 +106,7 @@ def _plan(args: argparse.Namespace, status: str, reason: str) -> dict:
         "benchmark": args.benchmark,
         "task": args.task,
         "seed": args.seed,
+        "config": args.config,
         "device": args.device,
         "checkpoint": args.checkpoint,
         "retention_ratio": args.retention_ratio,
@@ -88,6 +124,38 @@ def _plan(args: argparse.Namespace, status: str, reason: str) -> dict:
 def _write(path: Path, payload: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _budget(args: argparse.Namespace) -> SelectionBudget:
+    max_episodes = None
+    if args.retention_ratio == 1.0:
+        max_episodes = None
+    return SelectionBudget(
+        max_episodes=max_episodes,
+        max_transitions=args.online_steps if args.protocol != "online_closed_loop" else None,
+        retention_ratio=args.retention_ratio,
+    )
+
+
+def _common(args: argparse.Namespace, payload: dict) -> dict:
+    payload.update(
+        {
+            "protocol": args.protocol,
+            "method": args.method,
+            "benchmark": args.benchmark,
+            "task": args.task,
+            "seed": args.seed,
+            "config": args.config,
+            "device": args.device,
+            "checkpoint": args.checkpoint,
+            "retention_ratio": args.retention_ratio,
+            "online_steps": args.online_steps,
+            "resume": bool(args.resume),
+            "paper_result": False,
+            "will_download": False,
+        }
+    )
+    return payload
 
 
 def execute(args: argparse.Namespace) -> int:
@@ -113,8 +181,10 @@ def execute(args: argparse.Namespace) -> int:
         else:
             status = "SYNTHETIC_INTERFACE_ONLY"
             reason = "Dry run does not train. A later --synthetic invocation only exercises the CPU selector."
-        if policy["status"] == BLOCKED_NO_CUDA and args.device == "cuda":
-            reason = reason + " Requested CUDA device is unavailable."
+        cuda_ok = bool(policy.get("cuda"))
+        device_note = real_device_blocker(args.device, cuda_ok=cuda_ok, cuda_detail=policy.get("torch_import_error") or "")
+        if device_note:
+            reason = reason + " " + device_note
         payload = _plan(args, status, reason)
         payload["policy_probe"] = policy["status"]
         payload["benchmark_forgetting_applicable"] = bench.forgetting_applicable
@@ -125,35 +195,23 @@ def execute(args: argparse.Namespace) -> int:
         return 0
 
     out = Path(args.output_dir)
-    if args.device == "cuda" or policy["status"] == BLOCKED_NO_CUDA and not args.synthetic:
-        payload = {
-            "status": BLOCKED_NO_CUDA,
-            "paper_result": False,
-            "method": args.method,
-            "benchmark": args.benchmark,
-            "seed": args.seed,
-            "reason": "Image Diffusion Policy training is not run on this machine.",
-            "policy_probe": policy,
-        }
-        _write(out / "result.json", payload)
-        return 2
-    if not args.synthetic:
-        payload = {
-            "status": "NOT_RUN",
-            "paper_result": False,
-            "reason": "No benchmark run was requested. Pass --dry-run or --synthetic.",
-        }
-        _write(out / "result.json", payload)
-        return 2
+    if args.synthetic:
+        return _synthetic(args, spec, out)
+    return _real(args, spec, bench, policy, out)
+
+
+def _synthetic(args: argparse.Namespace, spec, out: Path) -> int:
     if spec is None or spec.kind != "control":
         if spec is None:
             _write(
                 out / "result.json",
-                {
-                    "status": "NOT_APPLICABLE",
-                    "paper_result": False,
-                    "reason": "HinFlow is not a unified selector.",
-                },
+                _common(
+                    args,
+                    {
+                        "status": "NOT_APPLICABLE",
+                        "reason": "HinFlow is not a unified selector.",
+                    },
+                ),
             )
             return 2
         blocked = spec.select(
@@ -163,12 +221,14 @@ def execute(args: argparse.Namespace) -> int:
         )
         _write(
             out / "result.json",
-            {
-                "status": blocked.status,
-                "reason": blocked.reason,
-                "paper_result": False,
-                "selected_ids": blocked.selected_ids,
-            },
+            _common(
+                args,
+                {
+                    "status": blocked.status,
+                    "reason": blocked.reason,
+                    "selected_ids": blocked.selected_ids,
+                },
+            ),
         )
         return 2
     if args.protocol == "online_closed_loop":
@@ -190,6 +250,7 @@ def execute(args: argparse.Namespace) -> int:
         result["paper_result"] = False
         result["requested_benchmark"] = args.benchmark
         result["method"] = spec.name
+        result["training_optimizer_steps"] = 0
         _write(out / "result.json", result)
         _write(out / "state.json", {"completed_phases": ["synthetic_online"], "paper_result": False})
         return 0
@@ -203,22 +264,180 @@ def execute(args: argparse.Namespace) -> int:
         max_transitions=args.online_steps,
         retention_ratio=args.retention_ratio,
     )
-    selected = spec.select(pool, budget, SelectionContext(seed=args.seed, scores={item.trajectory_id: item.score or 0.0 for item in pool}))
-    payload = {
-        "status": SYNTHETIC_INTERFACE_SMOKE,
-        "paper_result": False,
-        "protocol": args.protocol,
-        "method": spec.name,
-        "benchmark": "synthetic_vector",
-        "requested_benchmark": args.benchmark,
-        "seed": args.seed,
-        "selection_status": selected.status,
-        "selected_ids": selected.selected_ids,
-        "selected_episodes": selected.selected_episodes,
-        "selected_transitions": selected.selected_transitions,
-        "training_optimizer_steps": 0,
-        "reason": "CPU synthetic selector smoke. Not a published benchmark number.",
-    }
+    selected = spec.select(
+        pool,
+        budget,
+        SelectionContext(
+            seed=args.seed,
+            scores={item.trajectory_id: item.score or 0.0 for item in pool},
+            score_provenance="synthetic_interface_scores",
+        ),
+    )
+    payload = _common(
+        args,
+        {
+            "status": SYNTHETIC_INTERFACE_SMOKE,
+            "benchmark": "synthetic_vector",
+            "requested_benchmark": args.benchmark,
+            "selection_status": selected.status,
+            "selected_ids": selected.selected_ids,
+            "selected_episodes": selected.selected_episodes,
+            "selected_transitions": selected.selected_transitions,
+            "training_optimizer_steps": 0,
+            "reason": "CPU synthetic selector smoke. Not a published benchmark number.",
+        },
+    )
     _write(out / "result.json", payload)
     _write(out / "state.json", {"completed_phases": ["plan", "synthetic_select"], "paper_result": False})
     return 0
+
+
+def _real(args: argparse.Namespace, spec, bench, policy: dict, out: Path) -> int:
+    from policies.diffusion_policy_image.adapter import execute_image_dp
+
+    cuda_ok = bool(policy.get("cuda"))
+    blocker = real_device_blocker(
+        args.device,
+        cuda_ok=cuda_ok,
+        cuda_detail=policy.get("torch_import_error") or "",
+    )
+    if blocker:
+        _write(
+            out / "result.json",
+            _common(
+                args,
+                {
+                    "status": BLOCKED_NO_CUDA,
+                    "reason": blocker,
+                    "policy_probe": policy,
+                    "will_train": False,
+                    "training_optimizer_steps": None,
+                },
+            ),
+        )
+        return 2
+    if args.protocol == "online_closed_loop":
+        from online.loop import RealOnlineProtocol
+
+        result = RealOnlineProtocol().run(
+            seed=args.seed,
+            online_steps=args.online_steps,
+            policy_ready=False,
+            simulator_ready=False,
+            supervision_ready=False,
+        )
+        _write(out / "result.json", _common(args, result))
+        return 2
+    if spec is None:
+        _write(
+            out / "result.json",
+            _common(args, {"status": "NOT_APPLICABLE", "reason": "HinFlow is not a unified selector.", "will_train": False}),
+        )
+        return 2
+    if args.resume and not args.checkpoint:
+        state_path = out / "state.json"
+        if not state_path.is_file() and not (out / "checkpoints").is_dir():
+            _write(
+                out / "result.json",
+                _common(
+                    args,
+                    {
+                        "status": "BLOCKED",
+                        "reason": "resume requested but no checkpoint or state.json exists in the output directory",
+                        "will_train": False,
+                        "training_optimizer_steps": None,
+                    },
+                ),
+            )
+            return 2
+    config = _load_config(args)
+    dataset = _dataset_path(args, bench, config)
+    loaded = bench.load_dataset(dataset)
+    if loaded.get("status") != "SCHEMA_OK":
+        payload = {
+            "status": "BLOCKED",
+            "reason": loaded.get("reason") or "dataset is not ready",
+            "dataset_status": loaded.get("status"),
+            "dataset_path": dataset,
+            "will_train": False,
+            "training_optimizer_steps": None,
+            "reported_as_mh": False,
+        }
+        if str(args.benchmark).startswith("robomimic"):
+            payload["task_yaml_dataset_type"] = "ph"
+        _write(out / "result.json", _common(args, payload))
+        return 2
+    if spec.kind == "published_method":
+        blocked = spec.select(
+            [make_synthetic_trajectory("author_probe", 2)],
+            SelectionBudget(max_episodes=1),
+            SelectionContext(seed=args.seed),
+        )
+        _write(
+            out / "result.json",
+            _common(
+                args,
+                {
+                    "status": blocked.status,
+                    "reason": blocked.reason,
+                    "selected_ids": blocked.selected_ids,
+                    "official_stack_invoked": blocked.extra_cost.get("official_stack_invoked"),
+                    "heuristic_fallback": False,
+                    "dataset_path": dataset,
+                    "will_train": False,
+                    "training_optimizer_steps": None,
+                    "note": "Author stack did not return scores for this dataset. Training was not started.",
+                },
+            ),
+        )
+        return 2
+    if spec.name != "all_data":
+        _write(
+            out / "result.json",
+            _common(
+                args,
+                {
+                    "status": "BLOCKED",
+                    "reason": (
+                        "real mode does not select a synthetic probe. "
+                        "Materialized benchmark episodes are required before this control can run."
+                    ),
+                    "will_train": False,
+                    "training_optimizer_steps": None,
+                    "dataset_path": dataset,
+                },
+            ),
+        )
+        return 2
+    if spec.name == "all_data" and args.retention_ratio not in (None, 1.0):
+        _write(
+            out / "result.json",
+            _common(
+                args,
+                {
+                    "status": "BLOCKED",
+                    "reason": "all_data refuses a retention ratio below 1. Use another method name for a subset.",
+                    "will_train": False,
+                    "training_optimizer_steps": None,
+                },
+            ),
+        )
+        return 2
+    request = {
+        "method": args.method,
+        "benchmark": args.benchmark,
+        "task": args.task or getattr(bench, "task", ""),
+        "seed": args.seed,
+        "device": args.device,
+        "dataset_path": dataset,
+        "checkpoint": args.checkpoint,
+        "resume": bool(args.resume),
+        "output_dir": str(out),
+        "expected_variant": "mh" if str(args.benchmark).endswith("_mh") else None,
+        "dry_run": False,
+    }
+    trained = execute_image_dp(request)
+    trained = _common(args, trained)
+    trained["dataset_path"] = dataset
+    _write(out / "result.json", trained)
+    return 0 if trained.get("status") == "COMPLETED_VERIFIED" else 2

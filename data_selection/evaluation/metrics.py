@@ -136,5 +136,36 @@ def blank_record(**known) -> dict:
     row["forgetting"] = NA
     row["backward_transfer"] = NA
     row["average_success"] = NA
+    row["forward_transfer"] = "NOT_DEFINED"
     row.update(known)
     return row
+
+
+def metric_applicability(phase: str, metric: str, benchmark: str, *, online_protocol_real: bool = False) -> str:
+    """Protocol-level applicability. Applicable cells stay NOT_RUN until measured.
+
+    P1 does not report online AUC. P2 AUC requires a real online protocol.
+    Forgetting, BWT, and average success apply only to libero_continual.
+    forward_transfer is not defined.
+    """
+    if metric == "forward_transfer":
+        return "NOT_DEFINED"
+    continual_metrics = {"forgetting", "backward_transfer", "average_success"}
+    if metric in continual_metrics:
+        if benchmark != "libero_continual" or phase != "P3":
+            return NA
+        return NOT_RUN
+    if metric == "success_auc":
+        if phase == "P2" and online_protocol_real:
+            return NOT_RUN
+        return NA
+    if phase == "P0" and metric == "paper_metric":
+        return NOT_RUN
+    if metric in METRIC_FIELDS:
+        return NOT_RUN
+    return NOT_RUN
+
+
+def preserve_runs(existing: list[dict], new_rows: list[dict]) -> list[dict]:
+    """Keep every seed, including FAILED. Nothing is dropped or rewritten to zero."""
+    return list(existing) + list(new_rows)

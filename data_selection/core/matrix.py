@@ -30,12 +30,36 @@ def _paper_status(fact: dict) -> str:
     return status
 
 
+def _runtime_readiness() -> str:
+    try:
+        import torch
+    except Exception:
+        return "BLOCKED_NO_CUDA"
+    try:
+        if torch.cuda.is_available():
+            return "CUDA_AVAILABLE_EXPERIMENT_NOT_RUN"
+    except Exception:
+        return "BLOCKED_NO_CUDA"
+    return "BLOCKED_NO_CUDA"
+
+
+def _image_dp_compatibility(spec) -> str:
+    if spec.kind == "control":
+        return "COMPATIBLE_IMAGE_CNN_DP"
+    if spec.name in {"cupid", "demo_score"}:
+        return "COMPATIBLE_IMAGE_CNN_DP"
+    if spec.name in {"deminf", "datamil", "strap"}:
+        return "NOT_YET_ADAPTED"
+    return "NOT_YET_ADAPTED"
+
+
 def build_matrix(root: Path | None = None) -> dict:
     root = root or ROOT
     facts = _facts(root)
     baselines = discover_baselines(root)
     benchmarks = discover_benchmarks(root)
     references = discover_references(root)
+    runtime = _runtime_readiness()
     rows = []
     unsupported = []
     for spec in baselines:
@@ -43,13 +67,17 @@ def build_matrix(root: Path | None = None) -> dict:
         if spec.kind == "control":
             implementation = "IMPLEMENTED_CPU_SELECTOR"
             original = "NOT_APPLICABLE"
-            unified = "INTERFACE_ONLY_NO_IMAGE_DP_TRAINING"
-            online = "SYNTHETIC_INTERFACE_ONLY"
+            unified = "NOT_YET_ADAPTED"
+            online = "NOT_IMPLEMENTED"
+            source_status = "NOT_APPLICABLE"
         else:
             implementation = _paper_status(fact)
             original = fact.get("original_reproduction", "NOT_YET_AUDITED")
             unified = fact.get("unified_adaptation", "NOT_IMPLEMENTED")
+            if unified == "NOT_APPLICABLE":
+                unified = "NOT_IMPLEMENTED"
             online = fact.get("online_closed_loop", "NOT_IMPLEMENTED")
+            source_status = "CLONED" if fact.get("entrypoint_verified") else "NOT_YET_AUDITED"
         robomimic_state = "SELECTOR_INTERFACE_ONLY" if spec.kind == "control" else fact.get(
             "robomimic", "NOT_YET_AUDITED"
         )
@@ -63,7 +91,7 @@ def build_matrix(root: Path | None = None) -> dict:
                 "leaderboard_eligible": False,
                 "robomimic": robomimic_state,
                 "libero": libero_state,
-                "image_dp_compatibility": "BLOCKED_NO_CUDA",
+                "image_dp_compatibility": _image_dp_compatibility(spec),
                 "original_paper_reproduction": original,
                 "unified_adaptation": unified,
                 "online_closed_loop": online,
@@ -76,6 +104,15 @@ def build_matrix(root: Path | None = None) -> dict:
                 "implementation_status": implementation,
                 "selects": spec.selects,
                 "reason": fact.get("reason", ""),
+                "SOURCE_STATUS": source_status,
+                "IMPLEMENTATION_STATUS": implementation,
+                "DEPENDENCY_STATUS": fact.get("dependency_status", "NOT_INSTALLED"),
+                "DATA_STATUS": "NOT_PRESENT",
+                "MODEL_STATUS": "NOT_TRAINED",
+                "ORIGINAL_FIDELITY_STATUS": original,
+                "UNIFIED_ADAPTATION_STATUS": unified,
+                "RUNTIME_READINESS": runtime,
+                "EXPERIMENT_STATUS": "NOT_RUN",
             }
         )
         unsupported.append(
@@ -107,6 +144,15 @@ def build_matrix(root: Path | None = None) -> dict:
                     "reason",
                     "HinFlow is an online-learning reference and is not an Image-DP data-selection baseline.",
                 ),
+                "SOURCE_STATUS": "CLONED_SUBMODULES_INCOMPLETE",
+                "IMPLEMENTATION_STATUS": "NOT_APPLICABLE",
+                "DEPENDENCY_STATUS": "NOT_INSTALLED",
+                "DATA_STATUS": "NOT_PRESENT",
+                "MODEL_STATUS": "NOT_TRAINED",
+                "ORIGINAL_FIDELITY_STATUS": fact.get("original_reproduction", "BLOCKED"),
+                "UNIFIED_ADAPTATION_STATUS": "NOT_APPLICABLE",
+                "RUNTIME_READINESS": runtime,
+                "EXPERIMENT_STATUS": "NOT_RUN",
             }
         )
     unsupported.append(
@@ -141,7 +187,11 @@ def build_matrix(root: Path | None = None) -> dict:
         "unsupported": unsupported,
         "runnable_jobs": runnable,
         "benchmarks": [bench.name for bench in benchmarks],
-        "note": "No Image-DP or simulator job is runnable from this matrix. URLs are not implementation evidence.",
+        "note": (
+            "Runnable jobs are CPU selector checks only. "
+            "Image-DP compatibility is not the same field as RUNTIME_READINESS. "
+            "A missing CUDA device does not mean the image CNN policy code is absent."
+        ),
     }
 
 

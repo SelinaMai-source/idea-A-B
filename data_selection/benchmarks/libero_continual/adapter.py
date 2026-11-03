@@ -1,4 +1,7 @@
-class LiberoContinualBenchmark:
+from benchmarks.common import BenchmarkBase
+
+
+class LiberoContinualBenchmark(BenchmarkBase):
     name = "libero_continual"
     family = "libero"
     task = "task_incremental"
@@ -8,14 +11,7 @@ class LiberoContinualBenchmark:
     forgetting_applicable = True
     protocol_id = "libero_continual"
     image_keys_status = "UNVERIFIED"
-
-    def schema(self):
-        return {
-            "image_keys_status": self.image_keys_status,
-            "action_convention": self.action_convention,
-            "forgetting_applicable": self.forgetting_applicable,
-            "formal_result_without_hdf5_or_zarr": False,
-        }
+    expected_dataset_path = "artifacts/libero/continual"
 
 
 BENCHMARK = LiberoContinualBenchmark()
