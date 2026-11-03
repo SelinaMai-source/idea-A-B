@@ -27,15 +27,24 @@ def test_registry_has_controls_and_papers_and_skips_sources():
 
 
 def test_budget_reports_episodes_and_transitions():
-    selected = _selectors()["all_data"].select(
+    rejected = _selectors()["all_data"].select(
         _pool(),
         SelectionBudget(max_episodes=2, max_transitions=4),
         SelectionContext(seed=0),
     )
+    assert rejected.status == BLOCKED
+    assert rejected.selected_ids == []
+    assert rejected.truncated is False
+    selected = _selectors()["random"].select(
+        _pool(),
+        SelectionBudget(max_episodes=2),
+        SelectionContext(seed=1),
+    )
     assert selected.status == OK
     assert selected.selected_episodes == 2
-    assert selected.selected_transitions == 4
-    assert selected.truncated
+    assert selected.truncated is False
+    widths = {item.trajectory_id: item.n_transitions for item in _pool()}
+    assert selected.selected_transitions == sum(widths[item] for item in selected.selected_ids)
 
 
 def test_random_is_seeded_and_papers_do_not_fall_back():
@@ -64,8 +73,19 @@ def test_fifo_keeps_newest_and_fixed_score_blocks_without_scores():
     blocked = _selectors()["fixed_score"].select(blank, SelectionBudget(max_episodes=1), SelectionContext(seed=0))
     assert blocked.status == BLOCKED
     assert blocked.selected_ids == []
-    ranked = _selectors()["fixed_score"].select(_pool(), SelectionBudget(max_episodes=1), SelectionContext(seed=0))
+    ranked = _selectors()["fixed_score"].select(
+        _pool(),
+        SelectionBudget(max_episodes=1),
+        SelectionContext(seed=0, score_provenance="unit_test_external_scores"),
+    )
     assert ranked.selected_ids == ["b"]
+    missing_provenance = _selectors()["fixed_score"].select(
+        _pool(),
+        SelectionBudget(max_episodes=1),
+        SelectionContext(seed=0),
+    )
+    assert missing_provenance.status == BLOCKED
+    assert missing_provenance.selected_ids == []
 
 
 def test_reservoir_respects_episode_cap_and_seed():
