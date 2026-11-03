@@ -7,7 +7,7 @@
 - Lift MH `latest.ckpt` 与 `epoch=0250-test_mean_score=1.000.ckpt` 的 HEAD Content-Length 都是 4627773609。正文未下载。后者不能当 `INITIAL_CHECKPOINT`。Can / Square / Transport 的 checkpoint 文件名还没有列出来。
 - `lift_image.yaml` 的 `dataset_type` 是 `ph`。本机没有 MH HDF5，所以 Lift MH 是 `BLOCKED`，不是成功。
 - CUPID 卡在 `torch` / `hydra` / `click` 导入。DemInf 卡在 `jax`。Demo-SCORE 和 STRAP 卡在 `torch`。DataMIL 的 `scripts/perform_libero_dm.sh` 使用 Octo，统一 DP 适配没有实现。都没有退回随机分数。
-- HinFlow `third_party/co-tracker` 有本地修改，检出 `82e02e8029753ad4ef13cf06be7f4fc5facdda4d`，没有 reset。`third_party/maniskill`（`ac59dcadacd307e7acbbce22c708b6b1a28fb7bc`）和 `third_party/robosuite`（`eafb81f54ffc104f905ee48a16bb15f059176ad3`）没有开始检出。`third_party/robomimic`（gitlink `5dee58f9cc1235010d0877142b54d0e82dd23986`）用 `git submodule update --init --depth 1 third_party/robomimic` 重试，远程是 `git@github.com:ARISE-Initiative/robomimic.git`。约 3.5 分钟时 pack 约 9MB，工作区仍是 `--no-checkout`，不能记成已完成。
+- HinFlow `third_party/co-tracker` 有本地修改，检出 `82e02e8029753ad4ef13cf06be7f4fc5facdda4d`，没有 reset。`third_party/maniskill`（`ac59dcadacd307e7acbbce22c708b6b1a28fb7bc`）和 `third_party/robosuite`（`eafb81f54ffc104f905ee48a16bb15f059176ad3`）没有开始检出。`third_party/robomimic`（gitlink `5dee58f9cc1235010d0877142b54d0e82dd23986`）的重试 `git submodule update --init --depth 1 third_party/robomimic` 在 `--no-checkout` 阶段被中止，远程是 `git@github.com:ARISE-Initiative/robomimic.git`。中止后 `git submodule status` 前缀是 `-`，没有 HEAD，`robomimic/scripts/train.py` 不存在，`.git/modules/robomimic` 不存在。不能记成已完成。
 - `conda` 在 `/opt/anaconda3/bin/conda`，但 Darwin 上 `bash scripts/setup_environment.sh` 退出码 2，七套环境都没有创建。
 - RTX 4090 与作者 CUDA 11.6 / PyTorch 1.12.1 的组合没有在这台机器上验证，也不写成已经兼容。
 - 没有实现 ours / v1。没有论文成功率。

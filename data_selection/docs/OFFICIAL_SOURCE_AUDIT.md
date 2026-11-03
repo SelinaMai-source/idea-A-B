@@ -22,7 +22,7 @@
 
 - `third_party/co-tracker`，当前检出 `82e02e8029753ad4ef13cf06be7f4fc5facdda4d`，与 gitlink 不一致（`git submodule status` 前缀 `+`），工作区有本地修改 `M third_party/co-tracker`。这次没有 reset。
 - `third_party/maniskill`，gitlink `ac59dcadacd307e7acbbce22c708b6b1a28fb7bc`，未检出。
-- `third_party/robomimic`，gitlink `5dee58f9cc1235010d0877142b54d0e82dd23986`，未检出。2026-11-03 用 `git submodule update --init --depth 1 third_party/robomimic` 重试，URL 是 `git@github.com:ARISE-Initiative/robomimic.git`。传输很慢，不能记成已完成。
+- `third_party/robomimic`，gitlink `5dee58f9cc1235010d0877142b54d0e82dd23986`，未检出。2026-11-03 的 `git submodule update --init --depth 1 third_party/robomimic` 在 `--no-checkout` 阶段被中止，URL 是 `git@github.com:ARISE-Initiative/robomimic.git`。中止后没有 HEAD，没有 `train.py`，`.git/modules/robomimic` 不存在。
 - `third_party/robosuite`，gitlink `eafb81f54ffc104f905ee48a16bb15f059176ad3`，未检出。
 
 HinFlow 不是数据选择 baseline，也不能标成 fully ready。

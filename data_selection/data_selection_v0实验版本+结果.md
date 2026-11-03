@@ -209,3 +209,5 @@ HinFlow 不是数据选择 baseline，也不进入 Image-DP 排行榜。hindsigh
 |v0.1-baseline-integration|published_methods|robomimic_and_libero|all_tasks|original_and_unified|image_cnn_diffusion_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED|作者入口会调用或保持 BLOCKED。本机导入失败，没有随机分数。DataMIL 因 Octo 阻断。|
 |v0.1-tests|pytest|cpu|parent_venv|unit|not_a_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|COMPLETED_VERIFIED|49 tests，0 failed，2 skipped。skipped 是 CUDA 集成测试，不是论文通过。|
 |v0.1-gpu-smoke|all_data|robomimic_lift_mh|Lift MH|unified_offline|image_cnn_diffusion_policy|NOT_RUN|NOT_RUN|N/A|N/A|NOT_RUN|BLOCKED_NO_CUDA|scripts/run_lift_mh_all_data.sh 在 Darwin 退出码 2。没有 GPU 训练。|
+
+2026-11-03 补充：HinFlow `third_party/robomimic` 的浅克隆重试被中止。`git submodule status` 仍是 `-5dee58f9cc1235010d0877142b54d0e82dd23986`，没有 HEAD，没有 `train.py`。这不是完成，也不是论文结果。
