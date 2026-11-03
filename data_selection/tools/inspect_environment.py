@@ -37,7 +37,12 @@ def _nvidia() -> str:
     return (proc.stdout or proc.stderr or "").strip() or f"exit {proc.returncode}"
 
 
+def _which(name: str) -> str:
+    return shutil.which(name) or "NOT_FOUND"
+
+
 def collect() -> dict:
+    conda = _which("conda")
     return {
         "platform": platform.platform(),
         "system": platform.system(),
@@ -46,8 +51,16 @@ def collect() -> dict:
         "executable": sys.executable,
         "nvidia_smi": _nvidia(),
         "torch": _torch(),
-        "cuda_training_supported_here": False if platform.system() == "Darwin" or platform.machine() == "arm64" else None,
-        "notes": "Parent venv is used as-is. No system-wide install and no Conda environment was created.",
+        "conda": conda,
+        "mamba": _which("mamba"),
+        "cuda_training_supported_here": False if platform.system() == "Darwin" else None,
+        "conda_envs_created": False,
+        "notes": (
+            "Parent venv is used as-is. No system-wide install. "
+            "Conda environment creation is refused on Darwin even if conda exists. "
+            "PyTorch 1.12.1+cu116 is the author pin and is not installed on this Mac. "
+            "RTX 4090 compatibility with CUDA 11.6 is not claimed."
+        ),
     }
 
 

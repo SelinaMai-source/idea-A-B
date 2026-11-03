@@ -7,7 +7,7 @@ assets:
     content_length_bytes: 84754919326
     sha256: ""
     local_relative_path: ""
-    notes: "HEAD 200. Not downloaded. macOS downloader refuses this name."
+    notes: "Re-checked 2026-11-03 with HEAD. HTTP 200, Content-Type application/zip, Accept-Ranges bytes, Content-Length 84754919326. No mirror. Body not downloaded."
   - name: robomimic_lowdim
     url: https://diffusion-policy.cs.columbia.edu/data/training/robomimic_lowdim.zip
     status: SOURCE_VERIFIED_DEFERRED
@@ -15,7 +15,7 @@ assets:
     content_length_bytes: 1930261710
     sha256: ""
     local_relative_path: ""
-    notes: "HEAD 200. Not downloaded. Low-dimensional data is not an image Diffusion Policy result."
+    notes: "Re-checked 2026-11-03 with HEAD. HTTP 200, Content-Type application/zip, Accept-Ranges bytes, Content-Length 1930261710. No mirror. Body not downloaded. Low-dimensional data is not an image Diffusion Policy result."
   - name: libero_hdf5
     url: https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets
     status: SOURCE_VERIFIED_DEFERRED
@@ -38,16 +38,20 @@ assets:
     url: https://diffusion-policy.cs.columbia.edu/data/experiments/image/lift_mh/diffusion_policy_cnn/train_0/checkpoints/latest.ckpt
     status: SOURCE_VERIFIED_DEFERRED
     http_status: 200
+    content_length_bytes: 4627773609
     sha256: ""
     local_relative_path: ""
-    notes: "Directory listing of train_0/checkpoints showed latest.ckpt and epoch=0250-test_mean_score=1.000.ckpt. The file body was not downloaded and its byte size was not requested."
+    checkpoint_role: UNSPECIFIED_LATEST
+    notes: "Re-checked 2026-11-03. Directory listing contains latest.ckpt and epoch=0250-test_mean_score=1.000.ckpt. HEAD 200, Content-Length 4627773609, Accept-Ranges bytes. Body not downloaded. latest.ckpt is not used as a from-scratch initial state."
   - name: dp_image_lift_mh_cnn_train0_epoch
     url: https://diffusion-policy.cs.columbia.edu/data/experiments/image/lift_mh/diffusion_policy_cnn/train_0/checkpoints/epoch=0250-test_mean_score=1.000.ckpt
     status: SOURCE_VERIFIED_DEFERRED
     http_status: 200
+    content_length_bytes: 4627773609
     sha256: ""
     local_relative_path: ""
-    notes: "Filename taken from the lift_mh train_0 listing only. Do not copy this epoch name onto can/square/transport."
+    checkpoint_role: PRETRAINED_EVALUATION_CHECKPOINT
+    notes: "Re-checked 2026-11-03. HEAD 200, Content-Length 4627773609. Body not downloaded. This is a finished evaluation checkpoint, not INITIAL_CHECKPOINT, and it is not assumed valid for Can, Square, or Transport."
   - name: hinflow_hf
     url: https://huggingface.co/datasets/Zhangchen0731/HinFlow
     status: SOURCE_VERIFIED_DEFERRED
@@ -62,4 +66,4 @@ assets:
     status: NOT_YET_CHECKED
     sha256: ""
     local_relative_path: ""
-    notes: "image/ listing contains can_mh, can_ph, lift_mh, lift_ph, pusht, square_mh, square_ph, tool_hang_ph, transport_mh, transport_ph. Checkpoint filenames inside those other task folders were not listed."
+    notes: "Re-checked 2026-11-03. image/ lists can_mh, can_ph, lift_mh, lift_ph, pusht, square_mh, square_ph, tool_hang_ph, transport_mh, transport_ph. can_mh, square_mh, and transport_mh each list diffusion_policy_cnn, diffusion_policy_transformer, ibc_dfo, and lstm_gmm. Checkpoint filenames inside those other task folders were not listed."

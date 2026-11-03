@@ -1,66 +1,85 @@
 #!/usr/bin/env python3
-"""Resumable downloader. Refuses the RoboMimic image zip on macOS."""
+"""Download one named asset. Large RoboMimic image bodies stay deferred on macOS.
+
+DOWNLOAD_FAILED is a transfer error. SOURCE_VERIFIED_DEFERRED means the URL was
+checked and the body was intentionally not fetched.
+"""
 
 from __future__ import annotations
 
 import argparse
+import json
 import platform
+import sys
 import urllib.request
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from tools.http_transfer import download_with_resume  # noqa: E402
+
 MANIFEST = ROOT / "manifests" / "artifacts.yaml"
-# 2 GB. The image zip is far above this and is also named below.
 LARGE_BYTES = 2_000_000_000
-MAC_FORBIDDEN = {"robomimic_image"}
+MAC_FORBIDDEN = {"robomimic_image", "robomimic_lowdim"}
 
 
-def _assets() -> list[dict]:
-    payload = yaml.safe_load(MANIFEST.read_text(encoding="utf-8")) or {}
+def _assets(manifest: Path) -> list[dict]:
+    payload = yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}
     return list(payload.get("assets") or [])
 
 
-def _head(url: str) -> dict:
-    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "data-selection-v0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        headers = {key.lower(): value for key, value in resp.headers.items()}
-        return {"status": resp.status, "content_length": headers.get("content-length"), "accept_ranges": headers.get("accept-ranges")}
+def urllib_opener(url: str, method: str = "GET", headers: dict | None = None):
+    request = urllib.request.Request(url, method=method, headers=headers or {})
+    return urllib.request.urlopen(request, timeout=60)
 
 
-def download_one(name: str, dest: Path, allow_large: bool) -> dict:
-    asset = next(item for item in _assets() if item["name"] == name)
-    if platform.system() == "Darwin" and name in MAC_FORBIDDEN:
-        raise SystemExit(
-            f"refusing {name} on macOS. Content stays SOURCE_VERIFIED_DEFERRED. "
-            "Run this command on the Linux GPU machine."
-        )
-    meta = _head(asset["url"])
-    length = int(meta["content_length"]) if meta.get("content_length") else None
-    if length is not None and length >= LARGE_BYTES and not allow_large:
-        raise SystemExit(
-            f"refusing {name}: content-length {length} bytes. Pass --allow-large on the server after checking free disk."
-        )
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    existing = dest.stat().st_size if dest.exists() else 0
-    if length is not None and existing > length:
-        raise SystemExit(f"{dest} is larger than content-length; not overwriting")
-    if length is not None and existing == length:
-        return {"name": name, "status": "ALREADY_COMPLETE", "bytes": existing, "path": str(dest)}
-    headers = {"User-Agent": "data-selection-v0"}
-    mode = "wb"
-    if existing and meta.get("accept_ranges") == "bytes":
-        headers["Range"] = f"bytes={existing}-"
-        mode = "ab"
-    req = urllib.request.Request(asset["url"], headers=headers)
-    with urllib.request.urlopen(req, timeout=120) as resp, dest.open(mode) as handle:
-        while True:
-            chunk = resp.read(1024 * 1024)
-            if not chunk:
-                break
-            handle.write(chunk)
-    return {"name": name, "status": "DOWNLOADED_UNVERIFIED", "bytes": dest.stat().st_size, "path": str(dest)}
+def download_one(
+    name: str,
+    dest: Path,
+    *,
+    allow_large: bool,
+    manifest: Path = MANIFEST,
+    opener=None,
+    system: str | None = None,
+) -> dict:
+    asset = next(item for item in _assets(manifest) if item["name"] == name)
+    system = system or platform.system()
+    if system == "Darwin" and name in MAC_FORBIDDEN:
+        return {
+            "name": name,
+            "status": "SOURCE_VERIFIED_DEFERRED",
+            "reason": f"macOS refuses the {name} body; status stays SOURCE_VERIFIED_DEFERRED",
+            "url": asset["url"],
+            "expected_size": asset.get("content_length_bytes"),
+            "bytes": 0,
+            "sha256": "",
+            "path": "",
+        }
+    expected = asset.get("content_length_bytes")
+    if expected is not None and int(expected) >= LARGE_BYTES and not allow_large:
+        return {
+            "name": name,
+            "status": "SOURCE_VERIFIED_DEFERRED",
+            "reason": f"content-length {expected} is at least {LARGE_BYTES}; pass --allow-large on the server",
+            "url": asset["url"],
+            "expected_size": int(expected),
+            "bytes": 0,
+            "sha256": "",
+            "path": "",
+        }
+    report = download_with_resume(
+        asset["url"],
+        dest,
+        opener or urllib_opener,
+        expected_size=int(expected) if expected else None,
+        expected_sha256=asset.get("sha256") or None,
+    )
+    report["name"] = name
+    return report
 
 
 def main() -> int:
@@ -69,12 +88,19 @@ def main() -> int:
     parser.add_argument("--dest", required=True)
     parser.add_argument("--allow-large", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--manifest", default=str(MANIFEST))
     args = parser.parse_args()
     if args.dry_run:
-        print({"dry_run": True, "asset": args.asset, "will_download": False})
+        print(json.dumps({"dry_run": True, "asset": args.asset, "will_download": False}))
         return 0
-    print(download_one(args.asset, Path(args.dest), args.allow_large))
-    return 0
+    report = download_one(
+        args.asset,
+        Path(args.dest),
+        allow_large=args.allow_large,
+        manifest=Path(args.manifest),
+    )
+    print(json.dumps(report, indent=2))
+    return 0 if report["status"] in {"DOWNLOADED_VERIFIED", "SOURCE_VERIFIED_DEFERRED"} else 2
 
 
 if __name__ == "__main__":
