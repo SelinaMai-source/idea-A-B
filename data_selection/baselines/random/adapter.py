@@ -1,6 +1,6 @@
 import random
 
-from core.selection_budget import guard_pool, result_from_ordered
+from core.selection_budget import blocked_result, budget_is_explicit, guard_pool, result_from_ordered
 
 
 class RandomSelector:
@@ -13,6 +13,12 @@ class RandomSelector:
 
     def select(self, trajectories, budget, context):
         guard_pool(trajectories)
+        if not budget_is_explicit(budget):
+            return blocked_result(
+                self.name,
+                "random requires an explicit budget (max_episodes, max_transitions, or retention_ratio) and a seed",
+                {"seed": context.seed},
+            )
         rng = random.Random(context.seed)
         ordered = list(trajectories)
         rng.shuffle(ordered)
@@ -21,7 +27,10 @@ class RandomSelector:
             ordered,
             budget,
             ["trajectory_ids", "budget", "seed"],
-            reason="control: seeded shuffle, then episode and transition caps",
+            reason=f"control: Random({context.seed}) shuffle, then complete episodes inside the budget",
+            extra_cost={"seed": context.seed, "rng": "random.Random"},
+            pool=trajectories,
         )
+
 
 SELECTOR = RandomSelector()

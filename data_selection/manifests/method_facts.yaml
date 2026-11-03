@@ -1,6 +1,7 @@
 methods:
   cupid:
-    implementation_status: BLOCKED
+    implementation_status: IMPLEMENTED
+    dependency_status: NOT_INSTALLED
     entrypoint_verified: true
     official_stack_executed: false
     original_reproduction: BLOCKED_NO_CUDA
@@ -13,7 +14,8 @@ methods:
     estimated_run_cost: "unmeasured; README pins Ubuntu 20.04, Python 3.9, mujoco210"
     reason: "CUPID README describes RoboMimic and PushT curation on Diffusion Policy. The influence entrypoints are present and were not executed. LIBERO is not an original CUPID benchmark in that README."
   deminf:
-    implementation_status: BLOCKED
+    implementation_status: IMPLEMENTED
+    dependency_status: NOT_INSTALLED
     entrypoint_verified: true
     official_stack_executed: false
     original_reproduction: BLOCKED
@@ -26,7 +28,8 @@ methods:
     estimated_run_cost: "unmeasured; README asks for Python 3.11 and jax 0.4.37"
     reason: "DemInf estimates demonstration information with a JAX/OpenX stack and recommends relative actions. It is not the image CNN Diffusion Policy. The README does not mention LIBERO."
   datamil:
-    implementation_status: BLOCKED
+    implementation_status: IMPLEMENTED
+    dependency_status: NOT_INSTALLED
     entrypoint_verified: true
     official_stack_executed: false
     original_reproduction: BLOCKED
@@ -39,7 +42,8 @@ methods:
     estimated_run_cost: "unmeasured; README pins Python 3.10, TensorFlow 2.14.0, JAX 0.4.20, CUDA 11.8"
     reason: "DataMIL's LIBERO path trains Octo. That is not swapped into the image Diffusion Policy leaderboard. MetaWorld is outside this phase."
   demo_score:
-    implementation_status: BLOCKED
+    implementation_status: IMPLEMENTED
+    dependency_status: NOT_INSTALLED
     entrypoint_verified: true
     official_stack_executed: false
     original_reproduction: BLOCKED_NO_CUDA
@@ -52,7 +56,8 @@ methods:
     estimated_run_cost: "unmeasured; README uses separate Python 3.10 environments for demoscore, robodiff, and aloha"
     reason: "Demo-SCORE filters demos with a success/failure classifier. The vendored robodiff format can read robomimic-style data. LIBERO is not named in the upstream README. No classifier was trained."
   strap:
-    implementation_status: BLOCKED
+    implementation_status: IMPLEMENTED
+    dependency_status: NOT_INSTALLED
     entrypoint_verified: true
     official_stack_executed: false
     original_reproduction: BLOCKED_NO_CUDA

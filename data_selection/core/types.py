@@ -116,6 +116,7 @@ class SelectionContext:
     evaluation_budget: dict | None = None
     hindsight_labels: dict | None = None
     scores: dict | None = None
+    score_provenance: str | None = None
 
 
 @dataclass
